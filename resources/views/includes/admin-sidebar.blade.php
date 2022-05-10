@@ -40,24 +40,45 @@
                                     </a>
                                     <ul class="sidebar-nav">
                                         <li>
-                                            <a href="charts-flot.html"> Add Category </a>
+                                            <a href="/add-category"> Add Category </a>
                                         </li>
                                         <li>
-                                            <a href="charts-morris.html"> Add Batch </a>
+                                            <a href="/add-batch"> Add Batch </a>
+                                        </li>
+                                        <li>
+                                            <a href="/add-courses"> Add Courses </a>
+                                        </li>
+                                        <li>
+                                            <a href="/course-mapping"> Course Mapping </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-table"></i> Tables
+                                        <i class="fa fa-table"></i> Quiz
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
                                         <li>
-                                            <a href="static-tables.html"> Static Tables </a>
+                                            <a href="/questions-topic"> Question Topic </a>
                                         </li>
                                         <li>
-                                            <a href="responsive-tables.html"> Responsive Tables </a>
+                                            <a href="/add-question"> Add Question </a>
+                                        </li>
+                                        <li>
+                                            <a href="/questions-bank"> Question Bank </a>
+                                        </li>
+                                        <li>
+                                            <a href="responsive-tables.html"> Question Bulk Import </a>
+                                        </li>
+                                        <li>
+                                            <a href="responsive-tables.html"> Add Quiz </a>
+                                        </li>
+                                        <li>
+                                            <a href="responsive-tables.html"> Quiz Setup </a>
+                                        </li>
+                                        <li>
+                                            <a href="responsive-tables.html">  Quiz Report </a>
                                         </li>
                                     </ul>
                                 </li>

@@ -12,17 +12,20 @@
     <!-- <link rel="stylesheet" href="{{asset('css/admindashboard.css')}}"> -->
     <link rel="stylesheet" href="{{asset('css/stylelogin.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    
+    
     @livewireStyles
 </head>
 <body>
     {{$slot}}
-
+   
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/all.min.js')}}"></script>
     <script src="{{asset('js/vendor.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>
+
     @livewireScripts
 </body>
 </html>

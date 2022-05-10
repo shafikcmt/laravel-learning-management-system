@@ -674,8 +674,11 @@ pre {
   .btn.btn-pill-right {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px; }
-  .btn.btn-oval {
-    border-radius: 25px; }
+    .btn.btn-oval {
+      border-radius: 7px;
+      padding: 10px 30px;
+      font-size: 21px;
+  }
   .btn.btn-link {
     text-decoration: none; }
   .btn strong {
