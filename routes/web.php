@@ -12,6 +12,7 @@ use App\Http\Livewire\AddCourses;
 use App\Http\Livewire\QuestionsTopic;
 use App\Http\Livewire\AddQuestion;
 use App\Http\Livewire\QuestionsBank;
+use App\Http\Livewire\QuestionBulkImport;
 use App\Http\Livewire\CourseMapping;
 use App\Http\Livewire\Admindashboard;
 use App\Http\Livewire\Studentdashboard;
@@ -50,4 +51,5 @@ Route::get('/add-courses',AddCourses::class);
 Route::get('/questions-topic',QuestionsTopic::class);
 Route::get('/add-question',AddQuestion::class);
 Route::get('/questions-bank',QuestionsBank::class);
+Route::get('/question-bulk-import',QuestionBulkImport::class);
 

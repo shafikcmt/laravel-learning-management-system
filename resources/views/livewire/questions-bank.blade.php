@@ -6,16 +6,11 @@
         <article class="content responsive-tables-page">
         <div class="title-block">
                 <h1 class="title well p-3">Question Topic </h1>
-                
             </div>
-        
-                    <section class="section">
+             <section class="section">
                         <div class="row sameheight-container">
-                            
-
-                    <div class="col-md-12">
-                   
-                                <div class="card">
+                             <div class="col-md-12">
+                        <div class="card">
                                     <div class="card-block">
                                         <div class="card-title-block">
                                             <div class="row">
