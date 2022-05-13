@@ -13,24 +13,24 @@
                         <nav class="menu">
                             <ul class="sidebar-menu metismenu" id="sidebar-menu">
                                 <li class="active">
-                                    <a href="/dashboard">
+                                    <a href="/student-dashboard">
                                         <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
+                                    <a href="/student-details">
+                                        <i class="fa fa-home"></i> Personal Details </a>
+                                </li>
+                                <li>
                                     <a href="#">
-                                        <i class="fa fa-th-large"></i> Students Info
+                                        <i class="fa fa-th-large"></i> Assesment Works
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
                                         <li>
-                                            <a href="items-list.html"> Students List </a>
+                                            <a href="/drive-skills"> Drive Skills </a>
                                         </li>
-                                        <li>
-                                            <a href="item-editor.html"> Add Students </a>
-                                        </li>
-                                        <li>
-                                            <a href="item-editor.html">Students Attendance</a>
-                                        </li>
+                                       
+                                   
                                     </ul>
                                 </li>
                                 <li>

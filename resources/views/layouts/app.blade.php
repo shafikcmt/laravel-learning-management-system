@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <!-- <link rel="stylesheet" href="{{asset('css/admindashboard.css')}}"> -->
     <link rel="stylesheet" href="{{asset('css/stylelogin.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -25,7 +26,30 @@
     <script src="{{asset('js/all.min.js')}}"></script>
     <script src="{{asset('js/vendor.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script>
+      $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:true
+        }
+    }
+})
 
+    </script>
     @livewireScripts
 </body>
 </html>

@@ -15,11 +15,11 @@
                                     <h3 class="title">Students List </h3>
                                     </div>
                                     <div class="student_list_icon float-right ">
-                                    <i class="fa-solid fa-clipboard-check"></i>
-                                   <i class="fa-solid fa-file-excel"></i>
-                                   <i class="fa-solid fa-file-csv"></i>
-                                   <i class="fa-solid fa-file-pdf"></i>
-                                   <i class="fa-solid fa-print"></i>
+                                   <a href="#"><i class="fa-solid fa-clipboard-check"></i></a> 
+                                   <a href="#"><i class="fa-solid fa-file-excel"></i></a>
+                                   <a href="#"><i class="fa-solid fa-file-csv"></i></a>
+                                   <a href="#"><i class="fa-solid fa-file-pdf"></i></a>
+                                   <a href="#"><i class="fa-solid fa-print"></i></a> 
                                     </div>
                                     
                                 </div>

@@ -1,6 +1,11 @@
 <?php
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Studentlogin;
+use App\Http\Livewire\DriveSkills;
+use App\Http\Livewire\StudentDetails;
+
+// *********************************************************
+
 use App\Http\Livewire\Sturesetpass;
 use App\Http\Livewire\AllStudent;
 use App\Http\Livewire\AddStudents;
@@ -37,7 +42,10 @@ Route::get('/',Home::class);
 Route::get('/student-dashboard',Studentdashboard::class);
 Route::get('/student-login',Studentlogin::class);
 Route::get('/reset-password-student',Sturesetpass::class);
+Route::get('/drive-skills',DriveSkills::class);
+Route::get('/student-details',StudentDetails::class);
 
+// **************************************************************************
 // Admin
 Route::get('/admin',Adminlogin::class);
 Route::get('/reset-password',Resetpassword::class);
