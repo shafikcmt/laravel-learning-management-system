@@ -1,3 +1,4 @@
+
 <div class="main-wrapper">
     <div class="app" id="app">
         @section('title','Admin Dashboard')
@@ -6,8 +7,70 @@
 
 
         <article class="content dashboard-page">
-       
+
             <section class="section map-tasks">
+                <div class="row sameheight-container">
+                    <div class="col-xl-3 ">
+                        <div class="card card-default bg-success bg-gradient">
+                            <!-- <div class="card-header">
+                                    <div class="header-block">
+                                        <p class="title"> Default card </p>
+                                    </div>
+                                </div> -->
+                            <div class="card-block">
+                                <h1>220</h1>
+                                <h4>Students</h4>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3">
+                        <div class="card card-default bg-info bg-gradient">
+                            <!-- <div class="card-header">
+                                    <div class="header-block">
+                                        <p class="title"> Default card </p>
+                                    </div>
+                                </div> -->
+                            <div class="card-block">
+                                <h1>220</h1>
+                                <h4>Questions</h4>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3">
+                        <div class="card card-default bg-success bg-gradient">
+                            <!-- <div class="card-header">
+                                    <div class="header-block">
+                                        <p class="title"> Default card </p>
+                                    </div>
+                                </div> -->
+                            <div class="card-block">
+                                <h1>220</h1>
+                                <h4>Quizzes</h4>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3">
+                        <div class="card card-default bg-info bg-gradient">
+                            <!-- <div class="card-header">
+                                    <div class="header-block">
+                                        <p class="title"> Default card </p>
+                                    </div>
+                                </div> -->
+                            <div class="card-block">
+                                <h1>220</h1>
+                                <h4>Attempts</h4>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
                 <div class="row sameheight-container">
                     <div class="col-md-12">
                         <div class="card sameheight-item" data-exclude="xs,sm">
@@ -23,6 +86,7 @@
                     </div>
 
                 </div>
+               
             </section>
         </article>
         @include('includes.footer')

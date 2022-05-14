@@ -17,10 +17,8 @@
                     <div class="col-md-10 offset-md-1">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover">
-
                                 <tr>
                                     <td rowspan="5">
-                                   
                                     </td>
                                     <th>Name</th>
                                     <td>Md shafiqul Islam</td>
@@ -34,10 +32,8 @@
                                     <td>GGI</td>
                                 </tr>
                                 <tr>
-
                                     <th>Branch</th>
-                                    <td>CSE</td>
-                                    
+                                    <td>CSE</td> 
                                 </tr>
                                 <tr>
                                 <td colspan="3"></td>
@@ -48,7 +44,6 @@
                                     <td>B.Tech</td>
                                 </tr>
                                 <tr>
-
                                 </tr>
                                 <tr>
                                     <th>Semister</th>
@@ -67,12 +62,8 @@
                                 </tr>
                             </table>
                         </div>
-
                     </div>
-
-
                 </div>
-
             </section>
 
         </article>

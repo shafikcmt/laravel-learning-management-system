@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-    <!-- <link rel="stylesheet" href="{{asset('css/admindashboard.css')}}"> -->
+    <!-- <link rel="stylesheet" href="{{asset('calender/css/fullcalendar.print.css')}}">
+    <link rel="stylesheet" href="{{asset('calender/css/fullcalendar.css')}}"> -->
     <link rel="stylesheet" href="{{asset('css/stylelogin.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     
@@ -19,9 +20,13 @@
 </head>
 <body>
     {{$slot}}
-   
+
     <script src="{{asset('js/jquery.min.js')}}"></script>
+    <!-- <script src="{{asset('calender/js/jquery-1.10.2.js')}}"></script> -->
+    <!-- <script src="{{asset('calender/js/jquery-ui.custom.min.js')}}"></script> -->
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+    <!-- <script src="{{asset('calender/js/fullcalendar.js')}}"></script> -->
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/all.min.js')}}"></script>
     <script src="{{asset('js/vendor.js')}}"></script>
@@ -50,6 +55,9 @@
 })
 
     </script>
+<!-- Calender -->
+
+                               
     @livewireScripts
 </body>
 </html>

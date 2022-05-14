@@ -28,6 +28,10 @@
                                         <li>
                                             <a href="add-students"> Add Students </a>
                                         </li>
+
+                                        <li>
+                                            <a href="/check-password"> Check Password </a>
+                                        </li>
                                        
                                     </ul>
                                 </li>
@@ -82,7 +86,21 @@
                                 </li>
                                 <li>
                                     <a href="forms.html">
-                                        <i class="fa fa-pencil-square-o"></i> Forms </a>
+                                        <i class="fa fa-pencil-square-o"></i> Results </a>
+                                        <ul class="sidebar-nav">
+                                        <li>
+                                            <a href="/results-quiz-wise"> Quiz Wise</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="/results-batch-wise"> Batch Wise</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="/results-date-wise"> Date Wise</a>
+                                        </li>
+                                
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#">
