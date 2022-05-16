@@ -33,7 +33,7 @@
                                    
                                     </ul>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#">
                                         <i class="fa fa-area-chart"></i> Charts
                                         <i class="fa arrow"></i>
@@ -46,8 +46,8 @@
                                             <a href="charts-morris.html"> Morris Charts </a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     <a href="#">
                                         <i class="fa fa-table"></i> Tables
                                         <i class="fa arrow"></i>
@@ -60,12 +60,12 @@
                                             <a href="responsive-tables.html"> Responsive Tables </a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     <a href="forms.html">
                                         <i class="fa fa-pencil-square-o"></i> Forms </a>
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     <a href="#">
                                         <i class="fa fa-desktop"></i> UI Elements
                                         <i class="fa arrow"></i>
@@ -87,8 +87,8 @@
                                             <a href="grid.html"> Grid </a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     <a href="#">
                                         <i class="fa fa-file-text-o"></i> Pages
                                         <i class="fa arrow"></i>
@@ -116,8 +116,8 @@
                                             <a href="error-500-alt.html"> Error 500 Global </a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     <a href="#">
                                         <i class="fa fa-sitemap"></i> Menu Levels
                                         <i class="fa arrow"></i>
@@ -167,7 +167,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                              
+                               -->
                             </ul>
                         </nav>
                     </div>
