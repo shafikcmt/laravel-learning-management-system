@@ -16,10 +16,10 @@
                                     <form role="form">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Batch Name</label>
-                                            <input type="text" class="form-control" id="category" name="batch" placeholder="Enter Batch"> 
+                                            <input type="text" wire:model="batch" class="form-control" id="category" name="batch" placeholder="Enter Batch"> 
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" wire:click="AddBatch()" class="btn btn-primary">Submit</button>
                                             <button type="reset" class="btn btn-danger">Cancel</button>
                                         </div>
                                     </form>

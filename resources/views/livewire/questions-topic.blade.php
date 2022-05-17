@@ -10,16 +10,27 @@
             </div>
         
                     <section class="section">
+                        <div class="row">
+                        <div class="col-md-12">
+                        @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                {{ session()->get('message') }}
+                            </div>
+                        @endif
+                        </div>
+                        </div>
+                        
                         <div class="row sameheight-container">
+                           
                             <div class="col-md-3">
                                 <div class="card card-block sameheight-item">
                                     <form role="form">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Topic Name</label>
-                                            <input type="text" class="form-control" id="category" name="batch" placeholder="Enter topic name"> 
+                                            <input type="text" wire:model="topic_name" class="form-control" id="category" name="batch" placeholder="Enter topic name"> 
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Save</button>
+                                            <button wire:click="insertTopic()" type="submit" class="btn btn-primary">Save</button>
                                         </div>
                                     </form>
                                 </div>
@@ -42,54 +53,20 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                    @foreach($qtopics as $qtopic)
                                                         <tr>
-                                                            <td>01</td>
-                                                            <td>ARTICLES</td>
-                                                            <td>
-                                                                <a class="btn btn-info" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                                <a class="btn btn-info" href="#"><i class="fa-solid fa-trash"></i></a>
-                                                            </td>
-                                                           
-                                                        </tr>
-                                                        <tr>
-                                                            <td>02</td>
-                                                            <td>VOICE</td>
-                                                            <td>
-                                                                <a class="btn btn-info" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                                <a class="btn btn-info" href="#"><i class="fa-solid fa-trash"></i></a>
-                                                            </td>
-                                                           
-                                                        </tr>
+                                                            <td>{{$qtopic->id}}</td>
+                                                         
+                                                            <td>{{$qtopic->topic_title}}</td>
 
-                                                        <tr>
-                                                            <td>03</td>
-                                                            <td>PREPOSITIONS</td>
                                                             <td>
                                                                 <a class="btn btn-info" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
                                                                 <a class="btn btn-info" href="#"><i class="fa-solid fa-trash"></i></a>
                                                             </td>
                                                            
                                                         </tr>
-
-                                                        <tr>
-                                                            <td>04</td>
-                                                            <td>ADJECTIVES</td>
-                                                            <td>
-                                                                <a class="btn btn-info" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                                <a class="btn btn-info" href="#"><i class="fa-solid fa-trash"></i></a>
-                                                            </td>
-                                                           
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>05</td>
-                                                            <td>TENSES</td>
-                                                            <td>
-                                                                <a class="btn btn-info" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                                <a class="btn btn-info" href="#"><i class="fa-solid fa-trash"></i></a>
-                                                            </td>
-                                                           
-                                                        </tr>
+                                                        @endforeach
+                                                        
                                                     </tbody>
                                                 </table>
                                             </div>

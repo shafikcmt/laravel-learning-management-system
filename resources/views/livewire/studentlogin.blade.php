@@ -32,7 +32,11 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-block btn-primary">Login</button>
                             </div>
-                          
+                            <div class="form-group">
+                                <p class="text-muted text-center">Do not have an account?
+                                    <a href="/student-registration">Sign Up!</a>
+                                </p>
+                            </div>
                         </form>
                     </div>
                 </div>

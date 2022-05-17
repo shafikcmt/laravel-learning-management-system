@@ -16,11 +16,11 @@
                                     <form role="form">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Category Name</label>
-                                            <input type="text" class="form-control" id="category" name="category" placeholder="Enter Category"> 
+                                            <input type="text" class="form-control" id="category" wire:model="category_name" name="category" placeholder="Enter Category"> 
                                         </div>
                                         
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" wire:click="insertCategory()" class="btn btn-primary">Submit</button>
                                             <button type="reset" class="btn btn-danger">Cancel</button>
                                         </div>
                                     </form>

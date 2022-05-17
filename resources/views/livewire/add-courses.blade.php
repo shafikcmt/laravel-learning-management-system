@@ -17,20 +17,20 @@
                                 <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course full name</label>
                                     <div class="col-sm-8">
-                                        <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                                        <input type="text" wire:model="course_full_name" class="form-control" id="colFormLabel" placeholder="col-form-label">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course short
                                         name</label>
                                     <div class="col-sm-8">
-                                        <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                                        <input type="text" wire:model="course_short_name" class="form-control" id="colFormLabel" placeholder="col-form-label">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course category</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control">
+                                        <select class="form-control" wire:model="course_category">
                                             <option>Option one</option>
                                             <option>Option two</option>
                                             <option>Option three</option>
@@ -41,28 +41,22 @@
                                 <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course start date</label>
                                     <div class="col-sm-8">
-                                        <input type="date" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                                        <input type="date" wire:model="course_start_date" class="form-control" id="colFormLabel" placeholder="col-form-label">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course end date</label>
                                     <div class="col-sm-8">
-                                        <input type="date" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                                        <input type="date" wire:model="course_end_date" class="form-control" id="colFormLabel" placeholder="col-form-label">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course image</label>
                                     <div class="col-sm-8">
-                                        <input type="file" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                                        <input type="file" wire:model="course_image" class="form-control" id="colFormLabel" placeholder="col-form-label">
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="colFormLabel" class="col-sm-4 col-form-label">Course short
-                                        name</label>
-                                    <div class="col-sm-8">
-                                        <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                                    </div>
-                                </div>
+                               
                                 <div class="form-group pull-right">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <button type="reset" class="btn btn-danger">Cancel</button>

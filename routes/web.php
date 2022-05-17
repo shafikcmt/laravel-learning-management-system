@@ -3,6 +3,7 @@ use App\Http\Livewire\Home;
 use App\Http\Livewire\Studentlogin;
 use App\Http\Livewire\DriveSkills;
 use App\Http\Livewire\StudentDetails;
+use App\Http\Livewire\StudentRegistrations;
 
 // *********************************************************
 
@@ -48,6 +49,7 @@ Route::get('/student-login',Studentlogin::class);
 Route::get('/reset-password-student',Sturesetpass::class);
 Route::get('/drive-skills',DriveSkills::class);
 Route::get('/student-details',StudentDetails::class);
+Route::get('/student-registration',StudentRegistrations::class);
 
 // **************************************************************************
 // Admin

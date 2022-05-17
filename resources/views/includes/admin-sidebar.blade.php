@@ -26,7 +26,7 @@
                                             <a href="/all-student"> Students List </a>
                                         </li>
                                         <li>
-                                            <a href="add-students"> Add Students </a>
+                                            <a href="/add-students"> Add Students </a>
                                         </li>
 
                                         <li>

@@ -4,7 +4,7 @@
         @include('includes.header')
         @include('includes.student-sidebar')
         <article class="content dashboard-page">
-        <div class="title-block">
+            <div class="title-block">
                 <h1 class="title well p-3"> MONTY SOLANKI 4914112 </h1>
             </div>
             <section class="section">
@@ -32,7 +32,7 @@
                                 <div class="card card-default">
                                     <div class="card-header">
                                         <div class="header-block">
-                                            <p class="title">Technical  </p>
+                                            <p class="title">Technical </p>
                                         </div>
                                     </div>
                                     <div class="card-block">
@@ -56,7 +56,7 @@
                                         <img src="images/frontImg.jpg" alt="">
                                     </div>
                                     <div class="card-footer">
-                                        
+
                                         <h3>Soft Skills Level-1</h3>
                                         <a href="#" class="btn btn-primary stretched-link">View Course</a>
 
@@ -74,7 +74,7 @@
                                         <img src="images/frontImg.jpg" alt="">
                                     </div>
                                     <div class="card-footer">
-<h3>Level-1 Reasoning</h3>
+                                        <h3>Level-1 Reasoning</h3>
                                         <a href="#" class="btn btn-primary stretched-link">View Course</a>
 
                                     </div>
@@ -84,7 +84,7 @@
                                 <div class="card card-default">
                                     <div class="card-header">
                                         <div class="header-block">
-                                            <p class="title">Technical  </p>
+                                            <p class="title">Technical </p>
                                         </div>
                                     </div>
                                     <div class="card-block">
@@ -108,7 +108,7 @@
                                         <img src="images/frontImg.jpg" alt="">
                                     </div>
                                     <div class="card-footer">
-                                        
+
                                         <h3>Soft Skills Level-2</h3>
                                         <a href="#" class="btn btn-primary stretched-link">View Course</a>
 
@@ -136,7 +136,7 @@
                                 <div class="card card-default">
                                     <div class="card-header">
                                         <div class="header-block">
-                                            <p class="title">Technical  </p>
+                                            <p class="title">Technical </p>
                                         </div>
                                     </div>
                                     <div class="card-block">
@@ -160,7 +160,7 @@
                                         <img src="images/frontImg.jpg" alt="">
                                     </div>
                                     <div class="card-footer">
-                                        
+
                                         <h3>Soft Skills Level-2</h3>
                                         <a href="#" class="btn btn-primary stretched-link">View Course</a>
 
@@ -188,7 +188,7 @@
                                 <div class="card card-default">
                                     <div class="card-header">
                                         <div class="header-block">
-                                            <p class="title">Technical  </p>
+                                            <p class="title">Technical </p>
                                         </div>
                                     </div>
                                     <div class="card-block">
@@ -212,16 +212,16 @@
                                         <img src="images/frontImg.jpg" alt="">
                                     </div>
                                     <div class="card-footer">
-                                        
+
                                         <h3>Soft Skills Level-3</h3>
                                         <a href="#" class="btn btn-primary stretched-link">View Course</a>
 
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
                 </div>
             </section>
@@ -476,7 +476,7 @@
                             </ul>
                         </div>
                     </div>
-                   
+
                 </div>
             </section>
             <section class="section map-tasks">
