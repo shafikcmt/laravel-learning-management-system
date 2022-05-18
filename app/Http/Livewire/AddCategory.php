@@ -23,7 +23,8 @@ class AddCategory extends Component
        $category = new Category;
        $category->category_name = $this->category_name;
        $category->save();
-        
+        session()->flash('message','Category Added Successfully.');
+        return redirect('add-category');
     }
   
 }

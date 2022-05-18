@@ -1,6 +1,6 @@
 <div class="main-wrapper">
     <div class="app" id="app">
-        @section('title', 'Add Students')
+        @section('title', 'Add Category')
         @include('includes.header')
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
@@ -13,14 +13,20 @@
                         <div class="row sameheight-container">
                             <div class="col-md-8 offset-md-2">
                                 <div class="card card-block sameheight-item">
-                                    <form role="form">
+                                   
+                                    <form role="form" wire:submit.prevent="insertCategory">
+                                    @if(session()->has('message'))
+                                        <div class="alert alert-success" id="alertMessage">
+                                          {{session()->get('message')}}
+                                        </div>
+                                    @endif
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Category Name</label>
                                             <input type="text" class="form-control" id="category" wire:model="category_name" name="category" placeholder="Enter Category"> 
                                         </div>
                                         
                                         <div class="form-group">
-                                            <button type="submit" wire:click="insertCategory()" class="btn btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
                                             <button type="reset" class="btn btn-danger">Cancel</button>
                                         </div>
                                     </form>

@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\student;
+use App\Models\Student;
 use Hash;
 class StudentRegistrations extends Component
 {
@@ -22,16 +22,16 @@ class StudentRegistrations extends Component
         return view('livewire.student-registration');
     }
     public function StudentRegistration(){
-        // $this->validate([
-        //     'name' => 'required',
-        //     'roll' => 'required|numeric|digits_between:6,12|unique',
-        //     'class' => 'required',
-        //     'branch' => 'required',
-        //     'semester' => 'required',
-        //     'email' => 'required|email',
-        //     'password' => 'required|min:6|max:12'
-        // ]);
-       $student = new student;
+        $this->validate([
+            'name' => 'required',
+            'roll' => 'required|numeric|digits_between:6,12|unique',
+            'class' => 'required',
+            'branch' => 'required',
+            'semester' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:12'
+        ]);
+       $student = new Student;
        $student->name = $this->name;
        $student->roll = $this->roll;
        $student->class = $this->class;
@@ -41,13 +41,13 @@ class StudentRegistrations extends Component
        $student->email = $this->email;
        $student->password = Hash::make($this->password);
        $student->save();
-       session()->flash('message','You are registration successfully!');
-    //    if($student){
-    //     session()->flash('message','You are registration successfully!');
-    //    }else{
-    //     session()->flash('message','Something Wrong !');
-    //    }
+    //    session()->flash('message','You are registration successfully!');
+       if($student){
+        session()->flash('message','You are registration successfully!');
+       }else{
+        session()->flash('message','Something Wrong !');
+       }
        
-       return redirect('/student-login');
+    //    return redirect('/student-login');
     }
 }

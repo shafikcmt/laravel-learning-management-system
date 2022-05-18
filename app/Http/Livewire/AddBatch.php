@@ -18,5 +18,7 @@ class AddBatch extends Component
         $batch = new Batch;
         $batch->batch_name = $this->batch;
         $batch->save();
+        session()->flash('message','Successfully added Batch.');
+        return redirect('/add-batch');
     }
 }

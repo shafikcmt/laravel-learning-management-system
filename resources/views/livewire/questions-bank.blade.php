@@ -1,6 +1,6 @@
 <div class="main-wrapper">
     <div class="app" id="app">
-        @section('title', 'Add Students')
+        @section('title', 'Questions')
         @include('includes.header')
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">

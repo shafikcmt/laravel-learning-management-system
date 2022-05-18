@@ -2,7 +2,7 @@
     <div class="app" id="app">@section('title', 'Student List') @include('includes.header')
         @include('includes.admin-sidebar') <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Students </h1>
+                <h1 class="title well p-3">Students <a href="/add-students" class="btn btn-info">Add New Student</a></h1>
                 <p class="title-description"> </p>
             </div>
             <section class="section">
@@ -39,76 +39,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($students as $student)
                                                 <tr>
-                                                    <td>01</td>
-                                                    <td>Shafiqul Islam</td>
-                                                    <td>4919853</td>
-                                                    <td>B.Tech</td>
-                                                    <td>CSE</td>
-                                                    <td>8th</td>
-                                                    <td>7404606419</td>
-                                                    <td>gth.shafiqul@geeta.edu.in</td>
+                                                    <td>{{$student->id}}</td>
+                                                    <td>{{$student->name}}</td>
+                                                    <td>{{$student->roll}}</td>
+                                                    <td>{{$student->class}}</td>
+                                                    <td>{{$student->branch}}</td>
+                                                    <td>{{$student->semester}}</td>
+                                                    <td>{{$student->mobile}}</td>
+                                                    <td>{{$student->email}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Shafiqul Islam</td>
-                                                    <td>4919853</td>
-                                                    <td>B.Tech</td>
-                                                    <td>CSE</td>
-                                                    <td>8th</td>
-                                                    <td>7404606419</td>
-                                                    <td>gth.shafiqul@geeta.edu.in</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Shafiqul Islam</td>
-                                                    <td>4919853</td>
-                                                    <td>B.Tech</td>
-                                                    <td>CSE</td>
-                                                    <td>8th</td>
-                                                    <td>7404606419</td>
-                                                    <td>gth.shafiqul@geeta.edu.in</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Shafiqul Islam</td>
-                                                    <td>4919853</td>
-                                                    <td>B.Tech</td>
-                                                    <td>CSE</td>
-                                                    <td>8th</td>
-                                                    <td>7404606419</td>
-                                                    <td>gth.shafiqul@geeta.edu.in</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Shafiqul Islam</td>
-                                                    <td>4919853</td>
-                                                    <td>B.Tech</td>
-                                                    <td>CSE</td>
-                                                    <td>8th</td>
-                                                    <td>7404606419</td>
-                                                    <td>gth.shafiqul@geeta.edu.in</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Shafiqul Islam</td>
-                                                    <td>4919853</td>
-                                                    <td>B.Tech</td>
-                                                    <td>CSE</td>
-                                                    <td>8th</td>
-                                                    <td>7404606419</td>
-                                                    <td>gth.shafiqul@geeta.edu.in</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Shafiqul Islam</td>
-                                                    <td>4919853</td>
-                                                    <td>B.Tech</td>
-                                                    <td>CSE</td>
-                                                    <td>8th</td>
-                                                    <td>7404606419</td>
-                                                    <td>gth.shafiqul@geeta.edu.in</td>
-                                                </tr>
+                                                @endforeach
+                                                
                                             </tbody>
 
                                             <tfoot>
