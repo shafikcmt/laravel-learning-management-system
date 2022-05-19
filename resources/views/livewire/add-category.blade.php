@@ -1,5 +1,6 @@
 <div class="main-wrapper">
     <div class="app" id="app">
+        @include('livewire.edit')
         @section('title', 'Add Category')
         @include('includes.header')
         @include('includes.admin-sidebar')
@@ -11,7 +12,7 @@
         
                     <section class="section">
                         <div class="row sameheight-container">
-                            <div class="col-md-8 offset-md-2">
+                            <div class="col-md-12">
                                 <div class="card card-block sameheight-item">
                                    
                                     <form role="form" wire:submit.prevent="insertCategory">
@@ -34,6 +35,54 @@
                             </div>
                            
                         </div>
+
+                        <div class="row sameheight-container">
+
+
+                    <div class="col-md-12">
+
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="card-title-block">
+                                    <h3 class="title"> Category List </h3>
+                                </div>
+                                <section class="example">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Serial</th>
+                                                    <th>Title</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php $i=1; ?>
+                                                @foreach($categories as $category)
+                                                <tr>
+                                                    <td><?php echo $i; ?></td>
+
+                                                    <td>{{$category->category_name}}</td>
+
+                                                    <td>
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="edit({{$category->id}})"><i
+                                                                class="fa-solid fa-pen-to-square"></i></button>
+                                                        <button class="btn btn-info" wire:click="delete({{$category->id}})"><i
+                                                                class="fa-solid fa-trash"></i></button>
+                                                    </td>
+
+                                                </tr>
+                                                <?php $i++; ?>
+                                                @endforeach
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     </section>
 
         </article>

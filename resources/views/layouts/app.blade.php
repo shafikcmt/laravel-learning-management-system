@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('calender/css/fullcalendar.css')}}"> -->
     <link rel="stylesheet" href="{{asset('css/stylelogin.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     @livewireStyles
 </head>
 <body>
@@ -60,5 +60,6 @@
       });
 </script>
 @livewireScripts
+
 </body>
 </html>

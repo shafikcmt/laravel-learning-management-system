@@ -4,32 +4,82 @@
         @include('includes.header')
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
-        <div class="title-block">
-                <h1 class="title well p-3">Add Batch </h1>      
+            <div class="title-block">
+                <h1 class="title well p-3">Add Batch </h1>
             </div>
             <section class="section">
-                        <div class="row sameheight-container">
-                            <div class="col-md-8 offset-md-2">
-                                <div class="card card-block sameheight-item">
-                                    <form role="form" wire:submit.prevent="AddBatch">
-                                    @if(session()->has('message'))
-                                    <div class="alert alert-success" id="alertMessage">
-                                        {{session()->get('message')}}
-                                    </div>
-                                    @endif
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Batch Name</label>
-                                            <input type="text" wire:model="batch" class="form-control" id="category" name="batch" placeholder="Enter Batch"> 
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                            <button type="reset" class="btn btn-danger">Cancel</button>
-                                        </div>
-                                    </form>
+                <div class="row sameheight-container">
+                    <div class="col-md-12">
+                        <div class="card card-block sameheight-item">
+                            <form role="form" wire:submit.prevent="AddBatch">
+                                @if(session()->has('message'))
+                                <div class="alert alert-success" id="alertMessage">
+                                    {{session()->get('message')}}
                                 </div>
+                                @endif
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Batch Name</label>
+                                    <input type="text" wire:model="batch" class="form-control" id="category"
+                                        name="batch" placeholder="Enter Batch">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="reset" class="btn btn-danger">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row sameheight-container">
+
+
+                    <div class="col-md-12">
+
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="card-title-block">
+                                    <h3 class="title"> Batches List </h3>
+                                </div>
+                                <section class="example">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Serial</th>
+                                                    <th>Title</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php $i=1; ?>
+                                                @foreach($batches as $batch)
+                                                <tr>
+                                                    <td><?php echo $i; ?></td>
+
+                                                    <td>{{$batch->batch_name}}</td>
+
+                                                    <td>
+                                                        <button class="btn btn-info"
+                                                            wire:click="edit({{$batch->id}})"><i
+                                                                class="fa-solid fa-pen-to-square"></i></button>
+                                                        <button class="btn btn-info"
+                                                            wire:click="delete({{$batch->id}})"><i
+                                                                class="fa-solid fa-trash"></i></button>
+                                                    </td>
+
+                                                </tr>
+                                                <?php $i++; ?>
+                                                @endforeach
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </section>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </div>
+            </section>
         </article>
     </div>
 </div>

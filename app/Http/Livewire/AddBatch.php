@@ -7,12 +7,13 @@ use App\Models\Batch;
 
 class AddBatch extends Component
 {
+
     public $batch;
     public $batch_items;
     public function render()
     {
-        $this->batch_items = Batch::all();
-        return view('livewire.add-batch');
+        $batches = Batch::orderBy('id','DESC')->get();
+        return view('livewire.add-batch',['batches'=>$batches]);
     }
     public function AddBatch(){
         $batch = new Batch;
@@ -20,5 +21,9 @@ class AddBatch extends Component
         $batch->save();
         session()->flash('message','Successfully added Batch.');
         return redirect('/add-batch');
+    }
+    public function delete($id){
+        Batch::find($id)->delete();
+        session()->flash('message','Batch Deleted');
     }
 }

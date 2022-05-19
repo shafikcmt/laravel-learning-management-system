@@ -9,7 +9,11 @@ class AllStudent extends Component
 {
     public function render()
     {
-        $students = Student::all();
+        $students = Student::orderBy('id','DESC')->get();
         return view('livewire.all-student',['students'=>$students]);
+    }
+    public function delete($id){
+        Student::find($id)->delete();
+        session()->flash('message','Student data Deleted ');
     }
 }

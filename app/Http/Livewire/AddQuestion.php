@@ -3,6 +3,9 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Category;
+use App\Models\Batch;
+use App\Models\Qtopic;
 
 class AddQuestion extends Component
 {
@@ -19,6 +22,8 @@ class AddQuestion extends Component
     public $option4;
     public function render()
     {
-        return view('livewire.add-question');
+        $categories = Category::orderBy('id','DESC')->get();
+        $qtopics = Qtopic::orderBy('id','DESC')->get();
+        return view('livewire.add-question',['qtopics'=>$qtopics],['categories'=>$categories]);
     }
 }

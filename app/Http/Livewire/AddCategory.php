@@ -8,10 +8,12 @@ class AddCategory extends Component
 {
     public $category_name;
     public $cat_items;
+    // public $updateMode = false;
     public function render()
     {
-        $this->cat_items = Category::all();
-        return view('livewire.add-category');
+        $categories = Category::orderBy('id','DESC')->get();
+        // $categories = Category::all();
+        return view('livewire.add-category',['categories'=>$categories]);
     }
     private function resetInput(){
         $this->category_name = null;
@@ -26,5 +28,16 @@ class AddCategory extends Component
         session()->flash('message','Category Added Successfully.');
         return redirect('add-category');
     }
+    public function delete($id){
+        Category::find($id)->delete();
+        session()->flash('message','Category Deleted');
+    }
+
+    // public function edit($id){
+    //     $this->updateMode = true;
+    //     $category = Category::where('id',$id)->first();
+    //     $this->id = $id;
+    //     $this->category_name = $category->category_name;
+    //     }
   
 }

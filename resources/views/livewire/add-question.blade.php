@@ -14,16 +14,15 @@
                             <form role="form">
                                 <div class="row mb-3">
                                     <div class="col-sm-4">
-                                        <label for="colFormLabel" class="col-form-label">Topic <span style="color:red">*</span></label>
+                                        <label for="colFormLabel" class="col-form-label">CATEGORY <span style="color:red">*</span></label>
                                         <select class="form-control" wire:model="topic">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
+                                            @foreach($categories as $category)
+                                            <option>{{$category->category_name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
-                                        <label for="colFormLabel" class=" col-form-label">CATEGORY <span style="color:red">*</span></label>
+                                        <label for="colFormLabel" class=" col-form-label">SUB CATEGORY <span style="color:red">*</span></label>
                                         <select class="form-control" wire:model="category">
                                             <option>Option one</option>
                                             <option>Option two</option>
@@ -32,18 +31,17 @@
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
-                                        <label for="colFormLabel" class="col-form-label">SUB CATEGORY <span style="color:red">*</span></label>
+                                        <label for="colFormLabel" class="col-form-label">TOPIC <span style="color:red">*</span></label>
                                         <select class="form-control" wire:model="sub_category">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
+                                            @foreach($qtopics as $qtopic)
+                                            <option>{{$qtopic->topic_title}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-4">
-                                        <label for="colFormLabel" class="col-form-label">QUESTION TYPE <span style="color:red">*</span></label>
+                                        <label for="colFormLabel" class="col-form-label">SUB TOPIC <span style="color:red">*</span></label>
                                         <input type="text" wire:model="question_type" class="form-control" id="colFormLabel" placeholder="">
                                     </div>
                                     <div class="col-sm-4">

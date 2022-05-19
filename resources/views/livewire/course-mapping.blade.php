@@ -17,13 +17,15 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Select Category</label>
                                             <div class="form-group">
+                                             
                                             <select class="form-control">
                                             <option selected>--Select Category--</option>
-                                                <option>Option one</option>
-                                                <option>Option two</option>
-                                                <option>Option three</option>
-                                                <option>Option four</option>
+                                                @foreach($categories as $category)
+                                                
+                                                <option>{{$category->category_name}}</option>
+                                                @endforeach
                                             </select>
+                                           
                                         </div> 
                                         </div>
                                         <div class="form-group">
@@ -43,10 +45,9 @@
                                             <div class="form-group">
                                             <select class="form-control">
                                             <option selected>--Select Batch--</option>
-                                                <option>Option one</option>
-                                                <option>Option two</option>
-                                                <option>Option three</option>
-                                                <option>Option four</option>
+                                            @foreach($batches as $batch)
+                                                <option>{{$batch->batch_name}}</option>
+                                            @endforeach
                                             </select>
                                         </div> 
                                         </div>

@@ -18,7 +18,7 @@
                                     </div>
                                 </div> -->
                             <div class="card-block">
-                                <h1>220</h1>
+                                <h1>{{$students->count()}}</h1>
                                 <h4>Students</h4>
                             </div>
 
