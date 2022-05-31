@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Student extends Model
 {
@@ -17,7 +18,10 @@ class Student extends Model
         'semester',
         'mobile',
         'email',
-        'password'
+        'password',
     ];
-
+    public static function getUser(){
+    $records = DB::table('students')->select('id','name','roll','class','branch','semester','mobile','email','password')->get()->toArray();
+    return $records;
+}
 }

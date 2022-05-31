@@ -1,7 +1,8 @@
 <div class="main-wrapper">
     <div class="app" id="app">
         @section('title', 'Questions')
-        @include('includes.header')
+        @extends('layouts.admin-master')
+        @section('content')
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
         <div class="title-block">
@@ -112,4 +113,4 @@
         </article>
     </div>
 </div>
-@include('includes.footer')
+@stop

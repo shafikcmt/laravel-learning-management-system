@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('student_registrations', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('roll')->unique();
-            $table->string('class');
-            $table->string('branch');
-            $table->string('semester');
-            $table->string('mobile');
-            $table->string('email');
-            $table->string('password');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('image')->nullable();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_registrations');
+        Schema::dropIfExists('courses');
     }
 };

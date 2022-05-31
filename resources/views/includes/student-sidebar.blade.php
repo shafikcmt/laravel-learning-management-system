@@ -17,7 +17,7 @@
                                         <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="/student-details">
+                                    <a href="/student-profile/{{$data['id']}}">
                                         <i class="fa fa-home"></i> Personal Details </a>
                                 </li>
                                 <li>
@@ -27,7 +27,7 @@
                                     </a>
                                     <ul class="sidebar-nav">
                                         <li>
-                                            <a href="/drive-skills"> Drive Skills </a>
+                                            <!-- <a href="/drive-skills"> Drive Skills </a> -->
                                         </li>
                                        
                                    

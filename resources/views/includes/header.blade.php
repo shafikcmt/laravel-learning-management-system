@@ -16,14 +16,14 @@
                    
                     <div class="header-block header-block-nav">
                         <ul class="nav-profile">
-                            <li class="notifications new">
+                            <!-- <li class="notifications new">
                                 <a href="#" data-toggle="dropdown">
                                     <i class="fa fa-bell-o"></i>
                                     <sup>
                                         <span class="counter">8</span>
                                     </sup>
                                 </a>
-                                <div class="dropdown-menu notifications-dropdown-menu">
+                                <!-- <div class="dropdown-menu notifications-dropdown-menu">
                                     <ul class="notifications-container">
                                         <li>
                                             <a href="#" class="notification-item">
@@ -49,7 +49,7 @@
                                                 </div>
                                             </a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="#" class="notification-item">
                                                 <div class="img-col">
                                                     <div class="img" style="background-image: url('assets/faces/8.jpg')"></div>
@@ -69,23 +69,23 @@
                                                 <a href="#"> View All </a>
                                             </li>
                                         </ul>
-                                    </footer>
-                                </div>
-                            </li>
+                                    </footer> 
+                                </div> 
+                            </li> -->
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&amp;s=40')"> </div>
-                                    <span class="name"> John Doe </span>
+                                    <span class="name"> {{$data->name}} </span>
                                 </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="/student-profile/{{$data['id']}}">
                                         <i class="fa fa-user icon"></i> Profile </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa fa-bell icon"></i> Notifications </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa fa-gear icon"></i> Settings </a>
+                                    <!-- <a class="dropdown-item" href="#">
+                                        <i class="fa fa-bell icon"></i> Notifications </a> -->
+                                    <!-- <a class="dropdown-item" href="#">
+                                        <i class="fa fa-gear icon"></i> Settings </a> -->
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="login.html">
+                                    <a class="dropdown-item" href="/student-logout">
                                         <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>

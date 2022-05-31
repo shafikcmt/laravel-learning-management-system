@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Batch;
+use App\Models\Course;
 use App\Models\Qtopic;
 
 class CourseMapping extends Component
@@ -13,7 +14,7 @@ class CourseMapping extends Component
     {
         $categories = Category::orderBy('id','DESC')->get();
         $batches = Batch::orderBy('id','DESC')->get();
-        
-        return view('livewire.course-mapping',['batches'=>$batches],['categories'=>$categories]);
+        $courses = Course::orderBy('id','DESC')->get();
+        return view('livewire.course-mapping',['batches'=>$batches],['categories'=>$categories],['courses'=>$courses]);
     }
 }

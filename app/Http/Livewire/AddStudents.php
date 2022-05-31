@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Student;
 use Hash;
+use Excell;
+use App\Imports\StudentImport;
 
 class AddStudents extends Component
 {
@@ -46,4 +48,5 @@ class AddStudents extends Component
         session()->flash('message','Student data inserted Successfully!');
         return redirect('/all-student');
     }
+   
 }

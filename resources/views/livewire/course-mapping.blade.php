@@ -1,7 +1,8 @@
 <div class="main-wrapper">
     <div class="app" id="app">
         @section('title', 'Add Students')
-        @include('includes.header')
+        @extends('layouts.admin-master')
+        @section('content')
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
         <div class="title-block">
@@ -33,10 +34,9 @@
                                             <div class="form-group">
                                             <select class="form-control">
                                                 <option selected>--Select Course--</option>
-                                                <option>Option one</option>
-                                                <option>Option two</option>
-                                                <option>Option three</option>
-                                                <option>Option four</option>
+                                                @foreach($courses as $course)
+                                                <option>{{$course->name}}</option>
+                                                @endforeach
                                             </select>
                                         </div> 
                                         </div>
@@ -65,4 +65,4 @@
         </article>
     </div>
 </div>
-@include('includes.footer')
+@stop

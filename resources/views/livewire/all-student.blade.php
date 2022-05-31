@@ -1,8 +1,9 @@
 <div class="main-wrapper">
 <div class="app" id="app">
 @section('title', 'Student List') 
-@include('includes.header')
-@include('includes.admin-sidebar') 
+@extends('layouts.admin-master')
+@section('content')
+@extends('includes.admin-sidebar')
 <article class="content responsive-tables-page">
 <div class="title-block">
 <h1 class="title well p-3">Students <a href="/add-students" class="btn btn-info">Add New Student</a>
@@ -56,10 +57,10 @@
                                 <td>{{$student->mobile}}</td>
                                 <td>{{$student->email}}</td>
                                 <td>
-                                    <a href="#" wire:click="edit({{$student->id}})"
+                                    <a href="/edit-student/{{$student->id}}" wire:click="edit({{$student->id}})"
                                         class="btn btn-primary"><i
                                             class="fa-solid fa-pen-to-square"></i></a>
-                                    <a href="#" wire:click="delete({{$student->id}})"
+                                    <a href="" wire:click="delete({{$student->id}})"
                                         class="btn btn-primary"><i
                                             class="fa-solid fa-trash"></i></a>
                                 </td>
@@ -115,4 +116,4 @@
 </article>
 </div>
 </div>
-@include('includes.footer')
+@stop

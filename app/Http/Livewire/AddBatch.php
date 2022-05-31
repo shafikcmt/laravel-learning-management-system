@@ -26,4 +26,10 @@ class AddBatch extends Component
         Batch::find($id)->delete();
         session()->flash('message','Batch Deleted');
     }
+
+    public function edit(Request $request){
+        $batch = Batch::find($id);
+        $batch->batch_name = $this->batch;
+        session()->flash('message','Batch Updated');
+    }
 }

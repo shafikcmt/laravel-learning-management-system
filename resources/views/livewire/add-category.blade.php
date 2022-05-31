@@ -1,8 +1,9 @@
 <div class="main-wrapper">
     <div class="app" id="app">
-        @include('livewire.edit')
+       
         @section('title', 'Add Category')
-        @include('includes.header')
+        @extends('layouts.admin-master')
+        @section('content')
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
         <div class="title-block">
@@ -65,10 +66,14 @@
                                                     <td>{{$category->category_name}}</td>
 
                                                     <td>
-                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="edit({{$category->id}})"><i
+                                                        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="edit({{$category->id}})"><i
+                                                                class="fa-solid fa-pen-to-square"></i></button> -->
+                                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                                                                 class="fa-solid fa-pen-to-square"></i></button>
-                                                        <button class="btn btn-info" wire:click="delete({{$category->id}})"><i
+                                                        <button class="btn btn-info"><i
                                                                 class="fa-solid fa-trash"></i></button>
+                                                                <!-- <button class="btn btn-info" wire:click="delete({{$category->id}})"><i
+                                                                class="fa-solid fa-trash"></i></button> -->
                                                     </td>
 
                                                 </tr>
@@ -88,4 +93,4 @@
         </article>
     </div>
 </div>
-@include('includes.footer')
+@stop

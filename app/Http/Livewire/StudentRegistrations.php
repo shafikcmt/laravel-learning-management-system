@@ -3,51 +3,54 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Http\Request;
 use App\Models\Student;
 use Hash;
+use Session;
 class StudentRegistrations extends Component
 {
-    public $name;
-    public $roll;
-    public $class;
-    public $branch;
-    public $semester;
-    public $mobile;
-    public $email;
-    public $password;
-    public $re_password;
+    // public $name;
+    // public $roll;
+    // public $class;
+    // public $branch;
+    // public $semester;
+    // public $mobile;
+    // public $email;
+    // public $password;
+    // public $re_password;
  
     public function render()
     {
         return view('livewire.student-registration');
     }
-    public function StudentRegistration(){
-        $this->validate([
+    public function StudentRegistration(Request $request){
+        $request->validate([
             'name' => 'required',
-            'roll' => 'required|numeric|digits_between:6,12|unique',
+            'roll' => 'required|unique:students',
             'class' => 'required',
             'branch' => 'required',
             'semester' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6|max:12'
+            'mobile' => 'required',
+            'email' => 'required',
+            'password' => 'required',
         ]);
-       $student = new Student;
-       $student->name = $this->name;
-       $student->roll = $this->roll;
-       $student->class = $this->class;
-       $student->branch = $this->branch;
-       $student->semester = $this->semester;
-       $student->mobile = $this->mobile;
-       $student->email = $this->email;
-       $student->password = Hash::make($this->password);
-       $student->save();
-    //    session()->flash('message','You are registration successfully!');
-       if($student){
-        session()->flash('message','You are registration successfully!');
-       }else{
-        session()->flash('message','Something Wrong !');
-       }
-       
-    //    return redirect('/student-login');
+        $student = new Student();
+        $student->name = $request->name;
+        $student->roll = $request->roll;
+        $student->class = $request->class;
+        $student->branch = $request->branch;
+        $student->semester = $request->semester;
+        $student->mobile = $request->mobile;
+        $student->email = $request->email;
+        $student->password = Hash::make($request->password);
+        $result = $student->save();
+        if($result){
+            // return back()->with('message','You have Registered Successfully')->redirect('livewire.studentlogin');
+            return back()->with('message','You have Registered Successfully');
+           
+        }
+        else{
+           return back()->with('message','something wrong');
+        }
     }
 }

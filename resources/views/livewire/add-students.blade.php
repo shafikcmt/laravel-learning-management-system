@@ -1,8 +1,9 @@
 <div class="main-wrapper">
     <div class="app" id="app">
         @section('title', 'Add Students')
-        @include('includes.header')
-        @include('includes.admin-sidebar')
+        @extends('layouts.admin-master')
+        @section('content')
+        @extends('includes.admin-sidebar')
         <article class="content responsive-tables-page">
             <div class="title-block">
                 <h1 class="title well p-3">Add Students <a class="btn btn-info" href="/all-student">All Students</a></h1>
@@ -81,24 +82,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card card-block sameheight-item">
-                            <div class="import-students">
-                                <div class="mb-3">
-                                    <label for="formFile" class="form-label">Import Students</label>
-                                    <input class="form-control" type="file" id="formFile">
-                                    <center class="mt-3">
-                                        <input class="btn btn-oval btn-primary" type="submit" value="submit">
-                                    </center>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </section>
         </article>
     </div>
 </div>
 
-@include('includes.footer')
+@stop

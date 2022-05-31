@@ -1,9 +1,9 @@
-
 <div class="main-wrapper">
     <div class="app" id="app">
         @section('title','Admin Dashboard')
-        @include('includes.header')
-        @include('includes.admin-sidebar')
+        @extends('layouts.admin-master')
+        @section('content')
+        @extends('includes.admin-sidebar')
 
 
         <article class="content dashboard-page">
@@ -89,7 +89,7 @@
                
             </section>
         </article>
-        @include('includes.footer')
+       
         <div class="modal fade" id="modal-media">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -174,3 +174,4 @@
         <div class="color-secondary"></div>
     </div>
 </div>
+@stop

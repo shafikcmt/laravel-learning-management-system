@@ -1,7 +1,8 @@
 <div class="main-wrapper">
     <div class="app" id="app">
         @section('title', 'Drive Skills')
-        @include('includes.header')
+        @extends('layouts.master')
+        @section('content')
         @include('includes.student-sidebar')
         <article class="content responsive-tables-page">
             <div class="title-block">
@@ -93,4 +94,4 @@
         </article>
     </div>
 </div>
-@include('includes.footer')
+@stop
