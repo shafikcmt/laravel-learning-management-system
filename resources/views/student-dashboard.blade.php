@@ -10,214 +10,30 @@
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
+                    <div class="title-block">
+                        <h1 class="title well p-3"> Available Course </h1>
+                    </div>
                         <div class="owl-carousel owl-theme">
+                            @foreach($courses as $course)
                             <div class="item">
                                 <div class="card card-default">
                                     <div class="card-header">
                                         <div class="header-block">
-                                            <p class="title">Aptitute </p>
+                                            <p class="title">{{$course->category_name}} </p>
                                         </div>
                                     </div>
                                     <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
+                                        <img src="{{asset('images')}}/{{$course->image}}" alt="">
                                     </div>
                                     <div class="card-footer">
-                                        <h3>Aptitute Level-1</h3>
+                                        <h3>{{$course->name}}</h3>
                                         <a href="#" class="btn btn-primary stretched-link">View Course</a>
 
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Technical </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h3>Technical Level-1</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Soft Skills </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-
-                                        <h3>Soft Skills Level-1</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Reasoning </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h3>Level-1 Reasoning</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Technical </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h3>Technical Level-3</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Soft Skills </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-
-                                        <h3>Soft Skills Level-2</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Aptitute </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h3>Aptitute Level-2</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Technical </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h3>Technical Level-2</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Soft Skills </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-
-                                        <h3>Soft Skills Level-2</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Aptitute </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h3>Aptitute Level-3</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Technical </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h3>Technical Level-2</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">Soft Skills </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="images/frontImg.jpg" alt="">
-                                    </div>
-                                    <div class="card-footer">
-
-                                        <h3>Soft Skills Level-3</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
-
-                                    </div>
-                                </div>
+                            @endforeach
+                            
                             </div>
 
                         </div>

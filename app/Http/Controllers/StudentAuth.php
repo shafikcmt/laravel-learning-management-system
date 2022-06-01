@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 use Hash;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Illuminate\Support\Facades\DB;
 use Session;
 class StudentAuth extends Controller
 {
 public function login(){
+
  return view('auth.student.studentlogin');
 }
 public function registration(){
@@ -65,11 +67,15 @@ public function StudentRegister(Request $request){
         }
     }
     public function StudentDashboard(){
+       
         $data = array();
         if(Session::has('loginId')){
             $data = Student::where('id','=',Session::get('loginId'))->first();
+            $courses = DB::table('categories')
+            ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
+            ->get();
         }
-        return view('/student-dashboard',compact('data'));
+        return view('/student-dashboard',compact('data','courses'));
     }
     public function Logout(){
         if(Session::has('loginId'));

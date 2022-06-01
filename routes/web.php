@@ -103,6 +103,7 @@ Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
 
 Route::get('course-mapping',[CourseMappingController::class,'index']);
+Route::get('test',[CourseMappingController::class,'Test']);
 
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');
 Route::get('/admin-dashboard',[AdminAuth::class,'index']);

@@ -17,7 +17,7 @@
                                     </div>
                                 </div> -->
                             <div class="card-block">
-                                <h1>545</h1>
+                                <h1>{{$students->count()}}</h1>
                                 <h4>Students</h4>
                             </div>
 
@@ -75,11 +75,31 @@
                         <div class="card sameheight-item" data-exclude="xs,sm">
                             <div class="card-header">
                                 <div class="header-block">
-                                    <h3 class="title"> World Map </h3>
+                                    <h3 class="title"> Available Course </h3>
                                 </div>
                             </div>
                             <div class="card-block">
-                                <div id="dashboard-sales-map" style="width: 100%; height: 400px;"></div>
+                            <div class="owl-carousel owl-theme">
+                            @foreach($courses as $course)
+                            <div class="item">
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                        <div class="header-block">
+                                            <p class="title">{{$course->category_name}} </p>
+                                        </div>
+                                    </div>
+                                    <div class="card-block">
+                                        <img src="{{asset('images')}}/{{$course->image}}" alt="">
+                                    </div>
+                                    <div class="card-footer">
+                                        <h3>{{$course->name}}</h3>
+                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                            
                             </div>
                         </div>
                     </div>

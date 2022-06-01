@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Student;
+use Illuminate\Support\Facades\DB;
 use Session;
 class AdminAuth extends Controller
 {
     public function index(){
-        return view('admin-dashboard');
+        $students = new Student;
+        $courses = DB::table('categories')
+        ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
+        ->get();
+        return view('admin-dashboard',compact('courses','students'));
     }
     public function AdminLog(){
         return view('auth.admin.adminlogin');
@@ -22,6 +28,7 @@ class AdminAuth extends Controller
         $admin = Admin::where('email','=',$request->email)->first();
         if($admin){
         if(md5($request->password,$admin->password)){
+           
             $request->session()->put('adminloginId',$admin->id);
             
             return redirect('/admin-dashboard');
