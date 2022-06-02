@@ -65,6 +65,9 @@
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
+                    <li>
+                            <a href="/questions-category"> Question Category </a>
+                        </li>
                         <li>
                             <a href="/questions-topic"> Question Topic </a>
                         </li>

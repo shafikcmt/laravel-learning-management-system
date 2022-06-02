@@ -14,16 +14,27 @@
                 <div class="row sameheight-container">
                     <div class="col-md-12">
                         <div class="card card-block sameheight-item">
-                            <form role="form" wire:submit.prevent="insertTopic">
-                                @if(session()->has('message'))
+                            <form role="form" method="POST" action="{{route('create-topic')}}">
+                                @if(session()->has('add-topic'))
                                 <div class="alert alert-success" id="alertMessage">
-                                    {{ session()->get('message') }}
+                                    {{ session()->get('add-topic') }}
                                 </div>
                                 @endif
+                                @csrf
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Question Category</label>
+                                    <select name="category_id" id="" class="form-control">
+                                        @foreach($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="text-danger">@error('category_id') {{$message}} @enderror</div>
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Topic Name</label>
-                                    <input type="text" wire:model="topic_name" class="form-control" id="category"
+                                    <input type="text" name="topic_name" class="form-control" id="category"
                                         name="batch" placeholder="Enter topic name">
+                                        <div class="text-danger">@error('topic_name') {{$message}} @enderror</div>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Save</button>
@@ -46,19 +57,30 @@
                                 </div>
                                 <section class="example">
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover">
+                                        <table class="table table-striped table-bordered table-hover text-center">
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>
-                                                    <th>Title</th>
+                                                    <th>Topic</th>
+                                                    <th>Category</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              
-                                              
-
+                                                <?php $i=1; ?>
+                                              @foreach($topics as $topic)
+                                                <tr>
+                                                    <td><?php echo $i; ?></td>
+                                                    <td>{{$topic->topic_name}}</td>
+                                                    <td>{{$topic->category_name}}</td>
+                                                    <td>
+                                                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
                                             </tbody>
+                                            <?php $i++ ?>
+                                            @endforeach
                                         </table>
                                     </div>
                                 </section>

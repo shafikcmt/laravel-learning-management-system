@@ -8,6 +8,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AddCourseController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseMappingController;
+use App\Http\Controllers\QuestionsController;
 use App\Http\Livewire\DriveSkills;
 // use App\Http\Livewire\StudentDetails;
 // use App\Http\Livewire\StudentRegistrations;
@@ -23,7 +24,7 @@ use App\Http\Livewire\Adminlogin;
 // use App\Http\Livewire\AddCategory;
 // use App\Http\Livewire\AddBatch;
 // use App\Http\Livewire\AddCourses;
-use App\Http\Livewire\QuestionsTopic;
+// use App\Http\Livewire\QuestionsTopic;
 use App\Http\Livewire\AddQuestion;
 use App\Http\Livewire\QuestionsBank;
 use App\Http\Livewire\QuestionBulkImport;
@@ -99,10 +100,22 @@ Route::get('/edit-batch/{id}',[BatchController::class,'editBatch']);
 Route::post('/edit-batch',[BatchController::class,'updateBatch'])->name('update-batch');
 Route::get('/batch-delete/{id}',[BatchController::class,'batchDelete']);
 
+Route::get('/questions-topic',[QuestionsController::class,'addTopic']);
+Route::post('/create-topic',[QuestionsController::class,'createTopic'])->name('create-topic');
+
+Route::get('/questions-category',[QuestionsController::class,'addCategory']);
+Route::post('/questions-category',[QuestionsController::class,'createQcategory'])->name('create-qcategory');
+Route::get('/edit-qcategory/{id}',[QuestionsController::class,'editQcategory']);
+Route::post('/edit-qcategory',[QuestionsController::class,'updateQcategory'])->name('update-qcategory');
+Route::get('/delete-qcategory/{id}',[QuestionsController::class,'deleteQcategory']);
+
 Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
+Route::get('/edit-courses/{id}',[AddCourseController::class,'editCourse']);
+Route::post('/edit-courses',[AddCourseController::class,'updateCourse'])->name('update-courses');
+Route::get('/delete-courses/{id}',[AddCourseController::class,'deleteCourse']);
 
-Route::get('course-mapping',[CourseMappingController::class,'index']);
+Route::get('/course-mapping',[CourseMappingController::class,'index']);
 Route::get('test',[CourseMappingController::class,'Test']);
 
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');
@@ -120,7 +133,7 @@ Route::get('/reset-password',Resetpassword::class);
 // Route::get('/add-batch',AddBatch::class);
 // Route::get('/course-mapping',CourseMapping::class);
 // Route::get('/add-courses',AddCourses::class);
-Route::get('/questions-topic',QuestionsTopic::class);
+// Route::get('/questions-topic',QuestionsTopic::class);
 Route::get('/add-question',AddQuestion::class);
 Route::get('/questions-bank',QuestionsBank::class);
 Route::get('/question-bulk-import',QuestionBulkImport::class);

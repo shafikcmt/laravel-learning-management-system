@@ -93,7 +93,7 @@
                                     </div>
                                     <div class="card-footer">
                                         <h3>{{$course->name}}</h3>
-                                        <a href="#" class="btn btn-primary stretched-link">View Course</a>
+                                       <center><a href="#" class="btn btn-primary stretched-link">View Course</a></center> 
 
                                     </div>
                                 </div>

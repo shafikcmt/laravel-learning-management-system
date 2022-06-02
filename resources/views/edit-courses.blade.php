@@ -6,28 +6,24 @@
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Add Courses </h1>
+                <h1 class="title well p-3">Edit Courses <a class="btn btn-primary" href="/add-courses">Back</a></h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
                         <div class="card card-block sameheight-item">
-                            @if(session()->has('add-courses'))
+                            @if(session()->has('update-courses'))
                             <div class="alert alert-success">
-                                {{session()->get('add-courses')}}
+                                {{session()->get('update-courses')}}
                             </div>
                             @endif
-                            @if(session()->has('course-deleted'))
-                            <div class="alert alert-success">
-                                {{session()->get('course-deleted')}}
-                            </div>
-                            @endif
-                            <form method="post" action="{{route('create-course')}}" enctype="multipart/form-data" >
-                            @csrf    
+                            <form method="POST" action="{{route('update-courses')}}" enctype="multipart/form-data" >
+                            @csrf 
+                            <input type="hidden" value="{{$course->id}}">  
                             <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course Name</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="name" class="form-control" id="colFormLabel" placeholder="Name">
+                                        <input type="text" value="{{$course->name}}" name="name" class="form-control" id="colFormLabel" placeholder="Name">
                                         <div class="text-danger">@error('name') {{$message}} @enderror</div>
                                         
                                     </div>
@@ -49,14 +45,14 @@
                                 <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course start date</label>
                                     <div class="col-sm-8">
-                                        <input type="date" name="start_date" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                                        <input type="date" value="{{$course->start_date}}"  name="start_date" class="form-control" id="colFormLabel" placeholder="col-form-label">
                                         <div class="text-danger">@error('start_date') {{$message}} @enderror</div>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course end date</label>
                                     <div class="col-sm-8">
-                                        <input type="date" name="end_date" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                                        <input type="date" value="{{$course->end_date}}" name="end_date" class="form-control" id="colFormLabel" placeholder="col-form-label">
                                         <div class="text-danger">@error('end_date') {{$message}} @enderror</div>
 
                                     </div>
@@ -65,13 +61,14 @@
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course image</label>
                                     <div class="col-sm-8">
                                         <input type="file" name="image" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                                        <img src="{{asset('images')}}/{{$course->image}}" alt="">
                                         <div class="text-danger">@error('image') {{$message}} @enderror</div>
                                    
                                     </div>
                                 </div>
                                
                                 <div class="form-group pull-right">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                     <button type="reset" class="btn btn-danger">Cancel</button>
                                 </div>
                             </form>
@@ -81,50 +78,7 @@
                     </div>
                 </div>
 
-                <div class="row sameheight-container">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-block">
-                                <div class="card-title-block">
-                                    <h3 class="title">Available Course List</h3>
-                                </div>
-                                <section class="example">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover text-center">
-                                            <thead>
-                                                <tr>
-                                                    <th>Serial</th>
-                                                    <th>Course Name</th>
-                                                    <th>Course Category</th>
-                                                    <th>Course Image</th>
-                                                    <th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php $i =1; ?>
-                                                @foreach($courses as $course)
-                                                <tr>
-                                                    <td><?php echo $i; ?></td>
-                                                    <td>{{$course->name}}</td>
-                                                    <td>{{$course->category_name}}</td>
-                                                    <td><img src="{{asset('images')}}/{{$course->image}}" width="60px" alt=""></td>
-                                                    <td>
-                                                        <a class="btn btn-primary" href="/edit-courses/{{$course->id}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                        <a class="btn btn-primary" href="/delete-courses/{{$course->id}}"><i class="fa-solid fa-trash"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+               
             </section>
 
         </article>
