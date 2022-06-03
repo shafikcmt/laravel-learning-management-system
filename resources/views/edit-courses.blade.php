@@ -60,8 +60,8 @@
                                 <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course image</label>
                                     <div class="col-sm-8">
-                                        <input type="file" name="image" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                                        <img src="{{asset('images')}}/{{$course->image}}" alt="">
+                                        <input type="file" name="image" class="form-control mb-2" id="colFormLabel" placeholder="col-form-label">
+                                        <img width="120px;" src="{{asset('images')}}/{{$course->image}}" alt="">
                                         <div class="text-danger">@error('image') {{$message}} @enderror</div>
                                    
                                     </div>

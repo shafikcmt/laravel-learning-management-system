@@ -74,7 +74,7 @@
                                                     <td>{{$topic->topic_name}}</td>
                                                     <td>{{$topic->category_name}}</td>
                                                     <td>
-                                                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                        <a href="/edit-topic/{{$topic->id}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                                                         <a href="#" class="btn btn-primary"><i class="fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>

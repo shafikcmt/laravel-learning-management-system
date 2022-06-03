@@ -6,7 +6,7 @@
         @extends('includes.admin-sidebar')
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Add Students <a class="btn btn-info" href="/all-student">All Students</a></h1>
+                <h1 class="title well p-3">Add Students <a class="btn btn-info" href="/all-student">Back</a></h1>
                 <p class="title-description"> </p>
             </div>
                     <section class="section">

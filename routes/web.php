@@ -9,6 +9,7 @@ use App\Http\Controllers\AddCourseController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseMappingController;
 use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\AddQuestionController;
 use App\Http\Livewire\DriveSkills;
 // use App\Http\Livewire\StudentDetails;
 // use App\Http\Livewire\StudentRegistrations;
@@ -25,7 +26,7 @@ use App\Http\Livewire\Adminlogin;
 // use App\Http\Livewire\AddBatch;
 // use App\Http\Livewire\AddCourses;
 // use App\Http\Livewire\QuestionsTopic;
-use App\Http\Livewire\AddQuestion;
+// use App\Http\Livewire\AddQuestion;
 use App\Http\Livewire\QuestionsBank;
 use App\Http\Livewire\QuestionBulkImport;
 // use App\Http\Livewire\CourseMapping;
@@ -102,12 +103,16 @@ Route::get('/batch-delete/{id}',[BatchController::class,'batchDelete']);
 
 Route::get('/questions-topic',[QuestionsController::class,'addTopic']);
 Route::post('/create-topic',[QuestionsController::class,'createTopic'])->name('create-topic');
+Route::get('/edit-topic/{id}',[QuestionsController::class,'editTopic']);
 
 Route::get('/questions-category',[QuestionsController::class,'addCategory']);
 Route::post('/questions-category',[QuestionsController::class,'createQcategory'])->name('create-qcategory');
 Route::get('/edit-qcategory/{id}',[QuestionsController::class,'editQcategory']);
 Route::post('/edit-qcategory',[QuestionsController::class,'updateQcategory'])->name('update-qcategory');
 Route::get('/delete-qcategory/{id}',[QuestionsController::class,'deleteQcategory']);
+
+Route::get('/add-question',[AddQuestionController::class,'addQuestion']);
+Route::post('/add-question',[AddQuestionController::class,'createQuestion'])->name('create-question');
 
 Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
@@ -134,7 +139,7 @@ Route::get('/reset-password',Resetpassword::class);
 // Route::get('/course-mapping',CourseMapping::class);
 // Route::get('/add-courses',AddCourses::class);
 // Route::get('/questions-topic',QuestionsTopic::class);
-Route::get('/add-question',AddQuestion::class);
+// Route::get('/add-question',AddQuestion::class);
 Route::get('/questions-bank',QuestionsBank::class);
 Route::get('/question-bulk-import',QuestionBulkImport::class);
 Route::get('/results-quiz-wise',ResultsQuizWise::class);

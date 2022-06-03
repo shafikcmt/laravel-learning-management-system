@@ -32,7 +32,7 @@
                                     </div>
                                 </div> -->
                             <div class="card-block">
-                                <h1>220</h1>
+                                <h1>{{$questions->count()}}</h1>
                                 <h4>Questions</h4>
                             </div>
 

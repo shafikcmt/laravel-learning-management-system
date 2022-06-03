@@ -47,7 +47,7 @@
                                 </div>
                                 <section class="example">
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover">
+                                        <table class="table table-striped table-bordered table-hover text-center align-middle">
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>
@@ -58,15 +58,15 @@
                                             <tbody>
                                                 <?php $i=1; ?>
                                                 @foreach($batches as $batch)
-                                                <tr>
+                                                <tr class="align-middle">
                                                     <td><?php echo $i; ?></td>
 
                                                     <td>{{$batch->batch_name}}</td>
 
                                                     <td>
-                                                        <a href="/edit-batch/{{$batch->id}}" class="btn btn-info"><i
+                                                        <a href="/edit-batch/{{$batch->id}}" class="btn btn-primary"><i
                                                                 class="fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="/batch-delete/{{$batch->id}}" class="btn btn-info"><i
+                                                        <a href="/batch-delete/{{$batch->id}}" class="btn btn-primary"><i
                                                                 class="fa-solid fa-trash"></i></a>
                                                     </td>
 

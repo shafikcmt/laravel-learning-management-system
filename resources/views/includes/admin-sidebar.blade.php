@@ -8,7 +8,7 @@
                     <span class="l l3"></span>
                     <span class="l l4"></span>
                     <span class="l l5"></span>
-                </div> Gportal Admin</div>
+                </div> <a style="text-decoration:none" href="/admin-dashboard">Gportal Admin</a> </div>
         </div>
         <nav class="menu">
             <ul class="sidebar-menu metismenu" id="sidebar-menu">
@@ -54,9 +54,9 @@
                         <li>
                             <a href="/add-courses"> Add Courses </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/course-mapping"> Course Mapping </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 <li>

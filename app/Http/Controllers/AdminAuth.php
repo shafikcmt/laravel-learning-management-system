@@ -5,16 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Student;
+use App\Models\AddQuestion;
 use Illuminate\Support\Facades\DB;
 use Session;
 class AdminAuth extends Controller
 {
     public function index(){
         $students = new Student;
+        $questions = new AddQuestion;
         $courses = DB::table('categories')
         ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
         ->get();
-        return view('admin-dashboard',compact('courses','students'));
+        return view('admin-dashboard',compact('courses','students','questions'));
     }
     public function AdminLog(){
         return view('auth.admin.adminlogin');

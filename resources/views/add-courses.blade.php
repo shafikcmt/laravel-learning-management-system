@@ -90,7 +90,7 @@
                                 </div>
                                 <section class="example">
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover text-center">
+                                        <table class="table table-striped table-bordered table-hover text-center align-middle">
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>

@@ -56,7 +56,7 @@
                                 </div>
                                 <section class="example">
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover">
+                                        <table class="table table-striped table-bordered table-hover text-center">
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>
@@ -76,7 +76,7 @@
                                                       
                                                                 <a href="/edit-category/{{$category->id}}" class="btn btn-primary"><i
                                                                 class="fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="/category-delete/{{$category->id}}" class="btn btn-info"><i
+                                                        <a class="btn btn-primary" href="/category-delete/{{$category->id}}" class="btn btn-info"><i
                                                                 class="fa-solid fa-trash"></i></a>
                                                                
                                                     </td>

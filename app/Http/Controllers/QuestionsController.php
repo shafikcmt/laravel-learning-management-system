@@ -25,6 +25,14 @@ class QuestionsController extends Controller
         $qcategory->qtopic()->save($topics);
         return back()->with('add-topic','Topic added successfully !');
     }
+    public function editTopic($id){
+        $topics = DB::table('qcategories')
+        ->leftJoin('qtopics', 'qcategories.id', '=', 'qtopics.qcategory_id')
+        ->get();
+        $categories = Qcategory::all();
+        return view('/edit-topic',compact('categories'));
+    }
+
     public function addCategory(){
         $categories = Qcategory::all();
         return view('/questions-category',compact('categories'));
