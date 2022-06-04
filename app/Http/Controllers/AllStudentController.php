@@ -12,7 +12,7 @@ use App\Imports\StudentImport;
 class AllStudentController extends Controller
 {
     public function allStudent(){
-        $students = Student::all();
+        $students = Student::paginate(10);
         return view('/all-student',compact('students'));
     }
     

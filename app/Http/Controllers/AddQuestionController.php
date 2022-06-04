@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Qtopic;
 use App\Models\AddQuestion;
 use Illuminate\Support\Facades\DB;
+use Excel;
+use App\Imports\QuestionImport;
 
 
 class AddQuestionController extends Controller
@@ -36,5 +38,20 @@ class AddQuestionController extends Controller
         $questions->option4 = $request->option4;
         $qtopic->addquestion()->save($questions);
         return back()->with('add-question','Question added successfully !');
+    }
+    public function bulkQuestion(){
+        $qtopics = Qtopic::all();
+        return view('/question-bulk-import',compact('qtopics'));
+    }
+    public function createBulkQuestion(Request $request){
+        Excel::import(new QuestionImport,$request->file);
+        return back()->with('bulk-question','Bulk Question Added Successfully !');
+    }
+
+    public function questionBank(){
+        $questions = DB::table('qtopics')
+        ->leftJoin('add_questions', 'qtopics.id', '=', 'add_questions.qtopic_id')
+        ->paginate(20);
+        return view('/questions-bank',compact('questions'));
     }
 }

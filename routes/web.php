@@ -27,8 +27,8 @@ use App\Http\Livewire\Adminlogin;
 // use App\Http\Livewire\AddCourses;
 // use App\Http\Livewire\QuestionsTopic;
 // use App\Http\Livewire\AddQuestion;
-use App\Http\Livewire\QuestionsBank;
-use App\Http\Livewire\QuestionBulkImport;
+// use App\Http\Livewire\QuestionsBank;
+// use App\Http\Livewire\QuestionBulkImport;
 // use App\Http\Livewire\CourseMapping;
 use App\Http\Livewire\ResultsQuizWise;
 use App\Http\Livewire\ResultsBatchWise;
@@ -114,6 +114,11 @@ Route::get('/delete-qcategory/{id}',[QuestionsController::class,'deleteQcategory
 Route::get('/add-question',[AddQuestionController::class,'addQuestion']);
 Route::post('/add-question',[AddQuestionController::class,'createQuestion'])->name('create-question');
 
+Route::get('/question-bulk-import',[AddQuestionController::class,'bulkQuestion']);
+Route::post('/bulk-question',[AddQuestionController::class,'createBulkQuestion'])->name('bulk-question');
+
+Route::get('/questions-bank',[AddQuestionController::class,'questionBank']);
+
 Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
 Route::get('/edit-courses/{id}',[AddCourseController::class,'editCourse']);
@@ -140,8 +145,8 @@ Route::get('/reset-password',Resetpassword::class);
 // Route::get('/add-courses',AddCourses::class);
 // Route::get('/questions-topic',QuestionsTopic::class);
 // Route::get('/add-question',AddQuestion::class);
-Route::get('/questions-bank',QuestionsBank::class);
-Route::get('/question-bulk-import',QuestionBulkImport::class);
+// Route::get('/questions-bank',QuestionsBank::class);
+// Route::get('/question-bulk-import',QuestionBulkImport::class);
 Route::get('/results-quiz-wise',ResultsQuizWise::class);
 Route::get('/results-batch-wise',ResultsBatchWise::class);
 Route::get('/results-date-wise',ResultsDateWise::class);

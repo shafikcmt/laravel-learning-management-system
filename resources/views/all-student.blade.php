@@ -75,7 +75,7 @@
 
                                                 </tbody>
 
-                                                <tfoot>
+                                                <!-- <tfoot>
                                                     <tr>
                                                         <td colspan="9">
                                                             <nav class="text-right">
@@ -107,9 +107,10 @@
 
                                                     </tr>
 
-                                                </tfoot>
+                                                </tfoot> -->
 
                                             </table>
+                                            {{$students->links('pagination::bootstrap-5')}}
                                         </div>
                                     </section>
                                 </div>

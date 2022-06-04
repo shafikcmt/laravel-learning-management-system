@@ -16,6 +16,7 @@ class AddQuestion extends Model
         'option2',
         'option3',
         'option4',
+        'qtopic_id',
     ];
     public function qtopic(){
         return $this->belongsTo(Qtopic::class);

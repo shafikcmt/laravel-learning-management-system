@@ -74,11 +74,12 @@
                         <li>
                             <a href="/add-question"> Add Question </a>
                         </li>
-                        <li>
-                            <a href="/questions-bank"> Question Bank </a>
-                        </li>
+                       
                         <li>
                             <a href="/question-bulk-import"> Question Bulk Import </a>
+                        </li>
+                        <li>
+                            <a href="/questions-bank"> Question Bank </a>
                         </li>
                         <!-- <li>
                             <a href="responsive-tables.html"> Add Quiz </a>
