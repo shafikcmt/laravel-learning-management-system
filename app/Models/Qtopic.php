@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Qtopic extends Model
 {
     use HasFactory;
+    protected $table = 'qtopics';
+    protected $fillable = [
+        'topic_name',
+    ];
     public function qcategory(){
         return $this->belongsTo(Qcategory::class);
     }

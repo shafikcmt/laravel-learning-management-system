@@ -6,7 +6,7 @@
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Question Topic </h1>
+                <h1 class="title well p-3">Question Topic <a class="btn btn-primary" href="/questions-category">Add Category</a></h1>
 
             </div>
 
@@ -18,6 +18,11 @@
                                 @if(session()->has('add-topic'))
                                 <div class="alert alert-success" id="alertMessage">
                                     {{ session()->get('add-topic') }}
+                                </div>
+                                @endif
+                                @if(session()->has('delete-topic'))
+                                <div class="alert alert-success" id="alertMessage">
+                                    {{ session()->get('delete-topic') }}
                                 </div>
                                 @endif
                                 @csrf
@@ -75,7 +80,7 @@
                                                     <td>{{$topic->category_name}}</td>
                                                     <td>
                                                         <a href="/edit-topic/{{$topic->id}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-trash"></i></a>
+                                                        <a href="/delete-topic/{{$topic->id}}" class="btn btn-primary"><i class="fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             </tbody>

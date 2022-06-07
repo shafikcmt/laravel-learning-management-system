@@ -6,106 +6,30 @@
         @extends('includes.admin-sidebar')
 
         <article class="content dashboard-page">
+        <div class="title-block">
+                <h1 class="title well p-3">{{$courses->name}} <a class="btn btn-primary" href="/admin-dashboard">Back</a></h1>
 
+        </div>
             <section class="section map-tasks">
                 <div class="row sameheight-container">
-                    <div class="col-xl-3 ">
-                        <div class="card card-default bg-success bg-gradient">
-                            <!-- <div class="card-header">
-                                    <div class="header-block">
-                                        <p class="title"> Default card </p>
-                                    </div>
-                                </div> -->
-                            <div class="card-block">
-                                <h1>{{$students->count()}}</h1>
-                                <h4>Students</h4>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3">
-                        <div class="card card-default bg-info bg-gradient">
-                            <!-- <div class="card-header">
-                                    <div class="header-block">
-                                        <p class="title"> Default card </p>
-                                    </div>
-                                </div> -->
-                            <div class="card-block">
-                                <h1>{{$questions->count()}}</h1>
-                                <h4>Questions</h4>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3">
-                        <div class="card card-default bg-success bg-gradient">
-                            <!-- <div class="card-header">
-                                    <div class="header-block">
-                                        <p class="title"> Default card </p>
-                                    </div>
-                                </div> -->
-                            <div class="card-block">
-                                <h1>220</h1>
-                                <h4>Quizzes</h4>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3">
-                        <div class="card card-default bg-info bg-gradient">
-                            <!-- <div class="card-header">
-                                    <div class="header-block">
-                                        <p class="title"> Default card </p>
-                                    </div>
-                                </div> -->
-                            <div class="card-block">
-                                <h1>220</h1>
-                                <h4>Attempts</h4>
-                            </div>
-
-                        </div>
-                    </div>
-
+                  <div class="col-md-12">
+                 <table>
+                    @foreach($qcategories as $qcategory)
+                     <thead>
+                         <tr>
+                            <h4 class="well p-2 bg-info text-white">{{$qcategory->category_name}}</h4>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                       
+                         </tr>
+                     </tbody>
+                    @endforeach
+                 </table>
+                  
+                  </div> 
                 </div>
-                <div class="row sameheight-container">
-                    <div class="col-md-12">
-                        <div class="card sameheight-item" data-exclude="xs,sm">
-                            <div class="card-header">
-                                <div class="header-block">
-                                    <h3 class="title"> Available Course </h3>
-                                </div>
-                            </div>
-                            <div class="card-block">
-                            <div class="owl-carousel owl-theme">
-                            @foreach($courses as $course)
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">{{$course->category_name}} </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img src="{{asset('images')}}/{{$course->image}}" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h3>{{$course->name}}</h3>
-                                       <center><a href="/course-view/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a></center> 
-
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                            
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-               
             </section>
         </article>
   

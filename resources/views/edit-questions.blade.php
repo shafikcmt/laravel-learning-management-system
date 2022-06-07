@@ -6,7 +6,7 @@
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Add Question <a class="btn btn-primary" href="/questions-bank">Question List</a></h1>
+                <h1 class="title well p-3">Edit Question <a class="btn btn-primary" href="/questions-bank">Back</a></h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">
@@ -17,9 +17,15 @@
                         {{session()->get('add-question')}}
                     </div>
                     @endif
+                    @if(session()->has('update-question'))
+                    <div class="alert alert-success">
+                        {{session()->get('update-question')}}
+                    </div>
+                    @endif
                         <div class="card card-block sameheight-item">
-                            <form role="form" method="POST" action="{{route('create-question')}}">
+                            <form role="form" method="POST" action="{{route('update-question')}}">
                                 @csrf
+                                <input type="hidden" name="id" value="{{$questions->id}}">
                                 <div class="row mb-3">
                                     <div class="col-sm-12">
                                         <label for="colFormLabel" class="col-form-label">TOPIC NAME <span style="color:red">*</span></label>
@@ -37,7 +43,7 @@
                                 <div class="row mb-3">
                                     <div class="col-sm-12">
                                         <label for="colFormLabel" class="col-form-label">Question <span style="color:red">*</span></label>
-                                        <textarea class="form-control" value="{{old('question')}}" name="question" id="" cols="30" rows="5"></textarea>
+                                        <textarea class="form-control" value="{{$questions->question}}" name="question" id="" cols="30" rows="5">{{$questions->question}}</textarea>
                                         <div class="text-danger">@error('question') {{$message}} @enderror</div>
 
                                     </div>
@@ -50,16 +56,16 @@
                         <div class="col-sm-4">
                         <label for="colFormLabel" class="col-form-label">Answer <span style="color:red">*</span></label>
 
-                        <input type="text" name="answer" value="{{old('answer')}}" class="form-control mb-3" placeholder="Correct Answer">
+                        <input type="text" name="answer" value="{{$questions->answer}}" class="form-control mb-3" placeholder="Correct Answer">
                         <div class="text-danger">@error('answer') {{$message}} @enderror</div>
                         <label for="colFormLabel" class="col-form-label">Answer Option <span style="color:red">*</span></label>
-                            <input type="text" value="{{old('option1')}}" name="option1" class="form-control mb-3" placeholder="Option ....">
+                            <input type="text" value="{{$questions->option1}}" name="option1" class="form-control mb-3" placeholder="Option ....">
                             <div class="text-danger">@error('option1') {{$message}} @enderror</div>
-                            <input type="text" value="{{old('option2')}}" name="option2" class="form-control mb-3" placeholder="Option ....">
+                            <input type="text" value="{{$questions->option2}}" name="option2" class="form-control mb-3" placeholder="Option ....">
                             <div class="text-danger">@error('option2') {{$message}} @enderror</div>
-                            <input type="text" value="{{old('option3')}}" name="option3" class="form-control mb-3" placeholder="Option ....">
+                            <input type="text" value="{{$questions->option3}}" name="option3" class="form-control mb-3" placeholder="Option ....">
                             <div class="text-danger">@error('option3') {{$message}} @enderror</div>
-                            <input type="text" value="{{old('option4')}}" name="option4" class="form-control mb-3" placeholder="Option ....">
+                            <input type="text" value="{{$questions->option4}}" name="option4" class="form-control mb-3" placeholder="Option ....">
                             <div class="text-danger">@error('option4') {{$message}} @enderror</div>
                         </div>
                     </div>

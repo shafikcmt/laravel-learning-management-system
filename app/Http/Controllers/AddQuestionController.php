@@ -54,4 +54,28 @@ class AddQuestionController extends Controller
         ->paginate(20);
         return view('/questions-bank',compact('questions'));
     }
+    public function questionBankEdit($id){
+        $qtopics = Qtopic::all();
+        $questions = AddQuestion::find($id);
+        return view('edit-questions',compact('questions','qtopics'));
+    }
+
+    public function updateQuestion(Request $request){
+        $qtopic = Qtopic::find($request->qtopic_id);
+        $questions = AddQuestion::find($request->id);
+        $questions->question = $request->question;
+        $questions->answer   = $request->answer;
+        $questions->option1  = $request->option1;
+        $questions->option2  = $request->option2;
+        $questions->option3  = $request->option3;
+        $questions->option4  = $request->option4;
+        $qtopic->addquestion()->save($questions);
+        return back()->with('update-question','Question Updated Successfully !');
+       
+    }
+
+    public function deleteQuestion($id){
+        AddQuestion::where('id',$id)->delete();
+        return back()->with('delete-question','Question Deleted Successfully !');
+    }
 }

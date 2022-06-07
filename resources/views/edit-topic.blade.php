@@ -6,7 +6,7 @@
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Edit Question Topic </h1>
+                <h1 class="title well p-3">Edit Question Topic <a class="btn btn-primary" href="/questions-topic">Back</a></h1>
 
             </div>
 
@@ -14,13 +14,14 @@
                 <div class="row sameheight-container">
                     <div class="col-md-12">
                         <div class="card card-block sameheight-item">
-                            <form role="form" method="POST" action="{{route('create-topic')}}">
-                                @if(session()->has('add-topic'))
+                            <form method="POST" action="{{route('update-topic')}}">
+                                @if(session()->has('update-topic'))
                                 <div class="alert alert-success" id="alertMessage">
-                                    {{ session()->get('add-topic') }}
+                                    {{ session()->get('update-topic') }}
                                 </div>
                                 @endif
                                 @csrf
+                                <input type="hidden" name="id" value="{{$qtopics->id}}">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Question Category</label>
                                     <select name="category_id" id="" class="form-control">
@@ -33,7 +34,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Topic Name</label>
                                     <input type="text" name="topic_name" class="form-control" id="category"
-                                        name="batch" placeholder="Enter topic name">
+                                        value="{{$qtopics->topic_name}}" placeholder="Enter topic name">
                                         <div class="text-danger">@error('topic_name') {{$message}} @enderror</div>
                                 </div>
                                 <div class="form-group">

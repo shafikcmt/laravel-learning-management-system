@@ -54,9 +54,9 @@
                         <li>
                             <a href="/add-courses"> Add Courses </a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="/course-mapping"> Course Mapping </a>
-                        </li> -->
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -92,7 +92,7 @@
                         </li> -->
                     </ul>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="forms.html">
                         <i class="fa fa-pencil-square-o"></i> Results </a>
                         <ul class="sidebar-nav">
@@ -109,7 +109,7 @@
                         </li>
                 
                     </ul>
-                </li>
+                </li> -->
                 <!-- <li>
                     <a href="#">
                         <i class="fa fa-desktop"></i> UI Elements

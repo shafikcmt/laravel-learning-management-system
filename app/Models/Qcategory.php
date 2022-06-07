@@ -15,4 +15,7 @@ class Qcategory extends Model
     public function qtopic(){
         return $this->hasMany(Qtopic::class);
     }
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
 }

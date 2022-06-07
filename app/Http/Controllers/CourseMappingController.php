@@ -13,7 +13,16 @@ class CourseMappingController extends Controller
         $categories = Category::orderBy('id','DESC')->get();
         $batches = Batch::orderBy('id','DESC')->get();
         $courses = Category::find($request->category_id);
-        return view('course-mapping',compact('categories','batches','courses'));
+        return view('course-mapping',compact('categories','batches'));
+    }
+    public function courseView($id)
+    {
+        $courses = Course::find($id);
+        $qcategories = Course::find($id)->qcategory;
+        $data = DB::table('qcategories')
+        ->leftJoin('qtopics', 'qcategories.id', '=', 'qtopics.qcategory_id')
+        ->get();
+        return view('/course-view',compact('qcategories','courses','data'));
     }
     public function Test(){
         // $categories = Category::find($request->id);       
@@ -21,12 +30,12 @@ class CourseMappingController extends Controller
 
         //     echo $course.'<br>';
         // }
-        $data = DB::table('categories')
-            ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
-            ->get();
+        $data = DB::table('qcategories')
+        ->leftJoin('qtopics', 'qcategories.id', '=', 'qtopics.qcategory_id')
+        ->get();
 
             foreach($data as $data){
-                echo $data->category_name;
+                echo $data->topic_name;
             }
 
         // return view('test',compact());

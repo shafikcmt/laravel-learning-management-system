@@ -6,7 +6,7 @@
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Questions Bulk Import </h1>
+                <h1 class="title well p-3">Questions Bulk Import <a class="btn btn-primary" href="/questions-bank">Questions List</a></h1>
             </div>
             <section class="section">
                 <div class="container">
@@ -55,6 +55,7 @@
                         </table>
                             <form role="form" action="{{route('bulk-question')}}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                
                                 <div class="row mb-3">
                                    
                                     <div class="col-sm-12">

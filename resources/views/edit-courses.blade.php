@@ -19,7 +19,8 @@
                             @endif
                             <form method="POST" action="{{route('update-courses')}}" enctype="multipart/form-data" >
                             @csrf 
-                            <input type="hidden" value="{{$course->id}}">  
+                            
+                            <input type="hidden" name="id" value="{{$course->id}}">  
                             <div class="row mb-3">
                                     <label for="colFormLabel" class="col-sm-4 col-form-label">Course Name</label>
                                     <div class="col-sm-8">
@@ -34,7 +35,7 @@
                                     <div class="col-sm-8">
                                         
                                         <select class="form-control" name="category_id">
-                                       
+                                       <option selected>Select category</option>
                                         @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->category_name}}</option>
                                         @endforeach

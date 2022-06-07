@@ -34,9 +34,9 @@
                                             <div class="form-group">
                                             <select class="form-control" >
                                                 <option selected>--Select Course--</option>
-                                                @foreach($courses->course as $course)
-                                                <option value="{{$course->id}}">{{$course->name}}</option>
-                                                @endforeach
+                                                
+                                               
+                                                
                                             </select>
                                         </div> 
                                         </div>

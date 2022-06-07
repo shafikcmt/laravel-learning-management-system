@@ -6,7 +6,7 @@
             @include('includes.admin-sidebar')
             <article class="content responsive-tables-page">
                 <div class="title-block">
-                    <h1 class="title well p-3">Students <a href="/add-students" class="btn btn-info">Add New Student</a>
+                    <h1 class="title well p-3">Students <a class="btn btn-primary" href="/import-students">Import Students</a> <a href="/add-students" class="btn btn-primary">Add New Student</a>
                     </h1>
                     <p class="title-description"> </p>
                 </div>

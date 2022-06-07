@@ -104,6 +104,8 @@ Route::get('/batch-delete/{id}',[BatchController::class,'batchDelete']);
 Route::get('/questions-topic',[QuestionsController::class,'addTopic']);
 Route::post('/create-topic',[QuestionsController::class,'createTopic'])->name('create-topic');
 Route::get('/edit-topic/{id}',[QuestionsController::class,'editTopic']);
+Route::post('/edit-topic',[QuestionsController::class,'updateTopic'])->name('update-topic');
+Route::get('/delete-topic/{id}',[QuestionsController::class,'deleteTopic']);
 
 Route::get('/questions-category',[QuestionsController::class,'addCategory']);
 Route::post('/questions-category',[QuestionsController::class,'createQcategory'])->name('create-qcategory');
@@ -118,6 +120,9 @@ Route::get('/question-bulk-import',[AddQuestionController::class,'bulkQuestion']
 Route::post('/bulk-question',[AddQuestionController::class,'createBulkQuestion'])->name('bulk-question');
 
 Route::get('/questions-bank',[AddQuestionController::class,'questionBank']);
+Route::get('/edit-questions/{id}',[AddQuestionController::class,'questionBankEdit']);
+Route::post('/edit-questions',[AddQuestionController::class,'updateQuestion'])->name('update-question');
+Route::get('/delete-questions/{id}',[AddQuestionController::class,'deleteQuestion']);
 
 Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
@@ -126,6 +131,7 @@ Route::post('/edit-courses',[AddCourseController::class,'updateCourse'])->name('
 Route::get('/delete-courses/{id}',[AddCourseController::class,'deleteCourse']);
 
 Route::get('/course-mapping',[CourseMappingController::class,'index']);
+Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']);
 Route::get('test',[CourseMappingController::class,'Test']);
 
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');

@@ -6,11 +6,16 @@
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
         <div class="title-block">
-                <h1 class="title well p-3">Questions </h1>
+                <h1 class="title well p-3">Questions <a class="btn btn-primary" href="/add-question">Add Question</a> <a class="btn btn-primary" href="/question-bulk-import">Import Question</a></h1>
             </div>
              <section class="section">
                         <div class="row sameheight-container">
                              <div class="col-md-12">
+                                 @if(session()->has('delete-question'))
+                                 <div class="alert alert-success">
+                                     {{session()->get('delete-question')}}
+                                 </div>
+                                 @endif
                         <div class="card">
                                     <div class="card-block">
                                         <div class="card-title-block">
@@ -47,8 +52,8 @@
                                                             <td>{{$question->question}}</td>
                                                            
                                                             <td>
-                                                                <a class="btn btn-primary" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                                <a class="btn btn-primary" href="#"><i class="fa-solid fa-trash"></i></a>
+                                                                <a class="btn btn-primary" href="/edit-questions/{{$question->id}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                                <a class="btn btn-primary" href="/delete-questions/{{$question->id}}"><i class="fa-solid fa-trash"></i></a>
                                                             </td>
                                                            
                                                         </tr>

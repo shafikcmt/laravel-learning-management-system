@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('option4');
             $table->string('mark')->default('1');
             $table->unsignedBigInteger('qtopic_id');
-            $table->foreign('qtopic_id')->references('id')->on('qtopics')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('qtopic_id')->references('id')->on('qtopics');
             $table->timestamps();
         });
     }

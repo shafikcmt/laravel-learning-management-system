@@ -6,7 +6,7 @@
         @include('includes.admin-sidebar')
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Question Category </h1>
+                <h1 class="title well p-3">Question Category <a class="btn btn-primary" href="/questions-topic">Add Question Topic</a> </h1>
 
             </div>
 
@@ -26,6 +26,16 @@
                                     {{ session()->get('delete-category') }}
                                 </div>
                                 @endif
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Select Course Name</label>
+                                    <select name="course_id" id="" class="form-control">
+                                        <option selected>Select Course</option>
+                                        @foreach($courses as $course)
+                                        <option value="{{$course->id}}">{{$course->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="text-danger">@error('category_name') {{$message}} @enderror</div>
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Category Name</label>
                                     <input type="text" name="category_name" class="form-control" id="category"
