@@ -13,7 +13,7 @@
                     <div class="col-md-12">
                         <div class="card card-block sameheight-item">
                             @if(session()->has('update-courses'))
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" id="alertMessage">
                                 {{session()->get('update-courses')}}
                             </div>
                             @endif

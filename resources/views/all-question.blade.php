@@ -1,34 +1,45 @@
 <div class="main-wrapper">
     <div class="app" id="app">
-    @extends('layouts.master')
-    @section('content')
-    @include('includes.student-sidebar')
+        @extends('layouts.master')
+        @section('content')
+        @include('includes.student-sidebar')
         <article class="content dashboard-page">
-           
+
             <div class="title-block">
-                <h1 class="title well p-3"> {{$courses->name}}  <a class="btn btn-primary" href="/student-dashboard">Back</a></h1>
+                <h1 class="title well p-3"> {{$qtopic->topic_name}} </h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                       <table class="table table-striped">
-                           <tr>
-                              @foreach($qcategories as $qcategory) 
-                              <h3 class="bg-info p-3 text-white">{{$qcategory->category_name}}</h3>
-                              <ul>
-                                  @foreach($qcategory->qtopic as $qtopic)
-                                  <li><a href="/all-question/{{$qtopic->id}}">{{$qtopic->topic_name}}</a></li>
-                                  @endforeach
-                              </ul>
-                              @endforeach
-                           </tr>
-                       </table>
+                        <div class="title-block">
+                            <h1 class="title well p-3">Questions </h1>
+                        </div>
+                        <?php $i=1; ?>
+                        <form action="" method="POST">
+                        @foreach($qtopic->addquestion as $addquestion)
+                            <div class="form-group">
+                           
+                                <label for="question">  <h4><?php echo $i; ?> .{{$addquestion->question}}</h4></label>
+                                <p><input type="radio" name="{{$i}}" value="option1"> {{$addquestion->option1}}</p>
+                                <p><input type="radio" name="{{$i}}" value="option2"> {{$addquestion->option2}}</p>
+                                <p><input type="radio" name="{{$i}}" value="option3"> {{$addquestion->option3}}</p>
+                                <p><input type="radio" name="{{$i}}" value="option4"> {{$addquestion->option4}}</p>
+                                <?php $i++ ?>
+                            
+                            </div>
+                            @endforeach
+                        </form>
+                      
+                     
+                     
+           
+                       
                     </div>
                 </div>
             </section>
-           
+
         </article>
-        
+
         <div class="modal fade" id="modal-media">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">

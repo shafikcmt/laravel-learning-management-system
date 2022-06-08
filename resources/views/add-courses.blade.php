@@ -13,12 +13,12 @@
                     <div class="col-md-12">
                         <div class="card card-block sameheight-item">
                             @if(session()->has('add-courses'))
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" id="alertMessage">
                                 {{session()->get('add-courses')}}
                             </div>
                             @endif
                             @if(session()->has('course-deleted'))
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" id="alertMessage">
                                 {{session()->get('course-deleted')}}
                             </div>
                             @endif

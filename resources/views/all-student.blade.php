@@ -31,7 +31,7 @@
                                     <section class="example">
                                         <div class="table-responsive">
                                             @if(Session()->has('delete-student'))
-                                            <div class="alert alert-danger">
+                                            <div class="alert alert-success" id="alertMessage">
                                                 {{Session()->get('delete-student')}}
                                             </div>
                                             @endif

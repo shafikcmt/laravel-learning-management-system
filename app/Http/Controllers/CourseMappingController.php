@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Batch;
 use App\Models\Course;
+use App\Models\Student;
+use App\Models\Qtopic;
+use App\Models\AddQuestion;
+use Session;
+use App\Models\Qcategory;
 use Illuminate\Support\Facades\DB;
 class CourseMappingController extends Controller
 {
@@ -17,12 +22,16 @@ class CourseMappingController extends Controller
     }
     public function courseView($id)
     {
+        $data = Student::where('id','=',Session::get('loginId'))->first();
         $courses = Course::find($id);
         $qcategories = Course::find($id)->qcategory;
-        $data = DB::table('qcategories')
-        ->leftJoin('qtopics', 'qcategories.id', '=', 'qtopics.qcategory_id')
-        ->get();
-        return view('/course-view',compact('qcategories','courses','data'));
+        $qcategory = Qcategory::find($id);
+        return view('/course-view',compact('qcategories','courses','qcategory','data'));
+    }
+    public function allQuestion($id){
+        $data = Student::where('id','=',Session::get('loginId'))->first();
+        $qtopic = Qtopic::find($id);
+        return view('/all-question',compact('qtopic','data'));
     }
     public function Test(){
         // $categories = Category::find($request->id);       

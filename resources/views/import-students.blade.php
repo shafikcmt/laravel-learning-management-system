@@ -24,7 +24,9 @@
                         <div class="card card-block sameheight-item">
                             <form action="{{route('import')}}" method="POST" enctype="multipart/form-data">
                                 @if(session()->has('success'))
-                                <div class="text-danger">{{session()->get('success')}}</div>
+                                <div class="text-danger" id="alertMessage">
+                                    {{session()->get('success')}}
+                                </div>
                                 @endif
                                 @csrf
                             <div class="import-students">

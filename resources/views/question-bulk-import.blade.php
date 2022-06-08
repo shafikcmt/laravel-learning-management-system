@@ -23,7 +23,7 @@
                 <div class="row sameheight-container">
                     <div class="col-md-12">
                       @if(session()->has('bulk-question'))
-                      <div class="alert alert-success">
+                      <div class="alert alert-success" id="alertMessage">
                           {{session()->get('bulk-question')}}
                       </div>
                       @endif

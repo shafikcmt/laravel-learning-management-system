@@ -13,7 +13,7 @@
                    
                     <div class="col-md-12">
                     @if(session()->has('add-question'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success" id="alertMessage">
                         {{session()->get('add-question')}}
                     </div>
                     @endif
