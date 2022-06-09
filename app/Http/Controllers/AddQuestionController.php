@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Qcategory;
 use App\Models\Qtopic;
+use App\Models\Course;
 use App\Models\AddQuestion;
 use Illuminate\Support\Facades\DB;
 use Excel;
@@ -77,5 +79,14 @@ class AddQuestionController extends Controller
     public function deleteQuestion($id){
         AddQuestion::where('id',$id)->delete();
         return back()->with('delete-question','Question Deleted Successfully !');
+    }
+    public function courseDetails($id){
+        $course = Course::find($id);
+        $categories = Category::all();
+        return view('course-details',compact('course','categories'));
+    }
+    public function viewQuestions($id){
+        $qtopics = Qcategory::find($id)->qtopic;
+        return view('view-questions',compact('qtopics'));
     }
 }

@@ -124,6 +124,9 @@ Route::get('/edit-questions/{id}',[AddQuestionController::class,'questionBankEdi
 Route::post('/edit-questions',[AddQuestionController::class,'updateQuestion'])->name('update-question');
 Route::get('/delete-questions/{id}',[AddQuestionController::class,'deleteQuestion']);
 
+Route::get('/course-details/{id}',[AddQuestionController::class,'courseDetails']);
+Route::get('/view-questions/{id}',[AddQuestionController::class,'viewQuestions']);
+
 Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
 Route::get('/edit-courses/{id}',[AddCourseController::class,'editCourse']);

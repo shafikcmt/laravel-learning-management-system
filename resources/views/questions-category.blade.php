@@ -64,7 +64,8 @@
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>
-                                                    <th>Title</th>
+                                                    <th>Course Name</th>
+                                                    <th>Question Category</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -73,6 +74,7 @@
                                                 @foreach($categories as $category)
                                                 <tr>
                                                     <td> <?php echo $i; ?> </td>
+                                                    <td>{{$category->name}}   </td>
                                                     <td>{{$category->category_name}}</td>
                                                     <td>
                                                         <a href="/edit-qcategory/{{$category->id}}"

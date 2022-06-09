@@ -46,7 +46,10 @@ class QuestionsController extends Controller
     }
 
     public function addCategory(){
-        $categories = Qcategory::all();
+        $categories = DB::table('courses')
+        ->leftJoin('qcategories', 'courses.id', '=', 'qcategories.course_id')
+        ->get();
+        // $categories = Qcategory::all();
         $courses = Course::all();
         return view('/questions-category',compact('categories','courses'));
     }

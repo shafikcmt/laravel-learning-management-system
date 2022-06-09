@@ -1,5 +1,7 @@
 <div class="main-wrapper">
     <div class="app" id="app">
+    @section('title','Student Dashboard')
+
     @extends('layouts.master')
     @section('content')
     @include('includes.student-sidebar')
@@ -23,7 +25,7 @@
                                         </div>
                                     </div>
                                     <div class="card-block">
-                                        <img src="{{asset('images')}}/{{$course->image}}" alt="">
+                                        <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
                                     </div>
                                     <div class="card-footer">
                                         <h3>{{$course->name}}</h3>

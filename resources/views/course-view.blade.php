@@ -1,5 +1,7 @@
 <div class="main-wrapper">
     <div class="app" id="app">
+       
+    @section('title','Course View')
     @extends('layouts.master')
     @section('content')
     @include('includes.student-sidebar')
@@ -15,9 +17,9 @@
                            <tr>
                               @foreach($qcategories as $qcategory) 
                               <h3 class="bg-info p-3 text-white">{{$qcategory->category_name}}</h3>
-                              <ul>
+                              <ul class="list_img">
                                   @foreach($qcategory->qtopic as $qtopic)
-                                  <li><a href="/all-question/{{$qtopic->id}}">{{$qtopic->topic_name}}</a></li>
+                                  <li class=""><a href="/all-question/{{$qtopic->id}}">{{$qtopic->topic_name}}</a></li>
                                   @endforeach
                               </ul>
                               @endforeach

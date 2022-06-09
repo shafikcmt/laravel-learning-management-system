@@ -16,10 +16,10 @@
                                         <p class="title"> Default card </p>
                                     </div>
                                 </div> -->
-                            <div class="card-block">
+                            <a href="/all-student" class="card-block text-dark" style="text-decoration:none">
                                 <h1>{{$students->count()}}</h1>
                                 <h4>Students</h4>
-                            </div>
+                            </a>
 
                         </div>
                     </div>
@@ -31,10 +31,10 @@
                                         <p class="title"> Default card </p>
                                     </div>
                                 </div> -->
-                            <div class="card-block">
+                            <a class="card-block text-dark" href="/questions-bank" style="text-decoration:none">
                                 <h1>{{$questions->count()}}</h1>
                                 <h4>Questions</h4>
-                            </div>
+                            </a>
 
                         </div>
                     </div>
@@ -89,17 +89,16 @@
                                         </div>
                                     </div>
                                     <div class="card-block">
-                                        <img src="{{asset('images')}}/{{$course->image}}" alt="">
+                                        <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
                                     </div>
                                     <div class="card-footer">
                                         <h3>{{$course->name}}</h3>
-                                       <center><a href="/course-view/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a></center> 
+                                       <center><a href="/course-details/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a></center> 
 
                                     </div>
                                 </div>
                             </div>
                             @endforeach
-                            
                             </div>
                         </div>
                     </div>

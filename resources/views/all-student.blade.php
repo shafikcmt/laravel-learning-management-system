@@ -6,7 +6,7 @@
             @include('includes.admin-sidebar')
             <article class="content responsive-tables-page">
                 <div class="title-block">
-                    <h1 class="title well p-3">Students <a class="btn btn-primary" href="/import-students">Import Students</a> <a href="/add-students" class="btn btn-primary">Add New Student</a>
+                    <h1 class="title well p-3">Students <a class="btn btn-primary" href="/import-page">Import Students</a> <a href="/add-students" class="btn btn-primary">Add New Student</a>
                     </h1>
                     <p class="title-description"> </p>
                 </div>
@@ -19,13 +19,13 @@
                                         <div class="float-left">
                                             <h3 class="title">Students List </h3>
                                         </div>
-                                        <div class="student_list_icon float-right ">
+                                        <!-- <div class="student_list_icon float-right ">
                                             <a href="#"><i class="fa-solid fa-clipboard-check"></i></a>
                                             <a href="#"><i class="fa-solid fa-file-excel"></i></a>
                                             <a href="#"><i class="fa-solid fa-file-csv"></i></a>
                                             <a href="#"><i class="fa-solid fa-file-pdf"></i></a>
                                             <a href="#"><i class="fa-solid fa-print"></i></a>
-                                        </div>
+                                        </div> -->
 
                                     </div>
                                     <section class="example">
