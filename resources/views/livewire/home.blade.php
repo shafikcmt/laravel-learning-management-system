@@ -5,13 +5,13 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <img src="images/005.jpg" alt="Los Angeles" class="d-block w-100">
+    <img src="images/gspbanner12.jpg" alt="Los Angeles" class="d-block w-100">
     </div>
     <div class="carousel-item">
-    <img src="images/005.jpg" alt="Los Angeles" class="d-block w-100">
+    <img src="images/gspbanner12.jpg" alt="Los Angeles" class="d-block w-100">
     </div>
     <div class="carousel-item">
-    <img src="images/005.jpg" alt="Los Angeles" class="d-block w-100">
+    <img src="images/gspbanner12.jpg" alt="Los Angeles" class="d-block w-100">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

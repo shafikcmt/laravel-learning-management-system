@@ -46,6 +46,7 @@
                                                         <th>Semester</th>
                                                         <th>Mobile Number</th>
                                                         <th>Email Id</th>
+                                                        
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -61,6 +62,7 @@
                                                         <td>{{$student->semester}}</td>
                                                         <td>{{$student->mobile}}</td>
                                                         <td>{{$student->email}}</td>
+                                                        
                                                         <td>
                                                             <a href="edit-student/{{$student->id}}"
                                                                 class="btn btn-primary"><i

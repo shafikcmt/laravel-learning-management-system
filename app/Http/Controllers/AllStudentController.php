@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Response;
 use Excel;
 use Session;
 use Hash;
@@ -83,5 +84,14 @@ class AllStudentController extends Controller
     public function studentDelete($id){
         Student::where('id',$id)->delete();
         return back()->with('delete-student','Student record Deleted Successfully !');
+    }
+    public function demoDownload(){
+    $file = public_path(). "/file/Studentlist.xlsx";
+    $headers = ['Content-Type: application/xlsx'];
+    if (file_exists($file)) {
+        return Response::download($file, 'Studentlist.xlsx', $headers);
+    } else {
+        echo('File not found.');
+    }
     }
 }

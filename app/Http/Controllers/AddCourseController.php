@@ -53,6 +53,11 @@ class AddCourseController extends Controller
             'image' => 'required',
             'category_id' => 'required',
         ]);
+
+        $categories = Category::find($request->category_id);
+        $course = Course::find($request->id);
+
+        unlink(public_path('images').'/'.$course->image);
         $name = $request->name;
         $start_date = $request->start_date;
         $end_date = $request->end_date;
@@ -60,8 +65,8 @@ class AddCourseController extends Controller
         $imageName = time().'.'.$image->extension();
         $image->move(public_path('images'),$imageName);
         
-        $categories = Category::find($request->category_id);
-        $course = Course::find($request->id);
+      
+        
         $course->name = $name;
         $course->start_date = $start_date;
         $course->end_date = $end_date;

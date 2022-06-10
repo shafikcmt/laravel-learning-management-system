@@ -1,6 +1,6 @@
 <div class="main-wrapper">
     <div class="app" id="app">
-        @section('title', 'Add Students')
+        @section('title', 'Import Students')
         @extends('layouts.admin-master')
         @section('content')
         @extends('includes.admin-sidebar')
@@ -14,7 +14,7 @@
                         <h4>Bulk Import</h4>
                     </div>
                     <div class="col-md-3 offset-md-6">
-                        <a href="#" class="btn btn-info pull-right rounded"> + Sample Downloads</a>
+                        <a href="/import-demo" class="btn btn-info pull-right rounded"> + Sample Downloads</a>
                     </div>
                 </div>
             <section class="section">

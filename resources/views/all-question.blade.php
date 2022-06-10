@@ -1,5 +1,6 @@
 <div class="main-wrapper">
     <div class="app" id="app">
+        @section('title', 'Questions')
         @extends('layouts.master')
         @section('content')
         @include('includes.student-sidebar')

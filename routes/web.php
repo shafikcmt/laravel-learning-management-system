@@ -87,6 +87,7 @@ Route::get('all-student',[AllStudentController::class,'allStudent']);
 Route::get('/add-students',[AllStudentController::class,'addStudent']);
 Route::post('/add-students',[AllStudentController::class,'createStudent'])->name('student-add');
 Route::post('/student-update',[AllStudentController::class,'UpdateStudent'])->name('update');
+Route::get('/import-demo',[AllStudentController::class,'demoDownload']);
 
 Route::get('/add-category',[CourseController::class,'addCategory']);
 Route::post('/add-category',[CourseController::class,'createCategory'])->name('create-category');
@@ -117,6 +118,7 @@ Route::get('/add-question',[AddQuestionController::class,'addQuestion']);
 Route::post('/add-question',[AddQuestionController::class,'createQuestion'])->name('create-question');
 
 Route::get('/question-bulk-import',[AddQuestionController::class,'bulkQuestion']);
+Route::get('/demo-download',[AddQuestionController::class,'demoQuestion']);
 Route::post('/bulk-question',[AddQuestionController::class,'createBulkQuestion'])->name('bulk-question');
 
 Route::get('/questions-bank',[AddQuestionController::class,'questionBank']);

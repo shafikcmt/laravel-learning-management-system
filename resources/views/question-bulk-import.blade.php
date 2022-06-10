@@ -15,7 +15,7 @@
                         <h4>Bulk Import</h4>
                     </div>
                     <div class="col-md-3 offset-md-6">
-                        <a href="#" class="btn btn-info pull-right rounded"> + Sample Downloads</a>
+                        <a href="/demo-download" class="btn btn-info pull-right rounded"> + Sample Downloads</a>
                     </div>
                 </div>
                 </div>
@@ -29,7 +29,7 @@
                       @endif
                         <div class="card card-block sameheight-item">
                         <ol>
-                            <li>01. You need to import Excel/CSV File. For sample you can download by clicking <b>Sample Download</b></li>
+                            <li>01. You need to import Excel/CSV File. For sample you can download by clicking <b><a href="/demo-download" class="btn btn-info pull-right rounded"> + Sample Downloads</a></b></li>
                             <li>02. Make sure input correct answer in right column.</li>
                             <li>03. You are uploading the question, you should match your question topic name and question topic id.</li>
                         </ol>
@@ -61,6 +61,7 @@
                                     <div class="col-sm-12">
                                         <label for="colFormLabel" class=" col-form-label">Excell File <span style="color:red">*</span></label>
                                         <input type="file" name="file" class="form-control" id="colFormLabel" placeholder="">
+                                        <div class="text-danger">@error('file') {{$message}} @enderror</div>
                                     </div>
                                 </div>
 

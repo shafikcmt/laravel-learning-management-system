@@ -9,6 +9,7 @@ use App\Models\Qtopic;
 use App\Models\Course;
 use App\Models\AddQuestion;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 use Excel;
 use App\Imports\QuestionImport;
 
@@ -46,6 +47,9 @@ class AddQuestionController extends Controller
         return view('/question-bulk-import',compact('qtopics'));
     }
     public function createBulkQuestion(Request $request){
+        $request->validate([
+            'file' => 'required', 
+        ]);
         Excel::import(new QuestionImport,$request->file);
         return back()->with('bulk-question','Bulk Question Added Successfully !');
     }
@@ -63,6 +67,15 @@ class AddQuestionController extends Controller
     }
 
     public function updateQuestion(Request $request){
+        $request->validate([
+            'qtopic_id' => 'required',
+            'question' => 'required',
+            'answer' => 'required',
+            'option1' => 'required',
+            'option2' => 'required',
+            'option3' => 'required',
+            'option4' => 'required',
+        ]);
         $qtopic = Qtopic::find($request->qtopic_id);
         $questions = AddQuestion::find($request->id);
         $questions->question = $request->question;
@@ -88,5 +101,14 @@ class AddQuestionController extends Controller
     public function viewQuestions($id){
         $qtopics = Qcategory::find($id)->qtopic;
         return view('view-questions',compact('qtopics'));
+    }
+    public function demoQuestion(){
+        $file = public_path(). "/file/sample_questions.xlsx";
+        $headers = ['Content-Type: application/xlsx'];
+        if (file_exists($file)) {
+            return Response::download($file, 'sample_questions.xlsx', $headers);
+        } else {
+            echo('File not found.');
+        }
     }
 }

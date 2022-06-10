@@ -1,6 +1,6 @@
 <div class="main-wrapper">
     <div class="app" id="app">
-        @section('title', 'Add Question topic')
+        @section('title', 'Question topic')
         @extends('layouts.admin-master')
         @section('content')
         @include('includes.admin-sidebar')
