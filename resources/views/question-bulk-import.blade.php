@@ -29,7 +29,7 @@
                       @endif
                         <div class="card card-block sameheight-item">
                         <ol>
-                            <li>01. You need to import Excel/CSV File. For sample you can download by clicking <b><a href="/demo-download" class="btn btn-info pull-right rounded"> + Sample Downloads</a></b></li>
+                            <li>01. You need to import Excel/CSV File. For sample you can download by clicking <b><a style="text-decoration:none" href="/demo-download"> Sample Downloads</a></b></li>
                             <li>02. Make sure input correct answer in right column.</li>
                             <li>03. You are uploading the question, you should match your question topic name and question topic id.</li>
                         </ol>

@@ -8,12 +8,24 @@ use Illuminate\Support\Facades\Response;
 use Excel;
 use Session;
 use Hash;
+use PDF;
 use App\Imports\StudentImport;
+use App\Exports\StudentsExport;
 
 class AllStudentController extends Controller
 {
-    public function allStudent(){
-        $students = Student::paginate(10);
+    public function allStudent(Request $request){
+        $search = '%'.$request->search.'%';
+        $students = Student::where('name','LIKE',$search)
+        ->orWhere('roll','LIKE',$search)
+        ->orWhere('class','LIKE',$search)
+        ->orWhere('branch','LIKE',$search)
+        ->orWhere('semester','LIKE',$search)
+        ->orWhere('mobile','LIKE',$search)
+        ->orWhere('email','LIKE',$search)
+        ->orderBy('id','DESC')
+        ->get();
+        // $students = Student::paginate(10);
         return view('/all-student',compact('students'));
     }
     
@@ -93,5 +105,38 @@ class AllStudentController extends Controller
     } else {
         echo('File not found.');
     }
+    }
+
+    public function ExportintoExcell()
+    {
+        return Excel::download(new StudentsExport,'Studentslist.xlsx');
+    }
+    public function ExportintoCSV()
+    {
+        return Excel::download(new StudentsExport,'Studentslist.csv');
+    }
+    public function getStudentsPDF(){
+        $students = Student::all();
+        return view('/all-studentspdf',compact('students'));
+    }
+    public function ExportintoPDF()
+    {
+        $students = Student::all();
+        $pdf = PDF::loadView('all-studentspdf',compact('students'));
+        return $pdf->download('Studentslist.pdf');
+    }
+    public function studentSearch(Request $request){
+        $search = '%'.$request->search.'%';
+        $students = Student::where('name','LIKE',$search)
+        ->orWhere('roll','LIKE',$search)
+        ->orWhere('class','LIKE',$search)
+        ->orWhere('branch','LIKE',$search)
+        ->orWhere('semester','LIKE',$search)
+        ->orWhere('mobile','LIKE',$search)
+        ->orWhere('email','LIKE',$search)
+        ->orderBy('id','DESC')
+        ->get();
+        return view('/all-student',compact('students'));
+
     }
 }

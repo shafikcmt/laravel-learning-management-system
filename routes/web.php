@@ -83,11 +83,16 @@ Route::get('/import-page',[AllStudentController::class,'index']);
 Route::post('/import',[AllStudentController::class,'import'])->name('import');
 Route::get('/edit-student/{id}',[AllStudentController::class,'EditStudent']);
 Route::get('/student-delete/{id}',[AllStudentController::class,'studentDelete']);
-Route::get('all-student',[AllStudentController::class,'allStudent']);
+Route::post('all-student',[AllStudentController::class,'allStudent'])->name('search-student');
 Route::get('/add-students',[AllStudentController::class,'addStudent']);
 Route::post('/add-students',[AllStudentController::class,'createStudent'])->name('student-add');
 Route::post('/student-update',[AllStudentController::class,'UpdateStudent'])->name('update');
 Route::get('/import-demo',[AllStudentController::class,'demoDownload']);
+Route::get('/export-excel',[AllStudentController::class,'ExportintoExcell']);
+Route::get('/export-csv',[AllStudentController::class,'ExportintoCSV']);
+Route::get('/export-pdf',[AllStudentController::class,'ExportintoPDF']);
+Route::get('/all-studentspdf',[AllStudentController::class,'getStudentsPDF']);
+// Route::post('/all-student',[AllStudentController::class,'studentSearch'])->name('search-student');
 
 Route::get('/add-category',[CourseController::class,'addCategory']);
 Route::post('/add-category',[CourseController::class,'createCategory'])->name('create-category');
@@ -107,6 +112,12 @@ Route::post('/create-topic',[QuestionsController::class,'createTopic'])->name('c
 Route::get('/edit-topic/{id}',[QuestionsController::class,'editTopic']);
 Route::post('/edit-topic',[QuestionsController::class,'updateTopic'])->name('update-topic');
 Route::get('/delete-topic/{id}',[QuestionsController::class,'deleteTopic']);
+Route::get('/export-csv-question',[QuestionsController::class,'ExportintoCSV']);
+Route::get('/export-excel-question',[QuestionsController::class,'ExportintoExcell']);
+Route::get('/export-pdf',[QuestionsController::class,'ExportintoPDF']);
+Route::get('/export-pdf-questions',[QuestionsController::class,'ExportintoPDF']);
+Route::get('/all-questionpdf',[QuestionsController::class,'getQuestionsPDF']);
+
 
 Route::get('/questions-category',[QuestionsController::class,'addCategory']);
 Route::post('/questions-category',[QuestionsController::class,'createQcategory'])->name('create-qcategory');

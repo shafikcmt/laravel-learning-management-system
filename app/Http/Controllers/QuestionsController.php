@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Qcategory;
 use App\Models\Qtopic;
 use App\Models\Course;
+use App\Models\AddQuestion;
+use Excel;
+use PDF;
 use Illuminate\Support\Facades\DB;
+use App\Exports\QuestionsExport;
 class QuestionsController extends Controller
 {
     public function addTopic(){
@@ -85,6 +89,24 @@ class QuestionsController extends Controller
     public function deleteQcategory($id){
         Qcategory::where('id',$id)->delete();
         return back()->with('delete-category','Category record Deleted Successfully !');
+    }
+    public function ExportintoExcell(){
+        return Excel::download(new QuestionsExport,'Questions.xlsx');
+    }
+    public function ExportintoCSV()
+    {
+        return Excel::download(new QuestionsExport,'Questions.csv');
+    }
+
+    public function getQuestionsPDF(){
+        $questions = AddQuestion::all();
+        return view('/all-questionpdf',compact('questions'));
+    }
+    public function ExportintoPDF()
+    {
+        $questions = AddQuestion::all();
+        $pdf = PDF::loadView('all-questionpdf',compact('questions'));
+        return $pdf->download('Questions.pdf');
     }
 
 }

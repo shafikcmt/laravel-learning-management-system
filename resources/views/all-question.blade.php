@@ -15,6 +15,7 @@
                         <div class="title-block">
                             <h1 class="title well p-3">Questions </h1>
                         </div>
+                       
                         <?php $i=1; ?>
                         <form action="" method="POST">
                         @foreach($qtopic->addquestion as $addquestion)

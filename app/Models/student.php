@@ -20,8 +20,8 @@ class Student extends Model
         'email',
         'password',
     ];
-    public static function getUser(){
-    $records = DB::table('students')->select('id','name','roll','class','branch','semester','mobile','email','password')->get()->toArray();
+    public static function getStudents(){
+    $records = DB::table('students')->select('id','name','roll','class','branch','semester','mobile','email')->get()->toArray();
     return $records;
 }
 }
