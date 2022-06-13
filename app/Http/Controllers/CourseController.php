@@ -8,7 +8,7 @@ use App\Models\Batch;
 class CourseController extends Controller
 {
     public function addCategory(){
-        $categories = Category::all();
+        $categories = Category::paginate(10);
         return view('/add-category',compact('categories'));
     }
 

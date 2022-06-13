@@ -70,10 +70,10 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $i=1; ?>
-                                                @foreach($categories as $category)
+                                                
+                                                @foreach($categories as $key => $category)
                                                 <tr>
-                                                    <td> <?php echo $i; ?> </td>
+                                                    <td> {{$categories->firstItem() + $key}} </td>
                                                     <td>{{$category->name}}   </td>
                                                     <td>{{$category->category_name}}</td>
                                                     <td>
@@ -84,11 +84,12 @@
                                                             class="btn btn-primary"><i class="fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                                <?php $i++ ?>
+                                              
                                                 @endforeach
 
                                             </tbody>
                                         </table>
+                                        {{$categories->links()}}
                                     </div>
                                 </section>
                             </div>

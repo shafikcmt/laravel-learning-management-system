@@ -101,10 +101,10 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $i =1; ?>
-                                                @foreach($courses as $course)
+                                               
+                                                @foreach($courses as $key => $course)
                                                 <tr>
-                                                    <td><?php echo $i; ?></td>
+                                                    <td>{{$courses->firstItem() + $key}}</td>
                                                     <td>{{$course->name}}</td>
                                                     <td>{{$course->category_name}}</td>
                                                     <td><img src="{{asset('images')}}/{{$course->image}}" width="60px" alt=""></td>
@@ -113,10 +113,11 @@
                                                         <a class="btn btn-primary" href="/delete-courses/{{$course->id}}"><i class="fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                                <?php $i++; ?>
+                                               
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        {{$courses->links()}}
                                     </div>
                                 </section>
                             </div>

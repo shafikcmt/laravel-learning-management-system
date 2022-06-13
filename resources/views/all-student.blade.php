@@ -21,7 +21,7 @@
                                         <h3 class="title">Students List </h3>
                                     </div>
                                     <div class="col-md-4">
-                                        <form action="{{route('search-student')}}" method="POST">
+                                        <form action="" method="POST">
                                         <input style="border:none;" name="search" type="text" class="form-control" id="colFormLabel"
                                             placeholder="Quick Search">
                                         </form>
@@ -61,10 +61,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $i=1; ?>
-                                        @foreach($students as $student)
+                                       
+                                        @foreach($students as $serial => $student)
                                         <tr>
-                                            <td><?php echo $i; ?></td>
+                                            <td>{{$students->firstItem() + $serial}}</td>
                                             <td>{{$student->name}}</td>
                                             <td>{{$student->roll}}</td>
                                             <td>{{$student->class}}</td>
@@ -80,7 +80,7 @@
                                                         class="fa-solid fa-trash"></i></a>
                                             </td>
                                         </tr>
-                                        <?php $i++; ?>
+                                      
                                         @endforeach
 
                                     </tbody>

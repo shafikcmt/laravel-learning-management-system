@@ -83,7 +83,7 @@ Route::get('/import-page',[AllStudentController::class,'index']);
 Route::post('/import',[AllStudentController::class,'import'])->name('import');
 Route::get('/edit-student/{id}',[AllStudentController::class,'EditStudent']);
 Route::get('/student-delete/{id}',[AllStudentController::class,'studentDelete']);
-Route::post('all-student',[AllStudentController::class,'allStudent'])->name('search-student');
+Route::get('all-student',[AllStudentController::class,'allStudent']);
 Route::get('/add-students',[AllStudentController::class,'addStudent']);
 Route::post('/add-students',[AllStudentController::class,'createStudent'])->name('student-add');
 Route::post('/student-update',[AllStudentController::class,'UpdateStudent'])->name('update');

@@ -49,7 +49,7 @@
                                     <td>{{$qtopic->topic_name}}</td>
                                     <td>{{$qtopic->id}}</td>
                                 </tr>
-                                <?php $i++ ?>
+                               <?php $i++; ?>
                                 @endforeach
                             </tbody>
                         </table>

@@ -72,10 +72,10 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $i=1; ?>
-                                              @foreach($topics as $topic)
+                                               
+                                              @foreach($topics as $key => $topic)
                                                 <tr>
-                                                    <td><?php echo $i; ?></td>
+                                                    <td>{{$topics->firstitem() + $key}}</td>
                                                     <td>{{$topic->topic_name}}</td>
                                                     <td>{{$topic->category_name}}</td>
                                                     <td>
@@ -84,9 +84,10 @@
                                                     </td>
                                                 </tr>
                                             </tbody>
-                                            <?php $i++ ?>
+                                           
                                             @endforeach
                                         </table>
+                                        {{$topics->links()}}
                                     </div>
                                 </section>
                             </div>

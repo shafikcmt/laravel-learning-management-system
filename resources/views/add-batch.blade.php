@@ -56,10 +56,10 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $i=1; ?>
-                                                @foreach($batches as $batch)
+                                               
+                                                @foreach($batches as $key => $batch)
                                                 <tr class="align-middle">
-                                                    <td><?php echo $i; ?></td>
+                                                    <td>{{$batches->firstItem() + $key}}</td>
 
                                                     <td>{{$batch->batch_name}}</td>
 
@@ -71,11 +71,12 @@
                                                     </td>
 
                                                 </tr>
-                                                <?php $i++; ?>
+                                               
                                                 @endforeach
 
                                             </tbody>
                                         </table>
+                                        {{$batches->links()}}
                                     </div>
                                 </section>
                             </div>

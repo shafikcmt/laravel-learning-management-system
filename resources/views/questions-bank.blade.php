@@ -58,9 +58,9 @@
                                             </thead>
                                             <tbody>
                                                 <?php $i=1; ?>
-                                                @foreach($questions as $question)
+                                                @foreach($questions as $key => $question)
                                                 <tr>
-                                                    <td>{{$question->id}}</td>
+                                                    <td>{{$questions->firstItem() + $key}}</td>
                                                     <td>{{$question->topic_name}}</td>
                                                     <td>{{$question->question}}</td>
 
@@ -81,7 +81,7 @@
                                             </tbody>
 
                                         </table>
-                                        {{$questions->links('pagination::bootstrap-5')}}
+                                        {{$questions->links()}}
                                     </div>
                                 </section>
                             </div>

@@ -13,7 +13,7 @@ class AddCourseController extends Controller
         $categories = Category::all();
         $courses = DB::table('categories')
         ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
-        ->get();
+        ->paginate(10);
         return view('/add-courses',compact('categories','courses'));
     }
     public function CreateCourse(Request $request){

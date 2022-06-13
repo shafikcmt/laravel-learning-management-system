@@ -7,7 +7,7 @@ use App\Models\Batch;
 class BatchController extends Controller
 {
     public function addBatch(){
-        $batches = Batch::all();
+        $batches = Batch::paginate(10);
         return view('/add-batch',compact('batches'));
     }
 

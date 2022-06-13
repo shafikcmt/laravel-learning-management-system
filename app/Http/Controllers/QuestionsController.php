@@ -16,7 +16,7 @@ class QuestionsController extends Controller
     public function addTopic(){
         $topics = DB::table('qcategories')
         ->leftJoin('qtopics', 'qcategories.id', '=', 'qtopics.qcategory_id')
-        ->get();
+        ->paginate(10);
         $categories = Qcategory::all();
         return view('/questions-topic',compact('categories','topics'));
     }
@@ -52,7 +52,7 @@ class QuestionsController extends Controller
     public function addCategory(){
         $categories = DB::table('courses')
         ->leftJoin('qcategories', 'courses.id', '=', 'qcategories.course_id')
-        ->get();
+        ->paginate(10);
         // $categories = Qcategory::all();
         $courses = Course::all();
         return view('/questions-category',compact('categories','courses'));

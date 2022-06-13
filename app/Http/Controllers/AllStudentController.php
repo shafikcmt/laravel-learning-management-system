@@ -15,17 +15,17 @@ use App\Exports\StudentsExport;
 class AllStudentController extends Controller
 {
     public function allStudent(Request $request){
-        $search = '%'.$request->search.'%';
-        $students = Student::where('name','LIKE',$search)
-        ->orWhere('roll','LIKE',$search)
-        ->orWhere('class','LIKE',$search)
-        ->orWhere('branch','LIKE',$search)
-        ->orWhere('semester','LIKE',$search)
-        ->orWhere('mobile','LIKE',$search)
-        ->orWhere('email','LIKE',$search)
-        ->orderBy('id','DESC')
-        ->get();
-        // $students = Student::paginate(10);
+        // $search = '%'.$request->search.'%';
+        // $students = Student::where('name','LIKE',$search)
+        // ->orWhere('roll','LIKE',$search)
+        // ->orWhere('class','LIKE',$search)
+        // ->orWhere('branch','LIKE',$search)
+        // ->orWhere('semester','LIKE',$search)
+        // ->orWhere('mobile','LIKE',$search)
+        // ->orWhere('email','LIKE',$search)
+        // ->orderBy('id','DESC')
+        // ->get();
+        $students = Student::paginate(10);
         return view('/all-student',compact('students'));
     }
     
@@ -125,18 +125,18 @@ class AllStudentController extends Controller
         $pdf = PDF::loadView('all-studentspdf',compact('students'));
         return $pdf->download('Studentslist.pdf');
     }
-    public function studentSearch(Request $request){
-        $search = '%'.$request->search.'%';
-        $students = Student::where('name','LIKE',$search)
-        ->orWhere('roll','LIKE',$search)
-        ->orWhere('class','LIKE',$search)
-        ->orWhere('branch','LIKE',$search)
-        ->orWhere('semester','LIKE',$search)
-        ->orWhere('mobile','LIKE',$search)
-        ->orWhere('email','LIKE',$search)
-        ->orderBy('id','DESC')
-        ->get();
-        return view('/all-student',compact('students'));
+    // public function studentSearch(Request $request){
+    //     $search = '%'.$request->search.'%';
+    //     $students = Student::where('name','LIKE',$search)
+    //     ->orWhere('roll','LIKE',$search)
+    //     ->orWhere('class','LIKE',$search)
+    //     ->orWhere('branch','LIKE',$search)
+    //     ->orWhere('semester','LIKE',$search)
+    //     ->orWhere('mobile','LIKE',$search)
+    //     ->orWhere('email','LIKE',$search)
+    //     ->orderBy('id','DESC')
+    //     ->get();
+    //     return view('/all-student',compact('students'));
 
-    }
+    // }
 }
