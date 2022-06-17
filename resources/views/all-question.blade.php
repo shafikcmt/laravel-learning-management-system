@@ -1,9 +1,10 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
-        @section('title', 'Questions')
-        @extends('layouts.master')
-        @section('content')
-        @include('includes.student-sidebar')
+
+  
+    @extends('layouts.master')
+    @section('title', 'Questions')
+      
+    @section('content')
+      
         <article class="content dashboard-page">
 
             <div class="title-block">
@@ -20,28 +21,20 @@
                         <form action="" method="POST">
                         @foreach($qtopic->addquestion as $addquestion)
                             <div class="form-group">
-                           
                                 <label for="question">  <h4><?php echo $i; ?> .{{$addquestion->question}}</h4></label>
                                 <p><input type="radio" name="{{$i}}" value="option1"> {{$addquestion->option1}}</p>
                                 <p><input type="radio" name="{{$i}}" value="option2"> {{$addquestion->option2}}</p>
                                 <p><input type="radio" name="{{$i}}" value="option3"> {{$addquestion->option3}}</p>
                                 <p><input type="radio" name="{{$i}}" value="option4"> {{$addquestion->option4}}</p>
                                 <?php $i++ ?>
-                            
                             </div>
-                            @endforeach
-                        </form>
-                      
-                     
-                     
-           
-                       
+                        @endforeach
+                        </form> 
                     </div>
                 </div>
             </section>
-
         </article>
-
+    
         <div class="modal fade" id="modal-media">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -118,6 +111,7 @@
         <!-- /.modal -->
     </div>
 </div>
+
 <!-- Reference block for JS -->
 <div class="ref" id="ref">
     <div class="color-primary"></div>

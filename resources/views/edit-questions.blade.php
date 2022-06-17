@@ -1,9 +1,10 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
-        @section('title', 'Add Question')
+
+       
         @extends('layouts.admin-master')
+        @section('title', 'Add Question')
+        
         @section('content')
-        @include('includes.admin-sidebar')
+       
         <article class="content responsive-tables-page">
             <div class="title-block">
                 <h1 class="title well p-3">Edit Question <a class="btn btn-primary" href="/questions-bank">Back</a></h1>

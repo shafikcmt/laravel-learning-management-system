@@ -1,10 +1,9 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
-       
-    @section('title','Course View')
+    
+
     @extends('layouts.master')
+    @section('title','Course View')
     @section('content')
-    @include('includes.student-sidebar')
+    
         <article class="content dashboard-page">
            
             <div class="title-block">

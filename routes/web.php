@@ -138,7 +138,8 @@ Route::post('/edit-questions',[AddQuestionController::class,'updateQuestion'])->
 Route::get('/delete-questions/{id}',[AddQuestionController::class,'deleteQuestion']);
 
 Route::get('/course-details/{id}',[AddQuestionController::class,'courseDetails']);
-Route::get('/view-questions/{id}',[AddQuestionController::class,'viewQuestions']);
+Route::get('/view-topic/{id}',[AddQuestionController::class,'viewTopic']);
+Route::get('/questions-view/{id}',[AddQuestionController::class,'questionsView']);
 
 Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
@@ -153,6 +154,7 @@ Route::get('test',[CourseMappingController::class,'Test']);
 
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');
 Route::get('/admin-dashboard',[AdminAuth::class,'index']);
+
 
 //********************************************************************************************* */
 

@@ -98,9 +98,13 @@ class AddQuestionController extends Controller
         $categories = Category::all();
         return view('course-details',compact('course','categories'));
     }
-    public function viewQuestions($id){
+    public function viewTopic($id){
         $qtopics = Qcategory::find($id)->qtopic;
-        return view('view-questions',compact('qtopics'));
+        return view('view-topic',compact('qtopics'));
+    }
+    public function questionsView($id){
+        $questions = Qtopic::find($id)->addquestion()->paginate(10);
+        return view('questions-view',compact('questions'));
     }
     public function demoQuestion(){
         $file = public_path(). "/file/sample_questions.xlsx";
@@ -111,4 +115,5 @@ class AddQuestionController extends Controller
             echo('File not found.');
         }
     }
+  
 }

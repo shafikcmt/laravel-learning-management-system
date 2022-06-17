@@ -1,9 +1,9 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
-        @section('title', 'Question Category')
+
+        
         @extends('layouts.admin-master')
+        @section('title', 'Question Category')
         @section('content')
-        @include('includes.admin-sidebar')
+        
         <article class="content responsive-tables-page">
             <div class="title-block">
                 <h1 class="title well p-3">Question Category <a class="btn btn-primary" href="/questions-topic">Add Question Topic</a> </h1>

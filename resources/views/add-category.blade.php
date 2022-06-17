@@ -1,10 +1,10 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
 
-        @section('title', 'Add Category')
+
+        
         @extends('layouts.admin-master')
+        @section('title', 'Add Category')
         @section('content')
-        @include('includes.admin-sidebar')
+       
         <article class="content responsive-tables-page">
             <div class="title-block">
                 <h1 class="title well p-3">Add Category </h1>

@@ -1,9 +1,9 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
-        @section('title', 'Add Courses')
+
+        
         @extends('layouts.admin-master')
+        @section('title', 'Add Courses')
         @section('content')
-        @include('includes.admin-sidebar')
+       
         <article class="content responsive-tables-page">
             <div class="title-block">
                 <h1 class="title well p-3">Edit Courses <a class="btn btn-primary" href="/admin-dashboard">Back</a></h1>
@@ -103,7 +103,7 @@
                                     <td><?php echo $i; ?></td>
                                     <td>{{$qcategory->category_name}}</td>
                                     <td>
-                                        <a href="/view-questions/{{$qcategory->id}}" class="btn btn-primary">View Questions</a>
+                                        <a href="/view-topic/{{$qcategory->id}}" class="btn btn-primary">View Topics</a>
                                        
                                 </tr>
                                 <?php $i++ ?>

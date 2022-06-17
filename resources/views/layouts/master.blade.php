@@ -7,8 +7,13 @@
    <header>
        @include('includes.header')
    </header>
-   <div id="main">
+   @section('sidebar')
+   @include('includes.student-sidebar')
+   @show
+   <div id="main" class="main-wrapper">
+   <div class="app" id="app">
            @yield('content')
+   </div>
    </div>
    <footer>
        @include('includes.footer')

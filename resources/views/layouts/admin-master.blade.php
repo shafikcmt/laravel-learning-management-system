@@ -1,18 +1,28 @@
 <!doctype html>
 <html>
+
 <head>
-   @include('includes.head')
+    @include('includes.head')
 </head>
+
 <body>
-   <header>
-       @include('includes.admin-header')
-   </header>
-   <div id="main">
+
+    <header>
+        @include('includes/admin-header')
+    </header>
+    @section('sidebar')
+   @include('includes.admin-sidebar')
+   @show
+   <div id="main" class="main-wrapper">
+   <div class="app" id="app">
            @yield('content')
    </div>
-   <footer>
-       @include('includes.footer')
-   </footer>
-        @include('includes.foot')
+   </div>
+    <footer>
+        @include('includes/footer')
+    </footer>
+    @include('includes/foot')
+
 </body>
+
 </html>

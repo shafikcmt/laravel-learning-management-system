@@ -1,10 +1,6 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
+ @extends('layouts.master')
     @section('title','Student Dashboard')
-
-    @extends('layouts.master')
     @section('content')
-    @include('includes.student-sidebar')
         <article class="content dashboard-page">
             <div class="title-block">
                 <h1 class="title well p-3"> {{$data->name}} {{$data->roll}} </h1>

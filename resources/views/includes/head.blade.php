@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('css/stylelogin.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    @yield('style')
 
 
 

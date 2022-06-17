@@ -1,9 +1,9 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
-    @section('title', 'Personal Details')
+
+
     @extends('layouts.master')
+    @section('title', 'Personal Details')
     @section('content')
-    @include('includes.student-sidebar')
+  
         <article class="content responsive-tables-page">
             <div class="title-block">
                 <h1 class="title well p-3"> Personal Details </h1>

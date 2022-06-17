@@ -1,9 +1,9 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
-        @section('title','Admin Dashboard')
+
+       
         @extends('layouts.admin-master')
+        @section('title','Admin Dashboard')
         @section('content')
-        @extends('includes.admin-sidebar')
+       
 
         <article class="content dashboard-page">
 

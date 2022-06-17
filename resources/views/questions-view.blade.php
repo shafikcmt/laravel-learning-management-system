@@ -1,13 +1,12 @@
 
-       
-        @extends('layouts.admin-master')
-        @section('title', 'Questions Bank')
-        @section('content')
       
+        @extends('layouts.admin-master')
+        @section('title', 'Questions')
+        @section('content')
+       
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Questions <a class="btn btn-primary" href="/add-question">Add Question</a> <a
-                        class="btn btn-primary" href="/question-bulk-import">Import Question</a></h1>
+                <h1 class="title well p-3">Questions </h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">
@@ -49,7 +48,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>
-                                                    <th>Topic Name</th>
+                                                    
 
                                                     <th>Question</th>
 
@@ -58,10 +57,10 @@
                                             </thead>
                                             <tbody>
                                                 <?php $i=1; ?>
-                                                @foreach($questions as $key => $question)
+                                                @foreach($questions as $key =>  $question)
                                                 <tr>
                                                     <td>{{$questions->firstItem() + $key}}</td>
-                                                    <td>{{$question->topic_name}}</td>
+                                                    
                                                     <td>{{$question->question}}</td>
 
                                                     <td>
@@ -74,14 +73,14 @@
                                                     </td>
 
                                                 </tr>
-                                                <?php $i++; ?>
+                                                <?php $i++ ?>
                                                 @endforeach
 
 
                                             </tbody>
 
                                         </table>
-                                        {{$questions->links()}}
+                                       {{$questions->links()}}
                                     </div>
                                 </section>
                             </div>

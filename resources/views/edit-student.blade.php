@@ -1,9 +1,9 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
-        @section('title', 'Add Students')
+
+       
         @extends('layouts.admin-master')
+        @section('title', 'Add Students')
         @section('content')
-        @extends('includes.admin-sidebar')
+       
         <article class="content responsive-tables-page">
             <div class="title-block">
                 <h1 class="title well p-3">Edit Student <a class="btn btn-info" href="/all-student">Back</a></h1>
