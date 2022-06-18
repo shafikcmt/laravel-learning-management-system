@@ -18,13 +18,13 @@ public function registration(){
 public function StudentRegister(Request $request){
     $request->validate([
         'name'      => 'required',
-        'roll'      => 'required|unique:students',
+        'roll'      => 'required|numeric|min:6|unique:students',
         'class'     => 'required',
         'branch'    => 'required',
         'semester'  => 'required',
-        'mobile'    => 'required',
-        'email'     => 'required',
-        'password'  => 'required',
+        'mobile'    => 'required|numeric|digits:10',
+        'email'     => 'required|email',
+        'password'  => 'required|min:8',
     ]);
         $student = new Student();
         $student->name = $request->name;
@@ -49,7 +49,7 @@ public function StudentRegister(Request $request){
     public function LoginStudent(Request $request){
         $request->validate([
             'roll'=>'required',
-            'password'=>'required|min:6|max:12'
+            'password'=>'required'
         ]);
         $student = Student::where('roll','=',$request->roll)->first();
         if($student){

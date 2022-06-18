@@ -4,7 +4,7 @@
             <i class="fa-solid fa-bars"></i>
         </button>
     </div>
-    <div class="header-block header-block-search">
+    <!-- <div class="header-block header-block-search">
         <form role="search">
             <div class="input-container">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -12,7 +12,7 @@
                 <div class="underline"></div>
             </div>
         </form>
-    </div>
+    </div> -->
 
     <div class="header-block header-block-nav">
         <ul class="nav-profile">

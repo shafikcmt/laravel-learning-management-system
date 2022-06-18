@@ -6,7 +6,7 @@
         
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Questions Topic <a class="btn btn-primary" href="#">Back</a></h1>
+                <h1 class="title well p-3">{{$qcategory->category_name}} <a class="btn btn-primary" href="/course-details/{{$qcategory->course_id}}">Back</a></h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">

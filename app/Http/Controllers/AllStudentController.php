@@ -15,28 +15,14 @@ use App\Exports\StudentsExport;
 class AllStudentController extends Controller
 {
     public function allStudent(Request $request){
-        // $search = '%'.$request->search.'%';
-        // $students = Student::where('name','LIKE',$search)
-        // ->orWhere('roll','LIKE',$search)
-        // ->orWhere('class','LIKE',$search)
-        // ->orWhere('branch','LIKE',$search)
-        // ->orWhere('semester','LIKE',$search)
-        // ->orWhere('mobile','LIKE',$search)
-        // ->orWhere('email','LIKE',$search)
-        // ->orderBy('id','DESC')
-        // ->get();
         $students = Student::paginate(10);
         return view('/all-student',compact('students'));
     }
     
+    
     public function index(){
         return view('/import-students');
     }
-    // public function Delete($id){
-    //     Student::find($id)->delete();
-    //     session()->flash('message','Student data Deleted ');
-    // }
-
     public function import(Request $request){
         $request->validate([
             'file' => 'required|max:10000|mimes:xlsx,xls',

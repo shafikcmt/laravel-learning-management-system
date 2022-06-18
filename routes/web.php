@@ -84,6 +84,7 @@ Route::post('/import',[AllStudentController::class,'import'])->name('import');
 Route::get('/edit-student/{id}',[AllStudentController::class,'EditStudent']);
 Route::get('/student-delete/{id}',[AllStudentController::class,'studentDelete']);
 Route::get('all-student',[AllStudentController::class,'allStudent']);
+
 Route::get('/add-students',[AllStudentController::class,'addStudent']);
 Route::post('/add-students',[AllStudentController::class,'createStudent'])->name('student-add');
 Route::post('/student-update',[AllStudentController::class,'UpdateStudent'])->name('update');
@@ -92,7 +93,7 @@ Route::get('/export-excel',[AllStudentController::class,'ExportintoExcell']);
 Route::get('/export-csv',[AllStudentController::class,'ExportintoCSV']);
 Route::get('/export-pdf',[AllStudentController::class,'ExportintoPDF']);
 Route::get('/all-studentspdf',[AllStudentController::class,'getStudentsPDF']);
-// Route::post('/all-student',[AllStudentController::class,'studentSearch'])->name('search-student');
+
 
 Route::get('/add-category',[CourseController::class,'addCategory']);
 Route::post('/add-category',[CourseController::class,'createCategory'])->name('create-category');
@@ -141,6 +142,7 @@ Route::get('/course-details/{id}',[AddQuestionController::class,'courseDetails']
 Route::get('/view-topic/{id}',[AddQuestionController::class,'viewTopic']);
 Route::get('/questions-view/{id}',[AddQuestionController::class,'questionsView']);
 
+
 Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
 Route::get('/edit-courses/{id}',[AddCourseController::class,'editCourse']);
@@ -157,6 +159,8 @@ Route::get('/admin-dashboard',[AdminAuth::class,'index']);
 
 
 //********************************************************************************************* */
+
+
 
 // Admin Livewire Class
 //---------------------------------

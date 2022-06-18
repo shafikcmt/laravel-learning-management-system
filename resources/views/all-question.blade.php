@@ -22,10 +22,10 @@
                         @foreach($qtopic->addquestion as $addquestion)
                             <div class="form-group">
                                 <label for="question">  <h4><?php echo $i; ?> .{{$addquestion->question}}</h4></label>
-                                <p><input type="radio" name="{{$i}}" value="option1"> {{$addquestion->option1}}</p>
-                                <p><input type="radio" name="{{$i}}" value="option2"> {{$addquestion->option2}}</p>
-                                <p><input type="radio" name="{{$i}}" value="option3"> {{$addquestion->option3}}</p>
-                                <p><input type="radio" name="{{$i}}" value="option4"> {{$addquestion->option4}}</p>
+                                <p><input type="radio" name="{{$i}}" value="option1">  {{$addquestion->option1}}</p>
+                                <p><input type="radio" name="{{$i}}" value="option2">  {{$addquestion->option2}}</p>
+                                <p><input type="radio" name="{{$i}}" value="option3">  {{$addquestion->option3}}</p>
+                                <p><input type="radio" name="{{$i}}" value="option4">  {{$addquestion->option4}}</p>
                                 <?php $i++ ?>
                             </div>
                         @endforeach

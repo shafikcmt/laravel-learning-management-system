@@ -1,6 +1,4 @@
-
-
-    @extends('layouts.master')
+ @extends('layouts.master')
     @section('title', 'Personal Details')
     @section('content')
   
@@ -19,26 +17,22 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover">
                                 <tr>
-                                    <td rowspan="5">
-                                    </td>
                                     <th>Name</th>
+                                    <td>:</td>
                                     <td>{{$data->name}}</td>
                                 </tr>
                                 <tr>
                                     <th>Roll</th>
+                                    <td>:</td>
                                     <td>{{$data->roll}}</td>
                                 </tr>
-                                <tr>
-                                    <th>College</th>
-                                    <td>GGI</td>
-                                </tr>
+                               
                                 <tr>
                                     <th>Branch</th>
+                                    <td>:</td>
                                     <td>{{$data->branch}}</td> 
                                 </tr>
-                                <tr>
-                                <td colspan="3"></td>
-                                </tr>
+                                
                                 <tr>
                                     <th>Class</th>
                                     <td>:</td>

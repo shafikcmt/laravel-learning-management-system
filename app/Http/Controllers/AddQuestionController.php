@@ -89,6 +89,7 @@ class AddQuestionController extends Controller
        
     }
 
+
     public function deleteQuestion($id){
         AddQuestion::where('id',$id)->delete();
         return back()->with('delete-question','Question Deleted Successfully !');
@@ -99,12 +100,15 @@ class AddQuestionController extends Controller
         return view('course-details',compact('course','categories'));
     }
     public function viewTopic($id){
+        $qcategory = Qcategory::find($id);
         $qtopics = Qcategory::find($id)->qtopic;
-        return view('view-topic',compact('qtopics'));
+        return view('view-topic',compact('qtopics','qcategory'));
+
     }
     public function questionsView($id){
+        $qtopic = Qtopic::find($id);
         $questions = Qtopic::find($id)->addquestion()->paginate(10);
-        return view('questions-view',compact('questions'));
+        return view('questions-view',compact('questions','qtopic'));
     }
     public function demoQuestion(){
         $file = public_path(). "/file/sample_questions.xlsx";
