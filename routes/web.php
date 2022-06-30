@@ -91,8 +91,8 @@ Route::post('/student-update',[AllStudentController::class,'UpdateStudent'])->na
 Route::get('/import-demo',[AllStudentController::class,'demoDownload']);
 Route::get('/export-excel',[AllStudentController::class,'ExportintoExcell']);
 Route::get('/export-csv',[AllStudentController::class,'ExportintoCSV']);
-Route::get('/export-pdf',[AllStudentController::class,'ExportintoPDF']);
-Route::get('/all-studentspdf',[AllStudentController::class,'getStudentsPDF']);
+Route::get('/exportstudents',[AllStudentController::class,'getStudentsPDF']);
+Route::get('/all-studentspdf',[AllStudentController::class,'ExportStudentintoPDF']);
 
 
 Route::get('/add-category',[CourseController::class,'addCategory']);
@@ -115,9 +115,9 @@ Route::post('/edit-topic',[QuestionsController::class,'updateTopic'])->name('upd
 Route::get('/delete-topic/{id}',[QuestionsController::class,'deleteTopic']);
 Route::get('/export-csv-question',[QuestionsController::class,'ExportintoCSV']);
 Route::get('/export-excel-question',[QuestionsController::class,'ExportintoExcell']);
-Route::get('/export-pdf',[QuestionsController::class,'ExportintoPDF']);
-Route::get('/export-pdf-questions',[QuestionsController::class,'ExportintoPDF']);
 Route::get('/all-questionpdf',[QuestionsController::class,'getQuestionsPDF']);
+Route::get('/export-pdf-questions',[QuestionsController::class,'ExportintoPDF']);
+
 
 
 Route::get('/questions-category',[QuestionsController::class,'addCategory']);

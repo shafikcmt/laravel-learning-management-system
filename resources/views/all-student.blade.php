@@ -30,7 +30,7 @@
                                             <a title="Excel" href="/export-excel"><i
                                                     class="fa-solid fa-file-excel"></i></a>
                                             <a title="CSV" href="/export-csv"><i class="fa-solid fa-file-csv"></i></a>
-                                            <a title="PDF" href="/export-pdf"><i class="fa-solid fa-file-pdf"></i></a>
+                                            <a title="PDF" href="/all-studentspdf"><i class="fa-solid fa-file-pdf"></i></a>
                                             <!-- <a title="Print" href="#"><i class="fa-solid fa-print"></i></a> -->
                                         </div>
                                     </div>

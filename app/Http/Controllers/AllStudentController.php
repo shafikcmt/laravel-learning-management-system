@@ -5,17 +5,19 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\DB;
 use Excel;
 use Session;
-use Hash;
-use PDF;
 use App\Imports\StudentImport;
 use App\Exports\StudentsExport;
+use Hash;
+use PDF;
+
 
 class AllStudentController extends Controller
 {
     public function allStudent(Request $request){
-        $students = Student::paginate(10);
+        $students = Student::orderBy('id','DESC')->paginate(10);
         return view('/all-student',compact('students'));
     }
     
@@ -25,13 +27,12 @@ class AllStudentController extends Controller
     }
     public function import(Request $request){
         $request->validate([
-            'file' => 'required|max:10000|mimes:xlsx,xls',
+            'file' => 'required', 
         ]);
-        $path = $request->file('file');
-        Excel::import(new StudentImport,$path);
+        Excel::import(new StudentImport,$request->file);
         Session::flash('success', 'Record are imported successfully');
-        return redirect('/all-student'); 
-       
+        return redirect('/all-student');  
+        
     }  
     public function addStudent(){
         return view('/add-students');
@@ -58,7 +59,7 @@ class AllStudentController extends Controller
         $students->email = $request->email;
         $students->password = $request->password;
         $students->save();
-        return back()->with('add-student','Student record successfully Added .')->redirect('/all-student');
+        return back()->with('add-student','Student record successfully Added .');
     }
    
     public function EditStudent($id){
@@ -105,12 +106,13 @@ class AllStudentController extends Controller
         $students = Student::all();
         return view('/all-studentspdf',compact('students'));
     }
-    public function ExportintoPDF()
+    public function ExportStudentintoPDF()
     {
         $students = Student::all();
         $pdf = PDF::loadView('all-studentspdf',compact('students'));
         return $pdf->download('Studentslist.pdf');
     }
+
     // public function studentSearch(Request $request){
     //     $search = '%'.$request->search.'%';
     //     $students = Student::where('name','LIKE',$search)

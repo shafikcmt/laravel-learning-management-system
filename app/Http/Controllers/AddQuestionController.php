@@ -11,6 +11,7 @@ use App\Models\AddQuestion;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
 use Excel;
+use Session;
 use App\Imports\QuestionImport;
 
 
@@ -46,12 +47,13 @@ class AddQuestionController extends Controller
         $qtopics = Qtopic::all();
         return view('/question-bulk-import',compact('qtopics'));
     }
+    
     public function createBulkQuestion(Request $request){
         $request->validate([
             'file' => 'required', 
         ]);
-        Excel::import(new QuestionImport,$request->file);
-        return back()->with('bulk-question','Bulk Question Added Successfully !');
+        Excel::import(new QuestionImport,request()->file('file'));
+        return back()->with('bulk-question', 'Bulk Question Added Successfully !'); 
     }
 
     public function questionBank(){
@@ -68,13 +70,13 @@ class AddQuestionController extends Controller
 
     public function updateQuestion(Request $request){
         $request->validate([
-            'qtopic_id' => 'required',
-            'question' => 'required',
-            'answer' => 'required',
-            'option1' => 'required',
-            'option2' => 'required',
-            'option3' => 'required',
-            'option4' => 'required',
+            'qtopic_id'     => 'required',
+            'question'      => 'required',
+            'answer'        => 'required',
+            'option1'       => 'required',
+            'option2'       => 'required',
+            'option3'       => 'required',
+            'option4'       => 'required',
         ]);
         $qtopic = Qtopic::find($request->qtopic_id);
         $questions = AddQuestion::find($request->id);
