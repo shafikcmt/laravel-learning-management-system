@@ -50,9 +50,10 @@ class AddQuestionController extends Controller
     
     public function createBulkQuestion(Request $request){
         $request->validate([
-            'file' => 'required', 
+            'file' => 'required|mimes:xlsx,csv',
         ]);
-        Excel::import(new QuestionImport,request()->file('file'));
+        $path = request()->file('file');
+        Excel::import(new QuestionImport,$path);
         return back()->with('bulk-question', 'Bulk Question Added Successfully !'); 
     }
 
@@ -63,6 +64,7 @@ class AddQuestionController extends Controller
         return view('/questions-bank',compact('questions'));
     }
     public function questionBankEdit($id){
+        
         $qtopics = Qtopic::all();
         $questions = AddQuestion::find($id);
         return view('edit-questions',compact('questions','qtopics'));
@@ -90,8 +92,6 @@ class AddQuestionController extends Controller
         return back()->with('update-question','Question Updated Successfully !');
        
     }
-
-
     public function deleteQuestion($id){
         AddQuestion::where('id',$id)->delete();
         return back()->with('delete-question','Question Deleted Successfully !');

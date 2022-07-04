@@ -28,6 +28,11 @@ class CourseMappingController extends Controller
         $qcategory = Qcategory::find($id);
         return view('/course-view',compact('qcategories','courses','qcategory','data'));
     }
+    public function startQuiz($id){
+        $data = Student::where('id','=',Session::get('loginId'))->first();
+        $qtopic = Qtopic::find($id);
+        return view('/start-quiz',compact('qtopic','data'));
+    }
     public function allQuestion($id){
         $data = Student::where('id','=',Session::get('loginId'))->first();
         $qtopic = Qtopic::find($id);

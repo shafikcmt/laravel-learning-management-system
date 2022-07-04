@@ -3,15 +3,15 @@
 namespace App\Imports;
 
 use App\Models\AddQuestion;
-use Maatwebsite\Excel\Concerns\ToModel;
+// use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Illuminate\Support\Facades\Validator;
-class QuestionImport implements ToCollection,WithHeadingRow
+class QuestionImport implements WithHeadingRow, ToCollection
 
 {
-    /**
+      /**
     * @param array $row
     *
     * @return \Illuminate\Database\Eloquent\Model|null
@@ -44,12 +44,12 @@ class QuestionImport implements ToCollection,WithHeadingRow
 
         foreach ($rows as $row) {
             AddQuestion::create([
-                'question' => $row['question'],
-                'answer' => $row['answer'],
-                'option1' => $row['option1'],
-                'option2' => $row['option2'],
-                'option3' => $row['option3'],
-                'option4' => $row['option4'],
+                'question'  => $row['question'],
+                'answer'    => $row['answer'],
+                'option1'   => $row['option1'],
+                'option2'   => $row['option2'],
+                'option3'   => $row['option3'],
+                'option4'   => $row['option4'],
                 'qtopic_id' => $row['qtopic_id'],
             ]);
 

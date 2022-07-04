@@ -27,11 +27,12 @@ class AllStudentController extends Controller
     }
     public function import(Request $request){
         $request->validate([
-            'file' => 'required', 
+            'file' => 'required|mimes:csv,xlsx', 
         ]);
         Excel::import(new StudentImport,$request->file);
-        Session::flash('success', 'Record are imported successfully');
-        return redirect('/all-student');  
+        return back()->with('success', 'Record are imported successfully');
+        // Session::flash('success', 'Record are imported successfully');
+        // return redirect('/all-student');  
         
     }  
     public function addStudent(){
@@ -39,12 +40,12 @@ class AllStudentController extends Controller
     }
     public function createStudent(Request $request){
         $request->validate([
-            'name'      => 'required',
-            'roll'      => 'required|unique:students',
+            'name'      => 'required|min:5',
+            'roll'      => 'required|numeric|unique:students',
             'class'     => 'required',
             'branch'    => 'required',
             'semester'  => 'required',
-            'mobile'    => 'required',
+            'mobile'    => 'required|numeric|digits_between:1,10',
             'email'     => 'required',
             'password'  => 'required',
         ]);

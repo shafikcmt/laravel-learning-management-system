@@ -70,7 +70,6 @@
                                             <td>{{$student->semester}}</td>
                                             <td>{{$student->mobile}}</td>
                                             <td>{{$student->email}}</td>
-
                                             <td>
                                                 <a href="edit-student/{{$student->id}}" class="btn btn-primary"><i
                                                         class="fa-solid fa-pen-to-square"></i></a>

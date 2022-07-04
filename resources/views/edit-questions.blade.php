@@ -7,7 +7,8 @@
        
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Edit Question <a class="btn btn-primary" href="/questions-bank">Back</a></h1>
+                <h1 class="title well p-3">Edit Question  <a class="btn btn-primary" href="/questions-bank">Back</a></h1>
+                <h1 class="title well p-3 text-center">Topic Name : {{$questions->qtopic->topic_name}}</h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">

@@ -1,10 +1,11 @@
-
-  
     @extends('layouts.master')
     @section('title', 'Questions')
-      
     @section('content')
-      
+      <script>
+         function examComplete(){
+            alert('Thank You');
+        }
+      </script>
         <article class="content dashboard-page">
 
             <div class="title-block">
@@ -29,6 +30,7 @@
                                 <?php $i++ ?>
                             </div>
                         @endforeach
+                    <a onclick="examComplete()" class="btn btn-primary pull-right" href="/student-dashboard">Submit</a>
                         </form> 
                     </div>
                 </div>

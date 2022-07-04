@@ -1,39 +1,38 @@
-    
+
     @extends('layouts.master')
-    @section('title','Course View')
+    @section('title', 'Questions')  
     @section('content')
-    <style>
-        ul.list_img{
-            list-style-image: url('{{asset('images/list.png')}}');
-            padding:2px;
+      <script>
+        function quizStart() {
+        var msg = "Are you ready for test !";
+        alert(msg);
         }
-    </style>
+      </script>
         <article class="content dashboard-page">
-           
-            <div class="title-block">
-                <h1 class="title well p-3"> {{$courses->name}}  <a class="btn btn-primary" href="/student-dashboard">Back</a></h1>
-            </div>
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                       <table class="table table-striped">
-                           <tr>
-                              @foreach($qcategories as $qcategory) 
-                              <h3 class="bg-info p-3 text-white">{{$qcategory->category_name}}</h3>
-                              <ul class="list_img">
-                                  @foreach($qcategory->qtopic as $qtopic)
-                                  <li class=""><a href="/start-quiz/{{$qtopic->id}}">{{$qtopic->topic_name}}</a></li>
-                                  @endforeach
-                              </ul>
-                              @endforeach
-                           </tr>
-                       </table>
+                        <div class="title-block">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                    <h2>{{$qtopic->topic_name}} </h2>
+                                    </div>
+                                <center><h4>Time limit: 30 mins</h4></center>
+                                <center><h4>Total Question: 20</h4></center>
+                                <br><br>
+                                <center>
+                                  <a  onclick="quizStart()" class="btn btn-primary" href="/all-question/{{$qtopic->id}}">Start Quiz</a></li>
+                                </center>
+                                </div>
+                            </div>
+                       
+                        </div>   
                     </div>
                 </div>
             </section>
-           
         </article>
-        
+    
         <div class="modal fade" id="modal-media">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -110,6 +109,7 @@
         <!-- /.modal -->
     </div>
 </div>
+
 <!-- Reference block for JS -->
 <div class="ref" id="ref">
     <div class="color-primary"></div>

@@ -1,9 +1,6 @@
-
-      
         @extends('layouts.admin-master')
         @section('title', 'Questions Bulk Import')
         @section('content')
-      
         <article class="content responsive-tables-page">
             <div class="title-block">
                 <h1 class="title well p-3">Questions Bulk Import <a class="btn btn-primary" href="/questions-bank">Questions List</a></h1>
@@ -19,25 +16,26 @@
                     </div>
                 </div>
                 </div>
-                @if (count($errors) > 0)
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                        
-                 
-                        <div class="alert alert-danger alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-ban"></i> Error!</h4>
-                            @foreach($errors->all() as $error)
-                            {{ $error }} <br>
-                            @endforeach      
+                    @if (count($errors) > 0)
+                        <div class="row">
+                            <div class="col-md-12">
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4><i class="icon fa fa-ban"></i> Error!</h4>
+                                @foreach($errors->all() as $error)
+                                {{ $error }} <br>
+                                @endforeach      
+                            </div>
+                            </div>
                         </div>
                     @endif
-
-                      @if(session()->has('bulk-question'))
-                      <div class="alert alert-success" id="alertMessage">
-                          {{session()->get('bulk-question')}}
-                      </div>
-                      @endif
+                    @if(session()->has('bulk-question'))
+                    <div class="alert alert-success" id="alertMessage">
+                        {{session()->get('bulk-question')}}
+                    </div>
+                    @endif
                         <div class="card card-block sameheight-item">
                         <ol>
                             <li> You need to import Excel/CSV File. For sample you can download by clicking <b><a style="text-decoration:none" href="/demo-download"> Sample Downloads</a></b></li>
@@ -66,33 +64,20 @@
                         </table>
                             <form role="form" action="{{route('bulk-question')}}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                
                                 <div class="row mb-3">
-                                   
                                     <div class="col-sm-12">
-                                        <label for="colFormLabel" class=" col-form-label">Excell File <span style="color:red">*</span></label>
+                                        <label for="colFormLabel" class=" col-form-label">Excell/CSV File <span style="color:red">*</span></label>
                                         <input type="file" name="file" class="form-control" id="colFormLabel" placeholder="">
                                         <div class="text-danger">@error('file') {{$message}} @enderror</div>
                                     </div>
                                 </div>
-
-
-
                                 <center>
                                     <button type="submit" class="btn btn-primary rounded mt-5">Import Questions</button>
                                 </center>
-
                             </form>
-
                         </div>
-
-
                     </div>
-
-
                 </div>
-
-
             </section>
         </article>
     </div>

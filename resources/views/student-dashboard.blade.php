@@ -1,4 +1,4 @@
- @extends('layouts.master')
+    @extends('layouts.master')
     @section('title','Student Dashboard')
     @section('content')
         <article class="content dashboard-page">

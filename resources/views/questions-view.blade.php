@@ -47,10 +47,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>
-                                                    
-
                                                     <th>Question</th>
-
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -59,9 +56,7 @@
                                                 @foreach($questions as $key =>  $question)
                                                 <tr>
                                                     <td>{{$questions->firstItem() + $key}}</td>
-                                                    
                                                     <td>{{$question->question}}</td>
-
                                                     <td>
                                                         <a class="btn btn-primary"
                                                             href="/edit-questions/{{$question->id}}"><i
@@ -74,10 +69,7 @@
                                                 </tr>
                                                 <?php $i++ ?>
                                                 @endforeach
-
-
                                             </tbody>
-
                                         </table>
                                        {{$questions->links()}}
                                     </div>
@@ -87,8 +79,6 @@
                     </div>
                 </div>
             </section>
-
-
         </article>
     </div>
 </div>
