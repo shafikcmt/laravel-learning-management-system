@@ -153,7 +153,8 @@ Route::get('/course-mapping',[CourseMappingController::class,'index']);
 Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']);
 Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
-Route::get('test',[CourseMappingController::class,'Test']);
+Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
+Route::get('/test/{id}',[CourseMappingController::class,'Test']);
 
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');
 Route::get('/admin-dashboard',[AdminAuth::class,'index']);

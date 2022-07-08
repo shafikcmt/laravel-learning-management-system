@@ -18,4 +18,5 @@ class Qtopic extends Model
     public function addquestion(){
         return $this->hasMany(AddQuestion::class);
     }
+
 }

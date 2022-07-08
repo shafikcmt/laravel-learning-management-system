@@ -16,7 +16,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title">
-                                    <h2>{{$qtopic->topic_name}} </h2>
+                                    <h2>Quiz For {{$qtopic->topic_name}} </h2>
                                     </div>
                                 <center><h4>Time limit: 30 mins</h4></center>
                                 <center><h4>Total Question: 20</h4></center>

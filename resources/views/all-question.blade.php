@@ -9,28 +9,42 @@
         <article class="content dashboard-page">
 
             <div class="title-block">
-                <h1 class="title well p-3"> {{$qtopic->topic_name}} </h1>
+                <h1 class="title well p-3">Quiz for {{$qtopic->topic_name}} </h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">
-                    <div class="col-md-12">
+                    <div class="col-md-8">
                         <div class="title-block">
-                            <h1 class="title well p-3">Questions </h1>
+                        <h1 class="title well p-3"> 
+                            @if(session()->has('add-answer')) 
+                            <div class="alert alert-success">
+                                {{session()->get('add-answer')}}
+                            </div>  
+                            @endif 
+                        </h1>
                         </div>
                        
-                        <?php $i=1; ?>
-                        <form action="" method="POST">
-                        @foreach($qtopic->addquestion as $addquestion)
+                        <form action="{{route('submit-answer')}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="topic_id" value="{{$qtopic->id}}">
                             <div class="form-group">
-                                <label for="question">  <h4><?php echo $i; ?> .{{$addquestion->question}}</h4></label>
-                                <p><input type="radio" name="{{$i}}" value="option1">  {{$addquestion->option1}}</p>
-                                <p><input type="radio" name="{{$i}}" value="option2">  {{$addquestion->option2}}</p>
-                                <p><input type="radio" name="{{$i}}" value="option3">  {{$addquestion->option3}}</p>
-                                <p><input type="radio" name="{{$i}}" value="option4">  {{$addquestion->option4}}</p>
-                                <?php $i++ ?>
+                                <?php $i=1; ?>
+                                @foreach($questions as $question)
+                                <label for="question">  <h4>#<?php echo $i; ?>.{{$question->question}}</h4></label>
+                                <input type="hidden" name="student_id" value="{{$data->id}}">
+                                <input type="text" name="question_id['{{$question->id}}']" value="{{$question->id}}">
+                                <p><input type="radio" required name="answer['{{$i}}, {{$question->id}}']" value="{{$question->option1}}">  {{$question->option1}}</p>
+                                <p><input type="radio" required name="answer['{{$i}}, {{$question->id}}']" value="{{$question->option2}}">  {{$question->option2}}</p>
+                                <p><input type="radio" required name="answer['{{$i}}, {{$question->id}}']" value="{{$question->option3}}">  {{$question->option3}}</p>
+                                <p><input type="radio" required name="answer['{{$i}}, {{$question->id}}']" value="{{$question->option4}}">  {{$question->option4}}</p>
+                                <input type="hidden" name="qanswer" value="{{$question->answer}}">
+                               
+                                <?php $i++; ?>
+                                @endforeach                      
                             </div>
-                        @endforeach
-                    <a onclick="examComplete()" class="btn btn-primary pull-right" href="/student-dashboard">Submit</a>
+                       
+                    <!-- <a type="submit" class="btn btn-primary pull-right">Next</a> -->
+                    <button class="btn btn-primary pull-right mr-5 mr-5" type="submit">Next</button>
                         </form> 
                     </div>
                 </div>

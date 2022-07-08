@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Qcategory;
@@ -13,12 +11,9 @@ use Illuminate\Support\Facades\Response;
 use Excel;
 use Session;
 use App\Imports\QuestionImport;
-
-
 class AddQuestionController extends Controller
 {
     public function addQuestion(){
-        
         $qtopics = Qtopic::all();
         return view('/add-question',compact('qtopics'));
     }
