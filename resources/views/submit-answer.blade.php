@@ -8,7 +8,20 @@
         alert(msg);
         }
       </script>
+      <style>
+    #grad-score {
+	background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+	height: 92px;
+	}
+    #grad-per{
+	background-image: linear-gradient(to right, rgba(255,0,0,100), rgba(255,0,200,1));
+    height: 92px;
+    }
+      </style>
         <article class="content dashboard-page">
+        <div class="title-block">
+                <h1 class="title well p-3"><span class="text-success">Completed</span> <a class="btn btn-primary pull-right" href="/student-dashboard">Finish</a></h1>
+            </div>
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
@@ -16,14 +29,33 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title">
-                                    <h2>Quiz For {{$qtopic->topic_name}} </h2>
+                                    <h2 class="text-uppercase text-info"> Result's </h2>
+                                   
                                     </div>
-                                <center><h4>Time limit: 30 mins</h4></center>
-                                <center><h4>Total Question: {{$qtopic->addquestion->count()}}</h4></center>
-                                <br><br>
-                                <center>
-                                  <a  onclick="quizStart()" class="btn btn-primary" href="/all-question/{{$qtopic->id}}">Start Quiz</a></li>
-                                </center>
+                                    <div class="row">
+                                        <div class="col-md-6"> 
+                                        <?php $i=1; ?>
+                                        @foreach($results as $result)
+                                        <h4>Question :<?php echo $i; ?></h4>
+                                        <p>Your Answer: {{$result->answer}}</p>
+                                        <p> Correct Answer :{{$result->qanswer}}</p>
+                                        <?php $i++; ?>
+                                         @endforeach
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div id="grad-score" class="col-md-5 bg-primary p-3 text-light" style="line-height:5px">
+                                                    <h4>Score</h4><br>
+                                                    <h4 class="text-right text-light">{{$correct}}/{{$results->count()}}</h4>
+                                                </div>
+                                                <div id="grad-per" class="col-md-5 bg-primary p-3 text-light ml-2" style="line-height:5px">
+                                                    <h4>Perchantage</h4><br>
+                                                    <h4 class="text-right text-light">{{$correct/$results->count() * 100}} %</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               
                                 </div>
                             </div>
                        

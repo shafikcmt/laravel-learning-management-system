@@ -1,7 +1,6 @@
 <div>
     @extends('layouts.masterauth')
     @section('content')
-  
     @section('title','Student Registration')
     <div class="auth">
         <div class="auth-container" max-width="900px">
@@ -27,9 +26,7 @@
                     <form action="{{route('student-register')}}" method="post">
                         @csrf
                         <div class="form-group">
-
                             <div class="row">
-
                                 <div class="col-sm-6">
                                     <label for="name">Name</label>
                                     <input type="text" wire:model="name" class="form-control underlined" name="name" id="name"
@@ -44,9 +41,7 @@
                                     </div>
                             </div>
                         </div>
-
                         <div class="form-group">
-
                             <div class="row">
 
                                 <div class="col-sm-6">

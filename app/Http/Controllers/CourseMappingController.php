@@ -10,6 +10,8 @@ use App\Models\Student;
 use App\Models\Qtopic;
 use App\Models\AddQuestion;
 use App\Models\QuizAnswer;
+use App\Models\attempt_quiz;
+
 // use Session;
 use App\Models\Qcategory;
 use Illuminate\Support\Facades\DB;
@@ -43,69 +45,68 @@ class CourseMappingController extends Controller
         return view('/all-question',compact('questions','data','qtopic'));
     }
     public function submitAnswer(Request $request){
+        $data = Student::where('id','=',Session::get('loginId'))->first();
         $request->validate([
             'answer'        => 'required',
             'qanswer'       => 'required',
         ]);
-        // $quizans = new QuizAnswer;
-        // $quizans->student_id = $request->student_id;
-        // $quizans->qtopic_id = $request->topic_id;
-        // $quizans->addquestion_id  = $request->question_id;
-        // $quizans->answer = $request->answer;
-        // $quizans->qanswer = $request->qanswer;
-        // $quizans->save();
-        // return back()->with('add-answer','Your Answer Successfully added !');
-        // return dd($quizans);
-
-
-
         $answer = new QuizAnswer;
-        $data = $request->all();
-        // foreach($request->get('question_id') as $question_id){
+        // $data = $request->all();
             foreach ($request->get('answer') as $question_id  => $answer) {
                 $answers[] = [
                     'student_id' => $request->student_id,
                     'qtopic_id' => $request->topic_id,
-                    // 'addquestion_id' => $request->question_id,
                     'addquestion_id' => $question_id,
                     'answer' => $answer,
                     'qanswer' => $request->qanswer,
                 ];
-                
-            // }
-           
-
         }
         $ans = $request->get('answer');
         DB::table('quiz_answers')->insert($answers);
-        dd($answers); 
-        // dd($answers);
+        // $results = QuizAnswer::where('student_id',$data->id)->get();
+        $results = QuizAnswer::select("*")->where([
+            ["student_id", "=", $data->id],
+            ["qtopic_id", "=", $request->topic_id]
+        ])->get();
+            $correct=0;
+            $wrong=0;
+        foreach($results as $result){
+            if($result->answer == $result->qanswer ){
+                $correct +=1;
+                
+            }else{
+                $wrong +=1;
+            }
+          
+        }
+        $attemp_exam = new attempt_quiz;
+        $attemp_exam->student_id = $request->student_id;
+        $attemp_exam->topic_id = $request->topic_id;
+        $attemp_exam->status = '1';
+        $attemp_exam->save();
 
-        // foreach($request->answer as $answers){
 
-        //    $answers = QuizAnswer::create([
-        //      'student_id' => $request->student_id,
-        //      'qtopic_id' => $request->topic_id,
-        //      'addquestion_id' => $request->question_id,
-        //      'answer' => $answers,
-        //      'qanswer' => $request->qanswer,
-        //     ]);
-        //     }
+        return view('/submit-answer')->with(['data'=>$data,'results'=>$results,'correct'=>$correct,'wrong'=>$wrong]);
+    }
+    public function showAnswer(){
+        $data = Student::where('id','=',Session::get('loginId'))->first();
+        $results = QuizAnswer::where('student_id',$data->id)->get();
+        // $results = QuizAnswer::select("*")->where("student_id",$data->id)->get();
+        $results = QuizAnswer::select("*")->where([
+            ["student_id", "=", $data->id],
+            ["qtopic_id", "=", $request->topic_id]
+        ])->get();
+        foreach ($results as $result) {
+         dd($result->answer);
+        }
+        
+        // return view('/submit-answer')->with('submit_answer','Your Answer Submited Successfully !')->with(['data'=>$data,'results'=>$results]);
 
-        //     dd($answers);
+
     }
    
-    // public function allQuestion($id){
-    //     $data = Student::where('id','=',Session::get('loginId'))->first();
-    //     $qtopic = Qtopic::find($id);
-    //     return view('/all-question',compact('qtopic','data'));
-    // }
+  
     public function Test($id){
-        // $categories = Category::find($request->id);       
-        // foreach($categories->course as $course){
-
-        //     echo $course.'<br>';
-        // }
         $data = DB::table('add_questions')
         ->leftJoin('qtopics', 'add_questions.id', '=', 'add_questions.qtopic_id')
         ->get();

@@ -32,11 +32,11 @@
                                 @foreach($questions as $question)
                                 <label for="question">  <h4>#<?php echo $i; ?>.{{$question->question}}</h4></label>
                                 <input type="hidden" name="student_id" value="{{$data->id}}">
-                                <input type="text" name="question_id['{{$question->id}}']" value="{{$question->id}}">
-                                <p><input type="radio" required name="answer['{{$i}}, {{$question->id}}']" value="{{$question->option1}}">  {{$question->option1}}</p>
-                                <p><input type="radio" required name="answer['{{$i}}, {{$question->id}}']" value="{{$question->option2}}">  {{$question->option2}}</p>
-                                <p><input type="radio" required name="answer['{{$i}}, {{$question->id}}']" value="{{$question->option3}}">  {{$question->option3}}</p>
-                                <p><input type="radio" required name="answer['{{$i}}, {{$question->id}}']" value="{{$question->option4}}">  {{$question->option4}}</p>
+                                <input type="hidden" name="question_id" value="{{$question->id}}">
+                                <p><input type="radio" required name="answer[{{$question->id}}]" value="{{$question->option3}}">  {{$question->option3}}</p>
+                                <p><input type="radio" required name="answer[{{$question->id}}]" value="{{$question->option1}}">  {{$question->option1}}</p>
+                                <p><input type="radio" required name="answer[{{$question->id}}]" value="{{$question->option2}}">  {{$question->option2}}</p>
+                                <p><input type="radio" required name="answer[{{$question->id}}]" value="{{$question->option4}}">  {{$question->option4}}</p>
                                 <input type="hidden" name="qanswer" value="{{$question->answer}}">
                                
                                 <?php $i++; ?>

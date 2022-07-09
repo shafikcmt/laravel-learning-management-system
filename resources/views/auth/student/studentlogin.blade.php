@@ -1,9 +1,6 @@
-<div>
 @extends('layouts.masterauth')
-    @section('content')
-  
-   
-    @section('title','Student Login')
+@section('title', 'Student Login')  
+@section('content')
     <div class="auth">
         <div class="auth-container">
             <div class="card">

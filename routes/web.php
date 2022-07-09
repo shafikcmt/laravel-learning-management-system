@@ -1,6 +1,7 @@
 <?php
-use App\Http\Livewire\Home;
+// use App\Http\Livewire\HomeController;
 // use App\Http\Livewire\Studentlogin;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentAuth;
 use App\Http\Controllers\AdminAuth;
 use App\Http\Controllers\AllStudentController;
@@ -52,6 +53,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/',[HomeController::class,'index']);
 // Student Controller
 //------------------------------------
 Route::get('/student-login',[StudentAuth::class,'login'])->middleware('studentlogin');
@@ -67,7 +69,7 @@ Route::get('/password',[AllStudentController::class,'ShowPassword']);
 //---------------------------------
 Route::get('/drive-skills',DriveSkills::class);
 // Route::get('/student-registration',StudentRegistrations::class);
-Route::get('/',Home::class);
+// Route::get('/',Home::class);
 // Route::get('/student-login',Studentlogin::class);
 Route::get('/reset-password-student',Sturesetpass::class);
 
@@ -154,6 +156,7 @@ Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']);
 Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
 Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
+Route::get('/show-answer',[CourseMappingController::class,'showAnswer']);
 Route::get('/test/{id}',[CourseMappingController::class,'Test']);
 
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');

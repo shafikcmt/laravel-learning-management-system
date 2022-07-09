@@ -83,13 +83,11 @@ body {
       /* list-style-image:url(../images/list.png); */
       list-style-position: inside;
   }
-  ul.list_img li{
 
-  }
 .auth {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   left: 0;
   background:url(../images/ban.webp);
   background-repeat: no-repeat;
@@ -196,7 +194,8 @@ body {
   border: 1px dashed #ddd;
   background: #fafafa;
   color: #444;
-  cursor: pointer; }
+  cursor: pointer;
+ }
 
 .underline-animation {
   position: absolute;

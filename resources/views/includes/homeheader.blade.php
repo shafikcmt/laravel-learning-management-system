@@ -9,7 +9,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                           
+                        <span>ghub@geeta.edu.in</span>
                         </div>
                         <div class="col-md-4">
                             <nav class="navbar-expand-md navbar-dark">
@@ -34,11 +34,10 @@
                         <a href="/">
                         <img src="images/gsplogo.jpg" class="img-responsive" alt="">
                         </a>
-                       
                     </div>
                 </div>
-                <div class="col-md-6">
-                    
+                <div class="col-md-6 d-flex justify-content-end">
+                    <!-- <a class="btn btn-primary " href="/">Home</a> -->
                 </div>
             </div>
         </div>

@@ -4,14 +4,13 @@
     outline: 0;
 }
 #headerpart {
-   
     background: #00293E;
     width: 100%;
     color: #fff;
     line-height: 9vh;
-    min-height: 60px;
+    min-height: 10vh;
 }
-.logo{}
+
 .logo img {
 	height: 53px;
 	
@@ -43,14 +42,13 @@
 	
 }
 #second-header {
-   
     line-height: 50px;
-    height: 80px;
+    min-height: 10vh;
     background: #FFE;
     
 }
 #contentpart {
-	height: 65vh;
+	height: 60vh;
 	width: 100%;
 	background: #E1E1E1;
    
@@ -61,7 +59,7 @@
     overflow: hidden;
 }
 .carousel-item img{
-   height: 65vh;
+   height: 60vh;
 	width: 100%;
 }
 .card-main{
@@ -86,7 +84,7 @@
 	font-weight: bold;
 }
 #footerpart {
-	height: 15vh;
+	min-height: 13vh;
 	background: #00293E;
 	color: #fff;
 	display: flex;
@@ -96,18 +94,16 @@
 	text-align: center;
 	align-items: center;
 }
-
-.footer-icon i {
-	height: 30px;
-	width: 30px;
-	background: #73BE1A;
-	padding-top: 6px;
-	border: 1px solid #73BE1A;
+.second-footer{
+	min-height: 7vh;
+	background: #fff;
+}
+.footer-icon svg {
 	border-radius: 100%;
-	margin-top: 11px;
+	
 	margin-left: 8px;
-    color: #000;
-    text-align: center;
+	color: #73BE1A;
+	text-align: center;
 }
 
 /* Student Dashboard */
