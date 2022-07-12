@@ -35,7 +35,15 @@ class CourseMappingController extends Controller
     public function startQuiz($id){
         $data = Student::where('id','=',Session::get('loginId'))->first();
         $qtopic = Qtopic::find($id);
-        return view('/start-quiz',compact('qtopic','data'));
+        $qcategory = Qtopic::find($id)->qcategory;
+        $attemp = attempt_quiz::all();
+        foreach($attemp as $attemp){
+            if($data->id == $attemp->student_id && $qtopic->id == $attemp->topic_id && $attemp->status == 1){
+                return back()->with('already_attemp','This Quiz Already Taken');
+            }
+        }
+       
+        return view('/start-quiz',compact('qtopic','data','qcategory'));
     }
 
     public function allQuestion($id){
@@ -104,23 +112,28 @@ class CourseMappingController extends Controller
 
 
     }
+    public function StudentResult(){
+        $data = Student::where('id','=',Session::get('loginId'))->first();
+
+        return view('student-quiz-result',compact('data'));
+    }
    
   
-    public function Test($id){
+    public function Test(){
         $data = DB::table('add_questions')
         ->leftJoin('qtopics', 'add_questions.id', '=', 'add_questions.qtopic_id')
         ->get();
 
         $qtopics = Qtopic::find($id)->addquestion->all();
         $questions = AddQuestion::where('qtopic_id',$id)->get();
-        // echo $qtopics->question.'<br>';
-            $i=1;
-            foreach($questions as $question){
-                echo $i.')'.$question->question.'<br>';
-                $i++;
+        $attemp = attempt_quiz::all();
+        echo $attemp->student_id.'<br>';
+         dd($attemp->student_id);  
+            foreach($attemp as $attemp){
+                dd($attemp);
             }
            
-        // return view('test',compact());
+        return view('test',compact());
     }
  
 }

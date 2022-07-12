@@ -23,7 +23,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 @stop
 
 

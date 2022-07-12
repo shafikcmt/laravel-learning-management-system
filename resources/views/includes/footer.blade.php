@@ -4,10 +4,10 @@
     <div class="footer-block author">
         <ul>
             <li> created by
-                <a href="#">Geeta Technical Hub</a>
+                <a target="_blank" href="https://www.geeta.edu.in/gthub/">Geeta Technical Hub</a>
             </li>
             <li>
-                <a href="#">Touch With Geeta University</a>
+                <a target="_blank" href="https://www.geetauniversity.edu.in/">Touch With Geeta University</a>
             </li>
         </ul>
     </div>

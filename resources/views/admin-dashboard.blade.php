@@ -1,11 +1,7 @@
-
-       
         @extends('layouts.admin-master')
         @section('title','Admin Dashboard')
         @section('content')
-       
-
-        <article class="content dashboard-page">
+         <article class="content dashboard-page">
 
             <section class="section map-tasks">
                 <div class="row sameheight-container">
@@ -47,7 +43,7 @@
                                     </div>
                                 </div> -->
                             <div class="card-block">
-                                <h1>220</h1>
+                                <h1>{{$quizes->count()}}</h1>
                                 <h4>Quizzes</h4>
                             </div>
 
@@ -62,9 +58,10 @@
                                     </div>
                                 </div> -->
                             <div class="card-block">
-                                <h1>220</h1>
+                                <h1>{{$attemp->count()}}</h1>
                                 <h4>Attempts</h4>
                             </div>
+
 
                         </div>
                     </div>
@@ -72,12 +69,12 @@
                 </div>
                 <div class="row sameheight-container">
                     <div class="col-md-12">
+                   
                         <div class="card sameheight-item" data-exclude="xs,sm">
-                            <div class="card-header">
-                                <div class="header-block">
-                                    <h3 class="title"> Available Course </h3>
-                                </div>
+                            <div class="title-block">
+                            <h1 class="title well p-3"> Available Course </h1>
                             </div>
+                           
                             <div class="card-block">
                             <div class="owl-carousel owl-theme">
                             @foreach($courses as $course)
@@ -104,7 +101,48 @@
                     </div>
 
                 </div>
-               
+               <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                      
+                            <div class="card-body">
+                            <h2 class="card-title">
+                                    All Courses
+                            </h2>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="text-left">
+                                        <th>Course Name</th>
+                                        <th>Course Category</th>
+                                        <th>Course Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                @foreach($courses as $course)
+
+                                <tbody>
+                                    <tr>
+                                        <td>{{$course->category_name}}</td>
+                                        <td>{{$course->name}}</td>
+
+                                        <td>
+                                        <img height="50px" width="50px" src="{{asset('images')}}/{{$course->image}}" alt="">
+                                        </td>
+                                        <td>
+                                        <a href="/course-details/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                @endforeach
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </div>
+
+
             </section>
         </article>
   

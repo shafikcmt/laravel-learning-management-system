@@ -144,6 +144,7 @@ Route::get('/course-details/{id}',[AddQuestionController::class,'courseDetails']
 Route::get('/view-topic/{id}',[AddQuestionController::class,'viewTopic']);
 Route::get('/questions-view/{id}',[AddQuestionController::class,'questionsView']);
 
+Route::get('student-result',[CourseMappingController::class,'StudentResult']);
 
 Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
@@ -157,7 +158,7 @@ Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
 Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
 Route::get('/show-answer',[CourseMappingController::class,'showAnswer']);
-Route::get('/test/{id}',[CourseMappingController::class,'Test']);
+Route::get('/test',[CourseMappingController::class,'Test']);
 
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');
 Route::get('/admin-dashboard',[AdminAuth::class,'index']);

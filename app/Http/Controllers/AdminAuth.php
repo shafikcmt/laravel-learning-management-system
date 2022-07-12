@@ -6,17 +6,21 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Student;
 use App\Models\AddQuestion;
+use App\Models\attempt_quiz;
+use App\Models\Qtopic;
 use Illuminate\Support\Facades\DB;
 use Session;
 class AdminAuth extends Controller
 {
     public function index(){
+        $attemp = new attempt_quiz;
+        $quizes = new Qtopic;
         $students = new Student;
         $questions = new AddQuestion;
         $courses = DB::table('categories')
         ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
         ->get();
-        return view('admin-dashboard',compact('courses','students','questions'));
+        return view('admin-dashboard',compact('courses','students','questions','attemp','quizes'));
     }
     public function AdminLog(){
         return view('auth.admin.adminlogin');

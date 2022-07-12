@@ -11,13 +11,15 @@
         <article class="content dashboard-page">
             <section class="section">
                 <div class="row sameheight-container">
+                   
                     <div class="col-md-12">
                         <div class="title-block">
                             <div class="card">
+                            <div class="title-block">
+                        <h1 class="title well p-3"> Quiz For {{$qtopic->topic_name}} <a class="btn btn-primary" href="/course-view/{{$qcategory->course_id}}">Back</a></h1>
+                        </div>
                                 <div class="card-body">
-                                    <div class="card-title">
-                                    <h2>Quiz For {{$qtopic->topic_name}} </h2>
-                                    </div>
+                                    
                                 <center><h4>Time limit: 30 mins</h4></center>
                                 <center><h4>Total Question: {{$qtopic->addquestion->count()}}</h4></center>
                                 <br><br>

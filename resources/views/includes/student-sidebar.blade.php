@@ -20,19 +20,17 @@
                                     <a href="/student-profile/{{$data['id']}}">
                                         <i class="fa fa-home"></i> Personal Details </a>
                                 </li>
-                                <!-- <li>
+                                <li>
                                     <a href="#">
-                                        <i class="fa fa-th-large"></i> Assesment Works
+                                        <i class="fa fa-th-large"></i> Results
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
                                         <li>
-                                            <!-- <a href="/drive-skills"> Drive Skills </a> 
+                                             <a href="/student-result"> Result </a> 
                                         </li>
-                                       
-                                   
                                     </ul>
-                                </li> -->
+                                </li>
                                 <!-- <li>
                                     <a href="#">
                                         <i class="fa fa-area-chart"></i> Charts

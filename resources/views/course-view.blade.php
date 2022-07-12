@@ -15,7 +15,13 @@
             </div>
             <section class="section">
                 <div class="row sameheight-container">
+               
                     <div class="col-md-12">
+                    @if(session()->has('already_attemp'))
+                    <div class="alert alert-danger">
+                        {{session()->get('already_attemp')}}
+                    </div>
+                    @endif
                        <table class="table table-striped">
                            <tr>
                               @foreach($qcategories as $qcategory) 
