@@ -25,7 +25,9 @@ body {
   min-height: 100%;
   font-family: 'Open Sans', sans-serif;
   color: #4f5f6f;
-  overflow-x: hidden; }
+  overflow-x: hidden; 
+  /* font-family: system-ui; */
+}
 
 .main-wrapper {
   width: 100%;
@@ -79,11 +81,11 @@ body {
       left: 0; } }
   .app.blank {
     background-color: #667380; }
-  ul.list_img{
-      /* list-style-image:url(../images/list.png); */
-      list-style-position: inside;
-  }
-
+ 
+  .box {
+      padding: 15px;
+      margin-bottom: 10px;
+    }
 .auth {
   position: absolute;
   width: 100%;
@@ -1693,11 +1695,12 @@ span a {
       min-height: 200px; }
 
 .footer {
-  background-color: #fff;
+  background-color: #F6A94F;
   position: fixed;
   left: 240px;
   right: 0;
   bottom: 0;
+  color: #fff;
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;

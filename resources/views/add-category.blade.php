@@ -7,7 +7,7 @@
        
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Add Category </h1>
+                <h1 style="background:#F6A94F;" class="title well p-3">Add Category </h1>
 
             </div>
 

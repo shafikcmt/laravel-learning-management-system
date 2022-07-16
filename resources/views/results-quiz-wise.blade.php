@@ -1,12 +1,9 @@
-<div class="main-wrapper">
-    <div class="app" id="app">
-        @section('title', 'Add Students')
-        @extends('layouts.admin-master')
-        @section('content')
-        @include('includes.admin-sidebar')
+    @extends('layouts.admin-master')
+    @section('title', 'Quiz Wise Results')
+    @section('content')
         <article class="content responsive-tables-page">
         <div class="title-block">
-                <h1 class="title well p-3">Course Mapping</h1>
+                <h1 class="title well p-3">Quiz Wise Results</h1>
                 
             </div>
         
@@ -18,15 +15,13 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Select Category</label>
                                             <div class="form-group">
-                                             
                                             <select class="form-control">
                                             <option selected>--Select Category--</option>
-                                                @foreach($categories as $category)
-                                                
-                                                <option>{{$category->category_name}}</option>
-                                                @endforeach
+                                                <option>Option one</option>
+                                                <option>Option two</option>
+                                                <option>Option three</option>
+                                                <option>Option four</option>
                                             </select>
-                                           
                                         </div> 
                                         </div>
                                         <div class="form-group">
@@ -34,20 +29,22 @@
                                             <div class="form-group">
                                             <select class="form-control">
                                                 <option selected>--Select Course--</option>
-                                                @foreach($courses as $course)
-                                                <option>{{$course->name}}</option>
-                                                @endforeach
+                                                <option>Option one</option>
+                                                <option>Option two</option>
+                                                <option>Option three</option>
+                                                <option>Option four</option>
                                             </select>
                                         </div> 
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Select Batch</label>
+                                            <label for="exampleInputEmail1">Select Quiz</label>
                                             <div class="form-group">
                                             <select class="form-control">
-                                            <option selected>--Select Batch--</option>
-                                            @foreach($batches as $batch)
-                                                <option>{{$batch->batch_name}}</option>
-                                            @endforeach
+                                            <option selected>--Select Quiz--</option>
+                                                <option>Option one</option>
+                                                <option>Option two</option>
+                                                <option>Option three</option>
+                                                <option>Option four</option>
                                             </select>
                                         </div> 
                                         </div>
@@ -63,6 +60,5 @@
                     </section>
 
         </article>
-    </div>
-</div>
+  
 @stop

@@ -4,7 +4,7 @@
   
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3"> Personal Details </h1>
+                <h1 style="background:#F6A94F;" class="title well p-2 rounded"> Personal Details </h1>
             </div>
             <section class="section">
                 <div class="row">
@@ -13,8 +13,8 @@
                     </div>
                 </div>
                 <div class="row sameheight-container">
-                    <div class="col-md-10 offset-md-1">
-                        <div class="table-responsive">
+                    <div class="col-md-12">
+                        <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
                             <table class="table table-striped table-bordered table-hover">
                                 <tr>
                                     <th>Name</th>

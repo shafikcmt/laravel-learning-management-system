@@ -92,24 +92,27 @@
                         </li> -->
                     </ul>
                 </li>
-                <!-- <li>
+                 <li>
                     <a href="forms.html">
                         <i class="fa fa-pencil-square-o"></i> Results </a>
                         <ul class="sidebar-nav">
                         <li>
+                            <a href="/quiz-all-results">All Quiz Results</a>
+                        </li>
+                        <!-- <li>
                             <a href="/results-quiz-wise"> Quiz Wise</a>
                         </li>
-
                         <li>
                             <a href="/results-batch-wise"> Batch Wise</a>
                         </li>
-
                         <li>
                             <a href="/results-date-wise"> Date Wise</a>
-                        </li>
+                        </li> -->
+
+                       
                 
                     </ul>
-                </li> -->
+                </li> 
                 <!-- <li>
                     <a href="#">
                         <i class="fa fa-desktop"></i> UI Elements

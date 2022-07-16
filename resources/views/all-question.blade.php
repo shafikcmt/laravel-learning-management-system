@@ -27,11 +27,19 @@
                         <form action="{{route('submit-answer')}}" method="POST">
                             @csrf
                             <input type="hidden" name="topic_id" value="{{$qtopic->id}}">
+                            <input type="hidden" name="topic_name" value="{{$qtopic->topic_name}}">
                             <div class="form-group">
                                 <?php $i=1; ?>
                                 @foreach($questions as $question)
                                 <label for="question">  <h4>#<?php echo $i; ?>.{{$question->question}}</h4></label>
+                                <input type="hidden" name="student_name" value="{{$data->name}}">
                                 <input type="hidden" name="student_id" value="{{$data->id}}">
+                                <input type="hidden" name="student_roll" value="{{$data->roll}}">
+                                <input type="hidden" name="student_class" value="{{$data->class}}">
+                                <input type="hidden" name="student_branch" value="{{$data->branch}}">
+                                <input type="hidden" name="student_semester" value="{{$data->semester}}">
+                                <input type="hidden" name="student_mobile" value="{{$data->mobile}}">
+                                <input type="hidden" name="student_email" value="{{$data->email}}">
                                 <input type="hidden" name="question_id" value="{{$question->id}}">
                                 <p><input type="radio" required name="answer[{{$question->id}}]" value="{{$question->option3}}">  {{$question->option3}}</p>
                                 <p><input type="radio" required name="answer[{{$question->id}}]" value="{{$question->option1}}">  {{$question->option1}}</p>

@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <section class="example">
-                            <div class="table-responsive">
+                            <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
                                 @if(Session()->has('delete-student'))
                                 <div class="alert alert-success" id="alertMessage">
                                     {{Session()->get('delete-student')}}

@@ -50,7 +50,7 @@
                                                 </div>
                                                 <div id="grad-per" class="col-md-5 bg-primary p-3 text-light ml-2" style="line-height:5px">
                                                     <h4>Perchantage</h4><br>
-                                                    <h4 class="text-right text-light">{{$correct/$results->count() * 100}} %</h4>
+                                                    <h4 class="text-right text-light">{{round($correct/$results->count() * 100)}} %</h4>
                                                 </div>
                                             </div>
                                         </div>

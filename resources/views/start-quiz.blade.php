@@ -16,7 +16,7 @@
                         <div class="title-block">
                             <div class="card">
                             <div class="title-block">
-                        <h1 class="title well p-3"> Quiz For {{$qtopic->topic_name}} <a class="btn btn-primary" href="/course-view/{{$qcategory->course_id}}">Back</a></h1>
+                        <h1 style="background:#F6A94F; color:#fff" class="title well p-2"> Quiz For {{$qtopic->topic_name}} <a class="btn btn-info" href="/course-view/{{$qcategory->course_id}}">Back</a></h1>
                         </div>
                                 <div class="card-body">
                                     

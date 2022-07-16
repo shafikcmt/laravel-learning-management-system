@@ -1,7 +1,7 @@
         @extends('layouts.admin-master')
         @section('title','Admin Dashboard')
         @section('content')
-         <article class="content dashboard-page">
+        <article class="content dashboard-page">
 
             <section class="section map-tasks">
                 <div class="row sameheight-container">
@@ -69,83 +69,96 @@
                 </div>
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                   
+
                         <div class="card sameheight-item" data-exclude="xs,sm">
                             <div class="title-block">
-                            <h1 class="title well p-3"> Available Course </h1>
+                                <h1 class="title well p-3"> Available Course </h1>
                             </div>
-                           
+
                             <div class="card-block">
-                            <div class="owl-carousel owl-theme">
-                            @foreach($courses as $course)
-                            <div class="item">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">{{$course->category_name}} </p>
+                                <div class="owl-carousel owl-theme">
+                                    @foreach($courses as $course)
+                                    <div class="item">
+                                        <div class="card card-default">
+                                            <div class="card-header">
+                                                <div class="header-block">
+                                                    <p class="title">{{$course->category_name}} </p>
+                                                </div>
+                                            </div>
+                                            <div class="card-block">
+                                                <img height="100px" width="100%"
+                                                    src="{{asset('images')}}/{{$course->image}}" alt="">
+                                            </div>
+                                            <div class="card-footer">
+                                                <h3>{{$course->name}}</h3>
+                                                <center><a href="/course-details/{{$course->id}}"
+                                                        class="btn btn-primary stretched-link">View Course</a></center>
+
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-block">
-                                        <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h3>{{$course->name}}</h3>
-                                       <center><a href="/course-details/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a></center> 
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+
+                                    <div class="card-body">
+                                        <h2 style="background:#F6A94F;" class="card-title p-3">
+                                            All Courses
+                                        </h2>
+                                        <div class="row sameheight-container">
+                                            <div class="col-md-12">
+                                                <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
+
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr class="text-left">
+                                                                <th>Course Name</th>
+                                                                <th>Course Category</th>
+                                                                <th>Course Image</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        @foreach($courses as $course)
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>{{$course->category_name}}</td>
+                                                                <td>{{$course->name}}</td>
+
+                                                                <td>
+                                                                    <img height="50px" width="50px"
+                                                                        src="{{asset('images')}}/{{$course->image}}"
+                                                                        alt="">
+                                                                </td>
+                                                                <td>
+                                                                    <a href="/course-details/{{$course->id}}"
+                                                                        class="btn btn-primary stretched-link">View
+                                                                        Course</a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                        @endforeach
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
-                            </div>
                         </div>
                     </div>
-
-                </div>
-               <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                      
-                            <div class="card-body">
-                            <h2 class="card-title">
-                                    All Courses
-                            </h2>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr class="text-left">
-                                        <th>Course Name</th>
-                                        <th>Course Category</th>
-                                        <th>Course Image</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                @foreach($courses as $course)
-
-                                <tbody>
-                                    <tr>
-                                        <td>{{$course->category_name}}</td>
-                                        <td>{{$course->name}}</td>
-
-                                        <td>
-                                        <img height="50px" width="50px" src="{{asset('images')}}/{{$course->image}}" alt="">
-                                        </td>
-                                        <td>
-                                        <a href="/course-details/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                @endforeach
-                            </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               </div>
 
 
             </section>
         </article>
-  
+
         <div class="modal fade" id="modal-media">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -220,14 +233,14 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-    </div>
-</div>
-<!-- Reference block for JS -->
-<div class="ref" id="ref">
-    <div class="color-primary"></div>
-    <div class="chart">
-        <div class="color-primary"></div>
-        <div class="color-secondary"></div>
-    </div>
-</div>
-@stop
+        </div>
+        </div>
+        <!-- Reference block for JS -->
+        <div class="ref" id="ref">
+            <div class="color-primary"></div>
+            <div class="chart">
+                <div class="color-primary"></div>
+                <div class="color-secondary"></div>
+            </div>
+        </div>
+        @stop

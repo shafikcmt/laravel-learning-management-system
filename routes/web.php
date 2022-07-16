@@ -11,32 +11,22 @@ use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseMappingController;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\AddQuestionController;
+use App\Http\Controllers\QuizResultController;
 use App\Http\Livewire\DriveSkills;
-// use App\Http\Livewire\StudentDetails;
-// use App\Http\Livewire\StudentRegistrations;
+
 
 
 // *********************************************************
 
 use App\Http\Livewire\Sturesetpass;
-// use App\Http\Livewire\AllStudent;
-// use App\Http\Livewire\AddStudents;
 use App\Http\Livewire\Resetpassword;
 use App\Http\Livewire\Adminlogin;
-// use App\Http\Livewire\AddCategory;
-// use App\Http\Livewire\AddBatch;
-// use App\Http\Livewire\AddCourses;
-// use App\Http\Livewire\QuestionsTopic;
-// use App\Http\Livewire\AddQuestion;
-// use App\Http\Livewire\QuestionsBank;
-// use App\Http\Livewire\QuestionBulkImport;
-// use App\Http\Livewire\CourseMapping;
-use App\Http\Livewire\ResultsQuizWise;
-use App\Http\Livewire\ResultsBatchWise;
-use App\Http\Livewire\ResultsDateWise;
+
+// use App\Http\Livewire\ResultsQuizWise;
+// use App\Http\Livewire\ResultsBatchWise;
+// use App\Http\Livewire\ResultsDateWise;
 use App\Http\Livewire\CheckPassword;
 use App\Http\Livewire\Admindashboard;
-// use App\Http\Livewire\Studentdashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,9 +40,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 Route::get('/',[HomeController::class,'index']);
 // Student Controller
 //------------------------------------
@@ -160,6 +148,11 @@ Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->n
 Route::get('/show-answer',[CourseMappingController::class,'showAnswer']);
 Route::get('/test',[CourseMappingController::class,'Test']);
 
+Route::get('/results-quiz-wise',[QuizResultController::class,'indexQuiz']);
+Route::get('/results-batch-wise',[QuizResultController::class,'indexBatch']);
+Route::get('/results-date-wise',[QuizResultController::class,'indexDate']);
+Route::get('/quiz-all-results',[QuizResultController::class,'allStudentResult']);
+
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');
 Route::get('/admin-dashboard',[AdminAuth::class,'index']);
 
@@ -182,8 +175,8 @@ Route::get('/reset-password',Resetpassword::class);
 // Route::get('/add-question',AddQuestion::class);
 // Route::get('/questions-bank',QuestionsBank::class);
 // Route::get('/question-bulk-import',QuestionBulkImport::class);
-Route::get('/results-quiz-wise',ResultsQuizWise::class);
-Route::get('/results-batch-wise',ResultsBatchWise::class);
-Route::get('/results-date-wise',ResultsDateWise::class);
-Route::get('/check-password',CheckPassword::class);
+// Route::get('/results-quiz-wise',ResultsQuizWise::class);
+// Route::get('/results-batch-wise',ResultsBatchWise::class);
+// Route::get('/results-date-wise',ResultsDateWise::class);
+// Route::get('/check-password',CheckPassword::class);
 

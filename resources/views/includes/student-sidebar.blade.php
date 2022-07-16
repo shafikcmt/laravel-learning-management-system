@@ -22,7 +22,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-th-large"></i> Results
+                                        <i class="fa fa-th-large"></i> Quiz Results
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">

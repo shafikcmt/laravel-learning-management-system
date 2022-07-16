@@ -89,7 +89,18 @@ class CourseMappingController extends Controller
         }
         $attemp_exam = new attempt_quiz;
         $attemp_exam->student_id = $request->student_id;
+        $attemp_exam->student_name = $request->student_name;
+        $attemp_exam->student_roll = $request->student_roll;
+        $attemp_exam->student_class = $request->student_class;
+        $attemp_exam->student_branch = $request->student_branch;
+        $attemp_exam->student_semester = $request->student_semester;
+        $attemp_exam->student_mobile = $request->student_mobile;
+        $attemp_exam->student_email = $request->student_email;
+        $attemp_exam->topic_name = $request->topic_name;
         $attemp_exam->topic_id = $request->topic_id;
+        $attemp_exam->right_ans = $correct;
+        $attemp_exam->wrong_ans = $wrong;
+        $attemp_exam->perchantage = round($correct/$results->count() * 100);
         $attemp_exam->status = '1';
         $attemp_exam->save();
 
@@ -99,7 +110,6 @@ class CourseMappingController extends Controller
     public function showAnswer(){
         $data = Student::where('id','=',Session::get('loginId'))->first();
         $results = QuizAnswer::where('student_id',$data->id)->get();
-        // $results = QuizAnswer::select("*")->where("student_id",$data->id)->get();
         $results = QuizAnswer::select("*")->where([
             ["student_id", "=", $data->id],
             ["qtopic_id", "=", $request->topic_id]
@@ -114,26 +124,38 @@ class CourseMappingController extends Controller
     }
     public function StudentResult(){
         $data = Student::where('id','=',Session::get('loginId'))->first();
-
-        return view('student-quiz-result',compact('data'));
+        $exam_results = attempt_quiz::select("*")->where([
+            ["student_id", "=", $data->id]
+        ])->get();
+        return view('student-quiz-result',compact('data','exam_results'));
     }
    
   
     public function Test(){
-        $data = DB::table('add_questions')
-        ->leftJoin('qtopics', 'add_questions.id', '=', 'add_questions.qtopic_id')
-        ->get();
+        // $data = DB::table('add_questions')
+        // ->leftJoin('qtopics', 'add_questions.id', '=', 'add_questions.qtopic_id')
+        // ->get();
 
-        $qtopics = Qtopic::find($id)->addquestion->all();
-        $questions = AddQuestion::where('qtopic_id',$id)->get();
-        $attemp = attempt_quiz::all();
-        echo $attemp->student_id.'<br>';
-         dd($attemp->student_id);  
-            foreach($attemp as $attemp){
-                dd($attemp);
-            }
+        // $qtopics = Qtopic::find($id)->addquestion->all();
+        // $questions = AddQuestion::where('qtopic_id',$id)->get();
+        // $attemp = attempt_quiz::all();
+        // echo $attemp->student_id.'<br>';
+        //  dd($attemp->student_id);  
+        //     foreach($attemp as $attemp){
+        //         dd($attemp);
+        //     }
            
-        return view('test',compact());
+        // return view('test',compact());
+        $data = Student::where('id','=',Session::get('loginId'))->first();
+        $results = attempt_quiz::select("*")->where([
+            ["student_id", "=", $data->id]
+        ])->get();
+        // $exam_results = attempt_quiz::all();
+
+        foreach($results as $result){
+        dd(round($result->perchantage));
+        }
+
     }
  
 }
