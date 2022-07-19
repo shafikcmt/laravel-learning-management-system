@@ -1,0 +1,17 @@
+<script>
+ $("#DateCountdown").TimeCircles({
+     time:{
+         Days:{
+             show:false;
+         },
+         Hours:{
+             show:false;
+         }
+     }
+ });
+
+setInterval(function(){
+    var remaining_second = $('#DateCountdown').TimeCircles().getTime();
+},1000);
+console.log(remaining_second);
+</script>

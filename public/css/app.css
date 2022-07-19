@@ -158,7 +158,8 @@ body {
 .title-block {
   padding-bottom: 15px;
   margin-bottom: 30px;
-  border-bottom: 1px solid #d7dde4; }
+  /* border-bottom: 1px solid #d7dde4; */
+ }
   .title-block::after {
     display: block;
     clear: both;
@@ -1696,6 +1697,7 @@ span a {
 
 .footer {
   background-color: #F6A94F;
+  z-index: 2;
   position: fixed;
   left: 240px;
   right: 0;

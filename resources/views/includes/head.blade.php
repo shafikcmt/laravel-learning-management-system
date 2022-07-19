@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="{{asset('calender/css/fullcalendar.css')}}"> -->
     <link rel="stylesheet" href="{{asset('css/stylelogin.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="{{asset('css/TimeCircles.css')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon-16x16.png')}}">
    
 
 

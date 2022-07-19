@@ -48,8 +48,10 @@
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead>
+                        <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
+
+                        <table class="table table-striped table-bordered table-hover">
+                                <thead style="background:#F6A94F">
                                     <tr>
                                         <th>Course Category</th>
                                         <th>Course Name</th>
@@ -73,13 +75,11 @@
                                 @endforeach
                             </table>
                         </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
-
         </section>
-
     </article>
 
     <div class="modal fade" id="modal-media">
