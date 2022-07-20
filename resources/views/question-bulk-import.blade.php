@@ -37,7 +37,7 @@
                     </div>
                     @endif
                         <div class="card card-block sameheight-item">
-                        <ol>
+                        <ol class="p-3">
                             <li> You need to import Excel/CSV File. For sample you can download by clicking <b><a style="text-decoration:none" href="/demo-download"> Sample Downloads</a></b></li>
                             <li> Make sure input correct answer in right column.</li>
                             <li> You are uploading the question, you should match your question topic name and question topic id.</li>
@@ -51,6 +51,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+
                                 <?php $i=1 ?>
                                 @foreach($qtopics as $qtopic)
                                 <tr>
@@ -66,9 +67,13 @@
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-sm-12">
+                                    
+                                        <div class="form-group">
                                         <label for="colFormLabel" class=" col-form-label">Excell/CSV File <span style="color:red">*</span></label>
                                         <input type="file" name="file" class="form-control" id="colFormLabel" placeholder="">
                                         <div class="text-danger">@error('file') {{$message}} @enderror</div>
+
+                                        </div>
                                     </div>
                                 </div>
                                 <center>

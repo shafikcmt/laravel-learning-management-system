@@ -53,6 +53,7 @@
                                             </thead>
                                             <tbody>
                                                 <?php $i=1; ?>
+                                                @if(count($questions))
                                                 @foreach($questions as $key =>  $question)
                                                 <tr>
                                                     <td>{{$questions->firstItem() + $key}}</td>
@@ -69,6 +70,11 @@
                                                 </tr>
                                                 <?php $i++ ?>
                                                 @endforeach
+                                                @else
+                                                <tr>
+                                                    <td colspan="3">Questions not found !</td>
+                                                </tr>
+                                                @endif
                                             </tbody>
                                         </table>
                                        {{$questions->links()}}

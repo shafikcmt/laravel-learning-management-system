@@ -1,6 +1,7 @@
         @extends('layouts.admin-master')
         @section('title','Admin Dashboard')
         @section('content')
+      
         <article class="content dashboard-page">
 
             <section class="section map-tasks">
@@ -42,10 +43,10 @@
                                         <p class="title"> Default card </p>
                                     </div>
                                 </div> -->
-                            <div class="card-block">
+                            <a class="card-block" href="/questions-topic" style="text-decoration:none; color:white">
                                 <h1>{{$quizes->count()}}</h1>
                                 <h4>Quizzes</h4>
-                            </div>
+                            </a>
 
                         </div>
                     </div>
@@ -57,10 +58,10 @@
                                         <p class="title"> Default card </p>
                                     </div>
                                 </div> -->
-                            <div class="card-block">
+                            <a class="card-block" href="/quiz-all-results" style="text-decoration:none; color:white">
                                 <h1>{{$attemp->count()}}</h1>
                                 <h4>Attempts</h4>
-                            </div>
+                            </a>
 
 
                         </div>
@@ -72,7 +73,7 @@
 
                         <div class="card sameheight-item" data-exclude="xs,sm">
                             <div class="title-block">
-                                <h1 class="title well p-3"> Available Course </h1>
+                                <h1 style="background:#F6A94F;"  class="title well p-3"> Available Course <div class="owl-nav"></div></h1>
                             </div>
 
                             <div class="card-block">
@@ -109,12 +110,12 @@
                                 <div class="card">
 
                                     <div class="card-body">
-                                        <h2 style="background:#F6A94F;" class="card-title p-3">
+                                        <h1 style="background:#F6A94F;" class="title card-title p-3">
                                             All Courses
-                                        </h2>
+                                        </h1>
                                         <div class="row sameheight-container">
                                             <div class="col-md-12">
-                                                <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
+                                                <div class="table-responsive shadow-lg p-3 mb-3 bg-white rounded">
 
                                                     <table class="table table-striped table-bordered table-hover">
                                                         <thead>

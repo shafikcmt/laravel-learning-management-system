@@ -8,9 +8,12 @@
         <section class="section">
             <div class="row sameheight-container">
                 <div class="col-md-12">
+                <div class="card sameheight-item" data-exclude="xs,sm">
                     <div class="title-block">
-                        <h1 class="title well p-3"> Available Course </h1>
+                        <h1 style="background:#F6A94F;" class="title well p-3"> Available Course </h1>
                     </div>
+                    <div class="card-block">
+
                     <div class="owl-carousel owl-theme">
                         @foreach($courses as $course)
                         <div class="item">
@@ -27,31 +30,26 @@
                                     <h3>{{$course->name}}</h3>
                                     <center>
                                         <a href="/course-view/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a>
-
                                     </center>
-
                                 </div>
                             </div>
                         </div>
                         @endforeach
-
                     </div>
-
                 </div>
-
             </div>
-
+                </div>
+            </div>
             <div class="row sameheight-container">
                 <div class="col-md-12">
-                    <div class="title-block">
-                        <h1 class="title well p-3"> All Courses </h1>
-                    </div>
                     <div class="card">
                         <div class="card-body">
+                        <div class="title-block">
+                        <h1 style="background:#F6A94F;" class="title well p-3"> All Courses </h1>
+                        </div>
                         <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
-
                         <table class="table table-striped table-bordered table-hover">
-                                <thead style="background:#F6A94F">
+                                <thead>
                                     <tr>
                                         <th>Course Category</th>
                                         <th>Course Name</th>

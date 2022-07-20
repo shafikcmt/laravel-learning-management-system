@@ -2,23 +2,23 @@
     @section('title','Course View')
     @section('content')
     <style>
-     ul .list_img {
+        ul .list_img {
 
-	margin: 0;
-	padding: 6px 0px 6px 35px;
-	list-style: none;
-	background-image: url("http://127.0.0.1:8000/images/list.png");
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 27px;
-	font-size: 18px;
-}
+            margin: 0;
+            padding: 6px 0px 6px 35px;
+            list-style: none;
+            background-image: url("http://127.0.0.1:8000/images/list.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 27px;
+            font-size: 18px;
+        }
 
-    ul .list_img a {
-	text-decoration: none;
-	color: #3C96B4;
-	
-}
+        ul .list_img a {
+            text-decoration: none;
+            color: #3C96B4;
+
+        }
     </style>
     <article class="content dashboard-page">
 
@@ -40,18 +40,18 @@
                             @foreach($qcategories as $qcategory)
                             <div class=" shadow-sm p-3 mb-2 bg-white rounded">
 
-                            <h3 style="background:#F6A94F; padding:12px;" class="h6 text-white">{{$qcategory->category_name}}</h3>
-                            <ul class="">
-                                @foreach($qcategory->qtopic as $qtopic)
-                                <li class="list_img"><a href="/start-quiz/{{$qtopic->id}}">{{$qtopic->topic_name}}</a>
-                                </li>
-                            
-                               
-                                @endforeach
-                               
-                            </ul>
+                                <h3 style="background:#F6A94F; padding:12px;" class="h6 text-white">{{$qcategory->category_name}}</h3>
+                                <ul class="">
+                                   @if(count($qcategory->qtopic))
+                                    @foreach($qcategory->qtopic as $qtopic)
+                                    <li class="list_img"><a href="/start-quiz/{{$qtopic->id}}">{{$qtopic->topic_name}}</a>
+                                    </li>
+                                    @endforeach
+                                    @else
+                                    <p class="text-center bg-warning p-2">Quiz not Found !</p>
+                                    @endif
+                                </ul>
                             </div>
-
                             @endforeach
                         </tr>
                     </table>
@@ -89,8 +89,7 @@
                         <div class="tab-pane fade active in" id="upload" role="tabpanel">
                             <div class="upload-container">
                                 <div id="dropzone">
-                                    <form action="https://modularcode.io/" method="POST" enctype="multipart/form-data"
-                                        class="dropzone needsclick dz-clickable" id="demo-upload">
+                                    <form action="https://modularcode.io/" method="POST" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="demo-upload">
                                         <div class="dz-message-block">
                                             <div class="dz-message needsclick"> Drop files here or click to upload.
                                             </div>
@@ -116,7 +115,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">
-                        <i class="fa fa-warning"></i> Alert</h4>
+                        <i class="fa fa-warning"></i> Alert
+                    </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

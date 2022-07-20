@@ -6,6 +6,7 @@
 <body>
    <header>
        @include('includes.header')
+
    </header>
    @section('sidebar')
    @include('includes.student-sidebar')

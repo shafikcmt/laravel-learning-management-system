@@ -4,9 +4,9 @@
        
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1  class="title well p-3">Add Question <a class="btn btn-primary" href="/questions-bank">Question List</a></h1>
+                <h1  class="title well p-3 rounded">Add Question <a class="btn btn-primary" href="/questions-bank">Question List</a></h1>
             </div>
-            <section class="section">
+            <section class="section shadow-lg p-3 mb-5 bg-white rounded border border-light">
                 <div class="row sameheight-container">
                    
                     <div class="col-md-12">

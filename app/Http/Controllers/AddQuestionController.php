@@ -43,6 +43,7 @@ class AddQuestionController extends Controller
         return view('/question-bulk-import',compact('qtopics'));
     }
     
+    
     public function createBulkQuestion(Request $request){
         $request->validate([
             'file' => 'required|mimes:xlsx,csv',

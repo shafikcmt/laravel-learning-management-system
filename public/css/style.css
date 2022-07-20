@@ -22,7 +22,16 @@ h3{
     font-size: calc(1.3rem + -0.4vw);
 }
 
-
+.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
+	position: absolute;
+	right: 18px;
+	bottom: -17px;
+	font-size: 20px;
+	font-weight: bold;
+	display: block !important;
+    margin-top: 30px;
+    padding-top: 10px;
+}
 
 .header-title {
 	font-size: 23px;

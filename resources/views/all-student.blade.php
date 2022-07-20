@@ -1,7 +1,6 @@
             @extends('layouts.admin-master')
             @section('title','All Students')
-            @section('content')
-          
+            @section('content')       
             <article class="content responsive-tables-page">
                 <div class="title-block">
                     <h1 class="title well p-3">Students <a class="btn btn-primary" href="/import-page">Import
@@ -59,7 +58,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+                                        @if(count($students))
                                         @foreach($students as $serial => $student)
                                         <tr>
                                             <td>{{$students->firstItem() + $serial}}</td>
@@ -79,11 +78,12 @@
                                         </tr>
                                       
                                         @endforeach
-
+                                        @else
+                                        <tr>
+                                            <td colspan="9">Students not found !</td>
+                                        </tr>
+                                        @endif
                                     </tbody>
-
-                                   
-
                                 </table>
                                 {{$students->links('pagination::bootstrap-5')}}
                             </div>
@@ -97,8 +97,4 @@
     </article>
     </div>
     </div>
-
-
-
-
     @stop

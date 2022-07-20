@@ -66,7 +66,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-
+                                                @if(count($categories))
                                                 @foreach($categories as $key => $category)
                                                 <tr>
                                                     <td>{{$categories->firstItem() + $key}}</td>
@@ -87,7 +87,11 @@
                                                 </tr>
 
                                                 @endforeach
-
+                                                @else
+                                                <tr>
+                                                    <td>Category Not Found !</td>
+                                                </tr>
+                                                @endif
                                             </tbody>
                                         </table>
                                         {{$categories->links()}}
