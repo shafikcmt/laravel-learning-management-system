@@ -10,8 +10,7 @@
 </script>
 <style>
     #grad-score {
-        background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
-        height: 92px;
+        background-image: linear-gradient(to right top, #233873, #763a82, #b93775, #e54c52, #f07d1e);
     }
 
     #grad-per {

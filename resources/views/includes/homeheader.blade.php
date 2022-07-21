@@ -8,7 +8,7 @@
                                 <span>HAVE ANY QUESTIONS?</span>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 text-center">
                         <span>ghub@geeta.edu.in</span>
                         </div>
                         <div class="col-md-4">
@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="logo">
+                    <div class="logohome">
                         <a href="/">
                         <img src="images/gsplogo.jpg" class="img-responsive" alt="">
                         </a>

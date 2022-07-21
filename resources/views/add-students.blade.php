@@ -5,7 +5,7 @@
       
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 style="background:#F6A94F;" class="title well p-2">Add Students <a class="btn btn-info" href="/all-student">Back</a></h1>
+                <h1 class="title well p-2 bg-orange">Add Students <a class="btn btn-primary" href="/all-student">Back</a></h1>
                 <p class="title-description"> </p>
             </div>
                     <section class="section">

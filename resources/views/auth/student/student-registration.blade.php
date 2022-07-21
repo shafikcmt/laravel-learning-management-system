@@ -12,12 +12,11 @@
                 </div>
                 @endif
                     <h1 class="auth-title">
-                        <div class="logo">
-                            <span class="l l1"></span>
-                            <span class="l l2"></span>
-                            <span class="l l3"></span>
-                            <span class="l l4"></span>
-                            <span class="l l5"></span>
+                        <div class="logo" style="color:#000">
+                        <a href="/">
+                            <img style="margin-top:-10px;" src="{{asset('images/fav.png')}}" alt="">
+                            </a>
+
                         </div> Student Registration
                     </h1>
                 </header>
@@ -100,7 +99,7 @@
                         </div>
                         <div class="form-group">
                             <p class="text-muted text-center">Already have an account?
-                                <a href="/student-login">Login!</a>
+                                <a style="color:#000" href="/student-login">Login!</a>
                             </p>
                         </div>
                     </form>

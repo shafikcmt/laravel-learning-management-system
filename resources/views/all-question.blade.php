@@ -36,7 +36,7 @@
                 <div class="col-md-9 bg-light p-2">
                     
         <div class="title-block">
-            <h1 class="title well p-3">Quiz for {{$qtopic->topic_name}} </h1>
+            <h1 class="title well p-3 bg-orange">Quiz for {{$qtopic->topic_name}} </h1>
         </div>
             <div class="title-block">
                 <h1>

@@ -3,14 +3,14 @@
     @section('content')
     <article class="content dashboard-page">
         <div class="title-block">
-            <h1 class="title well p-3"> {{$data->name}} {{$data->roll}} </h1>
+            <h1 class="title well p-2 bg-orange"> {{$data->name}} {{$data->roll}} </h1>
         </div>
         <section class="section">
-            <div class="row sameheight-container">
+            <div class="row sameheight-container ">
                 <div class="col-md-12">
-                <div class="card sameheight-item" data-exclude="xs,sm">
+                <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
                     <div class="title-block">
-                        <h1 style="background:#F6A94F;" class="title well p-3"> Available Course </h1>
+                        <h1  class="title well p-2 bg-orange"> Available Course </h1>
                     </div>
                     <div class="card-block">
 
@@ -45,26 +45,24 @@
                     <div class="card">
                         <div class="card-body">
                         <div class="title-block">
-                        <h1 style="background:#F6A94F;" class="title well p-3"> All Courses </h1>
+                        <h1 class="title well p-2 bg-orange"> All Courses </h1>
                         </div>
-                        <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="table-responsive shadow-lg p-3 mb-2 bg-white rounded">
                         <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>Course Category</th>
                                         <th>Course Name</th>
-                                        <th>Image</th>
+                                       
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 @foreach($courses as $course)
-                                <tbody>
+                                <tbody style="color:#000">
                                     <tr>
                                         <td>{{$course->category_name}}</td>
                                         <td>{{$course->name}}</td>
-                                        <td>
-                                        <img height="50px" width="50px" src="{{asset('images')}}/{{$course->image}}" alt="">
-                                        </td>
+                                       
                                         <td>
                                             <a href="/course-view/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a>
                                         </td>

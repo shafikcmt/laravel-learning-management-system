@@ -6,14 +6,14 @@
         
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Question Topic <a class="btn btn-primary" href="/questions-category">Add Category</a></h1>
+                <h1 class="title well p-2 bg-orange">Question Topic <a class="btn btn-primary" href="/questions-category">Add Category</a></h1>
 
             </div>
 
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                        <div class="card card-block sameheight-item">
+                        <div class="card card-block sameheight-item shadow-lg p-3 bg-white rounded">
                             <form role="form" method="POST" action="{{route('create-topic')}}">
                                 @if(session()->has('add-topic'))
                                 <div class="alert alert-success" id="alertMessage">
@@ -61,7 +61,7 @@
                                     <h3 class="title"> Question Topic List </h3>
                                 </div>
                                 <section class="example">
-                                    <div class="table-responsive">
+                                    <div class="table-responsive shadow-lg bg-white rounded">
                                         <table class="table table-striped table-bordered table-hover text-center">
                                             <thead>
                                                 <tr>

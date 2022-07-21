@@ -3,7 +3,7 @@
         @section('content')
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Questions Bulk Import <a class="btn btn-primary" href="/questions-bank">Questions List</a></h1>
+                <h1 class="title well p-2 bg-orange">Questions Bulk Import <a class="btn btn-primary" href="/questions-bank">Questions List</a></h1>
             </div>
             <section class="section">
                 <div class="container">
@@ -12,11 +12,11 @@
                         <h4>Bulk Import</h4>
                     </div>
                     <div class="col-md-3 offset-md-6">
-                        <a href="/demo-download" class="btn btn-info pull-right rounded"> + Sample Downloads</a>
+                        <a href="/demo-download" class="btn btn-primary pull-right rounded"> + Sample Downloads</a>
                     </div>
                 </div>
                 </div>
-                <div class="row sameheight-container">
+                <div class="row sameheight-container shadow-lg p-2 bg-white rounded">
                     <div class="col-md-12">
                     @if (count($errors) > 0)
                         <div class="row">

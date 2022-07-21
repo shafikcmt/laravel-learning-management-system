@@ -6,7 +6,7 @@
       
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Questions <a class="btn btn-primary" href="/add-question">Add Question</a> <a
+                <h1 class="title well p-2 bg-orange">Questions <a class="btn btn-primary" href="/add-question">Add Question</a> <a
                         class="btn btn-primary" href="/question-bulk-import">Import Question</a></h1>
             </div>
             <section class="section">
@@ -29,7 +29,7 @@
                                                 id="colFormLabel" placeholder="Quick Search">
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="student_list_icon float-right ">
+                                            <div class="student_list_icon float-right " style="background:#243873">
                                                 <!-- <a title="Copy" href="#"><i class="fa-solid fa-clipboard-check"></i></a> -->
                                                 <a title="Excel" href="/export-excel-question"><i
                                                         class="fa-solid fa-file-excel"></i></a>

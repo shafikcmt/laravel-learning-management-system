@@ -5,7 +5,7 @@
        
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">{{$qtopic->topic_name}} <a class="btn btn-primary" href="/view-topic/{{$qtopic->qcategory_id}}">Back</a></h1>
+                <h1 class="title well p-2 bg-orange">{{$qtopic->topic_name}} <a class="btn btn-primary" href="/view-topic/{{$qtopic->qcategory_id}}">Back</a></h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">
@@ -15,12 +15,12 @@
                             {{session()->get('delete-question')}}
                         </div>
                         @endif
-                        <div class="card">
+                        <div class="card shadow-lg p-3 rounded bg-white">
                             <div class="card-block">
                                 <div class="card-title-block">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <h3 class="title">All Question List </h3>
+                                            <h3 style="color:#000 !important" class="title">All Question List </h3>
                                         </div>
                                         <div class="col-md-4">
                                             <input style="border:none;" type="search" class="form-control"

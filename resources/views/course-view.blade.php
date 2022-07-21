@@ -23,7 +23,7 @@
     <article class="content dashboard-page">
 
         <div class="title-block">
-            <h1 class="title well p-3 h2"> {{$courses->name}} <a class="btn btn-primary" href="/student-dashboard">Back</a>
+            <h1 class="title well p-2 bg-orange"> {{$courses->name}} <a class="btn btn-primary" href="/student-dashboard">Back</a>
             </h1>
         </div>
         <section class="section">
@@ -40,7 +40,7 @@
                             @foreach($qcategories as $qcategory)
                             <div class=" shadow-sm p-3 mb-2 bg-white rounded">
 
-                                <h3 style="background:#F6A94F; padding:12px;" class="h6 text-white">{{$qcategory->category_name}}</h3>
+                                <h3 style="padding:12px;" class="h6 text-white bg-orange">{{$qcategory->category_name}}</h3>
                                 <ul class="">
                                    @if(count($qcategory->qtopic))
                                     @foreach($qcategory->qtopic as $qtopic)

@@ -3,11 +3,7 @@
         <div class="sidebar-header">
             <div class="brand">
                 <div class="logo">
-                    <span class="l l1"></span>
-                    <span class="l l2"></span>
-                    <span class="l l3"></span>
-                    <span class="l l4"></span>
-                    <span class="l l5"></span>
+                  <img src="{{asset('images/fav.png')}}" alt="">
                 </div> <a style="text-decoration:none" href="/admin-dashboard">Gportal Admin</a> </div>
         </div>
         <nav class="menu">

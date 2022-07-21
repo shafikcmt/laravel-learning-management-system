@@ -73,7 +73,7 @@
 
                         <div class="card sameheight-item" data-exclude="xs,sm">
                             <div class="title-block">
-                                <h1 style="background:#F6A94F;"  class="title well p-3"> Available Course <div class="owl-nav"></div></h1>
+                                <h1 class="title well p-3 bg-orange"> Available Course</h1>
                             </div>
 
                             <div class="card-block">
@@ -83,7 +83,7 @@
                                         <div class="card card-default">
                                             <div class="card-header">
                                                 <div class="header-block">
-                                                    <p class="title">{{$course->category_name}} </p>
+                                                    <p style="color:#000 !important" class="title">{{$course->category_name}} </p>
                                                 </div>
                                             </div>
                                             <div class="card-block">
@@ -110,7 +110,7 @@
                                 <div class="card">
 
                                     <div class="card-body">
-                                        <h1 style="background:#F6A94F;" class="title card-title p-3">
+                                        <h1 class="title card-title p-3 bg-orange">
                                             All Courses
                                         </h1>
                                         <div class="row sameheight-container">

@@ -111,7 +111,7 @@ body {
     text-align: center;
     border-bottom: 1px solid #85CE36; }
   .auth-container .auth-title {
-    color: #97A4B1;
+    color: #000;
     padding: 20px;
     line-height: 30px;
     font-size: 26px;
@@ -749,6 +749,7 @@ pre {
         .card .card-header .header-block {
           padding: 0.5rem 10px; } }
     .card .card-header .title {
+      margin-left:-18px;
       color: #4f5f6f;
       display: -webkit-inline-box;
       display: -ms-inline-flexbox;
@@ -1696,13 +1697,13 @@ span a {
       min-height: 200px; }
 
 .footer {
-  background-color: #233873;
+  background-color: #fff;
   z-index: 2;
   position: fixed;
   left: 240px;
   right: 0;
   bottom: 0;
-  color: #fff;
+  color: #000;
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1758,7 +1759,7 @@ span a {
   margin-bottom: 0; }
 
 .header {
-  background-color: #233870;
+  background-color: #fff;
   height: 70px;
   position: fixed;
   left: 240px;
@@ -1789,7 +1790,7 @@ span a {
       padding: 5px; } }
 
 .sidebar {
-  background-color: #233873;
+  background-color: #060A45;
   width: 240px;
   padding-bottom: 60px;
   position: fixed;
@@ -1845,14 +1846,14 @@ span a {
     .sidebar .sidebar-menu li.active ul {
       height: auto; }
     .sidebar .sidebar-menu li a {
-      color: rgba(255, 255, 255, 0.5);
+      color: #fff;
       text-decoration: none;
       display: block; }
     .sidebar .sidebar-menu li a:hover,
     .sidebar .sidebar-menu li.open > a,
     .sidebar .sidebar-menu li.open a:hover {
       color: #ffffff;
-      background-color: #2d363f; }
+      background-color: #F07D1E; }
     .sidebar .sidebar-menu .arrow {
       float: right;
       font-size: 18px;
@@ -1872,7 +1873,7 @@ span a {
       padding-right: 15px; }
     .sidebar .sidebar-menu > li.active > a,
     .sidebar .sidebar-menu > li.active > a:hover {
-      background-color: #85CE36 !important;
+      background-color: #F07D1E !important;
       color: #ffffff !important; }
     .sidebar .sidebar-menu > li.open > a {
       background-color: #333e48; }
@@ -2667,7 +2668,7 @@ span a {
       display: none; }
   .header .header-block-nav > ul > li > a {
     padding: 0 15px;
-    color: #fff; 
+    color: #233873; 
     text-transform: uppercase;
   }
     .header .header-block-nav > ul > li > a:hover {

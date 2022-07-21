@@ -6,12 +6,12 @@
        
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Edit Question Category <a href="/questions-category" class="btn btn-info">Question Category List</a></h1>
+                <h1 class="title well p-2 bg-orange rounded">Edit Question Category <a href="/questions-category" class="btn btn-primary">Question Category List</a></h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                        <div class="card card-block sameheight-item">
+                        <div class="card card-block sameheight-item shadow-lg p-3 pb-2 bg-white rounded">
                             <form role="form" method="POST" action="{{route('update-qcategory')}}">
                                 @if(session()->has('update-category'))
                                 <div class="alert alert-success" id="alertMessage">

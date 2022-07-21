@@ -1,4 +1,9 @@
 
+<style>
+    .copy-right p a:hover{
+        color:#F07D1E;
+    }
+</style>
 <div id="footerpart">
         <div class="container">
             <div class="container-flex">
@@ -18,7 +23,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="footer-icon pt-3">
+                    <div class="footer-icon pt-3 " style="margin-left:21px">
                         <a target="_blank" href="https://www.youtube.com/channel/UCohPL3_a3SAuX19V24rk_4w"><i class="fa-brands fa-youtube"></i></a> 
                         <a target="_blank" href="https://www.instagram.com/gtechnicalhub/"><i class="fa-brands fa-instagram-square"></i></a> 
                         <a target="_blank" href="https://www.facebook.com/gtechnicalhub"><i class="fa-brands fa-facebook-square"></i></a>

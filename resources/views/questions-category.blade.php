@@ -6,14 +6,12 @@
         
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Question Category <a class="btn btn-primary" href="/questions-topic">Add Question Topic</a> </h1>
-
+                <h1 class="title well p-2 bg-orange">Question Category <a class="btn btn-primary" href="/questions-topic">Add Question Topic</a> </h1>
             </div>
-
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                        <div class="card card-block sameheight-item">
+                        <div class="card card-block sameheight-item shadow-lg p-3 rounded bg-white">
                             <form role="form" method="post" action="{{route('create-qcategory')}}">
                                 @csrf
                                 @if(session()->has('add-category'))
@@ -48,14 +46,12 @@
                             </form>
                         </div>
                     </div>
-
                 </div>
-
-                <div class="row sameheight-container">
+                <div class="row sameheight-container ">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-block">
-                                <div class="card-title-block">
+                                <div class="card-title-block rounded shadow-lg p-3">
                                     <h3 class="title"> Question Category List </h3>
                                 </div>
                                 <section class="example">

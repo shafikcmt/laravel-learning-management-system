@@ -6,22 +6,23 @@
      
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Add Students <a class="btn btn-info" href="/all-student">Back</a></h1>
+                <h1 class="title well p-2 bg-orange">Add Students <a class="btn btn-primary" href="/all-student">Back</a></h1>
                 <p class="title-description"> </p>
             </div>
             <div class="row mb-3">
+               
                     <div class="col-md-3">
                         <h4>Bulk Import</h4>
                     </div>
                     <div class="col-md-3 offset-md-6">
-                        <a href="/import-demo" class="btn btn-info pull-right rounded"> + Sample Downloads</a>
+                        <a href="/import-demo" class="btn btn-primary pull-right rounded"> + Sample Downloads</a>
                     </div>
                 </div>
             <section class="section">
             
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card card-block sameheight-item">
+                        <div class="card card-block sameheight-item shadow-lg p-3 bg-white rounded">
                             <form action="{{route('import')}}" method="POST" enctype="multipart/form-data">
                                 @if (count($errors) > 0)
                                 <div class="row">

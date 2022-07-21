@@ -7,7 +7,7 @@
        
         <article class="content responsive-tables-page">
         <div class="title-block">
-                <h1 class="title well p-3">Update Category <a href="/add-category" class="btn btn-info">Category List</a> </h1>
+                <h1 class="title well p-2 bg-orange">Update Category <a href="/add-category" class="btn btn-primary">Category List</a> </h1>
                 
             </div>
         
