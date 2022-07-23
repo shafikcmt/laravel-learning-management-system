@@ -5,13 +5,20 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <img src="images/gspbanner12.jpg" alt="Los Angeles" class="d-block w-100">
+    <img src="{{asset('images/homeslider/Website.jpg')}}" alt="Los Angeles" class="d-block w-100">
     </div>
     <div class="carousel-item">
-    <img src="images/gspbanner12.jpg" alt="Los Angeles" class="d-block w-100">
+    <img src="{{asset('images/homeslider/Website2.jpg')}}" alt="Los Angeles" class="d-block w-100">
+
     </div>
     <div class="carousel-item">
-    <img src="images/gspbanner12.jpg" alt="Los Angeles" class="d-block w-100">
+    <img src="{{asset('images/homeslider/Website3.jpg')}}" alt="Los Angeles" class="d-block w-100">
+
+    </div>
+
+    <div class="carousel-item">
+    <img src="{{asset('images/homeslider/Website4.jpg')}}" alt="Los Angeles" class="d-block w-100">
+
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

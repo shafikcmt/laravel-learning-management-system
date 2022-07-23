@@ -11,7 +11,7 @@ use App\Models\Qtopic;
 use App\Models\AddQuestion;
 use App\Models\QuizAnswer;
 use App\Models\attempt_quiz;
-
+use paginate;
 // use Session;
 use App\Models\Qcategory;
 use Illuminate\Support\Facades\DB;
@@ -48,7 +48,8 @@ class CourseMappingController extends Controller
 
     public function allQuestion($id){
         $data = Student::where('id','=',Session::get('loginId'))->first();
-        $questions = Qtopic::find($id)->addquestion;
+        // $questions = Qtopic::find($id)->addquestion()->skip(0)->take(20)->paginate(1);
+        $questions = Qtopic::find($id)->addquestion->skip(0)->take(20);
         $qtopic = Qtopic::find($id);
         return view('/all-question',compact('questions','data','qtopic'));
     }
@@ -131,31 +132,20 @@ class CourseMappingController extends Controller
     }
    
   
-    public function Test(){
-        // $data = DB::table('add_questions')
-        // ->leftJoin('qtopics', 'add_questions.id', '=', 'add_questions.qtopic_id')
-        // ->get();
-
-        // $qtopics = Qtopic::find($id)->addquestion->all();
-        // $questions = AddQuestion::where('qtopic_id',$id)->get();
-        // $attemp = attempt_quiz::all();
-        // echo $attemp->student_id.'<br>';
-        //  dd($attemp->student_id);  
-        //     foreach($attemp as $attemp){
-        //         dd($attemp);
-        //     }
-           
-        // return view('test',compact());
-        $data = Student::where('id','=',Session::get('loginId'))->first();
-        $results = attempt_quiz::select("*")->where([
-            ["student_id", "=", $data->id]
+    public function Test($id,$tid){
+        $exam_results = QuizAnswer::select("*")->where([
+            ["student_id", "=", $id],
+            ["qtopic_id", "=", $tid]
         ])->get();
-        // $exam_results = attempt_quiz::all();
 
-        foreach($results as $result){
-        dd(round($result->perchantage));
+        $students = attempt_quiz::select("*")->where([
+            ["student_id", "=", $id],
+            ["topic_id", "=", $tid]
+        ])->get();
+       
+        foreach($students as $student){
+            echo $student->student_name.'<br>';
         }
-
+        
     }
- 
 }

@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <p class="text-muted text-center">Do not have an account?
-                                <a href="/student-registration">Sign Up!</a>
+                                <a style="color:#000;" href="/student-registration">Sign Up!</a>
                             </p>
                         </div>
                     </form>

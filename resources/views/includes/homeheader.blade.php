@@ -9,7 +9,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 text-center">
-                        <span>ghub@geeta.edu.in</span>
+                        <span style="font-weight:bold;">ghub@geeta.edu.in</span>
                         </div>
                         <div class="col-md-4">
                             <nav class="navbar-expand-md navbar-dark">

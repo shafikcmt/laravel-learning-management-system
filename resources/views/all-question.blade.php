@@ -83,13 +83,16 @@
                         <!-- <a type="submit" class="btn btn-primary pull-right">Next</a> -->
                         <button class="btn btn-primary pull-right mr-5 mr-5" type="submit">Next</button>
                     </form>
+                   
                 </div>
                 <div class="col-md-2 pull-right custom_count">
                     <div class="count_doun">
                     <h4>Quiz navigation</h4>
                     <a style="color:skyblue;" href="/student-dashboard">Finish attempt</a>
                     <div id="CountDownTimer" data-timer="900" style="width: 200px; height: 250px;"></div>
+                   
                     </div>
+                    
 
                 </div>
             </div>

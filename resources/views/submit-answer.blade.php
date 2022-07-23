@@ -14,8 +14,8 @@
     }
 
     #grad-per {
-        background-image: linear-gradient(to right, rgba(255, 0, 0, 100), rgba(255, 0, 200, 1));
-        height: 92px;
+        background-image: linear-gradient(to right top, #233873, #763a82, #b93775, #e54c52, #f07d1e);
+
     }
 
 </style>
@@ -39,13 +39,21 @@
                                     <?php $i=1; ?>
                                     @foreach($results as $result)
                                     <h4>Question :<?php echo $i; ?></h4>
-                                    <p>Your Answer: {{$result->answer}}</p>
-                                    <p> Correct Answer :{{$result->qanswer}}</p>
+                                    @if($result->answer == $result->qanswer)
+                                    <p>Your Answer is Correct: <span style="color:green;">{{$result->answer}}</span></p>
+                                    @else
+                                    <p>Your Answer is Wrong: <span style="color:red;">{{$result->answer}}</span></p>
+                                    @endif
+                                    @if($result->answer == $result->qanswer)
+                                    @else       
+                                    <p> Correct Answer is :{{$result->qanswer}}</p>
+                                    @endif
                                     <?php $i++; ?>
                                     @endforeach
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
+                                        
                                         <div id="grad-score" class="col-md-5 bg-primary p-3 text-light"
                                             style="line-height:5px">
                                             <h4>Score</h4><br>

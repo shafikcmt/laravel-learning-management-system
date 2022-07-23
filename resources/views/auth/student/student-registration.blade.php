@@ -2,8 +2,8 @@
     @extends('layouts.masterauth')
     @section('content')
     @section('title','Student Registration')
-    <div class="auth">
-        <div class="auth-container" max-width="900px">
+    <div class="auth" style="background:url({{asset('images/Website3.jpg')}}); background-size:cover;left:0%">
+        <div class="auth-container" max-width="900px" style="left:25%">
             <div class="card">
                 <header class="auth-header">
                 @if(session()->has('message'))

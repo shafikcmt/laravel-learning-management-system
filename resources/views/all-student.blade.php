@@ -15,7 +15,7 @@
                             <div class="card-title-block">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <h3 class="title">Students List </h3>
+                                        <h3 class="title text-dark">Students List </h3>
                                     </div>
                                     <div class="col-md-4">
                                         <form action="" method="POST">

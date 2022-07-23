@@ -26,9 +26,7 @@
                                     <th>Semester</th>
                                     <th>Quiz Name</th>
                                     <th>Total Question</th>
-                                    <th>Wrong Answer</th>
-                                    <th>Right Answer</th>
-                                    <th>Perchantage</th>
+                                    <th>Action</th>
                                 </tr>
                                </thead>
                                <tbody>
@@ -43,10 +41,10 @@
                                     <td>{{$quiz_result->student_semester}}</td>
                                     <td>{{$quiz_result->topic_name}}</td>
                                     <td>{{$quiz_result->wrong_ans + $quiz_result->right_ans}}</td>
-                                    <td>{{$quiz_result->wrong_ans}}</td>
-                                    <td>{{$quiz_result->right_ans}}</td>
-                                    <td>{{round($quiz_result->perchantage)}}%</td>
-                                    <!-- <td><a href="#" class="btn btn-primary">View</a></td> -->
+                                   
+                                    <td>
+                                        <a href="/quiz-result/{{$quiz_result->student_id}}/{{$quiz_result->topic_id}}" class="btn btn-primary">View</a>
+                                    </td>
                                 </tr>
                                 <?php $i++ ?>
                                @endforeach

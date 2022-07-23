@@ -23,7 +23,7 @@ h3{
 }
 .card .title {
 	font-size: 1.1rem;
-	color: #fff;
+	color: #000;
 }
 .bg-orange{
     background: #f07d1e;
@@ -274,6 +274,7 @@ a:not(.btn) {
 }
 .first-title span {
 	margin-left: -11px;
+    font-weight: bold;
 }
 
 .footer-logo img {

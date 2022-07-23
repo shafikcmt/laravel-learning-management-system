@@ -1,6 +1,5 @@
 <?php
-// use App\Http\Livewire\HomeController;
-// use App\Http\Livewire\Studentlogin;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentAuth;
 use App\Http\Controllers\AdminAuth;
@@ -12,7 +11,7 @@ use App\Http\Controllers\CourseMappingController;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\AddQuestionController;
 use App\Http\Controllers\QuizResultController;
-use App\Http\Livewire\DriveSkills;
+
 
 
 
@@ -22,9 +21,6 @@ use App\Http\Livewire\Sturesetpass;
 use App\Http\Livewire\Resetpassword;
 use App\Http\Livewire\Adminlogin;
 
-// use App\Http\Livewire\ResultsQuizWise;
-// use App\Http\Livewire\ResultsBatchWise;
-// use App\Http\Livewire\ResultsDateWise;
 use App\Http\Livewire\CheckPassword;
 use App\Http\Livewire\Admindashboard;
 use Illuminate\Support\Facades\Route;
@@ -53,12 +49,7 @@ Route::get('/student-registration',[StudentAuth::class,'registration'])->middlew
 Route::post('/student-registration',[StudentAuth::class,'StudentRegister'])->name('student-register');
 Route::get('/password',[AllStudentController::class,'ShowPassword']);
 // **************************************************************************
-// Student Livewire class
-//---------------------------------
-Route::get('/drive-skills',DriveSkills::class);
-// Route::get('/student-registration',StudentRegistrations::class);
-// Route::get('/',Home::class);
-// Route::get('/student-login',Studentlogin::class);
+
 Route::get('/reset-password-student',Sturesetpass::class);
 
 //************************************************************************************ */
@@ -146,13 +137,14 @@ Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
 Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
 Route::get('/show-answer',[CourseMappingController::class,'showAnswer']);
-Route::get('/test',[CourseMappingController::class,'Test']);
+Route::get('/test/{id}/{tid}',[CourseMappingController::class,'Test']);
 
 Route::get('/results-quiz-wise',[QuizResultController::class,'indexQuiz']);
 Route::get('/results-batch-wise',[QuizResultController::class,'indexBatch']);
 Route::get('/results-date-wise',[QuizResultController::class,'indexDate']);
 Route::get('/quiz-all-results',[QuizResultController::class,'allStudentResult']);
-
+Route::get('/quiz-result/{student_id}/{topic_id}',[QuizResultController::class,'singleQuizResult']);
+  
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');
 Route::get('/admin-dashboard',[AdminAuth::class,'index']);
 
