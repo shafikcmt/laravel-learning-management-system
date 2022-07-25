@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Batch;
+use Illuminate\Support\Facades\Response;
+use Excel;
+use App\Imports\studentsBatchImport;
 class BatchController extends Controller
 {
     public function addBatch(){
@@ -40,5 +43,23 @@ class BatchController extends Controller
     public function batchDelete($id){
         Batch::where('id',$id)->delete();
         return back()->with('delete-batch','Batch record Deleted Successfully !');
+    }
+    public function demoBatchFile(){
+        $file = public_path(). "/file/batch.xlsx";
+        $headers = ['Content-Type: application/xlsx'];
+        if (file_exists($file)) {
+            return Response::download($file, 'batch.xlsx', $headers);
+        } else {
+            echo('File not found.');
+        }
+    }
+    public function studentsAddBatch(Request $request){
+        $request->validate([
+            'file' => 'required|mimes:xlsx,csv',
+            'batch_id' => 'required',
+        ]);
+        Excel::import(new studentsBatchImport ,$request->file('file'),$request->batch_id);
+        return back()->with('students-add-batch','Students add to batch Successfully !');
+
     }
 }

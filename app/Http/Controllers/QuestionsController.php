@@ -23,6 +23,7 @@ class QuestionsController extends Controller
     public function createTopic(Request $request){
         $request->validate([
             'topic_name' => 'required',
+            'category' => 'required',
         ]);
         $qcategory = Qcategory::find($request->category_id);
         $topics = new Qtopic;

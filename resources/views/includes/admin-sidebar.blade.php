@@ -50,9 +50,9 @@
                         <li>
                             <a href="/add-courses"> Add Courses </a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="/course-mapping"> Course Mapping </a>
-                        </li> -->
+                        </li>
                     </ul>
                 </li>
                 <li>

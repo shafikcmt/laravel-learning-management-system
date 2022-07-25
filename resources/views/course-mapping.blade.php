@@ -6,7 +6,7 @@
    
         <article class="content responsive-tables-page">
         <div class="title-block">
-                <h1 class="title well p-3">Course Mapping</h1>
+                <h1 class="title well p-2 bg-orange">Course Mapping</h1>
                 
             </div>
         

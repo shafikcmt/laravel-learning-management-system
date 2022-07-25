@@ -28,12 +28,13 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Question Category</label>
-                                    <select name="category_id" id="" class="form-control">
+                                    <select name="category" id="" class="form-control">
+                                        <option value="" selected>Select Category</option>
                                         @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->category_name}}</option>
                                         @endforeach
                                     </select>
-                                    <div class="text-danger">@error('category_id') {{$message}} @enderror</div>
+                                    <div class="text-danger">@error('category') {{$message}} @enderror</div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Topic Name</label>
@@ -72,7 +73,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                               
                                               @foreach($topics as $key => $topic)
                                                 <tr>
                                                     <td>{{$topics->firstitem() + $key}}</td>

@@ -88,6 +88,9 @@ Route::post('/create-batch',[BatchController::class,'createBatch'])->name('creat
 Route::get('/edit-batch/{id}',[BatchController::class,'editBatch']);
 Route::post('/edit-batch',[BatchController::class,'updateBatch'])->name('update-batch');
 Route::get('/batch-delete/{id}',[BatchController::class,'batchDelete']);
+Route::post('/add-batch',[BatchController::class,'studentsAddBatch'])->name('studentsaddbatch');
+Route::get('/demo-batch-file',[BatchController::class,'demoBatchFile']);
+
 
 Route::get('/questions-topic',[QuestionsController::class,'addTopic']);
 Route::post('/create-topic',[QuestionsController::class,'createTopic'])->name('create-topic');
