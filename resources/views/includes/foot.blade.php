@@ -59,3 +59,24 @@
        $('#alertMessage').delay(2000).fadeOut();
       });
 </script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#category').on('change', function () {
+                var categoryId = this.value;
+                $('#course').html('');
+                $.ajax({
+                    url: '{{ route('getCourse') }}?id='+categoryId,
+                    type: 'get',
+                    success: function (res) {
+                        $('#course').html('<option value="">Select Course</option>');
+                        $.each(res, function (key, value) {
+                            $('#course').append('<option  value="' + value
+                                .id + '">' + value.name + '</option>');
+                        });
+                       
+                    }
+                });
+            });
+           
+        });
+    </script>

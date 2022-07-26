@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Batch extends Model
+class CourseBatch extends Model
 {
     use HasFactory;
-    protected $table = 'batches';
+    protected $table = 'course_batches';
     protected $fillable = [
-        'batch_name'
+        'course_id',
+        'batch_id',
     ];
-
-    
 }

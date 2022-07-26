@@ -14,15 +14,20 @@
                         <div class="row sameheight-container">
                             <div class="col-md-8 offset-md-2">
                                 <div class="card card-block sameheight-item">
-                                    <form role="form">
+                                    @if(session()->has('course-map'))
+                                    <div class="alert alert-success">
+                                        {{session()->get('course-map')}}
+                                    </div>
+                                    @endif
+                                    <form method="POST" action="{{route('course.map')}}">
+                                        @csrf
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Select Category</label>
                                             <div class="form-group">
                                              
-                                            <select class="form-control" name="category_id">
+                                            <select class="form-control" id="category">
                                             <option selected>--Select Category--</option>
                                                 @foreach($categories as $category)
-                                                
                                                 <option value="{{$category->id}}">{{$category->category_name}}</option>
                                                 @endforeach
                                             </select>
@@ -32,23 +37,23 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Select Course</label>
                                             <div class="form-group">
-                                            <select class="form-control" >
-                                                <option selected>--Select Course--</option>
-                                                
-                                               
-                                                
+                                            <select id="course" class="form-control" name="course_id">
+
                                             </select>
+                                            <span class="text-danger">@error('course_id'){{$message}}@enderror</span>
                                         </div> 
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Select Batch</label>
                                             <div class="form-group">
-                                            <select class="form-control">
+                                            <select class="form-control" name="batch_id">
                                             <option selected>--Select Batch--</option>
                                             @foreach($batches as $batch)
-                                                <option>{{$batch->batch_name}}</option>
+                                                <option value="{{$batch->id}}">{{$batch->batch_name}}</option>
                                             @endforeach
                                             </select>
+                                            <span class="text-danger">@error('batch_id'){{$message}}@enderror</span>
+
                                         </div> 
                                         </div>
                                         <div class="form-group">
@@ -65,4 +70,8 @@
         </article>
     </div>
 </div>
+
+
 @stop
+
+

@@ -11,6 +11,7 @@ use App\Models\Qtopic;
 use App\Models\AddQuestion;
 use App\Models\QuizAnswer;
 use App\Models\attempt_quiz;
+use App\Models\CourseBatch;
 use paginate;
 // use Session;
 use App\Models\Qcategory;
@@ -19,11 +20,34 @@ use Illuminate\Support\Facades\Session;
 class CourseMappingController extends Controller
 {
     public function index(Request $request){
-        $categories = Category::orderBy('id','DESC')->get();
+        // $categories = Category::orderBy('id','DESC')->get();
+        $categories = \DB::table('categories')->get();
         $batches = Batch::orderBy('id','DESC')->get();
-        $courses = Category::find($request->category_id);
+        // $courses = Category::find($request->category_id);
         return view('course-mapping',compact('categories','batches'));
     }
+    public function getCourse(Request $request){
+        $course = \DB::table('courses')
+        ->where('category_id', $request->id)
+        ->get();
+    
+    if (count($course) > 0) {
+        return response()->json($course);
+    }
+    }
+
+    public function courseMap(Request $request){
+        $request->validate([
+            'course_id'        => 'required',
+            'batch_id'       => 'required',
+        ]);
+        $course_map = new CourseBatch();
+        $course_map->course_id = $request->course_id;
+        $course_map->batch_id = $request->batch_id;
+        $course_map->save();
+        return back()->with('course-map','Course map Successfully !');
+    }
+
     public function courseView($id)
     {
         $data = Student::where('id','=',Session::get('loginId'))->first();

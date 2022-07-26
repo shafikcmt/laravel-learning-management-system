@@ -135,6 +135,8 @@ Route::post('/edit-courses',[AddCourseController::class,'updateCourse'])->name('
 Route::get('/delete-courses/{id}',[AddCourseController::class,'deleteCourse']);
 
 Route::get('/course-mapping',[CourseMappingController::class,'index']);
+Route::get('get-course',[CourseMappingController::class,'getCourse'])->name('getCourse');
+Route::post('/course-mapping',[CourseMappingController::class,'courseMap'])->name('course.map');
 Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']);
 Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
