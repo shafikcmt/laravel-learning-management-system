@@ -12,6 +12,7 @@ use App\Models\AddQuestion;
 use App\Models\QuizAnswer;
 use App\Models\attempt_quiz;
 use App\Models\CourseBatch;
+use App\Models\StudentsBatch;
 use paginate;
 // use Session;
 use App\Models\Qcategory;
@@ -156,20 +157,24 @@ class CourseMappingController extends Controller
     }
    
   
-    public function Test($id,$tid){
-        $exam_results = QuizAnswer::select("*")->where([
-            ["student_id", "=", $id],
-            ["qtopic_id", "=", $tid]
-        ])->get();
+    public function Test(){
+                // $courses = DB::table('categories')
+                // ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
+                // ->leftJoin('course_batches', 'courses.id', '=', 'course_batches.course_id')
+                // ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
+                
+                // ->get(); 
 
-        $students = attempt_quiz::select("*")->where([
-            ["student_id", "=", $id],
-            ["topic_id", "=", $tid]
-        ])->get();
+                
+                $courses = DB::table('course_batches')
+                ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
+                ->leftJoin('courses', 'course_batches.batch_id', '=', 'courses.id')
+                ->leftJoin('categories','categories.id', '=','courses.category_id')
+                ->where('students_batches.student_roll', '=', 123456)
+                ->get(); 
+                dd($courses);
+          
+    
        
-        foreach($students as $student){
-            echo $student->student_name.'<br>';
-        }
-        
     }
 }

@@ -15,6 +15,7 @@
                     <div class="card-block">
 
                     <div class="owl-carousel owl-theme">
+                        
                         @foreach($courses as $course)
                         <div class="item">
                             <div class="card card-default">
@@ -35,6 +36,7 @@
                             </div>
                         </div>
                         @endforeach
+                       
                     </div>
                 </div>
             </div>

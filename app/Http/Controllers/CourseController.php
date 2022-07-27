@@ -12,8 +12,6 @@ class CourseController extends Controller
         return view('/add-category',compact('categories'));
     }
 
-   
-
     public function createCategory(Request $request){
         $request->validate([
             'category_name' => 'required|unique:categories',
@@ -44,9 +42,5 @@ class CourseController extends Controller
     public function categoryDelete($id){
         Category::where('id',$id)->delete();
         return back()->with('delete-category','Category record Deleted Successfully !');
-    }
-
-
-
-    
+    }   
 }

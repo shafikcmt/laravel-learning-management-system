@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Hash;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\StudentsBatch;
 use Illuminate\Support\Facades\DB;
 use Session;
 class StudentAuth extends Controller
@@ -67,15 +68,19 @@ public function StudentRegister(Request $request){
         }
     }
     public function StudentDashboard(){
-       
         $data = array();
         if(Session::has('loginId')){
-            $data = Student::where('id','=',Session::get('loginId'))->first();
-            $courses = DB::table('categories')
-            ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
-            ->get();
-        }
+            // $setbatch = new StudentsBatch;
+            $data = Student::where('id','=',Session::get('loginId'))->first();            
+                $courses = DB::table('course_batches')
+                ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
+                ->leftJoin('courses', 'course_batches.course_id', '=', 'courses.id')
+                ->leftJoin('categories','categories.id', '=','courses.category_id')
+                ->where('students_batches.student_roll', '=', $data->roll)
+                ->get();        
+            }
         return view('/student-dashboard',compact('data','courses'));
+
     }
     public function Logout(){
         if(Session::has('loginId'));

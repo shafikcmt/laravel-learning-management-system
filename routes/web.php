@@ -142,7 +142,7 @@ Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
 Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
 Route::get('/show-answer',[CourseMappingController::class,'showAnswer']);
-Route::get('/test/{id}/{tid}',[CourseMappingController::class,'Test']);
+Route::get('/test',[CourseMappingController::class,'Test']);
 
 Route::get('/results-quiz-wise',[QuizResultController::class,'indexQuiz']);
 Route::get('/results-batch-wise',[QuizResultController::class,'indexBatch']);
