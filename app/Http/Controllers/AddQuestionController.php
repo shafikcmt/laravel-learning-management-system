@@ -47,9 +47,10 @@ class AddQuestionController extends Controller
     public function createBulkQuestion(Request $request){
         $request->validate([
             'file' => 'required|mimes:xlsx,csv',
+            'qtopic_id' => 'required',
         ]);
         $path = request()->file('file');
-        Excel::import(new QuestionImport,$path);
+        Excel::import(new QuestionImport,$path,$request->qtopic_id);
         return back()->with('bulk-question', 'Bulk Question Added Successfully !'); 
     }
 

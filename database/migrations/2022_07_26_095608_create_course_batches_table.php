@@ -14,11 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('course_batches', function (Blueprint $table) {
+            // $table->id();
+            // $table->unsignedBigInteger('course_id');
+            // $table->foreign('course_id')->references('id')->on('courses');
+            // $table->unsignedBigInteger('batch_id');
+            // $table->foreign('batch_id')->references('id')->on('batches');
+            // $table->timestamps();
+
             $table->id();
-            $table->unsignedBigInteger('course_id');
-            $table->foreign('course_id')->references('id')->on('courses');
-            $table->unsignedBigInteger('batch_id');
-            $table->foreign('batch_id')->references('id')->on('batches');
+            $table->string('course_id');
+            $table->string('batch_id');
             $table->timestamps();
         });
     }

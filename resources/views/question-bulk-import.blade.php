@@ -67,7 +67,17 @@
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-sm-12">
-                                    
+                                    <div class="form-group">
+                                        <label for="topic_id">Topic Name</label>
+                                        <select name="qtopic_id" id="" class="form-control">
+                                            <option selected >Select Quiz</option>
+                                        @foreach($qtopics as $qtopic)
+                                            <option value="{{$qtopic->id}}">{{$qtopic->topic_name}}</option>
+                                        @endforeach
+                                        </select>
+                                        <div class="text-danger">@error('topic_name') {{$message}} @enderror</div>
+
+                                    </div>
                                         <div class="form-group">
                                         <label for="colFormLabel" class=" col-form-label">Excell/CSV File <span style="color:red">*</span></label>
                                         <input type="file" name="file" class="form-control" id="colFormLabel" placeholder="">

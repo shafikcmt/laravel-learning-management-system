@@ -18,10 +18,12 @@
                                         <h3 class="title text-dark">Students List </h3>
                                     </div>
                                     <div class="col-md-4">
-                                        <form action="" method="POST">
-                                        <input style="border:none;" name="search" type="text" class="form-control" id="colFormLabel"
+                                       <div class="form-group">
+                                       <input style="" id="search" name="search" type="text" class="form-control"
                                             placeholder="Quick Search">
-                                        </form>
+                                       </div>
+                                      
+                                        
                                     </div>
                                     <div class="col-md-4">
                                         <div class="student_list_icon float-right ">
@@ -46,7 +48,10 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Serial</th>
+                                            <th class="text-center" colspan="8">Total Students : <span id="total_records"></span></th>
+                                        </tr>
+                                        <tr>
+                                            <!-- <th>Serial</th> -->
                                             <th>Name</th>
                                             <th>Roll No</th>
                                             <th>Class</th>
@@ -57,35 +62,11 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @if(count($students))
-                                        @foreach($students as $serial => $student)
-                                        <tr>
-                                            <td>{{$students->firstItem() + $serial}}</td>
-                                            <td>{{$student->name}}</td>
-                                            <td>{{$student->roll}}</td>
-                                            <td>{{$student->class}}</td>
-                                            <td>{{$student->branch}}</td>
-                                            <td>{{$student->semester}}</td>
-                                            <td>{{$student->mobile}}</td>
-                                            <td>{{$student->email}}</td>
-                                            <td>
-                                                <a href="edit-student/{{$student->id}}" class="btn btn-primary"><i
-                                                        class="fa-solid fa-pen-to-square"></i></a>
-                                                <a href="student-delete/{{$student->id}}" class="btn btn-primary"><i
-                                                        class="fa-solid fa-trash"></i></a>
-                                            </td>
-                                        </tr>
-                                      
-                                        @endforeach
-                                        @else
-                                        <tr>
-                                            <td colspan="9">Students not found !</td>
-                                        </tr>
-                                        @endif
+                                    <tbody id="students">
+
                                     </tbody>
                                 </table>
-                                {{$students->links('pagination::bootstrap-5')}}
+                            
                             </div>
                         </section>
                     </div>
@@ -97,4 +78,6 @@
     </article>
     </div>
     </div>
+ 
     @stop
+

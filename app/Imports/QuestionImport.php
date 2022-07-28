@@ -26,7 +26,6 @@ class QuestionImport implements WithHeadingRow, ToCollection
              '*.option2' => 'required',
              '*.option3' => 'required',
              '*.option4' => 'required',
-             '*.qtopic_id' => 'required',
          ])->validate();
 
         foreach ($rows as $row) {
@@ -37,7 +36,7 @@ class QuestionImport implements WithHeadingRow, ToCollection
                 'option2'   => $row['option2'],
                 'option3'   => $row['option3'],
                 'option4'   => $row['option4'],
-                'qtopic_id' => $row['qtopic_id'],
+                'qtopic_id' => request('qtopic_id'),
             ]);
 
         }

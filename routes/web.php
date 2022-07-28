@@ -65,6 +65,7 @@ Route::post('/import',[AllStudentController::class,'import'])->name('import');
 Route::get('/edit-student/{id}',[AllStudentController::class,'EditStudent']);
 Route::get('/student-delete/{id}',[AllStudentController::class,'studentDelete']);
 Route::get('all-student',[AllStudentController::class,'allStudent']);
+Route::get('all-student/action',[AllStudentController::class,'action'])->name('all-student.action');
 
 Route::get('/add-students',[AllStudentController::class,'addStudent']);
 Route::post('/add-students',[AllStudentController::class,'createStudent'])->name('student-add');
