@@ -13,7 +13,7 @@
                         <h1  class="title well p-2 bg-orange"> Available Course </h1>
                     </div>
                     <div class="card-block">
-
+                    @if(count($courses))
                     <div class="owl-carousel owl-theme">
                         
                         @foreach($courses as $course)
@@ -38,6 +38,9 @@
                         @endforeach
                        
                     </div>
+                    @else
+                    <p>Quiz is not Available for you !</p>
+                    @endif
                 </div>
             </div>
                 </div>
@@ -59,6 +62,7 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
+                                @if(count($courses))
                                 @foreach($courses as $course)
                                 <tbody style="color:#000">
                                     <tr>
@@ -71,6 +75,11 @@
                                     </tr>
                                 </tbody>
                                 @endforeach
+                                @else
+                                <tr>
+                                    <th class="text-center" colspan="3">Quiz is not Available for you !</th>
+                                </tr>
+                                @endif
                             </table>
                         </div>
                         </div>

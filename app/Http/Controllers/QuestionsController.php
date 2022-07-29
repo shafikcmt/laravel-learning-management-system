@@ -24,10 +24,11 @@ class QuestionsController extends Controller
         $request->validate([
             'topic_name' => 'required',
         ]);
-        $qcategory = Qcategory::find($request->category_id);
+        $qcategory = Qcategory::find($request->category);
         $topics = new Qtopic;
         $topics->topic_name = $request->topic_name;
         $qcategory->qtopic()->save($topics);
+
         return back()->with('add-topic','Topic added successfully !');
     }
     public function editTopic($id){
@@ -35,6 +36,7 @@ class QuestionsController extends Controller
         $categories = Qcategory::all();
         return view('/edit-topic',compact('categories','qtopics'));
     }
+
 
     public function updateTopic(Request $request){
         $qcategory = Qcategory::find($request->category_id);

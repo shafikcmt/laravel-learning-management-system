@@ -36,6 +36,7 @@
                                     </select>
                                     <div class="text-danger">@error('category') {{$message}} @enderror</div>
                                 </div>
+                                
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Topic Name</label>
                                     <input type="text" name="topic_name" class="form-control" id="category"
