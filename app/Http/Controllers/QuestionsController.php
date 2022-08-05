@@ -22,11 +22,16 @@ class QuestionsController extends Controller
     }
     public function createTopic(Request $request){
         $request->validate([
+            'category' => 'required',
             'topic_name' => 'required',
+            'quiz_time' => 'required',
+            'total_question' => 'required',
         ]);
         $qcategory = Qcategory::find($request->category);
         $topics = new Qtopic;
         $topics->topic_name = $request->topic_name;
+        $topics->total_question = $request->total_question;
+        $topics->total_time = $request->quiz_time;
         $qcategory->qtopic()->save($topics);
 
         return back()->with('add-topic','Topic added successfully !');

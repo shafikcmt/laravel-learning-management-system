@@ -89,7 +89,7 @@
                                                 @endforeach
                                                 @else
                                                 <tr>
-                                                    <td>Category Not Found !</td>
+                                                    <td colspan="3">Category Not Found !</td>
                                                 </tr>
                                                 @endif
                                             </tbody>

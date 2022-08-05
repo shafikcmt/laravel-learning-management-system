@@ -69,14 +69,15 @@
 
                 </div>
                 <div class="row sameheight-container">
-                    <div class="col-md-12">
+                    <div class="col-md-12 ">
 
-                        <div class="card sameheight-item" data-exclude="xs,sm">
+                        <div class="card sameheight-item shadow-lg p-3 mb-3 bg-white rounded" data-exclude="xs,sm">
                             <div class="title-block">
-                                <h1 class="title well p-3 bg-orange"> Available Course</h1>
+                                <h1 class="title card-title p-3 bg-orange"> Available Course</h1>
                             </div>
 
-                            <div class="card-block">
+                            <div class="card-block ">
+                                @if(count($courses))
                                 <div class="owl-carousel owl-theme">
                                     @foreach($courses as $course)
                                     <div class="item">
@@ -99,13 +100,18 @@
                                         </div>
                                     </div>
                                     @endforeach
+                                    @else
+                                    <div class=" text-danger text-center">
+                                        Course Not found
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                    <div class="container">
-                        <div class="row">
+                </div>
+                        <div class="row sameheight-container">
                             <div class="col-md-12">
                                 <div class="card">
 
@@ -118,7 +124,8 @@
                                                 <div class="table-responsive shadow-lg p-3 mb-3 bg-white rounded">
 
                                                     <table class="table table-striped table-bordered table-hover">
-                                                        <thead>
+                                                 
+                                                    <thead>
                                                             <tr class="text-left">
                                                                 <th>Course Name</th>
                                                                 <th>Course Category</th>
@@ -126,8 +133,8 @@
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
+                                                        @if(count($courses))    
                                                         @foreach($courses as $course)
-
                                                         <tbody>
                                                             <tr>
                                                                 <td>{{$course->category_name}}</td>
@@ -146,6 +153,13 @@
                                                             </tr>
                                                         </tbody>
                                                         @endforeach
+                                                        @else
+                                                        <tr>
+                                                            <td colspan="4">
+                                                                <div class="text-danger text-center">Course Not Found</div>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
                                                     </table>
                                                 </div>
                                             </div>
@@ -154,7 +168,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
 
 
             </section>

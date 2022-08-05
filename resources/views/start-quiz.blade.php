@@ -20,8 +20,8 @@
                         </div>
                                 <div class="card-body">
                                     
-                                <center><h4>Time limit: 30 mins</h4></center>
-                                <center><h4>Total Question: {{$qtopic->addquestion->count()}}</h4></center>
+                                <center><h4>Time limit: {{$qtopic->total_time}} mins</h4></center>
+                                <center><h4>Total Question: {{$qtopic->total_question}}</h4></center>
                                 <br><br>
                                 <center>
                                   <a  onclick="quizStart()" class="btn btn-primary" href="/all-question/{{$qtopic->id}}">Start Quiz</a></li>

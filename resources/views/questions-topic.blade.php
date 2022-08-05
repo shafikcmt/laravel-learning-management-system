@@ -6,7 +6,7 @@
         
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-2 bg-orange">Question Topic <a class="btn btn-primary" href="/questions-category">Add Category</a></h1>
+                <h1 class="title well p-2 bg-orange">Add Quiz <a class="btn btn-primary" href="/questions-category">Add Category</a></h1>
 
             </div>
 
@@ -38,11 +38,25 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Topic Name</label>
+                                    <label for="exampleInputEmail1">Quiz Name</label>
                                     <input type="text" name="topic_name" class="form-control" id="category"
-                                        name="batch" placeholder="Enter topic name">
+                                        name="batch" placeholder="Enter Quiz name">
                                         <div class="text-danger">@error('topic_name') {{$message}} @enderror</div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Total Question</label>
+                                    <input type="text" name="total_question" class="form-control" id="category"
+                                        name="batch" placeholder="Enter Total Questions">
+                                        <div class="text-danger">@error('total_question') {{$message}} @enderror</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Quiz Time</label>
+                                    <input type="text" name="quiz_time" class="form-control" id="category"
+                                        name="batch" placeholder="Time">
+                                        <div class="text-danger">@error('quiz_time') {{$message}} @enderror</div>
+                                </div>
+
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </div>

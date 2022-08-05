@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Batch;
@@ -73,31 +72,31 @@ class CourseMappingController extends Controller
 
     public function allQuestion($id){
         $data = Student::where('id','=',Session::get('loginId'))->first();
-        // $questions = Qtopic::find($id)->addquestion()->skip(0)->take(20)->paginate(1);
-        $questions = Qtopic::find($id)->addquestion->skip(0)->take(20);
         $qtopic = Qtopic::find($id);
+        $questions = Qtopic::find($id)->addquestion->skip(0)->take($qtopic->total_question);
         return view('/all-question',compact('questions','data','qtopic'));
     }
     public function submitAnswer(Request $request){
         $data = Student::where('id','=',Session::get('loginId'))->first();
         $request->validate([
             'answer'        => 'required',
-            'qanswer'       => 'required',
         ]);
-        $answer = new QuizAnswer;
-        // $data = $request->all();
-            foreach ($request->get('answer') as $question_id  => $answer) {
-                $answers[] = [
-                    'student_id' => $request->student_id,
-                    'qtopic_id' => $request->topic_id,
-                    'addquestion_id' => $question_id,
-                    'answer' => $answer,
-                    'qanswer' => $request->qanswer,
-                ];
+        $c = count($request->answer);
+        // dd($c);
+        $answers = [];
+        foreach($request->get('answer') as $question_id => $answer ){
+            $answers[] = [
+                'student_id' => $request->student_id,
+                'qtopic_id' => $request->topic_id,
+                'answer' => $answer,
+                'qanswer' => $request['canswer'][$question_id],
+                'addquestion_id' => $question_id,          
+            ];
+           
         }
-        $ans = $request->get('answer');
-        DB::table('quiz_answers')->insert($answers);
-        // $results = QuizAnswer::where('student_id',$data->id)->get();
+    
+        // dd($answers);
+        QuizAnswer::insert($answers);
         $results = QuizAnswer::select("*")->where([
             ["student_id", "=", $data->id],
             ["qtopic_id", "=", $request->topic_id]
@@ -143,10 +142,7 @@ class CourseMappingController extends Controller
         foreach ($results as $result) {
          dd($result->answer);
         }
-        
         // return view('/submit-answer')->with('submit_answer','Your Answer Submited Successfully !')->with(['data'=>$data,'results'=>$results]);
-
-
     }
     public function StudentResult(){
         $data = Student::where('id','=',Session::get('loginId'))->first();
@@ -165,14 +161,13 @@ class CourseMappingController extends Controller
                 
                 // ->get(); 
 
+                $answer = array('Sofik','Rofik','Mannan','Islam');
+                $canswer = array('s','r','m','i');
+                $result = array_combine($answer,$canswer);
+                // foreach($result as list($answer,$canswer)){
+                dd($result);
+                // }
                 
-                $courses = DB::table('course_batches')
-                ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
-                ->leftJoin('courses', 'course_batches.batch_id', '=', 'courses.id')
-                ->leftJoin('categories','categories.id', '=','courses.category_id')
-                ->where('students_batches.student_roll', '=', 123456)
-                ->get(); 
-                dd($courses);
           
     
        

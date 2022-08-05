@@ -37,17 +37,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/',[HomeController::class,'index']);
+
+Route::get('/',[HomeController::class,'index'])->middleware(['studentlogin','ifStudentLogin']);
 // Student Controller
 //------------------------------------
 Route::get('/student-login',[StudentAuth::class,'login'])->middleware('studentlogin');
 Route::get('/student-logout',[StudentAuth::class,'Logout']);
 Route::get('/student-dashboard',[StudentAuth::class,'StudentDashboard'])->middleware('studentauthcheck');
 Route::post('/student-login',[StudentAuth::class,'LoginStudent'])->name('student-login');
-Route::get('/student-profile/{id}',[StudentAuth::class,'StudentProfile']);
+Route::get('/student-profile/{id}',[StudentAuth::class,'StudentProfile'])->middleware('ifStudentLogin');
 Route::get('/student-registration',[StudentAuth::class,'registration'])->middleware('studentlogin');
 Route::post('/student-registration',[StudentAuth::class,'StudentRegister'])->name('student-register');
 Route::get('/password',[AllStudentController::class,'ShowPassword']);
+Route::get('student-result',[CourseMappingController::class,'StudentResult'])->middleware('ifStudentLogin');
+Route::get('/course-view/{id}',[CourseMappingController::class,'courseView'])->middleware('ifStudentLogin');
+Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz'])->middleware('ifStudentLogin');
+Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion'])->middleware('ifStudentLogin');
+Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
+
+
 // **************************************************************************
 
 Route::get('/reset-password-student',Sturesetpass::class);
@@ -127,7 +135,6 @@ Route::get('/course-details/{id}',[AddQuestionController::class,'courseDetails']
 Route::get('/view-topic/{id}',[AddQuestionController::class,'viewTopic']);
 Route::get('/questions-view/{id}',[AddQuestionController::class,'questionsView']);
 
-Route::get('student-result',[CourseMappingController::class,'StudentResult']);
 
 Route::get('/add-courses',[AddCourseController::class,'addCourse']);
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
@@ -138,10 +145,6 @@ Route::get('/delete-courses/{id}',[AddCourseController::class,'deleteCourse']);
 Route::get('/course-mapping',[CourseMappingController::class,'index']);
 Route::get('get-course',[CourseMappingController::class,'getCourse'])->name('getCourse');
 Route::post('/course-mapping',[CourseMappingController::class,'courseMap'])->name('course.map');
-Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']);
-Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
-Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
-Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
 Route::get('/show-answer',[CourseMappingController::class,'showAnswer']);
 Route::get('/test',[CourseMappingController::class,'Test']);
 

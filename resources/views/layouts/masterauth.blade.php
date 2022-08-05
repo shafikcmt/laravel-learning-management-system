@@ -10,7 +10,7 @@
     <div>
         @yield('content')
     </div>
-
+    @include('includes.foot')
 </body>
 
 </html>

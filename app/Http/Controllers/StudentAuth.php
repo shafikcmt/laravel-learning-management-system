@@ -47,6 +47,7 @@ public function StudentRegister(Request $request){
         return back()->with('message','something wrong');
         }
     }
+    
     public function LoginStudent(Request $request){
         $request->validate([
             'roll'=>'required',

@@ -1,12 +1,12 @@
 
         
         @extends('layouts.admin-master')
-        @section('title', 'Question Category')
+        @section('title', 'Quiz Category')
         @section('content')
         
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-2 bg-orange">Question Category <a class="btn btn-primary" href="/questions-topic">Add Question Topic</a> </h1>
+                <h1 class="title well p-2 bg-orange">Quiz Category <a class="btn btn-primary" href="/questions-topic">Add Quiz </a> </h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">

@@ -101,7 +101,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                               
+                                               @if(count($courses))
                                                 @foreach($courses as $key => $course)
                                                 <tr>
                                                     <td>{{$courses->firstItem() + $key}}</td>
@@ -113,8 +113,12 @@
                                                         <a class="btn btn-primary" href="/delete-courses/{{$course->id}}"><i class="fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                               
                                                 @endforeach
+                                               @else
+                                               <tr>
+                                                <td colspan="5">Course is not Found!</td>
+                                               </tr>
+                                               @endif
                                             </tbody>
                                         </table>
                                         {{$courses->links()}}

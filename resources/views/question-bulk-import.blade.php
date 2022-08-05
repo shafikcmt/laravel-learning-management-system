@@ -42,33 +42,13 @@
                             <li> Make sure input correct answer in right column.</li>
                             <li> You are uploading the question, you should match your question topic name and question topic id.</li>
                         </ol>
-                        <table class="table table-striped text-center">
-                            <thead>
-                                <tr>
-                                    <th>Serial</th>
-                                    <th>Question Topic Name</th>
-                                    <th>Question Topic ID</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php $i=1 ?>
-                                @foreach($qtopics as $qtopic)
-                                <tr>
-                                    <td><?php echo $i; ?></td>
-                                    <td>{{$qtopic->topic_name}}</td>
-                                    <td>{{$qtopic->id}}</td>
-                                </tr>
-                               <?php $i++; ?>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        
                             <form role="form" action="{{route('bulk-question')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="topic_id">Topic Name</label>
+                                        <label for="topic_id">Quiz Name</label>
                                         <select name="qtopic_id" id="" class="form-control">
                                             <option selected >Select Quiz</option>
                                         @foreach($qtopics as $qtopic)

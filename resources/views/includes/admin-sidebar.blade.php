@@ -62,10 +62,10 @@
                     </a>
                     <ul class="sidebar-nav">
                     <li>
-                            <a href="/questions-category"> Question Category </a>
+                            <a href="/questions-category"> Quiz Category </a>
                         </li>
                         <li>
-                            <a href="/questions-topic"> Question Topic </a>
+                            <a href="/questions-topic"> Add Quiz </a>
                         </li>
                         <li>
                             <a href="/add-question"> Add Question </a>

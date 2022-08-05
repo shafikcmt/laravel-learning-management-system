@@ -37,7 +37,7 @@
                             </div>
                         <div class="form-group">
                             <label for="remember">
-                                <input class="checkbox" id="remember" type="checkbox">
+                                <input class="checkbox" name="remember" id="remember" value="1" type="checkbox">
                                 <span>Remember me</span>
                             </label>
                             <a href="/reset-password-student" class="forgot-btn pull-right">Forgot password?</a>

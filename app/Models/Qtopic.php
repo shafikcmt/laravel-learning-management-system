@@ -11,6 +11,8 @@ class Qtopic extends Model
     protected $table = 'qtopics';
     protected $fillable = [
         'topic_name',
+        'total_question',
+        'total_time',
     ];
     public function qcategory(){
         return $this->belongsTo(Qcategory::class);

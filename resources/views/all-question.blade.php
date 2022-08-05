@@ -66,22 +66,21 @@
                             <input type="hidden" name="student_semester" value="{{$data->semester}}">
                             <input type="hidden" name="student_mobile" value="{{$data->mobile}}">
                             <input type="hidden" name="student_email" value="{{$data->email}}">
-                            <input type="hidden" name="question_id" value="{{$question->id}}">
-                            <p><input type="radio" required name="answer[{{$question->id}}]"
-                                    value="{{$question->option3}}"> {{$question->option3}}</p>
+                            <input type="hidden" name="question_id[{{$question->id}}]" value="{{$question->id}}">
                             <p><input type="radio" required name="answer[{{$question->id}}]"
                                     value="{{$question->option1}}"> {{$question->option1}}</p>
                             <p><input type="radio" required name="answer[{{$question->id}}]"
                                     value="{{$question->option2}}"> {{$question->option2}}</p>
                             <p><input type="radio" required name="answer[{{$question->id}}]"
+                                    value="{{$question->option3}}"> {{$question->option3}}</p>
+                            <p><input type="radio" required name="answer[{{$question->id}}]"
                                     value="{{$question->option4}}"> {{$question->option4}}</p>
-                            <input type="hidden" name="qanswer" value="{{$question->answer}}">
-
+                            <input type="hidden" name="canswer[{{$question->id}}]" value="{{$question->answer}}">
                             <?php $i++; ?>
                             @endforeach
                         </div>
                         <!-- <a type="submit" class="btn btn-primary pull-right">Next</a> -->
-                        <button class="btn btn-primary pull-right mr-5 mr-5" type="submit">Next</button>
+                        <button class="btn btn-primary pull-right mr-5 mr-5" type="submit">Submit</button>
                     </form>
                    
                 </div>
@@ -89,7 +88,7 @@
                     <div class="count_doun">
                     <h4>Quiz navigation</h4>
                     <a style="color:skyblue;" href="/student-dashboard">Finish attempt</a>
-                    <div id="CountDownTimer" data-timer="900" style="width: 200px; height: 250px;"></div>
+                    <div id="CountDownTimer" data-timer="{{$qtopic->total_time*60}}" style="width: 200px; height: 250px;"></div>
                    
                     </div>
                     
