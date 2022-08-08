@@ -14,8 +14,7 @@
                     </div>
                     <div class="card-block">
                     @if(count($courses))
-                    <div class="owl-carousel owl-theme">
-                        
+                    <div class="owl-carousel owl-theme"> 
                         @foreach($courses as $course)
                         <div class="item">
                             <div class="card card-default">
@@ -43,7 +42,7 @@
                     @endif
                 </div>
             </div>
-                </div>
+            </div>
             </div>
             <div class="row sameheight-container">
                 <div class="col-md-12">
@@ -172,4 +171,4 @@
             <div class="color-secondary"></div>
         </div>
     </div>
-    @stop
+@stop

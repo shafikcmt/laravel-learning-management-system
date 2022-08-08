@@ -40,7 +40,6 @@
                         <ol class="p-3">
                             <li> You need to import Excel/CSV File. For sample you can download by clicking <b><a style="text-decoration:none" href="/demo-download"> Sample Downloads</a></b></li>
                             <li> Make sure input correct answer in right column.</li>
-                            <li> You are uploading the question, you should match your question topic name and question topic id.</li>
                         </ol>
                         
                             <form role="form" action="{{route('bulk-question')}}" method="post" enctype="multipart/form-data">

@@ -1,10 +1,11 @@
         @extends('layouts.admin-master')
         @section('title','Admin Dashboard')
         @section('content')
-      
+
         <article class="content dashboard-page">
 
-            <section class="section map-tasks">
+            <section class="section">
+               
                 <div class="row sameheight-container">
                     <div class="col-xl-3 ">
                         <div class="card card-default bg-success bg-gradient">
@@ -68,12 +69,15 @@
                     </div>
 
                 </div>
-                <div class="row sameheight-container">
+
+    </section>
+    <section class="section">
+                    <div class="row sameheight-container">
                     <div class="col-md-12 ">
 
                         <div class="card sameheight-item shadow-lg p-3 mb-3 bg-white rounded" data-exclude="xs,sm">
                             <div class="title-block">
-                                <h1 class="title card-title p-3 bg-orange"> Available Course</h1>
+                                <h1 class="title card-title p-3 bg-orange text-white"> Available Course</h1>
                             </div>
 
                             <div class="card-block ">
@@ -88,13 +92,11 @@
                                                 </div>
                                             </div>
                                             <div class="card-block">
-                                                <img height="100px" width="100%"
-                                                    src="{{asset('images')}}/{{$course->image}}" alt="">
+                                                <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
                                             </div>
                                             <div class="card-footer">
                                                 <h3>{{$course->name}}</h3>
-                                                <center><a href="/course-details/{{$course->id}}"
-                                                        class="btn btn-primary stretched-link">View Course</a></center>
+                                                <center><a href="/course-details/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a></center>
 
                                             </div>
                                         </div>
@@ -106,73 +108,71 @@
                                     </div>
                                     @endif
                                 </div>
-                            </div>
+                            
                         </div>
 
                     </div>
                 </div>
-                        <div class="row sameheight-container">
-                            <div class="col-md-12">
-                                <div class="card">
+    </section>
+            <section class="section">
+                <div class="row sameheight-container">
+                    <div class="col-md-12">
+                        <div class="sameheight-item shadow-lg p-3 mb-3 bg-white rounded">
 
-                                    <div class="card-body">
-                                        <h1 class="title card-title p-3 bg-orange">
-                                            All Courses
-                                        </h1>
-                                        <div class="row sameheight-container">
-                                            <div class="col-md-12">
-                                                <div class="table-responsive shadow-lg p-3 mb-3 bg-white rounded">
+                            <div class="title-block">
+                                <h1 class="title card-title p-3 bg-orange">
+                                    All Courses
+                                </h1>
+                               
+                                            <div class="table-responsive shadow-lg p-3 mb-2 bg-white rounded">
 
-                                                    <table class="table table-striped table-bordered table-hover">
-                                                 
-                                                    <thead>
-                                                            <tr class="text-left">
-                                                                <th>Course Name</th>
-                                                                <th>Course Category</th>
-                                                                <th>Course Image</th>
-                                                                <th>Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        @if(count($courses))    
-                                                        @foreach($courses as $course)
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>{{$course->category_name}}</td>
-                                                                <td>{{$course->name}}</td>
+                                            <table class="table table-striped table-bordered table-hover">
 
-                                                                <td>
-                                                                    <img height="50px" width="50px"
-                                                                        src="{{asset('images')}}/{{$course->image}}"
-                                                                        alt="">
-                                                                </td>
-                                                                <td>
-                                                                    <a href="/course-details/{{$course->id}}"
-                                                                        class="btn btn-primary stretched-link">View
-                                                                        Course</a>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                        @endforeach
-                                                        @else
-                                                        <tr>
-                                                            <td colspan="4">
-                                                                <div class="text-danger text-center">Course Not Found</div>
-                                                            </td>
-                                                        </tr>
-                                                        @endif
-                                                    </table>
-                                                </div>
-                                            </div>
+                                                <thead>
+                                                    <tr class="text-left">
+                                                        <th>Course Name</th>
+                                                        <th>Course Category</th>
+                                                        <th>Course Image</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                @if(count($courses))
+                                                @foreach($courses as $course)
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{$course->category_name}}</td>
+                                                        <td>{{$course->name}}</td>
+
+                                                        <td>
+                                                            <img height="50px" width="50px" src="{{asset('images')}}/{{$course->image}}" alt="">
+                                                        </td>
+                                                        <td>
+                                                            <a href="/course-details/{{$course->id}}" class="btn btn-primary stretched-link">View
+                                                                Course</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                @endforeach
+                                                @else
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div class="text-danger text-center">Course Not Found</div>
+                                                    </td>
+                                                </tr>
+                                                @endif
+                                            </table>
                                         </div>
+                                </div>
+                                   
+                                
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    
-
-
-            </section>
+                        
+               
+               </section> 
         </article>
+
 
         <div class="modal fade" id="modal-media">
             <div class="modal-dialog modal-lg">
@@ -202,9 +202,7 @@
                             <div class="tab-pane fade active in" id="upload" role="tabpanel">
                                 <div class="upload-container">
                                     <div id="dropzone">
-                                        <form action="https://modularcode.io/" method="POST"
-                                            enctype="multipart/form-data" class="dropzone needsclick dz-clickable"
-                                            id="demo-upload">
+                                        <form action="https://modularcode.io/" method="POST" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="demo-upload">
                                             <div class="dz-message-block">
                                                 <div class="dz-message needsclick"> Drop files here or click to upload.
                                                 </div>
@@ -230,7 +228,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">
-                            <i class="fa fa-warning"></i> Alert</h4>
+                            <i class="fa fa-warning"></i> Alert
+                        </h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

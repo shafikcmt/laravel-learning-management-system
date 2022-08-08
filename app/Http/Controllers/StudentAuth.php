@@ -78,6 +78,7 @@ public function StudentRegister(Request $request){
                 ->leftJoin('courses', 'course_batches.course_id', '=', 'courses.id')
                 ->leftJoin('categories','categories.id', '=','courses.category_id')
                 ->where('students_batches.student_roll', '=', $data->roll)
+                ->orWhere('course_batches.batch_id', '=', $data->roll)
                 ->get();        
             }
         return view('/student-dashboard',compact('data','courses'));

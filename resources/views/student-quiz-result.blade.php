@@ -22,7 +22,7 @@
                                     <th>Total Question</th>
                                     <th>Wrong Answer</th>
                                     <th>Right Answer</th>
-                                    <th>Perchantage</th>
+                                    <th>Percentage</th>
                                 </tr>
                                </thead>
                                <tbody>

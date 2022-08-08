@@ -49,7 +49,7 @@
                                         </div>
                                         <div id="grad-per" class="col-md-5 p-3 text-light ml-2"
                                             style="line-height:5px">
-                                            <h4>Perchantage</h4><br>
+                                            <h4>Percentage</h4><br>
                                             <h4 class="text-right text-light">
                                                 {{$attemp_student->perchantage}} %</h4>
                                         </div>

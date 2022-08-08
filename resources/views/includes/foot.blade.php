@@ -110,3 +110,24 @@
         });
     </script>
 
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#categories').on('change', function () {
+                var categoryId = this.value;
+                $('#courses').html('');
+                $.ajax({
+                    url: '{{ route('courseGet') }}?id='+categoryId,
+                    type: 'get',
+                    success: function (res) {
+                        $('#courses').html('<option value="">Select Course</option>');
+                        $.each(res, function (key, value) {
+                            $('#courses').append('<option  value="' + value
+                                .id + '">' + value.name + '</option>');
+                        });
+                       
+                    }
+                });
+            });
+           
+        });
+    </script>

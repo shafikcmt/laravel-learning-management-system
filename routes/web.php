@@ -38,21 +38,21 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/',[HomeController::class,'index'])->middleware(['studentlogin','ifStudentLogin']);
+Route::get('/',[HomeController::class,'index'])->middleware('ifStudentLogin');
 // Student Controller
 //------------------------------------
 Route::get('/student-login',[StudentAuth::class,'login'])->middleware('studentlogin');
 Route::get('/student-logout',[StudentAuth::class,'Logout']);
 Route::get('/student-dashboard',[StudentAuth::class,'StudentDashboard'])->middleware('studentauthcheck');
 Route::post('/student-login',[StudentAuth::class,'LoginStudent'])->name('student-login');
-Route::get('/student-profile/{id}',[StudentAuth::class,'StudentProfile'])->middleware('ifStudentLogin');
+Route::get('/student-profile/{id}',[StudentAuth::class,'StudentProfile']);
 Route::get('/student-registration',[StudentAuth::class,'registration'])->middleware('studentlogin');
 Route::post('/student-registration',[StudentAuth::class,'StudentRegister'])->name('student-register');
 Route::get('/password',[AllStudentController::class,'ShowPassword']);
-Route::get('student-result',[CourseMappingController::class,'StudentResult'])->middleware('ifStudentLogin');
-Route::get('/course-view/{id}',[CourseMappingController::class,'courseView'])->middleware('ifStudentLogin');
-Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz'])->middleware('ifStudentLogin');
-Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion'])->middleware('ifStudentLogin');
+Route::get('student-result',[CourseMappingController::class,'StudentResult']);
+Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']);
+Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
+Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
 Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
 
 
@@ -97,7 +97,8 @@ Route::post('/create-batch',[BatchController::class,'createBatch'])->name('creat
 Route::get('/edit-batch/{id}',[BatchController::class,'editBatch']);
 Route::post('/edit-batch',[BatchController::class,'updateBatch'])->name('update-batch');
 Route::get('/batch-delete/{id}',[BatchController::class,'batchDelete']);
-Route::post('/add-batch',[BatchController::class,'studentsAddBatch'])->name('studentsaddbatch');
+Route::post('/add-batch',[BatchController::class,'studentsAddBatch'])->name('students-add-batch');
+Route::post('/batch-add',[BatchController::class,'studentAddBatch'])->name('student-add-batch');
 Route::get('/demo-batch-file',[BatchController::class,'demoBatchFile']);
 
 
@@ -144,7 +145,9 @@ Route::get('/delete-courses/{id}',[AddCourseController::class,'deleteCourse']);
 
 Route::get('/course-mapping',[CourseMappingController::class,'index']);
 Route::get('get-course',[CourseMappingController::class,'getCourse'])->name('getCourse');
+Route::get('course-get',[CourseMappingController::class,'courseGet'])->name('courseGet');
 Route::post('/course-mapping',[CourseMappingController::class,'courseMap'])->name('course.map');
+Route::post('/course-mapping-student',[CourseMappingController::class,'courseMapStudent'])->name('course.map.student');
 Route::get('/show-answer',[CourseMappingController::class,'showAnswer']);
 Route::get('/test',[CourseMappingController::class,'Test']);
 
@@ -165,19 +168,4 @@ Route::get('/admin-dashboard',[AdminAuth::class,'index']);
 // Admin Livewire Class
 //---------------------------------
 Route::get('/reset-password',Resetpassword::class);
-// Route::get('/admin-dashboard',Admindashboard::class);
-// Route::get('/all-student',AllStudent::class);
-// Route::get('/add-students',AddStudents::class);
-// Route::get('/add-category',AddCategory::class);
-// Route::get('/add-batch',AddBatch::class);
-// Route::get('/course-mapping',CourseMapping::class);
-// Route::get('/add-courses',AddCourses::class);
-// Route::get('/questions-topic',QuestionsTopic::class);
-// Route::get('/add-question',AddQuestion::class);
-// Route::get('/questions-bank',QuestionsBank::class);
-// Route::get('/question-bulk-import',QuestionBulkImport::class);
-// Route::get('/results-quiz-wise',ResultsQuizWise::class);
-// Route::get('/results-batch-wise',ResultsBatchWise::class);
-// Route::get('/results-date-wise',ResultsDateWise::class);
-// Route::get('/check-password',CheckPassword::class);
 

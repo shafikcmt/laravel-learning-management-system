@@ -36,6 +36,16 @@ class CourseMappingController extends Controller
     }
     }
 
+    public function courseGet(Request $request){
+        $course = \DB::table('courses')
+        ->where('category_id', $request->id)
+        ->get();
+    
+    if (count($course) > 0) {
+        return response()->json($course);
+    }
+    }
+
     public function courseMap(Request $request){
         $request->validate([
             'course_id'        => 'required',
@@ -47,6 +57,19 @@ class CourseMappingController extends Controller
         $course_map->save();
         return back()->with('course-map','Course map Successfully !');
     }
+
+    public function courseMapStudent(Request $request){
+        $request->validate([
+            'course_id'        => 'required',
+            'batch_id'       => 'required',
+        ]);
+        $course_map = new CourseBatch();
+        $course_map->course_id = $request->course_id;
+        $course_map->batch_id = $request->batch_id;
+        $course_map->save();
+        return back()->with('course-map-student','Course map Successfully !');
+    }
+
 
     public function courseView($id)
     {

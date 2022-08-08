@@ -17,9 +17,11 @@ class ifStudentlogin
     public function handle(Request $request, Closure $next)
     {
         if(Session()->has('loginId')){
-            return $next($request);
-        }else{
             return redirect('/student-dashboard')->with('message','You have to Logout first !');
+
+        }else{
+            return $next($request);
+
         }
         
     }

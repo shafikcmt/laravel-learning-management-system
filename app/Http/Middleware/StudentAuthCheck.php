@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class StudentAuthCheck
 {
+
     /**
      * Handle an incoming request.
      *

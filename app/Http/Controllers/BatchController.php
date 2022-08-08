@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Batch;
+use App\Models\StudentsBatch;
 use Illuminate\Support\Facades\Response;
 use Excel;
 use App\Imports\studentsBatchImport;
@@ -60,6 +61,19 @@ class BatchController extends Controller
         ]);
         Excel::import(new studentsBatchImport ,$request->file('file'),$request->batch_id);
         return back()->with('students-add-batch','Students add to batch Successfully !');
+
+    }
+
+    public function studentAddBatch(Request $request){
+        $request->validate([
+            'roll' => 'required|',
+            'batch_id' => 'required',
+        ]);
+        $addbatch = new StudentsBatch;
+        $addbatch->batch_id = $request->batch_id;
+        $addbatch->student_roll = $request->roll;
+        $addbatch->save();
+        return back()->with('student-add-batch','Students add to batch Successfully !');
 
     }
 }
