@@ -41,7 +41,7 @@
                                     <div class="text-danger">@error('category_name') {{$message}} @enderror</div>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="cssbuttons-io"><span>Save</span> </button>
                                 </div>
                             </form>
                         </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="row sameheight-container ">
                     <div class="col-md-12">
-                        <div class="card">
+                        <div class="card sameheight-item">
                             <div class="card-block">
                                 <div class="card-title-block rounded shadow-lg p-3">
                                     <h3 class="title"> Question Category List </h3>

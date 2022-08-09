@@ -1,9 +1,22 @@
+@font-face {
+    font-family: shafi_font;
+    src: url(../fonts/Poppins-Light.ttf);
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: shafi_bold;
+    src: url(../fonts/Poppins-SemiBold.ttf);
+    font-weight: 800;
+  }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /* font-family:  !important; */
+    font-family: shafi_font !important;
 }
+
+
 body{
     min-height: 100vh;
     
@@ -11,9 +24,14 @@ body{
 a{
     text-decoration: none;
 }
-
+.sameheight-item{
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 10px;
+}
 h1,h2{
-    color: #444;
+    color: rgb(3, 2, 2);
+    font-family: shafi_bold !important;
 }
 h3{
     color: #4f5f6f;
@@ -29,6 +47,7 @@ h3{
     background: #f07d1e;
     color: #fff;
     border-radius: 5px;
+    color: #fff;
 }
 a:not(.btn) {
 	color: #fff;
@@ -85,7 +104,7 @@ a:not(.btn) {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 10px 18px 0px;
+	padding: 10px 20px 10px 20px !important;
 }
 
 .side-menu{
@@ -320,5 +339,65 @@ a:not(.btn) {
     }
 }
 
+
+
+/* Add Button Code */
+
+/* From uiverse.io by @adamgiebl */
+.cssbuttons-io {
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(to right, #f07d1e, #a76733);
+    color: ghostwhite;
+    overflow: hidden;
+   }
+   
+   .cssbuttons-io svg {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+   }
+   
+   .cssbuttons-io span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
+   }
+   
+   .cssbuttons-io::before,
+   .cssbuttons-io::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   
+   .cssbuttons-io::before {
+    content: "";
+    background: #233873;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+   }
+   
+   .cssbuttons-io:hover::before {
+    transform: translate3d(100%, 0, 0);
+   }
+   
+   .cssbuttons-io:active {
+    transform: scale(0.95);
+   }
+   
 
 

@@ -58,7 +58,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="cssbuttons-io"><span>Save</span></button>
                                 </div>
                             </form>
                         </div>
@@ -71,7 +71,7 @@
 
                     <div class="col-md-12">
 
-                        <div class="card">
+                        <div class="card sameheight-item">
                             <div class="card-block">
                                 <div class="card-title-block">
                                     <h3 class="title"> Question Topic List </h3>

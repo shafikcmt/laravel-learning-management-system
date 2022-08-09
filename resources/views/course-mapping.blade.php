@@ -60,8 +60,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="reset" class="btn btn-danger">Cancel</button>
+                            <button type="submit" class="cssbuttons-io"><span>Submit</span> </button>
+                            <button type="reset" class="cssbuttons-io"><span>Cancel</span> </button>
                         </div>
                     </form>
                 </div>
@@ -118,8 +118,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="reset" class="btn btn-danger">Cancel</button>
+                        <button type="submit" class="cssbuttons-io"><span>Submit</span> </button>
+                            <button type="reset" class="cssbuttons-io"><span>Cancel</span> </button>
+
                         </div>
                     </form>
                 </div>

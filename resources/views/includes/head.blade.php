@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="{{asset('css/TimeCircles.css')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon-16x16.png')}}">
    
-    
+    <style>
+        *{
+            font-family: Poppins;
+        }
+    </style>
 
 
 

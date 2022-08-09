@@ -21,53 +21,18 @@
 </style>
 <article class="content dashboard-page">
     <div class="title-block">
-        <h1 class="title well p-3"><span class="text-success">Completed</span> <a class="btn btn-primary pull-right"
-                href="/student-dashboard">Finish</a></h1>
+        <h1 class="title well p-3"><span class="text-success"></span> <a class="btn btn-primary pull-right"
+                href="/student-dashboard">Back to Home</a></h1>
     </div>
     <section class="section">
         <div class="row sameheight-container">
             <div class="col-md-12">
                 <div class="title-block">
                     <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h2 class="text-uppercase text-info"> Result's </h2>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 float-left">
-                                    <?php $i=1; ?>
-                                    @foreach($results as $result)
-                                    <h4>Question :<?php echo $i; ?></h4>
-                                    @if($result->answer == $result->qanswer)
-                                    <p>Your Answer is Correct: <span style="color:green;">{{$result->answer}}</span></p>
-                                    @else
-                                    <p>Your Answer is Wrong: <span style="color:red;">{{$result->answer}}</span></p>
-                                    @endif
-                                    @if($result->answer == $result->qanswer)
-                                    @else       
-                                    <p> Correct Answer is :{{$result->qanswer}}</p>
-                                    @endif
-                                    <?php $i++; ?>
-                                    @endforeach
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        
-                                        <div id="grad-score" class="col-md-5 bg-primary p-3 text-light"
-                                            style="line-height:5px">
-                                            <h4>Score</h4><br>
-                                            <h4 class="text-right text-light">{{$correct}}/{{$results->count()}}</h4>
-                                        </div>
-                                        <div id="grad-per" class="col-md-5 bg-primary p-3 text-light ml-2"
-                                            style="line-height:5px">
-                                            <h4>Percentage</h4><br>
-                                            <h4 class="text-right text-light">
-                                                {{round($correct/$results->count() * 100)}} %</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-body bg-orange text-center">
+                            
+                           <h1 class="text-white">You have successfully Completed the Quiz !</h1>
+                           <p class="h4">For Complete quiz result contact the system administrator .</p>
 
                         </div>
                     </div>

@@ -10,7 +10,7 @@
                 </div>
                 <section class="section">
 
-                    <div class="card">
+                    <div class="card sameheight-item">
                         <div class="card-block">
                             <div class="card-title-block">
                                 <div class="row">

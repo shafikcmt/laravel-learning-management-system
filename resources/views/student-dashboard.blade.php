@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                 <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
                     <div class="title-block">
-                        <h1  class="title well p-2 bg-orange"> Available Course </h1>
+                        <h1  class="title well p-2 bg-orange text-white"> Available Course </h1>
                     </div>
                     <div class="card-block">
                     @if(count($courses))
@@ -46,10 +46,10 @@
             </div>
             <div class="row sameheight-container">
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card sameheight-item">
                         <div class="card-body">
                         <div class="title-block">
-                        <h1 class="title well p-2 bg-orange"> All Courses </h1>
+                        <h1 class="title well p-2 bg-orange text-white"> All Courses </h1>
                         </div>
                         <div class="table-responsive shadow-lg p-3 mb-2 bg-white rounded">
                         <table class="table table-striped table-bordered table-hover">

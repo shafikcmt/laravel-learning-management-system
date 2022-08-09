@@ -1,14 +1,19 @@
         @extends('layouts.admin-master')
         @section('title','Admin Dashboard')
         @section('content')
-
+<style>
+    /* .bg-gradient{
+        background: rgb(240,125,30);
+background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.9698879551820728) 64%);
+    } */
+</style>
         <article class="content dashboard-page">
 
             <section class="section">
                
                 <div class="row sameheight-container">
                     <div class="col-xl-3 ">
-                        <div class="card card-default bg-success bg-gradient">
+                        <div class="card card-default bg-success bg-gradient sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
                                         <p class="title"> Default card </p>
@@ -23,7 +28,7 @@
                     </div>
 
                     <div class="col-xl-3">
-                        <div class="card card-default bg-info bg-gradient">
+                        <div class="card card-default bg-info bg-gradient sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
                                         <p class="title"> Default card </p>
@@ -38,7 +43,7 @@
                     </div>
 
                     <div class="col-xl-3">
-                        <div class="card card-default bg-success bg-gradient">
+                        <div class="card card-default bg-success bg-gradient sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
                                         <p class="title"> Default card </p>
@@ -53,7 +58,7 @@
                     </div>
 
                     <div class="col-xl-3">
-                        <div class="card card-default bg-info bg-gradient">
+                        <div class="card card-default bg-info bg-gradient sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
                                         <p class="title"> Default card </p>
@@ -96,7 +101,7 @@
                                             </div>
                                             <div class="card-footer">
                                                 <h3>{{$course->name}}</h3>
-                                                <center><a href="/course-details/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a></center>
+                                                <center><a href="/course-details/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button></a></center>
 
                                             </div>
                                         </div>
@@ -147,8 +152,7 @@
                                                             <img height="50px" width="50px" src="{{asset('images')}}/{{$course->image}}" alt="">
                                                         </td>
                                                         <td>
-                                                            <a href="/course-details/{{$course->id}}" class="btn btn-primary stretched-link">View
-                                                                Course</a>
+                                                            <a href="/course-details/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button></a>
                                                         </td>
                                                     </tr>
                                                 </tbody>

@@ -71,8 +71,8 @@
                                 </div>
                                
                                 <div class="form-group pull-right">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-danger">Cancel</button>
+                                    <button type="submit" class="cssbuttons-io"><span>Submit</span> </button>
+                                    <button type="reset" class="cssbuttons-io"><span>Cancel</span> </button>
                                 </div>
                             </form>
                         </div>
@@ -83,7 +83,7 @@
 
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                        <div class="card">
+                        <div class="card sameheight-item">
                             <div class="card-block">
                                 <div class="card-title-block ">
                                     <h3 class="title">Available Course List</h3>
