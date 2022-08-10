@@ -1,16 +1,17 @@
         @extends('layouts.admin-master')
         @section('title','Admin Dashboard')
         @section('content')
-<style>
-    /* .bg-gradient{
+        <style>
+            /* .bg-gradient{
         background: rgb(240,125,30);
 background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.9698879551820728) 64%);
     } */
-</style>
+
+        </style>
         <article class="content dashboard-page">
 
             <section class="section">
-               
+
                 <div class="row sameheight-container">
                     <div class="col-xl-3 ">
                         <div class="card card-default bg-success bg-gradient sameheight-item">
@@ -75,9 +76,9 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
 
                 </div>
 
-    </section>
-    <section class="section">
-                    <div class="row sameheight-container">
+            </section>
+            <section class="section">
+                <div class="row sameheight-container">
                     <div class="col-md-12 ">
 
                         <div class="card sameheight-item shadow-lg p-3 mb-3 bg-white rounded" data-exclude="xs,sm">
@@ -90,7 +91,28 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                                 <div class="owl-carousel owl-theme">
                                     @foreach($courses as $course)
                                     <div class="item">
-                                        <div class="card card-default">
+    
+                                        <div class="card_slider" style="background:url('{{asset('images')}}/{{$course->image}}'); background-size: cover; background-repeat: round;">
+                                            <div class="card-info">
+                                                <p class="title_slider">
+                                                {{$course->name}}
+                                                </p>
+                                                <p class="subtitle_slider">
+                                                {{$course->category_name}} 
+
+                                                </p>
+                                            </div>
+                                           <div class="card-bio">
+                                           <a style="width:25px; height:25px" href="/course-details/{{$course->id}}" class="">
+                                            <button class="cssbuttons-io"><span>View Course</span></button>
+                                            
+                                         </a>
+                                           </div> 
+                                       
+                                           
+                                        </div>
+
+                                        <!-- <div class="card card-default">
                                             <div class="card-header">
                                                 <div class="header-block">
                                                     <p style="color:#000 !important" class="title">{{$course->category_name}} </p>
@@ -104,7 +126,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                                                 <center><a href="/course-details/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button></a></center>
 
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     @endforeach
                                     @else
@@ -113,12 +135,12 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                                     </div>
                                     @endif
                                 </div>
-                            
-                        </div>
 
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-    </section>
+            </section>
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
@@ -128,53 +150,56 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                                 <h1 class="title card-title p-3 bg-orange">
                                     All Courses
                                 </h1>
-                               
-                                            <div class="table-responsive shadow-lg p-3 mb-2 bg-white rounded">
 
-                                            <table class="table table-striped table-bordered table-hover">
+                                <div class="table-responsive shadow-lg p-3 mb-2 bg-white rounded">
 
-                                                <thead>
-                                                    <tr class="text-left">
-                                                        <th>Course Name</th>
-                                                        <th>Course Category</th>
-                                                        <th>Course Image</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                @if(count($courses))
-                                                @foreach($courses as $course)
-                                                <tbody>
-                                                    <tr>
-                                                        <td>{{$course->category_name}}</td>
-                                                        <td>{{$course->name}}</td>
+                                    <table class="table table-striped table-bordered table-hover">
 
-                                                        <td>
-                                                            <img height="50px" width="50px" src="{{asset('images')}}/{{$course->image}}" alt="">
-                                                        </td>
-                                                        <td>
-                                                            <a href="/course-details/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button></a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                @endforeach
-                                                @else
-                                                <tr>
-                                                    <td colspan="4">
-                                                        <div class="text-danger text-center">Course Not Found</div>
-                                                    </td>
-                                                </tr>
-                                                @endif
-                                            </table>
-                                        </div>
-                                </div>
-                                   
-                                
-                                    </div>
+                                        <thead>
+                                            <tr class="text-left">
+                                                <th>Course Name</th>
+                                                <th>Course Category</th>
+                                                <th>Course Image</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        @if(count($courses))
+                                        @foreach($courses as $course)
+                                        <tbody>
+                                            <tr>
+                                                <td>{{$course->category_name}}</td>
+                                                <td>{{$course->name}}</td>
+
+                                                <td>
+                                                    <img height="50px" width="50px"
+                                                        src="{{asset('images')}}/{{$course->image}}" alt="">
+                                                </td>
+                                                <td>
+                                                    <a href="/course-details/{{$course->id}}"
+                                                        class="stretched-link"><button class="cssbuttons-io"><span>View
+                                                                Course</span></button></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        @endforeach
+                                        @else
+                                        <tr>
+                                            <td colspan="4">
+                                                <div class="text-danger text-center">Course Not Found</div>
+                                            </td>
+                                        </tr>
+                                        @endif
+                                    </table>
                                 </div>
                             </div>
-                        
-               
-               </section> 
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
         </article>
 
 
@@ -206,7 +231,9 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                             <div class="tab-pane fade active in" id="upload" role="tabpanel">
                                 <div class="upload-container">
                                     <div id="dropzone">
-                                        <form action="https://modularcode.io/" method="POST" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="demo-upload">
+                                        <form action="https://modularcode.io/" method="POST"
+                                            enctype="multipart/form-data" class="dropzone needsclick dz-clickable"
+                                            id="demo-upload">
                                             <div class="dz-message-block">
                                                 <div class="dz-message needsclick"> Drop files here or click to upload.
                                                 </div>

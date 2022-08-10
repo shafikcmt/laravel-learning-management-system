@@ -10,12 +10,11 @@
                 <p class="title-description"> </p>
             </div>
             <div class="row mb-3">
-               
                     <div class="col-md-3">
                         <h4>Bulk Import</h4>
                     </div>
                     <div class="col-md-3 offset-md-6">
-                        <a href="/import-demo" class="pull-right rounded"> <button class="cssbuttons-io"><span>+ Sample Downloads</span></button></a>
+                        <a href="/import-demo" class="pull-right rounded"> <button class="buttonDownload">Sample Downloads</button></a>
                     </div>
                 </div>
             <section class="section">
