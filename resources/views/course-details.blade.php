@@ -11,8 +11,8 @@
 
                 <div class="card card-block sameheight-item shadow-lg p-3 mb-3 bg-white rounded">
                     <div class="title-block">
-                        <h1 class="title well p-2 bg-orange">Edit Courses <a class="btn btn-primary"
-                                href="/admin-dashboard">Back</a></h1>
+                        <h1 class="title well p-2 bg-orange">Edit Courses <a
+                                href="/admin-dashboard"><button class="btnhead">Back</button></a></h1>
                     </div>
                     @if(session()->has('update-courses'))
                     <div class="alert alert-success" id="alertMessage">
@@ -75,8 +75,8 @@
                         </div>
 
                         <div class="form-group pull-right">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                            <button type="reset" class="btn btn-danger">Cancel</button>
+                            <button type="submit" class="cssbuttons-io"><span>Update</span></button>
+                            <button type="reset" class="cssbuttons-io"><span>Cancel</span></button>
                         </div>
                     </form>
                 </div>
@@ -108,7 +108,7 @@
                                 <td><?php echo $i; ?></td>
                                 <td>{{$qcategory->category_name}}</td>
                                 <td>
-                                    <a href="/view-topic/{{$qcategory->id}}" class="btn btn-primary">View Topics</a>
+                                    <a href="/view-topic/{{$qcategory->id}}" ><button class="cssbuttons-io"><span>View Quizes</span></button></a>
 
                             </tr>
                             <?php $i++ ?>

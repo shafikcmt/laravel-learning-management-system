@@ -16,7 +16,7 @@
                         <div class="title-block">
                             <div class="card">
                             <div class="title-block">
-                        <h1 class="title well p-2 bg-orange"> Quiz For {{$qtopic->topic_name}} <a class="btn btn-primary" href="/course-view/{{$qcategory->course_id}}">Back</a></h1>
+                        <h1 class="title well p-2 bg-orange"> Quiz For {{$qtopic->topic_name}} <a href="/course-view/{{$qcategory->course_id}}"><button class="btnhead">Back</button></a></h1>
                         </div>
                                 <div class="card-body">
                                     
@@ -24,7 +24,7 @@
                                 <center><h4>Total Question: {{$qtopic->total_question}}</h4></center>
                                 <br><br>
                                 <center>
-                                  <a  onclick="quizStart()" class="btn btn-primary" href="/all-question/{{$qtopic->id}}">Start Quiz</a></li>
+                                  <a  onclick="quizStart()"  href="/all-question/{{$qtopic->id}}"> <button class="cssbuttons-io"><span>Start Quiz</span></button></a></li>
                                 </center>
                                 </div>
                             </div>

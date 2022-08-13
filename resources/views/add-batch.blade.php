@@ -61,7 +61,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section class="section">
         <div class="row sameheight-container">
 
@@ -74,7 +74,7 @@
                     </div>
                     <div class="card-title-block">
                         <h3 class="title"> Adding Student's to Batch <a 
-                                href="/demo-batch-file"><button class="cssbuttons-io"><span>Sample Downloads</span></button></a></h3>
+                                href="/demo-batch-file"><button class="buttonDownload"><span>Sample Downloads</span></button></a></h3>
                     </div>
                     <form role="form" method="POST" action="{{route('students-add-batch')}}"
                         enctype="multipart/form-data">

@@ -9,8 +9,8 @@
             <div class="col-md-12">
                 <div class="card card-block sameheight-item shadow-lg p-3 bg-white rounded">
                     <div class="title-block">
-                        <h1 class="title well p-2 bg-orange">Edit Student <a class="btn btn-primary"
-                                href="/all-student">Back</a></h1>
+                        <h1 class="title well p-2 bg-orange">Edit Student <a
+                                href="/all-student"><button class="btnhead">Back</button></a></h1>
 
                     </div>
                     <form role="form" method="post" action="{{route('update')}}">

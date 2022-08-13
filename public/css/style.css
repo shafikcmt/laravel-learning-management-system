@@ -25,7 +25,6 @@ a{
     text-decoration: none;
 }
 .sameheight-item{
-    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     border-radius: 10px;
 }
@@ -59,7 +58,8 @@ a:not(.btn) {
     border-radius: 5px;
 }
 .no-js .owl-carousel, .owl-carousel.owl-loaded {
-	height: 319px;
+    margin-top: 5px;
+	height: 350px;
 }
 .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
   padding: 0px 10px !important;
@@ -74,16 +74,7 @@ a:not(.btn) {
     border-radius: 5px;
     transition: 1s;
 }
-/* .sidebar .sidebar-menu > li.active {
-	background-color: #F07D1E;
-	border-color: #F07D1E;
-	
-}  */
-/* .sidebar .sidebar-menu > li.active > a, .sidebar .sidebar-menu > li.active > a:hover {
-	background-color: #F07D1E;
-	border-color: #F07D1E;
-	color: #ffffff !important;
-} */
+
 .nav li a:hover{
     color: #F07D1E;
 }
@@ -109,7 +100,7 @@ a:not(.btn) {
 
 .side-menu{
     position: fixed;
-     background-image: linear-gradient(#18E066, #189AE7, #fff);
+    background-image: linear-gradient(#18E066, #189AE7, #fff);
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -355,8 +346,9 @@ a:not(.btn) {
     background: linear-gradient(to right, #f07d1e, #a76733);
     color: ghostwhite;
     overflow: hidden;
+    cursor: pointer;
     
-   }
+   }                                                                                                                                                                                                                                                                        
    
    .cssbuttons-io svg {
     width: 1.2em;
@@ -485,88 +477,131 @@ a:not(.btn) {
 
    /* From uiverse.io by @joe-watson-sbf */
 /* From uiverse.io by @alexruix */
-.card_slider {
-    width: 100%;
-    height: 200px;
+/* .card-item {
+	width: 215px;
+	height: 300px;
+    padding-bottom: 20px;
+	background: rgb(236, 236, 236);
+	box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+} */
+
+
+
+
+/* From uiverse.io by @Clenio21 */
+.card-item {
+    width: 215px;
+	height: 300px;
+    --border-radius: 15px;
+    --border-width: 4px;
+    appearance: none;
     position: relative;
-    outline: .5em solid #f5f5f5;
+    
+    border: 0;
+    /* background: rgb(5, 5, 22); */
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2;
+    border-radius: 15px;
+   }
+   
+   .card-item::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+           #488cfb,
+           #29dbbc,
+           #ddf505,
+           #ff9f0e,
+           #e440bb,
+           #655adc,
+           #488cfb
+       );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+   }
+   
+   .card-item:hover::after {
+    animation-play-state: running;
+   }
+   
+   @keyframes rotate-hue {
+    to {
+     filter: hue-rotate(1turn);
+    }
+   }
+   
+   .card-item,
+   .card-item::after {
+    box-sizing: border-box;
+   }
+   
+   .card-item:active {
+    --border-width: 5px;
+   }
+
+   /* Button for Heading */
+
+   /* From uiverse.io by @adamgiebl */
+  
+
+button{
+    cursor: pointer;
+}
+
+   /* From uiverse.io by @alexroumi */
+   .btnhead {
+    padding: 10px 20px;
+    border: unset;
+    border-radius: 10px;
+    color: #212121;
+    z-index: 1;
+    background: #EA8A2B;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
     overflow: hidden;
    }
    
-   .card_slider::before {
+   .btnhead::before {
     content: "";
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    z-index: 4;
-    background-color: rgba(80, 64, 44, 0);
-    transition: background-color 1s;
-   }
-   
-   .card-info {
-    bottom: 0;
-    position: absolute;
-    background: #F07D1E;
-    color: #fff;
-    width: 100%;
-    padding: 5px 5px;
-    text-align: center;
-    transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
-   }
-   
-   .card-bio {
-    position: absolute;
-    width: 100%;
     height: 100%;
-    padding: 1.8em;
-    transform: translate(100%,40%);
-    transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    width: 0;
+    border-radius: 10px;
+    background-color: #060A45;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
    }
    
-
-   .card-bio a{
-    cursor: pointer;
-   
+   .btnhead:hover {
+    color: #e8e8e8;
    }
    
-   
-   /*Text*/
-   .title_slider {
-    font-size: 1.3em;
-    font-weight: bold;
+   .btnhead:hover::before {
+    width: 100%;
    }
-   
-   /* .title_slider::after {
-    /* content: ""; */
-    /* display: block; */
-    /* width: 50%;
-    height: 2px;
-    margin: 0 auto 4%; */
-    /* background-color: #000; 
-   }
-    */
-   .subtitle_slider {
-    font-weight: 400;
-    line-height: 1em;
-   }
-   
-   
-   
-   /*Hover*/
-   .card_slider:hover::before {
-    background-color: rgba(80, 64, 44, 0.25);
-   }
-   
-   .card_slider:hover .card-info {
-    transform: translateX(-100%);
-   }
-   
-   .card_slider:hover .card-bio  {
-    transform: translate(0,40%);
-    opacity: 1;
-   }
-   
-   
-   

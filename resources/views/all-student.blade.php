@@ -3,8 +3,7 @@
             @section('content')       
             <article class="content responsive-tables-page">
                 <div class="title-block">
-                    <h1 class="title well p-2 bg-orange">Students <a class="btn btn-primary" href="/import-page">Import
-                            Students</a> <a href="/add-students" class="btn btn-primary">Add New Student</a>
+                    <h1 class="title well p-2 bg-orange">Students <a href="/import-page"><button class="btnhead">Import Students</button></a> <a href="/add-students"> <button class="btnhead">Add New Student</button></a>
                     </h1>
                     <p class="title-description"> </p>
                 </div>

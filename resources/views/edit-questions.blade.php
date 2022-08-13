@@ -5,7 +5,7 @@
 
 <article class="content responsive-tables-page">
     <div class="title-block ">
-        <h1 class="title well p-2 bg-orange rounded">Edit Question <a class="btn btn-primary" href="/questions-bank">Back</a>
+        <h1 class="title well p-2 bg-orange rounded">Edit Question <a href="/questions-bank"><button class="btnhead">Back</button></a>
         </h1>
     </div>
     <section class="section">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="form-group pull-right">
-                    <button type="submit" class="btn btn-primary">Save Question</button>
+                    <button type="submit" class="cssbuttons-io"><span>Save Question</span></button>
 
                 </div>
                 </form>

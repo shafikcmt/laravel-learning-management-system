@@ -17,7 +17,7 @@
                     <div class="owl-carousel owl-theme"> 
                         @foreach($courses as $course)
                         <div class="item">
-                            <div class="card card-default">
+                            <div class="card-item">
                                 <div class="card-header">
                                     <div class="header-block">
                                         <p class="title">{{$course->category_name}} </p>
@@ -29,7 +29,7 @@
                                 <div class="card-footer">
                                     <h3>{{$course->name}}</h3>
                                     <center>
-                                        <a href="/course-view/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a>
+                                        <a style="position:relative; z-index:10;" href="/course-view/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button> </a>
                                     </center>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                                         <td>{{$course->name}}</td>
                                        
                                         <td>
-                                            <a href="/course-view/{{$course->id}}" class="btn btn-primary stretched-link">View Course</a>
+                                            <a href="/course-view/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button></a>
                                         </td>
                                     </tr>
                                 </tbody>

@@ -78,68 +78,58 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
 
             </section>
             <section class="section">
-                <div class="row sameheight-container">
+                <div  class="row sameheight-container">
                     <div class="col-md-12 ">
 
-                        <div class="card sameheight-item shadow-lg p-3 mb-3 bg-white rounded" data-exclude="xs,sm">
+                        <div class="card sameheight-item" data-exclude="xs,sm" style="height:500px;">
                             <div class="title-block">
                                 <h1 class="title card-title p-3 bg-orange text-white"> Available Course</h1>
                             </div>
 
                             <div class="card-block ">
                                 @if(count($courses))
+                                   
                                 <div class="owl-carousel owl-theme">
                                     @foreach($courses as $course)
-                                    <div class="item">
-    
-                                        <div class="card_slider" style="background:url('{{asset('images')}}/{{$course->image}}'); background-size: cover; background-repeat: round;">
-                                            <div class="card-info">
-                                                <p class="title_slider">
-                                                {{$course->name}}
-                                                </p>
-                                                <p class="subtitle_slider">
-                                                {{$course->category_name}} 
-
-                                                </p>
-                                            </div>
-                                           <div class="card-bio">
-                                           <a style="width:25px; height:25px" href="/course-details/{{$course->id}}" class="">
-                                            <button class="cssbuttons-io"><span>View Course</span></button>
-                                            
-                                         </a>
-                                           </div> 
-                                       
-                                           
-                                        </div>
-
-                                        <!-- <div class="card card-default">
+                                    <div class="item card-item">
+                                        <div class="">
                                             <div class="card-header">
                                                 <div class="header-block">
-                                                    <p style="color:#000 !important" class="title">{{$course->category_name}} </p>
+                                                    <p style="color:#000 !important" class="title">
+                                                        {{$course->category_name}} </p>
                                                 </div>
                                             </div>
                                             <div class="card-block">
-                                                <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
+                                                <img height="100px" width="100%"
+                                                    src="{{asset('images')}}/{{$course->image}}" alt="">
                                             </div>
                                             <div class="card-footer">
                                                 <h3>{{$course->name}}</h3>
-                                                <center><a href="/course-details/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button></a></center>
+                                                <center><a style="position:relative; z-index:10;" href="/course-details/{{$course->id}}"
+                                                        class="stretched-link"><button class="cssbuttons-io"><span>View
+                                                                Course</span></button></a></center>
 
                                             </div>
-                                        </div> -->
-                                    </div>
-                                    @endforeach
-                                    @else
-                                    <div class=" text-danger text-center">
-                                        Course Not found
-                                    </div>
-                                    @endif
-                                </div>
+                                        </div>
 
+                                    </div>
+
+
+                                </div>
+                                @endforeach
+                                @else
+                                <div class=" text-danger text-center">
+                                    Course Not found
+                                </div>
+                                @endif
+
+                       
                             </div>
 
                         </div>
+
                     </div>
+                </div>
             </section>
             <section class="section">
                 <div class="row sameheight-container">

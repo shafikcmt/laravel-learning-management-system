@@ -16,7 +16,7 @@
                     <a href="#">
                         <i class="fa fa-th-large"></i> Students Info
                         <i class="fa arrow"></i>
-                    </a>
+                    </a> 
                     <ul class="sidebar-nav">
                         <li>
                             <a href="/all-student"> Students List </a>

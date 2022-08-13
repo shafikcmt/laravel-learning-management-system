@@ -3,7 +3,7 @@
         @section('content')
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-2 bg-orange">Questions Bulk Import <a class="btn btn-primary" href="/questions-bank">Questions List</a></h1>
+                <h1 class="title well p-2 bg-orange">Questions Bulk Import <a  href="/questions-bank"><button class="btnhead">Questions List </button></a></h1>
             </div>
             <div class="row mb-3">
                     <div class="col-md-3 ">
@@ -36,7 +36,7 @@
                     @endif
                         <div class="card card-block sameheight-item">
                         <ol class="p-3">
-                            <li> You need to import Excel/CSV File. For sample you can download by clicking <b><a style="text-decoration:none" href="/demo-download"> Sample Downloads</a></b></li>
+                            <li> You need to import Excel/CSV File. For sample you can download by clicking <b><a style="text-decoration:none; color:green" href="/demo-download"> Sample Downloads</a></b></li>
                             <li> Make sure input correct answer in right column.</li>
                         </ol>
                         
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <center>
-                                    <button type="submit" class="btn btn-primary rounded mt-5">Import Questions</button>
+                                    <button type="submit" class="cssbuttons-io rounded mt-5"><span>Import Questions</span></button>
                                 </center>
                             </form>
                         </div>

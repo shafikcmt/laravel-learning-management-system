@@ -4,7 +4,7 @@
        
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1  class="title well p-2 rounded bg-orange">Add Question <a class="btn btn-primary" href="/questions-bank">Question List</a></h1>
+                <h1  class="title well p-2 rounded bg-orange">Add Question <a href="/questions-bank"><button class="btnhead">Question List</button></a></h1>
             </div>
             <section class="section shadow-lg p-3 mb-5 bg-white rounded border border-light">
                 <div class="row sameheight-container">
@@ -20,9 +20,9 @@
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-sm-12">
-                                        <label for="colFormLabel" class="col-form-label">TOPIC NAME <span style="color:red">*</span></label>
+                                        <label for="colFormLabel" class="col-form-label">QUIZ NAME <span style="color:red">*</span></label>
                                         <select class="form-control" name="qtopic_id">
-                                        <option selected>Select Topic Name</option>
+                                        <option selected>Select Quiz Name</option>
                                             @foreach($qtopics as $qtopic)
                                             <option value="{{$qtopic->id}}">{{$qtopic->topic_name}}</option>
                                             @endforeach
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="form-group pull-right">
-                        <button type="submit" class="btn btn-primary">Save Question</button>
+                        <button type="submit" class="cssbuttons-io"><span>Save Question</span></button>
 
                     </div>
                     </form>

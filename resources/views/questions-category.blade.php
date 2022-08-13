@@ -6,7 +6,7 @@
         
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-2 bg-orange">Quiz Category <a class="btn btn-primary" href="/questions-topic">Add Quiz </a> </h1>
+                <h1 class="title well p-2 bg-orange">Quiz Category <a href="/questions-topic"><button class="btnhead">Add Quiz</button> </a> </h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">

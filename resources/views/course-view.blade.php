@@ -23,7 +23,7 @@
     <article class="content dashboard-page">
 
         <div class="title-block">
-            <h1 class="title well p-2 bg-orange"> {{$courses->name}} <a class="btn btn-primary" href="/student-dashboard">Back</a>
+            <h1 class="title well p-2 bg-orange"> {{$courses->name}} <a href="/student-dashboard"><button class="btnhead">Back</button></a>
             </h1>
         </div>
         <section class="section">

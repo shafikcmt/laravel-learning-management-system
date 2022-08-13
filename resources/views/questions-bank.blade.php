@@ -6,8 +6,8 @@
       
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-2 bg-orange">Questions <a class="btn btn-primary" href="/add-question">Add Question</a> <a
-                        class="btn btn-primary" href="/question-bulk-import">Import Question</a></h1>
+                <h1 class="title well p-2 bg-orange">Questions <a href="/add-question"><button class="btnhead">Add Question</button></a> <a
+                        href="/question-bulk-import"><button class="btnhead">Import Question</button></a></h1>
             </div>
             <section class="section">
                 <div class="row sameheight-container">
@@ -49,7 +49,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>
-                                                    <th>Topic Name</th>
+                                                    <th>Quiz Name</th>
 
                                                     <th>Question</th>
 

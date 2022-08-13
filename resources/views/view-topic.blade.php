@@ -1,10 +1,10 @@
 @extends('layouts.admin-master')
-@section('title', 'Question Topic')
+@section('title', 'Question Quiz')
 @section('content')
 
 <article class="content responsive-tables-page">
     <div class="title-block">
-        <h1 class="title well p-2 bg-orange">{{$qcategory->category_name}} <a class="btn btn-primary" href="/course-details/{{$qcategory->course_id}}">Back</a></h1>
+        <h1 class="title well p-2 bg-orange">{{$qcategory->category_name}} <a  href="/course-details/{{$qcategory->course_id}}"><button class="btnhead">Back</button></a></h1>
     </div>
     <section class="section">
         <div class="row sameheight-container">
@@ -19,7 +19,7 @@
                         <thead>
                             <tr>
                                 <th>Serial</th>
-                                <th>Question Topic Name</th>
+                                <th>Question Quiz Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -29,7 +29,7 @@
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td>{{$qtopic->topic_name}}</td>
-                                <td><a class="btn btn-primary" href="/questions-view/{{$qtopic->id}}">View Questions</a></td>
+                                <td><a href="/questions-view/{{$qtopic->id}}"><button class="cssbuttons-io"><span>View Questions</span></button></a></td>
                             </tr>
                             <?php $i++ ?>
                             @endforeach
