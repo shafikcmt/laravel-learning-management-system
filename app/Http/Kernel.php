@@ -56,6 +56,7 @@ class Kernel extends HttpKernel
         'ifStudentLogin' => \App\Http\Middleware\ifStudentLogin::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'studentauthcheck' => \App\Http\Middleware\StudentAuthCheck::class,
+        'adminauthcheck' => \App\Http\Middleware\AdminAuthCheck::class,
         'studentlogin' => \App\Http\Middleware\StudentLogin::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

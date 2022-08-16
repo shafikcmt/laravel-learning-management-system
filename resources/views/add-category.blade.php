@@ -53,7 +53,7 @@
                         <div class="card sameheight-item">
                             <div class="card-block ">
                                 <div class="card-title-block">
-                                    <h3 class="title"> Category List </h3>
+                                    <h1 class="title bg-orange text-white"> Category List </h1>
                                 </div>
                                 <section class="example">
                                     <div class="table-responsive">

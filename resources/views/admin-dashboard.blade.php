@@ -14,7 +14,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
 
                 <div class="row sameheight-container">
                     <div class="col-xl-3 ">
-                        <div class="card card-default bg-success bg-gradient sameheight-item">
+                        <div class="card card-default bg-orange sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
                                         <p class="title"> Default card </p>
@@ -29,7 +29,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                     </div>
 
                     <div class="col-xl-3">
-                        <div class="card card-default bg-info bg-gradient sameheight-item">
+                        <div class="card card-default bg-blue  sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
                                         <p class="title"> Default card </p>
@@ -44,7 +44,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                     </div>
 
                     <div class="col-xl-3">
-                        <div class="card card-default bg-success bg-gradient sameheight-item">
+                        <div class="card card-default bg-orange sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
                                         <p class="title"> Default card </p>
@@ -59,7 +59,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                     </div>
 
                     <div class="col-xl-3">
-                        <div class="card card-default bg-info bg-gradient sameheight-item">
+                        <div class="card card-default bg-blue sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
                                         <p class="title"> Default card </p>

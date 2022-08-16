@@ -1,7 +1,7 @@
 
       
         @extends('layouts.admin-master')
-        @section('title', 'Question topic')
+        @section('title', 'Quizzes')
         @section('content')
         
         <article class="content responsive-tables-page">
@@ -74,7 +74,7 @@
                         <div class="card sameheight-item">
                             <div class="card-block">
                                 <div class="card-title-block">
-                                    <h3 class="title"> Question Topic List </h3>
+                                    <h3 class="title"> Quizzes List </h3>
                                 </div>
                                 <section class="example">
                                     <div class="table-responsive shadow-lg bg-white rounded">
@@ -82,7 +82,9 @@
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>
-                                                    <th>Topic</th>
+                                                    <th>Quiz Name</th>
+                                                    <th>Total Question</th>
+                                                    <th>Quiz Time</th>
                                                     <th>Category</th>
                                                     <th>Actions</th>
                                                 </tr>
@@ -92,6 +94,8 @@
                                                 <tr>
                                                     <td>{{$topics->firstitem() + $key}}</td>
                                                     <td>{{$topic->topic_name}}</td>
+                                                    <td>{{$topic->total_question}}</td>
+                                                    <td>{{$topic->total_time}} Min</td>
                                                     <td>{{$topic->category_name}}</td>
                                                     <td>
                                                         <a href="/edit-topic/{{$topic->id}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>

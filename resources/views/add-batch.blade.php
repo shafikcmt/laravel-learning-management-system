@@ -19,9 +19,7 @@
                         <h1 class="title fs well p-2 bg-orange">Create Batch</h1>
 
                     </div>
-                    <div class="card-title-block">
-                        <h3 class="title"> Create Batch </h3>
-                    </div>
+                   
                     <form role="form" method="POST" action="{{route('create-batch')}}">
                         @if(session()->has('add-batch'))
                         <div class="alert alert-success" id="alertMessage">
@@ -73,8 +71,7 @@
 
                     </div>
                     <div class="card-title-block">
-                        <h3 class="title"> Adding Student's to Batch <a 
-                                href="/demo-batch-file"><button class="buttonDownload"><span>Sample Downloads</span></button></a></h3>
+                        <a class="pull-right" href="/demo-batch-file"><button class="buttonDownload"><span>Sample Downloads</span></button></a>
                     </div>
                     <form role="form" method="POST" action="{{route('students-add-batch')}}"
                         enctype="multipart/form-data">
@@ -114,9 +111,7 @@
                         <h1 class="title well fs p-2 bg-orange"> For Adding Single Student to Batch</h1>
 
                     </div>
-                    <div class="card-title-block">
-                        <h3 class="title"> Adding Student to Batch </h3>
-                    </div>
+                   
 
                     <form role="form" method="POST" action="{{route('student-add-batch')}}">
                         @csrf

@@ -25,7 +25,7 @@ class AdminAuth extends Controller
     public function AdminLog(){
         return view('auth.admin.adminlogin');
     }
-
+ 
     public function AdminLogin(Request $request){
         $request->validate([
             'email'=>'required|email|',

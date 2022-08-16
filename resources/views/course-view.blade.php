@@ -53,7 +53,7 @@
                                 </ul>
                             </div>
                             @endforeach
-                        </tr>
+                        </tr> 
                     </table>
                 </div>
             </div>

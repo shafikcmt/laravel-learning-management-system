@@ -47,6 +47,8 @@ class QuestionsController extends Controller
         $qcategory = Qcategory::find($request->category_id);
         $qtopics = Qtopic::find($request->id);
         $qtopics->topic_name = $request->topic_name;
+        $qtopics->total_question = $request->total_question;
+        $qtopics->total_time = $request->total_time;
         $qcategory->qtopic()->save($qtopics);
         return back()->with('update-topic','Topic Updated Successfully !');
     }

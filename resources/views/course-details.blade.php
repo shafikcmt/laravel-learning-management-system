@@ -11,7 +11,7 @@
 
                 <div class="card card-block sameheight-item shadow-lg p-3 mb-3 bg-white rounded">
                     <div class="title-block">
-                        <h1 class="title well p-2 bg-orange">Edit Courses <a
+                        <h1 class="title well p-2 bg-orange text-white">Edit Courses <a
                                 href="/admin-dashboard"><button class="btnhead">Back</button></a></h1>
                     </div>
                     @if(session()->has('update-courses'))
@@ -90,7 +90,7 @@
 
                 <div class="table-responsive shadow-lg p-3 mb-3 bg-white rounded">
                     <div class="title-block ">
-                        <h1 class="title well p-2 bg-orange">Questions Category </h1>
+                        <h1 class="title well p-2 bg-orange">Course Category </h1>
                     </div>
                     <table class="table table-striped table-bordered table-hover">
 

@@ -1,12 +1,12 @@
 
        
         @extends('layouts.admin-master')
-        @section('title', 'Add Question topic')
+        @section('title', 'Edit Quiz')
         @section('content')
 
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3">Edit Question Topic <a class="btn btn-primary" href="/questions-topic">Back</a></h1>
+                <h1 class="title well p-2 bg-orange">Edit Question Topic <a href="/questions-topic"><button class="btnhead">Back</button></a></h1>
 
             </div>
 
@@ -32,9 +32,21 @@
                                     <div class="text-danger">@error('category_id') {{$message}} @enderror</div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Topic Name</label>
+                                    <label for="exampleInputEmail1">Quiz Name</label>
                                     <input type="text" name="topic_name" class="form-control" id="category"
                                         value="{{$qtopics->topic_name}}" placeholder="Enter topic name">
+                                        <div class="text-danger">@error('topic_name') {{$message}} @enderror</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Total Question</label>
+                                    <input type="text" name="total_question" class="form-control" id="category"
+                                        value="{{$qtopics->total_question}}" placeholder="Enter topic name">
+                                        <div class="text-danger">@error('topic_name') {{$message}} @enderror</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Quiz Time</label>
+                                    <input type="text" name="total_time" class="form-control" id="category"
+                                        value="{{$qtopics->total_time}}" placeholder="Enter topic name">
                                         <div class="text-danger">@error('topic_name') {{$message}} @enderror</div>
                                 </div>
                                 <div class="form-group">
