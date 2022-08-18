@@ -27,7 +27,7 @@ a{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     border-radius: 10px;
 }
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3{
     color: #fff !important;
     font-size: 20px !important;
     font-family: shafi_bold !important;
@@ -64,9 +64,7 @@ a:not(.btn) {
 }
 .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
   padding: 0px 10px !important;
-  
   margin-right: 5px;
- 
 }
 .btn.btn-primary:hover{
     color: #f07d1e;
@@ -76,9 +74,9 @@ a:not(.btn) {
     transition: 1s;
 }
 
-.nav li a:hover{
+/* .nav li a:hover{
     color: #F07D1E;
-}
+} */
 .owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
 	position: absolute;
 	right: 18px;

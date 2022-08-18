@@ -20,7 +20,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                                         <p class="title"> Default card </p>
                                     </div>
                                 </div> -->
-                            <a href="/all-student" class="card-block text-dark" style="text-decoration:none">
+                            <a href="/all-student" class="card-block" style="text-decoration:none">
                                 <h1>{{$students->count()}}</h1>
                                 <h4>Students</h4>
                             </a>
@@ -29,13 +29,13 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                     </div>
 
                     <div class="col-xl-3">
-                        <div class="card card-default bg-blue  sameheight-item">
+                        <div class="card card-default bg-blue sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
                                         <p class="title"> Default card </p>
                                     </div>
                                 </div> -->
-                            <a class="card-block text-dark" href="/questions-bank" style="text-decoration:none">
+                            <a class="card-block" href="/questions-bank" style="text-decoration:none">
                                 <h1>{{$questions->count()}}</h1>
                                 <h4>Questions</h4>
                             </a>
@@ -50,7 +50,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                                         <p class="title"> Default card </p>
                                     </div>
                                 </div> -->
-                            <a class="card-block" href="/questions-topic" style="text-decoration:none; color:white">
+                            <a class="card-block" href="/questions-topic" style="text-decoration:none;">
                                 <h1>{{$quizes->count()}}</h1>
                                 <h4>Quizzes</h4>
                             </a>
@@ -65,7 +65,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                                         <p class="title"> Default card </p>
                                     </div>
                                 </div> -->
-                            <a class="card-block" href="/quiz-all-results" style="text-decoration:none; color:white">
+                            <a class="card-block" href="/quiz-all-results" style="text-decoration:none;">
                                 <h1>{{$attemp->count()}}</h1>
                                 <h4>Attempts</h4>
                             </a>

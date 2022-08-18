@@ -25,7 +25,7 @@
         <div class="title-block">
             <h1 class="title well p-2 bg-orange"> {{$courses->name}} <a href="/student-dashboard"><button class="btnhead">Back</button></a>
             </h1>
-        </div>
+        </div> 
         <section class="section">
             <div class="row sameheight-container">
 

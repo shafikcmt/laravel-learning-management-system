@@ -3,19 +3,18 @@
     @section('content')
         <article class="content responsive-tables-page">
         <div class="title-block">
-                <h1 class="title well p-3">Quiz Wise Results</h1>
-                
+                <h1 class="title well p-3 bg-orange">Quiz Wise Results</h1>
             </div>
-        
+         
                     <section class="section">
                         <div class="row sameheight-container">
-                            <div class="col-md-8 offset-md-2">
+                            <div class="col-md-12">
                                 <div class="card card-block sameheight-item">
                                     <form role="form">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Select Category</label>
                                             <div class="form-group">
-                                            <select class="form-control">
+                                            <select class="form-control" id="category">
                                             <option selected>--Select Category--</option>
                                                 <option>Option one</option>
                                                 <option>Option two</option>
@@ -27,7 +26,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Select Course</label>
                                             <div class="form-group">
-                                            <select class="form-control">
+                                            <select class="form-control" id="course">
                                                 <option selected>--Select Course--</option>
                                                 <option>Option one</option>
                                                 <option>Option two</option>

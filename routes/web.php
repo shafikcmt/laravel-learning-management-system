@@ -152,6 +152,8 @@ Route::get('/show-answer',[CourseMappingController::class,'showAnswer'])->middle
 Route::get('/test',[CourseMappingController::class,'Test']);
 
 Route::get('/results-quiz-wise',[QuizResultController::class,'indexQuiz'])->middleware('adminauthcheck');
+// Route::get('quiz-wise-result',[QuizResultController::class,'quizCourse'])->name('quizCourse');
+// Route::get('quiz-wise-result',[QuizResultController::class,'getQuiz'])->name('getQuiz');
 Route::get('/results-batch-wise',[QuizResultController::class,'indexBatch'])->middleware('adminauthcheck');
 Route::get('/results-date-wise',[QuizResultController::class,'indexDate']);
 Route::get('/quiz-all-results',[QuizResultController::class,'allStudentResult']);

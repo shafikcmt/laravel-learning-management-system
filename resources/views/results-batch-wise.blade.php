@@ -3,13 +3,13 @@
     @section('content')
         <article class="content responsive-tables-page">
         <div class="title-block">
-                <h1 class="title well p-3">Batch Wise Results</h1>
+                <h1 class="title well p-3 bg-orange">Batch Wise Results</h1>
                 
             </div>
         
                     <section class="section">
                         <div class="row sameheight-container">
-                            <div class="col-md-8 offset-md-2">
+                            <div class="col-md-12">
                                 <div class="card card-block sameheight-item">
                                     <form role="form">
                                         <div class="form-group">

@@ -1,5 +1,4 @@
-
-       
+      
         @extends('layouts.admin-master')
         @section('title', 'Questions Bank')
         @section('content')
@@ -22,7 +21,7 @@
                                 <div class="card-title-block">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <h3 class="title">All Question List </h3>
+                                            <h3 class="title text-dark">All Question List </h3>
                                         </div>
                                         <div class="col-md-4">
                                             <input style="border:none;" type="search" class="form-control"
@@ -50,9 +49,7 @@
                                                 <tr>
                                                     <th>Serial</th>
                                                     <th>Quiz Name</th>
-
                                                     <th>Question</th>
-
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -76,8 +73,6 @@
                                                 </tr>
                                                 <?php $i++; ?>
                                                 @endforeach
-
-
                                             </tbody>
 
                                         </table>

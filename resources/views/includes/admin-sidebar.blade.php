@@ -95,13 +95,13 @@
                         <li>
                             <a href="/quiz-all-results">All Quiz Results</a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="/results-quiz-wise"> Quiz Wise</a>
                         </li>
                         <li>
                             <a href="/results-batch-wise"> Batch Wise</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/results-date-wise"> Date Wise</a>
                         </li> -->
 

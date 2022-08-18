@@ -164,7 +164,7 @@ class CourseMappingController extends Controller
         ])->get();
         foreach ($results as $result) {
          dd($result->answer);
-        }
+        } 
         // return view('/submit-answer')->with('submit_answer','Your Answer Submited Successfully !')->with(['data'=>$data,'results'=>$results]);
     }
     public function StudentResult(){
@@ -177,22 +177,22 @@ class CourseMappingController extends Controller
    
   
     public function Test(){
-                // $courses = DB::table('categories')
-                // ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
-                // ->leftJoin('course_batches', 'courses.id', '=', 'course_batches.course_id')
-                // ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
-                
-                // ->get(); 
+             $quiz_ans = QuizAnswer::all();
+             $course_batch = CourseBatch::all();
+             $batch = Batch::all();
+             $courses = Course::all();
 
-                $answer = array('Sofik','Rofik','Mannan','Islam');
-                $canswer = array('s','r','m','i');
-                $result = array_combine($answer,$canswer);
-                // foreach($result as list($answer,$canswer)){
-                dd($result);
-                // }
-                
-          
-    
-       
+             foreach($course_batch as $course_batch){
+                foreach($courses as $course){
+                    if($course->id == $course_batch->course_id)
+                    {
+                        dd($course->name);
+                    }
+                }
+               
+             }  
+            //  foreach($quiz_ans as $quiz_ans){
+            //     dd($quiz_ans);
+            //  }            
     }
 }
