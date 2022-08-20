@@ -16,10 +16,9 @@
                                             <div class="form-group">
                                             <select class="form-control" id="category">
                                             <option selected>--Select Category--</option>
-                                                <option>Option one</option>
-                                                <option>Option two</option>
-                                                <option>Option three</option>
-                                                <option>Option four</option>
+                                               @foreach($categories as $category)
+                                               <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                               @endforeach
                                             </select>
                                         </div> 
                                         </div>
@@ -27,23 +26,15 @@
                                             <label for="exampleInputEmail1">Select Course</label>
                                             <div class="form-group">
                                             <select class="form-control" id="course">
-                                                <option selected>--Select Course--</option>
-                                                <option>Option one</option>
-                                                <option>Option two</option>
-                                                <option>Option three</option>
-                                                <option>Option four</option>
+                                               
                                             </select>
                                         </div> 
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Select Quiz</label>
                                             <div class="form-group">
-                                            <select class="form-control">
-                                            <option selected>--Select Quiz--</option>
-                                                <option>Option one</option>
-                                                <option>Option two</option>
-                                                <option>Option three</option>
-                                                <option>Option four</option>
+                                            <select class="form-control" id="quiz">
+                                           
                                             </select>
                                         </div> 
                                         </div>

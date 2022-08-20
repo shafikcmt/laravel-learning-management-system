@@ -135,14 +135,14 @@
 
 
 
-<!-- Quiz wish  Result  -->
-<!-- <script type="text/javascript">
+<!-- Quiz wish  Result   -->
+<script type="text/javascript">
     $(document).ready(function () {
-        $('#courseCategory').on('change', function () {
+        $('#category').on('change', function () {
             var categoryId = this.value;
             $('#course').html('');
             $.ajax({
-                url: 
+                url: '{{ route('quizCourse') }}?id='+categoryId,
                 type: 'get',
                 success: function (res) {
                     $('#course').html('<option value="">Select Course</option>');
@@ -153,11 +153,11 @@
                     
                 }
             });
-            $('course').on('change', function(){
+            $('#course').on('change', function(){
             var courseId = this.value;
             $('#quiz').html('');
             $.ajax({
-                url: 
+                url: '{{ route('getQuiz') }}?id='+courseId,
                 type: 'get',
                 success: function (res) {
                     $('#quiz').html('<option value="">Select Quiz</option>');
@@ -173,4 +173,4 @@
         });
         
     });
-</script> -->
+</script> 

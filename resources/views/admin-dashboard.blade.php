@@ -104,7 +104,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                                                     src="{{asset('images')}}/{{$course->image}}" alt="">
                                             </div>
                                             <div class="card-footer">
-                                                <h3>{{$course->name}}</h3>
+                                                <h5 class="text-dark">{{$course->name}}</h5>
                                                 <center><a style="position:relative; z-index:10;" href="/course-details/{{$course->id}}"
                                                         class="stretched-link"><button class="cssbuttons-io"><span>View
                                                                 Course</span></button></a></center>

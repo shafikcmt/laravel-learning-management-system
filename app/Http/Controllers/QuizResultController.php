@@ -6,34 +6,38 @@ use Illuminate\Http\Request;
 use App\Models\attempt_quiz;
 use App\Models\QuizAnswer;
 use App\Models\Batch;
+use App\Models\Category;
+use App\Models\Qtopic;
+use Illuminate\Support\Facades\DB;
+
 
  
 
 class QuizResultController extends Controller
 {
     public function indexQuiz(){
-        // $categories = \DB::table('categories')->get();
-        return view('/results-quiz-wise');
+        $categories = Category::all();
+        return view('/results-quiz-wise',compact('categories'));
     }
-    // public function quizCourse(Request $request){
-    //     $course = \DB::table('courses')
-    //     ->where('category_id', $request->id)
-    //     ->get();
+    public function quizCourse(Request $request){
+        $course = \DB::table('courses')
+        ->where('category_id', $request->id)
+        ->get();
     
-    // if (count($course) > 0) {
-    //     return response()->json($course);
-    // }
-    // }
+    if (count($course) > 0) {
+        return response()->json($course);
+    }
+    }
 
-    // public function getQuiz(Request $request){
-    //     $quiz = \DB::table('qtopics')
-    //     ->where('qcategory_id', $request->id)
-    //     ->get();
+    public function getQuiz(Request $request){
+        $quiz = \DB::table('qtopics')
+        ->where('qcategory_id', $request->id)
+        ->get();
     
-    // if (count($quiz) > 0) {
-    //     return response()->json($course);
-    // }
-    // }
+    if (count($quiz) > 0) {
+        return response()->json($course);
+    }
+    }
 
 
     public function indexBatch(){
