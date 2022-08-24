@@ -19,7 +19,7 @@
                 <div class="col-md-4">
                     <div class="copy-right">
                         <p>Copyright &copy;2022 All rights reserved <br>
-                            Made with &hearts; by <a target="_blank" href="https://geeta.edu.in/gthub/">TechnicalHub</a></p>
+                            Made with &hearts; by <a target="_blank" href="https://geeta.edu.in/gthub/">Geeta Technical Hub</a></p>
                     </div>
                 </div>
                 <div class="col-md-4">

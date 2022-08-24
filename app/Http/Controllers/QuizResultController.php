@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 class QuizResultController extends Controller
 {
     public function indexQuiz(){
+       
         $categories = Category::all();
         return view('/results-quiz-wise',compact('categories'));
     }
@@ -35,11 +36,67 @@ class QuizResultController extends Controller
         ->get();
     
     if (count($quiz) > 0) {
-        return response()->json($course);
+        return response()->json($quiz);
     }
     }
 
-
+    public function getQuizResult(Request $request){
+        if($request->ajax())
+        {
+         $output = '';
+         $query = $request->get('query');
+         if($query != '')
+         {
+          $data = DB::table('attempt_quizzes')
+            ->where('topic_id', $query)
+            ->get();
+            
+         }
+         else
+         {
+          $data = DB::table('attempt_quizzes')
+            ->orderBy('id', 'desc')
+            ->get();
+         }
+         $total_row = $data->count();
+         if($total_row > 0)
+         {
+        
+          foreach($data as $row)
+          {
+           $output .= '
+           <tr>
+            <td>'.$row->student_name.'</td>
+            <td>'.$row->student_roll.'</td>
+            <td>'.$row->student_class.'</td>
+            <td>'.$row->student_branch.'</td>
+            <td>'.$row->student_semester.'</td>
+            <td>'.$row->topic_name.'</td>
+            <td>
+            <a class="btn btn-primary" href="/quiz-result/'.$row->student_id.'/'.$row->topic_id.'">View</a>
+            </td>
+           </tr>
+           
+           ';
+           
+          }
+         }
+         else
+         {
+          $output = '
+          <tr>
+           <td align="center" colspan="8">No Data Found</td>
+          </tr>
+          ';
+         }
+         $data = array(
+          'table_data'  => $output,
+          'total_data'  => $total_row
+         );
+   
+         echo json_encode($data);
+        }
+    }
     public function indexBatch(){
         return view('/results-batch-wise');
     }

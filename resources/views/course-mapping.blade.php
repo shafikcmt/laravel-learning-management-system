@@ -17,15 +17,12 @@
                     <div class="alert alert-success">
                         {{session()->get('course-map')}}
                     </div>
-                    @elseif(session()->has('course-map-student'))
-                    <div class="alert alert-success">
-                        {{session()->get('course-map-student')}}
-                    </div>
                     @endif
+                   
                     <form method="POST" action="{{route('course.map')}}">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Select Category</label>
+                            <label for="exampleInputEmail1">Select Course Category</label>
                             <div class="form-group">
 
                                 <select class="form-control" id="category">
@@ -75,9 +72,9 @@
         <div class="row sameheight-container">
             <div class="col-md-12">
                 <div class="card card-block sameheight-item">
-                @if(session()->has('course-map'))
+                @if(session()->has('course-map-student'))
                     <div class="alert alert-success">
-                        {{session()->get('course-map')}}
+                        {{session()->get('course-map-student')}}
                     </div>
                     @endif
                 <div class="title-block">
@@ -88,7 +85,7 @@
                     <form method="POST" action="{{route('course.map.student')}}">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Select Category</label>
+                            <label for="exampleInputEmail1">Select Course Category</label>
                             <div class="form-group">
 
                                 <select class="form-control" id="categories">
@@ -125,13 +122,8 @@
                     </form>
                 </div>
             </div>
-
         </div>
-    </section>
-
-
-
-    
+    </section>   
 </article>
 </div>
 </div>

@@ -7,14 +7,9 @@
                 <h1 class="title well p-2 bg-orange"> All Results </h1>
             </div>
             <section class="section">
-                <div class="row">
-                    <div class="col-md-4 offset-md-4">
-                        
-                    </div>
-                </div>
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                        <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="table-responsive p-3 bg-white sameheight-item">
                             <table class="table table-striped table-bordered table-hover">
                                <thead>
                                 <tr>

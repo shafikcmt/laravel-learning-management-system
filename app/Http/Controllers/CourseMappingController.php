@@ -176,23 +176,11 @@ class CourseMappingController extends Controller
     }
    
   
-    public function Test(){
-             $quiz_ans = QuizAnswer::all();
-             $course_batch = CourseBatch::all();
-             $batch = Batch::all();
-             $courses = Course::all();
-
-             foreach($course_batch as $course_batch){
-                foreach($courses as $course){
-                    if($course->id == $course_batch->course_id)
-                    {
-                        dd($course->name);
-                    }
-                }
-               
-             }  
-            //  foreach($quiz_ans as $quiz_ans){
-            //     dd($quiz_ans);
-            //  }            
+    public function Test($id){
+        $course = \DB::table('qtopics')
+        ->where('qcategory_id', $id)
+        ->get(); 
+        
+        dd($course);
     }
 }

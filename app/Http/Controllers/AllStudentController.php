@@ -26,7 +26,7 @@ class AllStudentController extends Controller
          $output = '';
          $query = $request->get('query');
          if($query != '')
-         {
+         { 
           $data = DB::table('students')
             ->where('name', 'like', '%'.$query.'%')
             ->orWhere('roll', 'like', '%'.$query.'%')

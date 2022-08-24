@@ -1,13 +1,7 @@
         @extends('layouts.admin-master')
         @section('title','Admin Dashboard')
         @section('content')
-        <style>
-            /* .bg-gradient{
-        background: rgb(240,125,30);
-background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.9698879551820728) 64%);
-    } */
-
-        </style>
+       
         <article class="content dashboard-page">
 
             <section class="section">
@@ -78,7 +72,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
 
             </section>
             <section class="section">
-                <div  class="row sameheight-container">
+                <div class="row sameheight-container">
                     <div class="col-md-12 ">
 
                         <div class="card sameheight-item" data-exclude="xs,sm" style="height:500px;">
@@ -88,42 +82,41 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
 
                             <div class="card-block ">
                                 @if(count($courses))
-                                   
+
                                 <div class="owl-carousel owl-theme">
                                     @foreach($courses as $course)
                                     <div class="item card-item">
-                                        <div class="">
-                                            <div class="card-header">
-                                                <div class="header-block">
-                                                    <p style="color:#000 !important" class="title">
-                                                        {{$course->category_name}} </p>
-                                                </div>
-                                            </div>
-                                            <div class="card-block">
-                                                <img height="100px" width="100%"
-                                                    src="{{asset('images')}}/{{$course->image}}" alt="">
-                                            </div>
-                                            <div class="card-footer">
-                                                <h5 class="text-dark">{{$course->name}}</h5>
-                                                <center><a style="position:relative; z-index:10;" href="/course-details/{{$course->id}}"
-                                                        class="stretched-link"><button class="cssbuttons-io"><span>View
-                                                                Course</span></button></a></center>
 
+                                        <div class="card-header">
+                                            <div class="header-block">
+                                                <p style="color:#000 !important" class="title">
+                                                    {{$course->category_name}}
+                                                </p>
                                             </div>
                                         </div>
+                                        <div class="card-block">
+                                            <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
+                                        </div>
+                                        <div class="card-footer">
+                                            <h5 class="text-dark">{{$course->name}}</h5>
+                                            <center>
+                                                <a style="position:relative; z-index:10;" href="/course-details/{{$course->id}}" class="stretched-link">
+                                                    <button class="cssbuttons-io"><span>View
+                                                            Course</span></button>
+                                                </a>
+                                            </center>
 
+                                        </div>
                                     </div>
-
-
+                                    @endforeach
                                 </div>
-                                @endforeach
                                 @else
                                 <div class=" text-danger text-center">
                                     Course Not found
                                 </div>
                                 @endif
 
-                       
+
                             </div>
 
                         </div>
@@ -161,12 +154,10 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                                                 <td>{{$course->name}}</td>
 
                                                 <td>
-                                                    <img height="50px" width="50px"
-                                                        src="{{asset('images')}}/{{$course->image}}" alt="">
+                                                    <img height="50px" width="50px" src="{{asset('images')}}/{{$course->image}}" alt="">
                                                 </td>
                                                 <td>
-                                                    <a href="/course-details/{{$course->id}}"
-                                                        class="stretched-link"><button class="cssbuttons-io"><span>View
+                                                    <a href="/course-details/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View
                                                                 Course</span></button></a>
                                                 </td>
                                             </tr>
@@ -221,9 +212,7 @@ background: linear-gradient(90deg, rgba(240,125,30,1) 0%, rgba(11,41,77,0.969887
                             <div class="tab-pane fade active in" id="upload" role="tabpanel">
                                 <div class="upload-container">
                                     <div id="dropzone">
-                                        <form action="https://modularcode.io/" method="POST"
-                                            enctype="multipart/form-data" class="dropzone needsclick dz-clickable"
-                                            id="demo-upload">
+                                        <form action="https://modularcode.io/" method="POST" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="demo-upload">
                                             <div class="dz-message-block">
                                                 <div class="dz-message needsclick"> Drop files here or click to upload.
                                                 </div>

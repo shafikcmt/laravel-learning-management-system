@@ -134,7 +134,6 @@
 </script>
 
 
-
 <!-- Quiz wish  Result   -->
 <script type="text/javascript">
     $(document).ready(function () {
@@ -145,12 +144,11 @@
                 url: '{{ route('quizCourse') }}?id='+categoryId,
                 type: 'get',
                 success: function (res) {
-                    $('#course').html('<option value="">Select Course</option>');
+                    $('#course').html('<option>Select Course</option>');
                     $.each(res, function (key, value) {
                         $('#course').append('<option  value="' + value
                             .id + '">' + value.name + '</option>');
-                    });
-                    
+                    });  
                 }
             });
             $('#course').on('change', function(){
@@ -160,17 +158,42 @@
                 url: '{{ route('getQuiz') }}?id='+courseId,
                 type: 'get',
                 success: function (res) {
-                    $('#quiz').html('<option value="">Select Quiz</option>');
+                    $('#quiz').html('<option>Select Quiz</option>');
                     $.each(res, function (key, value) {
                         $('#quiz').append('<option  value="' + value
-                            .id + '">' + value.name + '</option>');
-                    });
-                    
+                            .id + '">' + value.topic_name + '</option>');
+                    }); 
                 }
             });
-            });
-
-        });
+            });      
+        });   
         
-    });
+        
+
+});
 </script> 
+<!-- Fetch Quiz Result Data -->
+<script>
+    
+fetch_quiz_result_data();
+
+function fetch_quiz_result_data(query = '') {
+    $.ajax({
+        url: "{{ route('getQuizResult') }}",
+        method: 'GET',
+        data: {
+            query: query
+        },
+        dataType: 'json',
+        success: function (data) {
+            $('#quiz_result').html(data.table_data);
+            $('#total_records').text(data.total_data);
+        }
+    })
+}
+
+$(document).on('change', '#quiz', function () {
+    var query = $(this).val();
+    fetch_quiz_result_data(query);
+});
+</script>

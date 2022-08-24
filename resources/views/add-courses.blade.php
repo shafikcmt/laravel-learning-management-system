@@ -11,7 +11,7 @@
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                        <div class="card card-block sameheight-item">
+                        <div class="card card-block sameheight-item mb-3">
                             @if(session()->has('add-courses'))
                             <div class="alert alert-success" id="alertMessage">
                                 {{session()->get('add-courses')}}

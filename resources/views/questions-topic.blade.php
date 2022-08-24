@@ -6,7 +6,7 @@
         
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-2 bg-orange">Add Quiz <a href="/questions-category"><button class="btnhead">Add Category</button></a></h1>
+                <h1 class="title well p-2 bg-orange">Add Quiz <a href="/questions-category"><button class="btnhead">Add Quiz Category</button></a></h1>
 
             </div>
 
@@ -27,7 +27,7 @@
                                 @endif
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Question Category</label>
+                                    <label for="exampleInputEmail1">Quiz Category</label>
                                     <select name="category" id="" class="form-control">
                                         <option value="" selected>Select Category</option>
                                         @foreach($categories as $category)

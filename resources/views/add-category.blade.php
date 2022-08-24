@@ -7,14 +7,14 @@
        
         <article class="content responsive-tables-page">
             <div class="title-block">
-                <h1 class="title well p-3 bg-orange">Add Category </h1>
+                <h1 class="title well p-3 bg-orange">Add Course Category </h1>
 
             </div>
 
             <section class="section">
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                        <div class="card card-block sameheight-item">
+                        <div class="card card-block sameheight-item mb-5">
 
                             <form role="form" method="post" action="{{route('create-category')}}">
                                 @if(session()->has('add-category'))
@@ -53,7 +53,7 @@
                         <div class="card sameheight-item">
                             <div class="card-block ">
                                 <div class="card-title-block">
-                                    <h1 class="title bg-orange text-white"> Category List </h1>
+                                    <h1 class="title bg-orange text-white"> Course Category List </h1>
                                 </div>
                                 <section class="example">
                                     <div class="table-responsive">
@@ -61,7 +61,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Serial</th>
-                                                    <th>Title</th>
+                                                    <th>Category</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>

@@ -14,7 +14,7 @@
                 </div>
                 <div class="row sameheight-container">
                     <div class="col-md-12">
-                        <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded sameheight-item">
                             <table class="table table-striped table-bordered table-hover ">
                                <thead>
                                 <tr>

@@ -16,8 +16,8 @@
                     @if(count($courses))
                     <div class="owl-carousel owl-theme"> 
                         @foreach($courses as $course)
-                        <div class="item">
-                            <div class="card-item">
+                        
+                            <div class="item card-item">
                                 <div class="card-header">
                                     <div class="header-block">
                                         <p class="title">{{$course->category_name}} </p>
@@ -33,7 +33,7 @@
                                     </center>
                                 </div>
                             </div>
-                        </div>
+                       
                         @endforeach
                        
                     </div>
