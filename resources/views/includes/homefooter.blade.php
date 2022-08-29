@@ -13,7 +13,6 @@
                         <a href="/">
                        <img src="{{asset('images/imageedit_11_6058849157.png')}}" alt="">
                         </a>
-                      
                     </div>
                 </div>
                 <div class="col-md-4">

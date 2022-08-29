@@ -27,7 +27,7 @@
                                     <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
                                 </div>
                                 <div class="card-footer">
-                                    <h3>{{$course->name}}</h3>
+                                    <h5 class="text-dark">{{$course->name}}</h5>
                                     <center>
                                         <a style="position:relative; z-index:10;" href="/course-view/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button> </a>
                                     </center>

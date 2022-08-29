@@ -11,7 +11,7 @@
                             <img style="margin-top:-10px;" src="{{asset('images/fav.png')}}" alt="">
                             </a>
                           
-                        </div> Student Login
+                        </div> <span class="text-dark">Student Login</span>
                     </h1>
                 </header>
                 <div class="auth-content">

@@ -128,6 +128,7 @@ Route::get('/demo-download',[AddQuestionController::class,'demoQuestion']);
 Route::post('/bulk-question',[AddQuestionController::class,'createBulkQuestion'])->name('bulk-question');
 
 Route::get('/questions-bank',[AddQuestionController::class,'questionBank'])->middleware('adminauthcheck');
+// Route::get('/question-search',[AddQuestionController::class,'qustionSearch'])->name('qustionSearch');
 Route::get('/edit-questions/{id}',[AddQuestionController::class,'questionBankEdit'])->middleware('adminauthcheck');
 Route::post('/edit-questions',[AddQuestionController::class,'updateQuestion'])->name('update-question');
 Route::get('/delete-questions/{id}',[AddQuestionController::class,'deleteQuestion']);
