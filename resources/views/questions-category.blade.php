@@ -20,7 +20,7 @@
                         <div class="alert alert-success" id="alertMessage">
                             {{ session()->get('delete-category') }}
                         </div>
-                        @endif
+                        @endif 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Select Course Name</label>
                             <select name="course_id" id="" class="form-control">
@@ -29,7 +29,7 @@
                                 <option value="{{$course->id}}">{{$course->name}}</option>
                                 @endforeach
                             </select>
-                            <div class="text-danger">@error('category_name') {{$message}} @enderror</div>
+                            <div class="text-danger">@error('course_id') {{$message}} @enderror</div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Quiz Category Name</label>

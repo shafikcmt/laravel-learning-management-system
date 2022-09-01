@@ -26,6 +26,7 @@ public function StudentRegister(Request $request){
         'mobile'    => 'required|numeric|digits:10',
         'email'     => 'required|email',
         'password'  => 'required|min:8',
+        'retype_password'  => 'required|min:8|same:password|min:8',
     ]);
         $student = new Student();
         $student->name = $request->name;
@@ -67,7 +68,7 @@ public function StudentRegister(Request $request){
         else{
             return back()->with('message','This roll number is not Registered ');
         }
-    }
+    } 
     public function StudentDashboard(){
         $data = array();
         if(Session::has('loginId')){

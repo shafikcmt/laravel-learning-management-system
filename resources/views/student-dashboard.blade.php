@@ -13,10 +13,9 @@
                         <h1  class="title well p-2 bg-orange text-white"> Available Course </h1>
                     </div>
                     <div class="card-block">
-                    @if(count($courses))
+                    @if(count($courses) >= 5)
                     <div class="owl-carousel owl-theme"> 
                         @foreach($courses as $course)
-                        
                             <div class="item card-item">
                                 <div class="card-header">
                                     <div class="header-block">
@@ -27,16 +26,35 @@
                                     <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
                                 </div>
                                 <div class="card-footer">
-                                    <h3>{{$course->name}}</h3>
+                                    <h5 class="text-dark">{{$course->name}}</h5>
                                     <center>
-                                        <a style="position:relative; z-index:10;" href="/course-view/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button> </a>
+                                        <a style="position:relative; z-index:10;" href="/course-view/{{$course->course_id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button> </a>
                                     </center>
                                 </div>
                             </div>
-                       
                         @endforeach
-                       
                     </div>
+                    @elseif(count($courses))
+                    <div class="row">
+                        @foreach($courses as $course)
+                            <div class="item card-item ml-3">
+                                <div class="card-header">
+                                    <div class="header-block">
+                                        <p class="title">{{$course->category_name}} </p>
+                                    </div>
+                                </div>
+                                <div class="card-block">
+                                    <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
+                                </div>
+                                <div class="card-footer">
+                                    <h5 class="text-dark">{{$course->name}}</h5>
+                                    <center>
+                                        <a style="position:relative; z-index:10;" href="/course-view/{{$course->course_id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button> </a>
+                                    </center>
+                                </div>
+                            </div>
+                        @endforeach
+                        </div>
                     @else
                     <p>Quiz is not Available for you !</p>
                     @endif
@@ -69,7 +87,7 @@
                                         <td>{{$course->name}}</td>
                                        
                                         <td>
-                                            <a href="/course-view/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button></a>
+                                            <a href="/course-view/{{$course->course_id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button></a>
                                         </td>
                                     </tr>
                                 </tbody>

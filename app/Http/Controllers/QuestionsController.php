@@ -66,10 +66,11 @@ class QuestionsController extends Controller
         $courses = Course::all();
         return view('/questions-category',compact('categories','courses'));
     }
-
+ 
     public function createQcategory(Request $request){
         $request->validate([
-            'category_name' => 'required|unique:qcategories',
+            'category_name' => 'required|unique:qcategories,category_name,{$this->course_id}',
+            
         ]);
         $courses = Course::find($request->course_id);
         $categories = new Qcategory;

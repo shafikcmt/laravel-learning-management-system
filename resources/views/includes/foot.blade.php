@@ -197,3 +197,32 @@ $(document).on('change', '#quiz', function () {
     fetch_quiz_result_data(query);
 });
 </script>
+
+<!-- 
+<script>
+    $(document).ready(function () {
+
+        fetch_question_data();
+
+        function fetch_question_data(query = '') {
+            $.ajax({
+                url: "{{ route('all-student.action') }}",
+                method: 'GET',
+                data: {
+                    query: query
+                },
+                dataType: 'json',
+                success: function (data) {
+                    $('#students').html(data.table_data);
+                    $('#total_records').text(data.total_data);
+                }
+            })
+        }
+
+        $(document).on('keyup', '#search', function () {
+            var query = $(this).val();
+            fetch_question_data(query);
+        });
+    });
+
+</script> -->

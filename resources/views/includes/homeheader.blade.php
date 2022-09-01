@@ -14,7 +14,7 @@
                         <div class="col-md-4">
                             <nav class="navbar-expand-md navbar-dark">
                                 <ul class="nav navbar-nav justify-content-end">
-                                <li class="nav-item"><a class="" href="/student-login">Login&nbsp  </a></li>
+                                <li class="nav-item"><a class="" href="/student-login">Login </a></li>&nbsp &nbsp &nbsp
                                 <li class="nav-item"><a class="" href="/student-registration"> &nbspCraete Account</a></li>
                               
                                 </ul>
