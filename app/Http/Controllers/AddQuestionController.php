@@ -42,7 +42,7 @@ class AddQuestionController extends Controller
         $qtopics = Qtopic::all();
         return view('/question-bulk-import',compact('qtopics'));
     }
-    
+     
     
     public function createBulkQuestion(Request $request){
         $request->validate([

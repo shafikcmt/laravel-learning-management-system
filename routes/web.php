@@ -50,7 +50,7 @@ Route::get('/student-registration',[StudentAuth::class,'registration'])->middlew
 Route::post('/student-registration',[StudentAuth::class,'StudentRegister'])->name('student-register');
 Route::get('/password',[AllStudentController::class,'ShowPassword']);
 Route::get('student-result',[CourseMappingController::class,'StudentResult']);
-Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']);
+Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']); 
 Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
 Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
@@ -132,7 +132,7 @@ Route::get('/questions-bank',[AddQuestionController::class,'questionBank'])->mid
 Route::get('/edit-questions/{id}',[AddQuestionController::class,'questionBankEdit'])->middleware('adminauthcheck');
 Route::post('/edit-questions',[AddQuestionController::class,'updateQuestion'])->name('update-question');
 Route::get('/delete-questions/{id}',[AddQuestionController::class,'deleteQuestion']);
-
+ 
 Route::get('/course-details/{id}',[AddQuestionController::class,'courseDetails'])->middleware('adminauthcheck');
 Route::get('/view-topic/{id}',[AddQuestionController::class,'viewTopic'])->middleware('adminauthcheck');
 Route::get('/questions-view/{id}',[AddQuestionController::class,'questionsView'])->middleware('adminauthcheck');

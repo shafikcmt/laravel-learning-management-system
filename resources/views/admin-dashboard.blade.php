@@ -1,7 +1,7 @@
         @extends('layouts.admin-master')
         @section('title','Admin Dashboard')
         @section('content')
-       
+
         <article class="content dashboard-page">
 
             <section class="section">
@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="card-block ">
-                                @if(count($courses))
+                                @if(count($courses) >= 5)
 
                                 <div class="owl-carousel owl-theme">
                                     @foreach($courses as $course)
@@ -95,12 +95,14 @@
                                             </div>
                                         </div>
                                         <div class="card-block">
-                                            <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
+                                            <img height="100px" width="100%"
+                                                src="{{asset('images')}}/{{$course->image}}" alt="">
                                         </div>
                                         <div class="card-footer">
                                             <h5 class="text-dark">{{$course->name}}</h5>
                                             <center>
-                                                <a style="position:relative; z-index:10;" href="/course-details/{{$course->id}}" class="stretched-link">
+                                                <a style="position:relative; z-index:10;"
+                                                    href="/course-details/{{$course->id}}" class="stretched-link">
                                                     <button class="cssbuttons-io"><span>View
                                                             Course</span></button>
                                                 </a>
@@ -110,6 +112,40 @@
                                     </div>
                                     @endforeach
                                 </div>
+                                @elseif(count($courses))
+                                <div class="row">
+                                @foreach($courses as $course)
+                                    <!-- <div class="col"> -->
+                                        <div class="ml-3 item card-item">
+
+                                            <div class="card-header">
+                                                <div class="header-block">
+                                                    <p style="color:#000 !important" class="title">
+                                                        {{$course->category_name}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="card-block">
+                                                <img height="100px" width="100%"
+                                                    src="{{asset('images')}}/{{$course->image}}" alt="">
+                                            </div>
+                                            <div class="card-footer">
+                                                <h5 class="text-dark">{{$course->name}}</h5>
+                                                <center>
+                                                    <a style="position:relative; z-index:10;"
+                                                        href="/course-details/{{$course->id}}" class="stretched-link">
+                                                        <button class="cssbuttons-io"><span>View
+                                                                Course</span></button>
+                                                    </a>
+                                                </center>
+
+                                            </div>
+                                        </div>
+                                    <!-- </div> -->
+
+                                @endforeach
+                                </div>
+
                                 @else
                                 <div class=" text-danger text-center">
                                     Course Not found
@@ -154,10 +190,12 @@
                                                 <td>{{$course->name}}</td>
 
                                                 <td>
-                                                    <img height="50px" width="50px" src="{{asset('images')}}/{{$course->image}}" alt="">
+                                                    <img height="50px" width="50px"
+                                                        src="{{asset('images')}}/{{$course->image}}" alt="">
                                                 </td>
                                                 <td>
-                                                    <a href="/course-details/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View
+                                                    <a href="/course-details/{{$course->id}}"
+                                                        class="stretched-link"><button class="cssbuttons-io"><span>View
                                                                 Course</span></button></a>
                                                 </td>
                                             </tr>
@@ -212,7 +250,9 @@
                             <div class="tab-pane fade active in" id="upload" role="tabpanel">
                                 <div class="upload-container">
                                     <div id="dropzone">
-                                        <form action="https://modularcode.io/" method="POST" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="demo-upload">
+                                        <form action="https://modularcode.io/" method="POST"
+                                            enctype="multipart/form-data" class="dropzone needsclick dz-clickable"
+                                            id="demo-upload">
                                             <div class="dz-message-block">
                                                 <div class="dz-message needsclick"> Drop files here or click to upload.
                                                 </div>

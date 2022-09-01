@@ -68,7 +68,7 @@ public function StudentRegister(Request $request){
         else{
             return back()->with('message','This roll number is not Registered ');
         }
-    }
+    } 
     public function StudentDashboard(){
         $data = array();
         if(Session::has('loginId')){

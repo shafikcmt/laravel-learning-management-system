@@ -13,7 +13,7 @@
             background-size: 27px;
             font-size: 18px;
         }
-
+ 
         ul .list_img a {
             text-decoration: none;
             color: #3C96B4;
@@ -48,7 +48,7 @@
                                     </li>
                                     @endforeach
                                     @else
-                                    <p class="text-center bg-warning p-2">Quiz not Found !</p>
+                                    <p class="text-center pt-2">Quiz not Found !</p>
                                     @endif
                                 </ul>
                             </div>

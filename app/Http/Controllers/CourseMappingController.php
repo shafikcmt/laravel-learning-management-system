@@ -57,7 +57,7 @@ class CourseMappingController extends Controller
         $course_map->save();
         return back()->with('course-map','Course map Successfully !');
     }
-
+ 
     public function courseMapStudent(Request $request){
         $request->validate([
             'course_id'        => 'required',
