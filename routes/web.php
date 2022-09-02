@@ -103,6 +103,8 @@ Route::get('/demo-batch-file',[BatchController::class,'demoBatchFile']);
 
 
 Route::get('/questions-topic',[QuestionsController::class,'addTopic'])->middleware('adminauthcheck');
+Route::get('get-quiz',[QuestionsController::class,'quizGet'])->name('quizGet');
+
 Route::post('/create-topic',[QuestionsController::class,'createTopic'])->name('create-topic');
 Route::get('/edit-topic/{id}',[QuestionsController::class,'editTopic'])->middleware('adminauthcheck');
 Route::post('/edit-topic',[QuestionsController::class,'updateTopic'])->name('update-topic');

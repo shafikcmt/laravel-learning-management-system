@@ -226,3 +226,27 @@ $(document).on('change', '#quiz', function () {
     });
 
 </script> -->
+
+
+<!-- Add Quiz -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#course').on('change', function () {
+            var courseId = this.value;
+            $('#quizcat').html('');
+            $.ajax({
+                url: '{{ route('quizGet') }}?id='+courseId,
+                type: 'get',
+                success: function (res) {
+                    $('#quizcat').html('<option value="">Select Course</option>');
+                    $.each(res, function (key, value) {
+                        $('#quizcat').append('<option  value="' + value
+                            .id + '">' + value.category_name + '</option>');
+                    });
+                    
+                }
+            });
+        });
+        
+    });
+</script>

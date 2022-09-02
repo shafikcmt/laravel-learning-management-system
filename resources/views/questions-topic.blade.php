@@ -27,12 +27,20 @@
                                 @endif
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Quiz Category</label>
-                                    <select name="category" id="" class="form-control">
-                                        <option value="" selected>Select Category</option>
-                                        @foreach($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                    <label for="exampleInputEmail1">Course</label>
+                                    <select name="course" id="course" class="form-control">
+                                        <option value="" selected>Select Course</option>
+                                        @foreach($courses as $course)
+                                        <option value="{{$course->id}}">{{$course->name}}</option>
                                         @endforeach
+                                    </select>
+                                    <div class="text-danger">@error('course') {{$message}} @enderror</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Quiz Category</label>
+                                    <select name="category" id="quizcat" class="form-control">
+                                       
                                     </select>
                                     <div class="text-danger">@error('category') {{$message}} @enderror</div>
                                 </div>
@@ -74,7 +82,7 @@
                         <div class="card sameheight-item">
                             <div class="card-block">
                                 <div class="card-title-block">
-                                    <h3 class="title"> Quizzes List </h3>
+                                    <h3 class="title bg-orange"> Quizzes List </h3>
                                 </div>
                                 <section class="example">
                                     <div class="table-responsive shadow-lg bg-white rounded">

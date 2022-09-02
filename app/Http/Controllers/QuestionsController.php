@@ -17,8 +17,18 @@ class QuestionsController extends Controller
         $topics = DB::table('qcategories')
         ->leftJoin('qtopics', 'qcategories.id', '=', 'qtopics.qcategory_id')
         ->paginate(10);
+        $courses = Course::all();
         $categories = Qcategory::all();
-        return view('/questions-topic',compact('categories','topics'));
+        return view('/questions-topic',compact('categories','topics','courses'));
+    }
+    public function quizGet(Request $request){
+        $quizcat = \DB::table('qcategories')
+        ->where('course_id', $request->id)
+        ->get();
+    
+    if (count($quizcat) > 0) {
+        return response()->json($quizcat);
+    }
     }
     public function createTopic(Request $request){
         $request->validate([
