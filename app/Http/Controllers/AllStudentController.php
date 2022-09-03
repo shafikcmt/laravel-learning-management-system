@@ -20,6 +20,21 @@ class AllStudentController extends Controller
         // $students = Student::orderBy('id','DESC')->paginate(10);
         return view('/all-student');
     }
+    public function driveSkills(){
+        $data = array();
+        if(Session::has('loginId')){
+            // $setbatch = new StudentsBatch;
+            $data = Student::where('id','=',Session::get('loginId'))->first();            
+                $courses = DB::table('course_batches')
+                ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
+                ->leftJoin('courses', 'course_batches.course_id', '=', 'courses.id')
+                ->leftJoin('categories','categories.id', '=','courses.category_id')
+                ->where('students_batches.student_roll', '=', $data->roll)
+                ->orWhere('course_batches.batch_id', '=', $data->roll)
+                ->get();        
+            }
+        return view('/drive-skills',compact('data','courses'));
+    }
     public function action(Request $request){
         if($request->ajax())
         {

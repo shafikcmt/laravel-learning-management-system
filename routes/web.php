@@ -44,6 +44,7 @@ Route::get('/',[HomeController::class,'index'])->middleware('ifStudentLogin');
 Route::get('/student-login',[StudentAuth::class,'login'])->middleware('studentlogin');
 Route::get('/student-logout',[StudentAuth::class,'Logout']);
 Route::get('/student-dashboard',[StudentAuth::class,'StudentDashboard'])->middleware('studentauthcheck');
+Route::get('/drive-skills',[AllStudentController::class,'driveSkills'])->middleware('studentauthcheck');
 Route::post('/student-login',[StudentAuth::class,'LoginStudent'])->name('student-login');
 Route::get('/student-profile/{id}',[StudentAuth::class,'StudentProfile']);
 Route::get('/student-registration',[StudentAuth::class,'registration'])->middleware('studentlogin');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Hash;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Course;
 use App\Models\StudentsBatch;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -74,13 +75,7 @@ public function StudentRegister(Request $request){
         if(Session::has('loginId')){
             // $setbatch = new StudentsBatch;
             $data = Student::where('id','=',Session::get('loginId'))->first();            
-                $courses = DB::table('course_batches')
-                ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
-                ->leftJoin('courses', 'course_batches.course_id', '=', 'courses.id')
-                ->leftJoin('categories','categories.id', '=','courses.category_id')
-                ->where('students_batches.student_roll', '=', $data->roll)
-                ->orWhere('course_batches.batch_id', '=', $data->roll)
-                ->get();        
+                $courses = Course::all();
             }
         return view('/student-dashboard',compact('data','courses'));
 

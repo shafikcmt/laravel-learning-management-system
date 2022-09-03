@@ -14,7 +14,7 @@
                                 </li>
                                 <li>
                                     <a href="/student-profile/{{$data['id']}}">
-                                        <i class="fa fa-home"></i> Personal Details </a>
+                                        <i class="fa fa-user"></i> Personal Details </a>
                                 </li>
                                 <li>
                                     <a href="#">
@@ -26,6 +26,12 @@
                                              <a href="/student-result"> Result </a> 
                                         </li>
                                     </ul>
+                                </li>
+                                <li>
+                                <a href="/drive-skills">
+                                        <i class="fa fa-area-chart"></i> Drive Skills
+                                        <i class="fa arrow"></i>
+                                    </a>
                                 </li>
                                 <!-- <li>
                                     <a href="#">
