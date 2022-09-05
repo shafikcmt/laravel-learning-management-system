@@ -176,11 +176,32 @@ class CourseMappingController extends Controller
     }
    
   
-    public function Test($id){
-        $course = \DB::table('qtopics')
-        ->where('qcategory_id', $id)
-        ->get(); 
+    public function Test(){   
+        // $courses = DB::table('course_batches')
+        // ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
+        // ->leftJoin('courses', 'course_batches.course_id', '=', 'courses.id')
+        // ->leftJoin('categories','categories.id', '=','courses.category_id')
+        // ->where('students_batches.student_roll', '=', $data->roll)
+        // ->orWhere('course_batches.batch_id', '=', $data->roll)
+        // ->get();  
+        // dd($courses);
         
-        dd($course);
+        $data = Student::where('id','=',Session::get('loginId'))->first();
+        
+        $courses = DB::table('courses')
+        ->leftJoin('course_batches', 'courses.id', '=', 'course_batches.course_id')
+        ->leftJoin('qcategories','course_batches.course_id', '=','qcategories.course_id')
+        ->leftJoin('qtopics','qcategories.id', '=','qtopics.qcategory_id')
+        ->leftJoin('students_batches','course_batches.batch_id', '=','students_batches.batch_id')
+        ->where('students_batches.student_roll', '=', $data->roll)
+        ->orWhere('course_batches.batch_id', '=', $data->roll)
+       ->get();
+        foreach($courses as $course){
+            dd($course);
+        }
+      
+
     }
 }
+
+

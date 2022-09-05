@@ -153,7 +153,7 @@ Route::get('course-get',[CourseMappingController::class,'courseGet'])->name('cou
 Route::post('/course-mapping',[CourseMappingController::class,'courseMap'])->name('course.map');
 Route::post('/course-mapping-student',[CourseMappingController::class,'courseMapStudent'])->name('course.map.student');
 Route::get('/show-answer',[CourseMappingController::class,'showAnswer'])->middleware('adminauthcheck');
-Route::get('/test/{id}',[CourseMappingController::class,'Test']);
+Route::get('/test',[CourseMappingController::class,'Test'])->middleware('studentauthcheck');
 
 Route::get('/results-quiz-wise',[QuizResultController::class,'indexQuiz'])->middleware('adminauthcheck');
 Route::get('quiz-wise-result',[QuizResultController::class,'quizCourse'])->name('quizCourse');

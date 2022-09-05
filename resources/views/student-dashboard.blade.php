@@ -16,87 +16,16 @@
                     <div class="card sameheight-item">
                         <div class="card-body">
                         <table valign="middle" class="table table-striped table-bordered table_timeline">
-                            <tr>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                               
-                            </tr>
-
-                            <tr>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                               
-                            </tr>
-
-
-                            <tr>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                               
-                            </tr>
-
-                            <tr>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                               
-                            </tr>
-
-
-                            <tr>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                               
-                            </tr>
-
-                            <tr>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                               
-                            </tr>
-
-                            <tr>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                               
-                            </tr>
-
-                            <tr>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                                <th>Aptitude Level-1</th>
-                                <th><span><i class="fa-solid fa-check"></i></span></th>
-                               
-                            </tr>
+                       @foreach($courses as $course)
+                        <tr>
+                            <th width="20%">{{$course->name}}</th>
+                            <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
+                            <th width="20%"></th>
+                            <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
+                            <th width="20%"></th>
+                            <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
+                        </tr>
+                        @endforeach
                         </table>
                         </div>
                     </div>
