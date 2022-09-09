@@ -118,7 +118,7 @@ class CourseMappingController extends Controller
            
         }
     
-        // dd($answers);
+    
         QuizAnswer::insert($answers);
         $results = QuizAnswer::select("*")->where([
             ["student_id", "=", $data->id],
@@ -177,28 +177,38 @@ class CourseMappingController extends Controller
    
   
     public function Test(){   
-        // $courses = DB::table('course_batches')
-        // ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
-        // ->leftJoin('courses', 'course_batches.course_id', '=', 'courses.id')
-        // ->leftJoin('categories','categories.id', '=','courses.category_id')
-        // ->where('students_batches.student_roll', '=', $data->roll)
-        // ->orWhere('course_batches.batch_id', '=', $data->roll)
-        // ->get();  
-        // dd($courses);
+        // $courses = Course::all();
+        // foreach($courses as $course){
+        //     $course_batches = CourseBatch::all();
+        //     $student_batches = StudentsBatch::all();
+        //     dd($course_batches->id);
+        //     // if($course->id == $course_batches->course_id && $student_batches->)
+        // }
         
         $data = Student::where('id','=',Session::get('loginId'))->first();
         
         $courses = DB::table('courses')
         ->leftJoin('course_batches', 'courses.id', '=', 'course_batches.course_id')
-        ->leftJoin('qcategories','course_batches.course_id', '=','qcategories.course_id')
-        ->leftJoin('qtopics','qcategories.id', '=','qtopics.qcategory_id')
         ->leftJoin('students_batches','course_batches.batch_id', '=','students_batches.batch_id')
         ->where('students_batches.student_roll', '=', $data->roll)
         ->orWhere('course_batches.batch_id', '=', $data->roll)
        ->get();
-        foreach($courses as $course){
-            dd($course);
-        }
+       $total = count($courses);
+        
+        $complete = DB::table('courses')
+        ->leftJoin('qcategories','courses.id', '=' , 'qcategories.course_id')
+        ->leftJoin('qtopics','qcategories.id','=', 'qtopics.qcategory_id')
+        ->leftJoin('attempt_quizzes','qtopics.id','=', 'attempt_quizzes.topic_id')
+        ->where('attempt_quizzes.student_roll', '=', $data->roll)
+        ->get();
+        
+        dd($complete);
+        // foreach($courses as $course){
+        //     // if($course->id == $course->course_id && ){
+        //         dd($course->student_roll);
+        //     // }
+              
+        // }
       
 
     }
