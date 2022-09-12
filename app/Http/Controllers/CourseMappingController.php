@@ -177,8 +177,8 @@ class CourseMappingController extends Controller
    
   
     public function Test(){   
-        // $courses = Course::all();
-        // foreach($courses as $course){
+        //  $courses = Course::all();
+        //  foreach($courses as $course){
         //     $course_batches = CourseBatch::all();
         //     $student_batches = StudentsBatch::all();
         //     dd($course_batches->id);
@@ -200,9 +200,10 @@ class CourseMappingController extends Controller
         ->leftJoin('qtopics','qcategories.id','=', 'qtopics.qcategory_id')
         ->leftJoin('attempt_quizzes','qtopics.id','=', 'attempt_quizzes.topic_id')
         ->where('attempt_quizzes.student_roll', '=', $data->roll)
+        // ->orWhere('qtopics.id', '=', 'attempt_quizzes.topic_id')
         ->get();
         
-        dd($complete);
+        dd(count($complete));
         // foreach($courses as $course){
         //     // if($course->id == $course->course_id && ){
         //         dd($course->student_roll);
