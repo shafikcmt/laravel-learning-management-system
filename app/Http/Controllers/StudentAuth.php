@@ -5,6 +5,7 @@ use Hash;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\StudentsBatch;
+use App\Models\Semester;
 use Illuminate\Support\Facades\DB;
 use Session;
 class StudentAuth extends Controller
@@ -14,7 +15,8 @@ public function login(){
  return view('auth.student.studentlogin');
 }
 public function registration(){
-    return view('auth.student.student-registration');
+    $semester = Semester::all();
+    return view('auth.student.student-registration',compact('semester'));
 }
 public function StudentRegister(Request $request){
     $request->validate([

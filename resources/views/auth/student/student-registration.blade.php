@@ -63,9 +63,13 @@
 
                                 <div class="col-sm-6">
                                     <label for="semester">Semester</label>
-                                    <input wire:model="semester" type="text" class="form-control underlined"
-                                        name="semester" id="semester" placeholder="Enter semester"
-                                        value="{{old('semester')}}">
+                                    <select name="semester" class="form-control underlined">
+                                        <option selected>Select Semester</option>
+                                        @foreach($semester as $semester)
+                                        <option value="{!! $semester->semester !!}">{!! $semester->semester !!}</option>
+                                        @endforeach
+                                    </select>
+                                   
                                     <span class="text-danger">@error('semester') {{$message}} @enderror</span>
                                 </div>
                                 <div class="col-sm-6">
