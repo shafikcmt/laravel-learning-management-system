@@ -3,102 +3,30 @@
     @section('content')
     <article class="content dashboard-page">
         <div class="title-block">
-            <h1 class="title well p-2 bg-orange"> {{$data->name}} {{$data->roll}} </h1>
+            <h1 class="text-dark">Your Progress</h1>
+            <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated rounded"  style="width:10%">10%</div> 
+
+            </div>
         </div>
+      
         <section class="section">
-            <div class="row sameheight-container ">
-                <div class="col-md-12">
-                <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
-                    <div class="title-block">
-                        <h1  class="title well p-2 bg-orange text-white"> Available Course </h1>
-                    </div>
-                    <div class="card-block">
-                    @if(count($courses) >= 5)
-                    <div class="owl-carousel owl-theme"> 
-                        @foreach($courses as $course)
-                            <div class="item card-item">
-                                <div class="card-header">
-                                    <div class="header-block">
-                                        <p class="title">{{$course->category_name}} </p>
-                                    </div>
-                                </div>
-                                <div class="card-block">
-                                    <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
-                                </div>
-                                <div class="card-footer">
-                                    <h5 class="text-dark">{{$course->name}}</h5>
-                                    <center>
-                                        <a style="position:relative; z-index:10;" href="/course-view/{{$course->course_id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button> </a>
-                                    </center>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    @elseif(count($courses))
-                    <div class="row">
-                        @foreach($courses as $course)
-                            <div class="item card-item ml-3">
-                                <div class="card-header">
-                                    <div class="header-block">
-                                        <p class="title">{{$course->category_name}} </p>
-                                    </div>
-                                </div>
-                                <div class="card-block">
-                                    <img height="100px" width="100%" src="{{asset('images')}}/{{$course->image}}" alt="">
-                                </div>
-                                <div class="card-footer">
-                                    <h5 class="text-dark">{{$course->name}}</h5>
-                                    <center>
-                                        <a style="position:relative; z-index:10;" href="/course-view/{{$course->course_id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button> </a>
-                                    </center>
-                                </div>
-                            </div>
-                        @endforeach
-                        </div>
-                    @else
-                    <p>Quiz is not Available for you !</p>
-                    @endif
-                </div>
-            </div>
-            </div>
-            </div>
             <div class="row sameheight-container">
                 <div class="col-md-12">
                     <div class="card sameheight-item">
                         <div class="card-body">
-                        <div class="title-block">
-                        <h1 class="title well p-2 bg-orange text-white"> All Courses </h1>
-                        </div>
-                        <div class="table-responsive shadow-lg p-3 mb-2 bg-white rounded">
-                        <table class="table table-striped table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Course Category</th>
-                                        <th>Course Name</th>
-                                       
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                @if(count($courses))
-                                @foreach($courses as $course)
-                                <tbody style="color:#000">
-                                    <tr>
-                                        <td>{{$course->category_name}}</td>
-                                        <td>{{$course->name}}</td>
-                                       
-                                        <td>
-                                            <a href="/course-view/{{$course->course_id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                @endforeach
-                                @else
-                                <tr>
-                                    <th class="text-center" colspan="3">Quiz is not Available for you !</th>
-                                </tr>
-                                @endif
-                            </table>
-                        </div>
+                        <table valign="middle" class="table table-striped table-bordered table_timeline">
+                       @foreach($courses as $course)
+                        <tr>
+                            <th width="20%">{{$course->name}}</th>
+                            <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
+                            <th width="20%"></th>
+                            <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
+                            <th width="20%"></th>
+                            <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
+                        </tr>
+                        @endforeach
+                        </table>
                         </div>
                     </div>
                 </div>

@@ -44,6 +44,7 @@ Route::get('/',[HomeController::class,'index'])->middleware('ifStudentLogin');
 Route::get('/student-login',[StudentAuth::class,'login'])->middleware('studentlogin');
 Route::get('/student-logout',[StudentAuth::class,'Logout']);
 Route::get('/student-dashboard',[StudentAuth::class,'StudentDashboard'])->middleware('studentauthcheck');
+Route::get('/drive-skills',[AllStudentController::class,'driveSkills'])->middleware('studentauthcheck');
 Route::post('/student-login',[StudentAuth::class,'LoginStudent'])->name('student-login');
 Route::get('/student-profile/{id}',[StudentAuth::class,'StudentProfile']);
 Route::get('/student-registration',[StudentAuth::class,'registration'])->middleware('studentlogin');
@@ -152,7 +153,7 @@ Route::get('course-get',[CourseMappingController::class,'courseGet'])->name('cou
 Route::post('/course-mapping',[CourseMappingController::class,'courseMap'])->name('course.map');
 Route::post('/course-mapping-student',[CourseMappingController::class,'courseMapStudent'])->name('course.map.student');
 Route::get('/show-answer',[CourseMappingController::class,'showAnswer'])->middleware('adminauthcheck');
-Route::get('/test/{id}',[CourseMappingController::class,'Test']);
+Route::get('/test',[CourseMappingController::class,'Test'])->middleware('studentauthcheck');
 
 Route::get('/results-quiz-wise',[QuizResultController::class,'indexQuiz'])->middleware('adminauthcheck');
 Route::get('quiz-wise-result',[QuizResultController::class,'quizCourse'])->name('quizCourse');
