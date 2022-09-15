@@ -1,7 +1,8 @@
 <div>
     @extends('layouts.masterauth')
-    @section('content')
     @section('title','Student Registration')
+    @section('content')
+
     <div class="auth" style="background:url({{asset('images/Website3.jpg')}}); background-size:cover;left:0%">
         <div class="auth-container" max-width="900px" style="left:25%">
             <div class="card">
