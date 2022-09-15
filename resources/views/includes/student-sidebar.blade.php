@@ -33,6 +33,12 @@
                                         <i class="fa arrow"></i>
                                     </a>
                                 </li>
+                                <li>   
+                                <a href="/assessment-work">
+                                        <i class="fa fa-area-large"></i> Assessments Works
+                                        <i class="fa arrow"></i>
+                                    </a>
+                                </li>
                                 <!-- <li>
                                     <a href="#">
                                         <i class="fa fa-area-chart"></i> Charts

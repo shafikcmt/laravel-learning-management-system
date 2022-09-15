@@ -203,7 +203,10 @@ class CourseMappingController extends Controller
         // ->orWhere('qtopics.id', '=', 'attempt_quizzes.topic_id')
         ->get();
         
-        dd(count($complete));
+        $student = DB::table('students')->pluck('name','email');
+        foreach($student as $name => $email){
+            dd($name);
+        }
         // foreach($courses as $course){
         //     // if($course->id == $course->course_id && ){
         //         dd($course->student_roll);
