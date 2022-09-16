@@ -1,4 +1,4 @@
-    @extends('layouts.master')
+@extends('layouts.master')
     @section('title','Assessment Work')
     @section('content')
     <article class="content dashboard-page">
@@ -10,46 +10,81 @@
             <div class="col-md-12">
                 <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
                 <div class="title-block">
-                        <h1  class="title well p-2 bg-orange text-white"> Drive Skills<a href="/detail-report"><button class="btnhead">Detail Report</button> </a> <a href="/assessment-work"><button class="btnhead">Back</button> </a> </h1>
+                        <h1  class="title well p-2 bg-orange text-white"> Target Level Assessment Report <a href="/assessments"><button class="btnhead">Back</button> </a> </h1>
                     </div>
                    <div class="card-block">
                        <div class="row">
                             <div class="col-xl-3 ">
-                                <div class="card card-default bg-blue">
+                                <div class="card card-default">  
+                                <a href="#" class="card-block" style="text-decoration:none">
+                                <h2 class="text-left text-dark">Soft Skills</h2>
+                                        <!--start-->
+                                    <div class="percent">
+                                    <svg class="detailsvg">
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2>90<span>%</span></h2>
+                                    </div>
+                                    </div>
+                                </a>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-3 ">
+                                <div class="card card-default">
                                     
                                     <a href="#" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h4>Soft Skills</h4>
+                                    <h2 class="text-left text-dark">Reasoning</h2>
+                                        <!--start-->
+                                    <div class="percent">
+                                    <svg class="detailsvg">
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2>80<span>%</span></h2>
+                                    </div>
+                                    </div>
                                     </a>
 
                                 </div>
                             </div>
                             <div class="col-xl-3 ">
-                                <div class="card card-default bg-orange">
+                                <div class="card card-default">
                                     
                                     <a href="#" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h4>Reasoning</h4>
+                                    <h2 class="text-left text-dark">Technical</h2>
+                                        <!--start-->
+                                    <div class="percent">
+                                    <svg class="detailsvg">
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2>75<span>%</span></h2>
+                                    </div>
+                                    </div>
                                     </a>
 
                                 </div>
                             </div>
                             <div class="col-xl-3 ">
-                                <div class="card card-default bg-blue">
+                                <div class="card card-default">
                                     
                                     <a href="#" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h4>Aptitude</h4>
-                                    </a>
-
-                                </div>
-                            </div>
-                            <div class="col-xl-3 ">
-                                <div class="card card-default bg-orange">
-                                    
-                                    <a href="#" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h4>Technical</h4>
+                                    <h2 class="text-left text-dark">Aptitude</h2>
+                                        <!--start-->
+                                    <div class="percent">
+                                    <svg class="detailsvg">
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2>85<span>%</span></h2>
+                                    </div>
+                                    </div> 
                                     </a>
 
                                 </div>
