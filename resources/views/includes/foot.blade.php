@@ -6,6 +6,7 @@
     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('js/TimeCircles.js')}}"></script>
     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+
     <!-- <script src="{{asset('js/main.js')}}"></script> -->
 
        
