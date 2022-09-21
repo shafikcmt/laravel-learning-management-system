@@ -16,18 +16,17 @@
                        <div class="row">
                             <div class="col-xl-3 ">
                                 <div class="card card-default bg-blue">
-                                    
-                                    <a href="#" class="card-block" style="text-decoration:none">
+                
+                                    <a href="/assessments-score" class="card-block" style="text-decoration:none">
                                         <h1>00</h1>
                                         <h4>Drive Skills</h4>
                                     </a>
-
                                 </div>
                             </div>
                             <div class="col-xl-3 ">
                                 <div class="card card-default bg-orange">
                                     
-                                    <a href="#" class="card-block" style="text-decoration:none">
+                                    <a href="/assessments-score" class="card-block" style="text-decoration:none">
                                         <h1>00</h1>
                                         <h4>Reasoning</h4>
                                     </a>
@@ -37,17 +36,16 @@
                             <div class="col-xl-3 ">
                                 <div class="card card-default bg-blue">
                                     
-                                    <a href="#" class="card-block" style="text-decoration:none">
+                                    <a href="/assessments-score" class="card-block" style="text-decoration:none">
                                         <h1>00</h1>
                                         <h4>Aptitude</h4>
                                     </a>
-
                                 </div>
                             </div>
                             <div class="col-xl-3 ">
                                 <div class="card card-default bg-orange">
                                     
-                                    <a href="#" class="card-block" style="text-decoration:none">
+                                    <a href="/assessments-score" class="card-block" style="text-decoration:none">
                                         <h1>00</h1>
                                         <h4>Technical</h4>
                                     </a>
@@ -60,10 +58,8 @@
                 </div>
             </div>
         </div>
-           
     </section>
     </article>
-
     <div class="modal fade" id="modal-media">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">

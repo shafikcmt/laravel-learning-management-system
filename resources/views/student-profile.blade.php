@@ -25,7 +25,7 @@
                                     <td>{{$data->roll}}</td>
                                 </tr>
                                
-                                <tr>
+                                <tr> 
                                     <th>Branch</th>
                                     <td>{{$data->branch}}</td> 
                                 </tr>

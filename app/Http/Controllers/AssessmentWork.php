@@ -21,4 +21,12 @@ class AssessmentWork extends Controller
         $data = Student::where('id','=',Session::get('loginId'))->first();
         return view('detail-report',compact('data'));
     }
+    public function AssessmentScore(){
+       $data = Student::where('id','=',Session::get('loginId'))->first();
+       return view('/assessment_score',compact('data')); 
+    }
+    public function AssessmentReport(){
+       $data = Student::where('id','=',Session::get('loginId'))->first();
+        return view('assessment_report',compact('data'));
+    }
 }

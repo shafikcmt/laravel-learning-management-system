@@ -13,11 +13,7 @@ use App\Http\Controllers\AddQuestionController;
 use App\Http\Controllers\QuizResultController;
 use App\Http\Controllers\AssessmentWork;
 
-
-
-
 // *********************************************************
-
 use App\Http\Livewire\Sturesetpass;
 use App\Http\Livewire\Resetpassword;
 use App\Http\Livewire\Adminlogin;
@@ -48,6 +44,8 @@ Route::get('/student-dashboard',[StudentAuth::class,'StudentDashboard'])->middle
 Route::get('/drive-skills',[AllStudentController::class,'driveSkills'])->middleware('studentauthcheck');
 Route::get('/assessment-work',[AssessmentWork::class,'index'])->middleware('studentauthcheck');
 Route::get('/assessments',[AssessmentWork::class,'Assessments'])->middleware('studentauthcheck');
+Route::get('/assessments-score',[AssessmentWork::class,'AssessmentScore'])->middleware('studentauthcheck');
+Route::get('/assessments-report',[AssessmentWork::class,'AssessmentReport'])->middleware('studentauthcheck');
 Route::get('/detail-report',[AssessmentWork::class,'DetailReport'])->middleware('studentauthcheck');
 Route::post('/student-login',[StudentAuth::class,'LoginStudent'])->name('student-login');
 Route::get('/student-profile/{id}',[StudentAuth::class,'StudentProfile']);
