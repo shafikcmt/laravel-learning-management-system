@@ -3,7 +3,7 @@
 @section('content')
 <article class="content dashboard-page">
     <section class="section">
-        <div class="row sameheight-container ">
+        <div class="row sameheight-container">
             <div class="col-md-12">
                 <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
                     <div class="title-block">
@@ -103,7 +103,7 @@
                         new Chart("myChart", {
                             type: "horizontalBar",
                             data: {
-                                labels: xValues,
+                               labels: xValues,
                                 datasets: [{
                                     backgroundColor: barColors,
                                     data: yValues
