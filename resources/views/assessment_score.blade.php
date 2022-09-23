@@ -24,6 +24,9 @@
                                         </th>
                                     </tr>
                                     <tr>
+                                        <th colspan="6" class="text-center"> <h3 class="text-dark">Overall Tests - 50  | Overall Percentage - 79 % </h3></th>
+                                    </tr>
+                                    <tr>
                                         <th>Topic</th>
                                         <th>Tests</th>
                                         <th>Percentage</th>
@@ -91,11 +94,25 @@
                                         <td>80%</td>
                                     </tr>
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="6" class="text-right"><h3 class="text-success"><i class="fa-regular fa-circle-check"></i> Badge Test Completed</h3></th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="6" class="text-right"><h3 class="text-primary">View Certificate</th>
+                                    </tr>
+                                </tfoot>
                             </table>
                             <table class="table table-striped table-bordered table-hover text-dark">
                                 <thead>
-                                    <tr class="text-center">
-                                        <th colspan="6">Soft Skills Level-2</th>
+                                <tr>
+                                        <th class="text-left" valign="middle" colspan="3">Soft Skills Level-2</th>
+                                        <th class="text-right" colspan="3">
+                                            <a href="/assessments-report"><button class="btnhead">Report</button> </a>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="6" class="text-center"> <h3 class="text-dark">Overall Tests - 50  | Overall Percentage - 79 % </h3></th>
                                     </tr>
                                     <tr>
                                         <th>Topic</th>
@@ -165,6 +182,14 @@
                                         <td>80%</td>
                                     </tr>
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="6" class="text-right"><h3 class="text-success"><i class="fa-regular fa-circle-check"></i> Badge Test Completed</h3></th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="6" class="text-right"><h3 class="text-primary">View Certificate</th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>
