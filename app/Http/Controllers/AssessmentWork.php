@@ -10,7 +10,7 @@ class AssessmentWork extends Controller
 {
     public function index(){
         $drive = Qtopic::all();
-        $data = Student::where('id','=',Session::get('loginId'))->first();  
+        $data = Student::where('id','=',Session::get('loginId'))->first();
         return view('assessment-work',compact('data','drive'));
     }
     public function Assessments(){
