@@ -1,9 +1,9 @@
     @extends('layouts.master')
-    @section('title','Assessment Work')
+    @section('title','Technical Work')
     @section('content')
     <article class="content dashboard-page">
         <div class="title-block">
-            <h1 class="title well p-2 bg-orange text-uppercase"> Assessment Works </h1>
+            <h1 class="title well p-2 bg-orange text-uppercase"> Technical Skills </h1>
         </div>
     <section class="section">
          <div class="row sameheight-container ">
@@ -11,39 +11,93 @@
                 <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
                    <div class="card-block">
                        <div class="row">
+                            <!-- <div class="col-xl-3">
+                                <div class="card card-default bg-blue">
+                                    
+                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
+                                        <h1>00</h1>
+                                        <h5>Workshops</h5>
+                                    </a>
+
+                                </div>
+                            </div> -->
+                            <div class="col-xl-3 ">
+                                <div class="card card-default bg-orange">
+                                    
+                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
+                                        <h1>00</h1>
+                                        <h5>Trainings</h5>
+                                    </a>
+
+                                </div>
+                            </div>
                             <div class="col-xl-3 ">
                                 <div class="card card-default bg-blue">
                                     
-                                    <a href="/assessments" class="card-block" style="text-decoration:none">
-                                        <h1>{{$drive->count()}}</h1>
-                                        <h4>Drive Skills</h4>
+                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
+                                        <h1>00</h1>
+                                        <h5>Certifications</h5>
                                     </a>
 
                                 </div>
                             </div>
+
+                            <div class="col-xl-3 ">
+                                <div class="card card-default bg-orange">
+                                    
+                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
+                                        <h1>00</h1>
+                                        <h5>Hackathon</h5>
+                                    </a>
+
+                                </div>
+                            </div>
+                            
+                       </div>
+
+                       <div class="row">
+                            <!-- <div class="col-xl-3 ">
+                                <div class="card card-default bg-blue">
+                                    
+                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
+                                        <h1>00</h1>
+                                        <h5>Digital Badges</h5>
+                                    </a>
+
+                                </div>
+                            </div> -->
                             <!-- <div class="col-xl-3 ">
                                 <div class="card card-default bg-orange">
                                     
-                                    <a href="#" class="card-block" style="text-decoration:none">
+                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
                                         <h1>00</h1>
-                                        <h4>CRT Attendance</h4>
+                                        <h5>Internship</h5>
                                     </a>
 
                                 </div>
                             </div> -->
-                            <!-- <div class="col-xl-3 ">
+                            <div class="col-xl-3 ">
                                 <div class="card card-default bg-blue">
-                                    <a href="#" class="card-block" style="text-decoration:none">
+                                    
+                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
                                         <h1>00</h1>
-                                        <h4>Mock Interviews</h4>
+                                        <h5>HackerRank</h5>
                                     </a>
+
                                 </div>
-<<<<<<< HEAD
                             </div>
-=======
-                            </div> -->
+
+                            <div class="col-xl-3 ">
+                                <div class="card card-default bg-orange">
+                                    
+                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
+                                        <h1>00</h1>
+                                        <h5>HackerRankCertificate</h5>
+                                    </a>
+
+                                </div>
+                            </div>
                             
->>>>>>> technical-work
                        </div>
                     </div>
                 </div>

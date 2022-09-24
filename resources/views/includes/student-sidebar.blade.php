@@ -39,6 +39,12 @@
                                         <i class="fa arrow"></i>
                                     </a>
                                 </li>
+                                <li>   
+                                <a href="/technical-work">
+                                        <i class="fa fa-area-large"></i> Technical Work
+                                        <i class="fa arrow"></i>
+                                    </a>
+                                </li>
                                 <!-- <li>
                                     <a href="#">
                                         <i class="fa fa-area-chart"></i> Charts
