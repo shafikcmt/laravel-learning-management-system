@@ -33,15 +33,12 @@
                             </div>
                             <div class="col-xl-3 ">
                                 <div class="card card-default bg-blue">
-                                    
                                     <a href="#" class="card-block" style="text-decoration:none">
                                         <h1>00</h1>
                                         <h4>Mock Interviews</h4>
                                     </a>
-
                                 </div>
                             </div>
-                            
                        </div>
                     </div>
                 </div>
