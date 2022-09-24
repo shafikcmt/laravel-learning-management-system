@@ -45,6 +45,7 @@ Route::get('/student-dashboard',[StudentAuth::class,'StudentDashboard'])->middle
 Route::get('/drive-skills',[AllStudentController::class,'driveSkills'])->middleware('studentauthcheck');
 Route::get('/technical-work',[TechnicalWork::class,'index'])->middleware('studentauthcheck');
 Route::get('/technical-skill',[TechnicalWork::class,'TechnicalSkill'])->middleware('studentauthcheck');
+Route::get('/add-technical-skill',[TechnicalWork::class,'AddTechnicalSkill'])->middleware('studentauthcheck');
 Route::get('/assessment-work',[AssessmentWork::class,'index'])->middleware('studentauthcheck');
 Route::get('/assessments',[AssessmentWork::class,'Assessments'])->middleware('studentauthcheck');
 Route::get('/assessments-score',[AssessmentWork::class,'AssessmentScore'])->middleware('studentauthcheck');

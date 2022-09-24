@@ -15,4 +15,8 @@ class TechnicalWork extends Controller
         $data = Student::where('id','=',Session::get('loginId'))->first(); 
         return view('technical-skill',compact('data'));
     }
+    public function AddTechnicalSkill(){
+        $data = Student::where('id','=',Session::get('loginId'))->first(); 
+        return view('add-technical-skill',compact('data'));
+    }
 }

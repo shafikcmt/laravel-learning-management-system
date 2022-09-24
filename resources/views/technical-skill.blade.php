@@ -11,7 +11,7 @@
                 <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
                     <div class="title-block">
                         <h1 class="title well p-2 bg-orange text-white"> Workshops <a
-                                href="#"><button class="btnhead">Add</button> </a> <a
+                                href="/add-technical-skill"><button class="btnhead">Add</button> </a> <a
                                 href="/technical-work"><button class="btnhead">Back</button> </a> </h1>
                     </div>
                     <div class="card-block">
@@ -25,6 +25,7 @@
                                         <th>Instructor</th>
                                         <th>From</th>
                                         <th>To</th>
+                                        <th>Organiged By</th>
                                         <th>Type</th>
                                         <th>Certificate ID</th>
                                         <th>Type of Campus</th>
@@ -33,7 +34,20 @@
 
                                 </thead>
                                 <tbody>
-                                   
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Web Development</td>
+                                        <td>Shafiqul</td>
+                                        <td>01-01-2022</td>
+                                        <td>01-01-2022</td>
+                                        <td>GEC</td>
+                                        <td>Online</td>
+                                        <td>A0148</td>
+                                        <td>In House</td>
+                                        <td>Pending</td>
+                                    </tr>
+                                </tbody>
+                            </table>     
                         </div>
                     </div>
                 </div>

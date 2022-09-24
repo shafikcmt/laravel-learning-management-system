@@ -21,7 +21,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-xl-3 ">
+                            <!-- <div class="col-xl-3 ">
                                 <div class="card card-default bg-orange">
                                     
                                     <a href="#" class="card-block" style="text-decoration:none">
@@ -30,8 +30,8 @@
                                     </a>
 
                                 </div>
-                            </div>
-                            <div class="col-xl-3 ">
+                            </div> -->
+                            <!-- <div class="col-xl-3 ">
                                 <div class="card card-default bg-blue">
                                     
                                     <a href="#" class="card-block" style="text-decoration:none">
@@ -40,7 +40,7 @@
                                     </a>
 
                                 </div>
-                            </div>
+                            </div> -->
                             
                        </div>
                     </div>
