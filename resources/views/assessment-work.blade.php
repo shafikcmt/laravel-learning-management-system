@@ -38,12 +38,9 @@
                                         <h4>Mock Interviews</h4>
                                     </a>
                                 </div>
-<<<<<<< HEAD
                             </div>
-=======
                             </div> -->
                             
->>>>>>> technical-work
                        </div>
                     </div>
                 </div>
