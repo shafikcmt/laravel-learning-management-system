@@ -74,7 +74,6 @@ Route::get('/reset-password-student',Sturesetpass::class);
 Route::get('/admin',[AdminAuth::class,'AdminLog']);
 Route::get('/admin-logout',[AdminAuth::class,'AdminLogout']);
 
-
 Route::get('/import-page',[AllStudentController::class,'index'])->middleware('adminauthcheck');
 Route::post('/import',[AllStudentController::class,'import'])->name('import');
 Route::get('/edit-student/{id}',[AllStudentController::class,'EditStudent'])->middleware('adminauthcheck');
@@ -91,13 +90,11 @@ Route::get('/export-csv',[AllStudentController::class,'ExportintoCSV']);
 Route::get('/exportstudents',[AllStudentController::class,'getStudentsPDF']);
 Route::get('/all-studentspdf',[AllStudentController::class,'ExportStudentintoPDF']);
 
-
 Route::get('/add-category',[CourseController::class,'addCategory'])->middleware('adminauthcheck');
 Route::post('/add-category',[CourseController::class,'createCategory'])->name('create-category');
 Route::get('/edit-category/{id}',[CourseController::class,'editCategory'])->middleware('adminauthcheck');
 Route::post('/edit-category',[CourseController::class,'updateCategory'])->name('update-category');
 Route::get('/category-delete/{id}',[CourseController::class,'categoryDelete']);
-
 
 Route::get('/add-batch',[BatchController::class,'addBatch'])->middleware('adminauthcheck');
 Route::post('/create-batch',[BatchController::class,'createBatch'])->name('create-batch');
@@ -107,7 +104,6 @@ Route::get('/batch-delete/{id}',[BatchController::class,'batchDelete']);
 Route::post('/add-batch',[BatchController::class,'studentsAddBatch'])->name('students-add-batch');
 Route::post('/batch-add',[BatchController::class,'studentAddBatch'])->name('student-add-batch');
 Route::get('/demo-batch-file',[BatchController::class,'demoBatchFile']);
-
 
 Route::get('/questions-topic',[QuestionsController::class,'addTopic'])->middleware('adminauthcheck');
 Route::get('get-quiz',[QuestionsController::class,'quizGet'])->name('quizGet');
@@ -120,8 +116,6 @@ Route::get('/export-csv-question',[QuestionsController::class,'ExportintoCSV'])-
 Route::get('/export-excel-question',[QuestionsController::class,'ExportintoExcell']);
 Route::get('/all-questionpdf',[QuestionsController::class,'getQuestionsPDF']);
 Route::get('/export-pdf-questions',[QuestionsController::class,'ExportintoPDF']);
-
-
 
 Route::get('/questions-category',[QuestionsController::class,'addCategory'])->middleware('adminauthcheck');
 Route::post('/questions-category',[QuestionsController::class,'createQcategory'])->name('create-qcategory');
@@ -145,7 +139,6 @@ Route::get('/delete-questions/{id}',[AddQuestionController::class,'deleteQuestio
 Route::get('/course-details/{id}',[AddQuestionController::class,'courseDetails'])->middleware('adminauthcheck');
 Route::get('/view-topic/{id}',[AddQuestionController::class,'viewTopic'])->middleware('adminauthcheck');
 Route::get('/questions-view/{id}',[AddQuestionController::class,'questionsView'])->middleware('adminauthcheck');
-
 
 Route::get('/add-courses',[AddCourseController::class,'addCourse'])->middleware('adminauthcheck');
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
@@ -175,7 +168,6 @@ Route::get('/admin-dashboard',[AdminAuth::class,'index'])->middleware('adminauth
 
 
 //********************************************************************************************* */
-
 
 
 // Admin Livewire Class
