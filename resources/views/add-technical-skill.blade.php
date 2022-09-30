@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
                     <div class="title-block">
-                        <h1 class="title well p-2 bg-orange text-white"> Workshops  <a
+                        <h1 class="title well p-2 bg-orange text-white"> {{$techskills->name}}  <a
                                 href="/technical-skill"><button class="btnhead">Back</button> </a> </h1>
                     </div>
                     <div class="card-block">

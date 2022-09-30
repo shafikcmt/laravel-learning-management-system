@@ -11,93 +11,18 @@
                 <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
                    <div class="card-block">
                        <div class="row">
-                            <!-- <div class="col-xl-3">
-                                <div class="card card-default bg-blue">
-                                    
-                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
+                        @foreach($technicalskill as $skill)
+                            <div class="col-xl-3">
+                                <div class="card card-default {{$skill->bg}}">
+                              
+                                    <a href="/technical-skill/{{$skill->id}}" class="card-block" style="text-decoration:none">
                                         <h1>00</h1>
-                                        <h5>Workshops</h5>
+                                        <h5>{{$skill->name}}</h5>
                                     </a>
-
                                 </div>
-                            </div> -->
-                            <div class="col-xl-3 ">
-                                <div class="card card-default bg-orange">
-                                    
-                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h5>Trainings</h5>
-                                    </a>
-
-                                </div>
-                            </div>
-                            <div class="col-xl-3 ">
-                                <div class="card card-default bg-blue">
-                                    
-                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h5>Certifications</h5>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 ">
-                                <div class="card card-default bg-orange">
-                                    
-                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h5>Hackathon</h5>
-                                    </a>
-
-                                </div>
-                            </div>
-                            
-                       </div>
-
-                       <div class="row">
-                            <!-- <div class="col-xl-3 ">
-                                <div class="card card-default bg-blue">
-                                    
-                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h5>Digital Badges</h5>
-                                    </a>
-
-                                </div>
-                            </div> -->
-                            <!-- <div class="col-xl-3 ">
-                                <div class="card card-default bg-orange">
-                                    
-                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h5>Internship</h5>
-                                    </a>
-
-                                </div>
-                            </div> -->
-                            <div class="col-xl-3 ">
-                                <div class="card card-default bg-blue">
-                                    
-                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h5>HackerRank</h5>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 ">
-                                <div class="card card-default bg-orange">
-                                    
-                                    <a href="/technical-skill" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h5>HackerRankCertificate</h5>
-                                    </a>
-
-                                </div>
-                            </div>
-                            
+                            </div>    
+                        @endforeach()
+                        </div>
                        </div>
                     </div>
                 </div>
