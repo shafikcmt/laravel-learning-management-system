@@ -19,7 +19,7 @@ class TechnicalWork extends Controller
         return view('technical-skill',compact('data','techskill'));
     }
     public function AddTechnicalSkill($id){
-        $techskills = TechnicalSkill::find($id);
+        $techskills = TechnicalSkills::find($id);
         $data = Student::where('id','=',Session::get('loginId'))->first(); 
         return view('add-technical-skill',compact('data','techskills'));
     }
