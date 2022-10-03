@@ -23,5 +23,12 @@ class Student extends Model
     public static function getStudents(){
     $records = DB::table('students')->select('id','name','roll','class','branch','semester','mobile','email')->get()->toArray();
     return $records;
-}
+    }
+
+    public function addtraining(){
+        return $this->hasMany(AddTraining::class);
+    }
+    public function addcertificate(){
+        return $this->hasMany(AddCertificate::class);
+    }
 }

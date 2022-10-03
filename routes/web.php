@@ -44,6 +44,8 @@ Route::get('/student-logout',[StudentAuth::class,'Logout']);
 Route::get('/student-dashboard',[StudentAuth::class,'StudentDashboard'])->middleware('studentauthcheck');
 Route::get('/drive-skills',[AllStudentController::class,'driveSkills'])->middleware('studentauthcheck');
 Route::get('/technical-work',[TechnicalWork::class,'index'])->middleware('studentauthcheck');
+Route::post('/add-training',[TechnicalWork::class,'TrainingAdd'])->name('add-training');
+Route::post('/add-certificate',[TechnicalWork::class,'AddCertificate'])->name('add-certificate');
 Route::get('/technical-skill/{id}',[TechnicalWork::class,'TechnicalSkill'])->middleware('studentauthcheck');
 Route::get('/add-technical-skill/{id}',[TechnicalWork::class,'AddTechnicalSkill'])->middleware('studentauthcheck');
 Route::get('/assessment-work',[AssessmentWork::class,'index'])->middleware('studentauthcheck');

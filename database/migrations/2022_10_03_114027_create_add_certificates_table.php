@@ -21,8 +21,11 @@ return new class extends Migration
             $table->string('score');
             $table->string('year_of_pass');
             $table->string('test_center_name');
-            $table->string('certificate_id');
             $table->string('type_of_campus');
+            $table->string('certificate_id');
+            $table->string('status')->default('pending');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->timestamps();
         });
     }

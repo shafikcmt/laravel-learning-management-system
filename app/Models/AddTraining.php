@@ -22,4 +22,8 @@ class AddTraining extends Model
         'certificate_id',
         'type_of_campus',
     ];
+
+    public function student(){
+        return $this->belongsTo(Student::class);
+    }
 }

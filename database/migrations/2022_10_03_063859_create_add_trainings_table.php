@@ -26,6 +26,9 @@ return new class extends Migration
             $table->string('learning_type');
             $table->string('certificate_id');
             $table->string('type_of_campus');
+            $table->string('status')->default('pending');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->timestamps();
         });
     }

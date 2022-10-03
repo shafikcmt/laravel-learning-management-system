@@ -25,7 +25,7 @@ class AddQuestionController extends Controller
             'option2' => 'required',
             'option3' => 'required',
             'option4' => 'required',
-            
+             
         ]);
         $qtopic = Qtopic::find($request->qtopic_id);
         $questions = new AddQuestion;

@@ -16,17 +16,20 @@
                     </div>
                     <div class="card-block">
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover text-dark">
+                            <table  class="table table-striped table-bordered table-hover text-dark">
+                                @if($techskill->name == 'Trainings')
                                 <thead>
-                                   
                                     <tr>
                                         <th>S.NO</th>
                                         <th>Course</th>
+                                        <th>Event</th>
                                         <th>Instructor</th>
                                         <th>From</th>
                                         <th>To</th>
                                         <th>Organiged By</th>
-                                        <th>Type</th>
+                                        <th>Course Completion</th>
+                                        <th>Place</th>
+                                        <th>Learning Type</th>
                                         <th>Certificate ID</th>
                                         <th>Type of Campus</th>
                                         <th>Request Status</th>
@@ -34,19 +37,123 @@
 
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Web Development</td>
-                                        <td>Shafiqul</td>
-                                        <td>01-01-2022</td>
-                                        <td>01-01-2022</td>
-                                        <td>GEC</td>
-                                        <td>Online</td>
-                                        <td>A0148</td>
-                                        <td>In House</td>
-                                        <td>Pending</td>
+                                    @if($trainingskills->count())
+                                    @foreach($trainingskills as $trainingskill)
+                                    <tr valign="middle">
+                                        <td>{{$trainingskill->id}}</td>
+                                        <td>{{$trainingskill->course}}</td>
+                                        <td>{{$trainingskill->event}}</td>
+                                        <td>{{$trainingskill->instructor_name}}</td>
+                                        <td>{{$trainingskill->from}}</td>
+                                        <td>{{$trainingskill->to}}</td>
+                                        <td>{{$trainingskill->organiged_by}}</td>
+                                        <td>{{$trainingskill->course_completion}}</td>
+                                        <td>{{$trainingskill->place}}</td>
+                                        <td>{{$trainingskill->learning_type}}</td>
+                                        <td>{{$trainingskill->certificate_id}}</td>
+                                        <td>{{$trainingskill->type_of_campus}}</td>
+                                        <td class="text-info">{{$trainingskill->status}}</td>
+                                       
                                     </tr>
+                                    @endforeach
+                                    @else
+                                    <tr>
+                                        <td class="text-center text-danger" colspan="14">Data Not Found !!</td>
+                                    </tr>
+                                    @endif
                                 </tbody>
+                                @elseif($techskill->name == 'Certifications')
+                                <thead>
+                                    <tr>
+                                        <th>S.NO</th>
+                                        <th>Certificate Name</th>
+                                        <th>Certificate Form</th>
+                                        <th> Instructor Name</th>
+                                        <th>Score</th>
+                                        <th>Test center Name</th>
+                                        <th>Year of Pass</th>
+                                        <th>Certificate ID</th>
+                                        <th>Type of Campus</th>
+                                        <th>Status</th>
+                                       
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                  
+                                </tbody>
+
+                                @elseif($techskill->name == 'Hackathon')
+                                <thead>
+                                    <tr>
+                                        <th>S.NO</th>
+                                        <th>Course</th>
+                                        <th>Event</th>
+                                        <th>Instructor Name</th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Organiged By</th>
+                                        <th>Learning Type</th>
+                                        <th>Total Hours</th>
+                                        <th>Certificate ID</th>
+                                        <th>Type of Campus</th>
+                                        <th>Request Status</th>
+
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                  
+                                </tbody>
+                                @elseif($techskill->name == 'HackerRank')
+                                <thead>
+                                    <tr>
+                                        <th>S.NO</th>
+                                        <th>Course</th>
+                                        <th>Event</th>
+                                        <th>Instructor</th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Organiged By</th>
+                                        <th>Course Completion</th>
+                                        <th>Place</th>
+                                        <th>Learning Type</th>
+                                        <th>Certificate ID</th>
+                                        <th>Type of Campus</th>
+                                        <th>Request Status</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                  
+                                </tbody>
+                                @elseif($techskill->name == 'HackerRankCertificate')
+                                <thead>
+                                    <tr>
+                                        <th>S.NO</th>
+                                        <th>Course</th>
+                                        <th>Event</th>
+                                        <th>Instructor</th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Organiged By</th>
+                                        <th>Course Completion</th>
+                                        <th>Place</th>
+                                        <th>Learning Type</th>
+                                        <th>Certificate ID</th>
+                                        <th>Type of Campus</th>
+                                        <th>Request Status</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                  
+                                </tbody>
+
+                                @endif
+
+
+
                             </table>     
                         </div>
                     </div>
