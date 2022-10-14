@@ -10,82 +10,315 @@
             <div class="col-md-12">
                 <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
                     <div class="title-block">
-                        <h1 class="title well p-2 bg-orange text-white"> Workshops  <a
-                                href="/technical-skill"><button class="btnhead">Back</button> </a> </h1>
+                        <h1 class="title well p-2 bg-orange text-white"> {{$techskills->name}} <a
+                                href="/technical-skill/{{$techskills->id}}"><button class="btnhead">Back</button> </a>
+                        </h1>
                     </div>
                     <div class="card-block">
-                    <form class="col-sm-offset-1" role="form" method="post" action="{{route('student-add')}}">
-                                       
-                                        <div class="row mb-3">
-                                            <div class="col-sm-6">
-                                                <label for="colFormLabel" class="col-form-label">Course <span style="color:red">*</span></label>
-                                                <input type="text" name="name" class="form-control" placeholder="Course">
-                                                <span class="text-danger">@error('name') {{$message}} @enderror</span>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label for="colFormLabel" class=" col-form-label">Instructor Name <span style="color:red">*</span></label>
-                                                <input type="text" name="roll" class="form-control" placeholder="Instructor Name">
-                                                <span class="text-danger">@error('roll'){{$message}}@enderror</span>
-                                            </div>
-                                           
-                                        </div>
-                                        <div class="row mb-3">
-                                        <div class="col-sm-6">
-                                                <label for="colFormLabel" class="col-form-label">From<span style="color:red">*</span></label>
-                                                <input type="date" name="class" class="form-control" placeholder="From">
-                                                <span class="text-danger">@error('class'){{$message}}@enderror</span>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label for="colFormLabel" class="col-form-label">To<span style="color:red">*</span></label>
-                                                <input type="date" name="branch" class="form-control" placeholder="To">
-                                                <span class="text-danger">@error('branch'){{$message}}@enderror</span>
-                                            </div>
-                                           
-                                        </div>
+                        @if($techskills->name == 'Trainings')
+                        <!-- Training Form Start -->
+                        @if(session()->has('add-training'))
+                        <div class="alert alert-success" id="alertMessage">
+                            {{session()->get('add-training')}}
+                        </div>
+                        @endif
+                        <form class="col-sm-offset-1" role="form" method="post" action="{{route('add-training')}}">
+                            @csrf
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Course <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="course" class="form-control" placeholder="Course">
+                                    <span class="text-danger">@error('course') {{$message}} @enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Event <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="event" class="form-control" placeholder="Event">
+                                    <span class="text-danger">@error('event'){{$message}}@enderror</span>
+                                </div>
+                               
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">From<span
+                                            style="color:red">*</span></label>
+                                    <input type="date" name="from" class="form-control" placeholder="From">
+                                    <span class="text-danger">@error('from'){{$message}}@enderror</span>
+                                </div>
+                               
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">To<span
+                                            style="color:red">*</span></label>
+                                    <input type="date" name="to" class="form-control" placeholder="To">
+                                    <span class="text-danger">@error('to'){{$message}}@enderror</span>
+                                </div>
 
-                                        <div class="row mb-3">
-                                        <div class="col-sm-6">
-                                                <label for="colFormLabel" class=" col-form-label">Organiged By <span style="color:red">*</span></label>
-                                                <input type="text" name="semester" class="form-control" id="colFormLabel" placeholder="Organiged By">
-                                                <span class="text-danger">@error('semester'){{$message}}@enderror</span>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label for="colFormLabel" class=" col-form-label">Learning Type </label>
-                                               <select name="" id="" class="form-control">
-                                                    <option selected>Select</option>
-                                                    <option value="Offline">Offline</option>
-                                                    <option value="Online">Online</option>
-                                               </select>
-                                                <span class="text-danger">@error('mobile'){{$message}}@enderror</span>
-                                            </div>
-                                           
-                                          
-                                           
-                                    </div>
-                                    <div class="row mb-6">
-                                    <div class="col-sm-6">
-                                                <label for="colFormLabel" class="col-form-label">Certificate ID<span style="color:red">*</span></label>
-                                                <input type="email" name="email" class="form-control" placeholder="Certificate ID">
-                                                <span class="text-danger">@error('email'){{$message}}@enderror</span>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label for="colFormLabel" class=" col-form-label">Type of Campus <span style="color:red">*</span></label>
-                                                <select name="" id="" class="form-control">
-                                                    <option selected>Select</option>
-                                                    <option value="Instructor Led">In House</option>
-                                                    <option value="In House">Outside</option>
-                                               </select>
-                                                <span class="text-danger">@error('password'){{$message}}@enderror</span>
-                                            </div>
-                                    </div>
-                                        <center>
-                                            <div class="form-group mt-5">
-                                                <button type="submit" class="cssbuttons-io"><span>Add</span> </button>
+                            </div>
 
-                                            </div>
-                                        </center>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Organiged By <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="organiged_by" class="form-control" id="colFormLabel"
+                                        placeholder="Organiged By">
+                                    <span class="text-danger">@error('organiged_by'){{$message}}@enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Learning Type </label>
+                                    <select name="learning_type" id="" class="form-control">
+                                        <option selected>Select</option>
+                                        <option value="Offline">Offline</option>
+                                        <option value="Online">Online</option>
+                                    </select>
+                                    <span class="text-danger">@error('learning_type'){{$message}}@enderror</span>
+                                </div>
 
-                                    </form>
+
+
+                            </div>
+                            <div class="row mb-6">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Certificate ID<span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="certificate_id" class="form-control" placeholder="Certificate ID">
+                                    <span class="text-danger">@error('certificate_id'){{$message}}@enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Type of Campus <span
+                                            style="color:red">*</span></label>
+                                    <select name="type_of_campus" id="" class="form-control">
+                                        <option selected>Select</option>
+                                        <option value="In House">In House</option>
+                                        <option value="Outside">Outside</option>
+                                    </select>
+                                    <span class="text-danger">@error('type_of_campus'){{$message}}@enderror</span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-6">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Course Completion<span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="course_completion" class="form-control" placeholder="Course Completion">
+                                    <span class="text-danger">@error('course_completion'){{$message}}@enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Place <span
+                                            style="color:red">*</span></label>
+                                   <input type="text" name="place" placeholder="Place" class="form-control">
+                                    <span class="text-danger">@error('place'){{$message}}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="row mb-6">
+                            <div class="col-sm-12">
+                                    <label for="colFormLabel" class=" col-form-label">Instructor Name <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="instructor_name" class="form-control" placeholder="Instructor Name">
+                                    <span class="text-danger">@error('instructor_name'){{$message}}@enderror</span>
+                                </div>
+                            </div>
+                            <center>
+                                <div class="form-group mt-5">
+                                    <button type="submit" class="cssbuttons-io"><span>Add</span> </button>
+
+                                </div>
+                            </center>
+
+                        </form>
+                        <!-- Training form end -->
+                        @elseif($techskills->name == 'Certifications')
+                        <!-- Add certifications Start -->
+                        @if(session()->has('add-certificate'))
+                        <div class="alert alert-success" id="alertMessage">
+                            {{session()->get('add-certificate')}}
+                        </div>
+                        @endif
+                        <form class="col-sm-offset-1" role="form" method="post" action="{{route('add-certificate')}}">
+                            @csrf
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Certificate name <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="certificate_name" class="form-control" placeholder="Certificate Name">
+                                    <span class="text-danger">@error('certificate_name') {{$message}} @enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Certificate Form <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="certificate_from" class="form-control" placeholder="Certificate From">
+                                    <span class="text-danger">@error('certificate_from'){{$message}}@enderror</span>
+                                </div>
+
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Instructor Name<span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="instructor_name" class="form-control" placeholder="Instructor Name">
+                                    <span class="text-danger">@error('instructor_name'){{$message}}@enderror</span>
+                                </div>
+                               
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Score<span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="score" class="form-control" placeholder="Score">
+                                    <span class="text-danger">@error('score'){{$message}}@enderror</span>
+                                </div>
+
+                               
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Test center Name <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="test_center_name" class="form-control" id="colFormLabel"
+                                        placeholder="Test Center Name">
+                                    <span class="text-danger">@error('test_center_name'){{$message}}@enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Year of Pass<span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="year_of_pass" class="form-control" placeholder="Year of Pass">
+                                    <span class="text-danger">@error('year_of_pass'){{$message}}@enderror</span>
+                                </div>
+                                
+
+
+
+                            </div>
+                            <div class="row mb-6">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Certificate ID<span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="certificate_id" class="form-control" placeholder="Certificate ID">
+                                    <span class="text-danger">@error('certificate_id'){{$message}}@enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Type of Campus <span
+                                            style="color:red">*</span></label>
+                                    <select name="type_of_campus" id="" class="form-control">
+                                        <option selected>Select</option>
+                                        <option value="In House">In House</option>
+                                        <option value="Outside">Outside</option>
+                                    </select>
+                                    <span class="text-danger">@error('type_of_campus'){{$message}}@enderror</span>
+                                </div>
+                            </div>
+                            <center>
+                                <div class="form-group mt-5">
+                                    <button type="submit" class="cssbuttons-io"><span>Add</span> </button>
+
+                                </div>
+                            </center>
+
+                        </form>
+                    <!-- Certifications end -->
+                    @elseif($techskills->name == 'Hackathon')
+                    <!-- Hackathon form start -->
+                        <form class="col-sm-offset-1" role="form" method="post" action="{{route('add-hackathon')}}">
+
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Course <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="course" class="form-control" placeholder="Course">
+                                    <span class="text-danger">@error('course') {{$message}} @enderror</span>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Instructor Name <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="instructor_name" class="form-control" placeholder="Instructor Name">
+                                    <span class="text-danger">@error('instructor_name'){{$message}}@enderror</span>
+                                </div>
+
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">From<span
+                                            style="color:red">*</span></label>
+                                    <input type="date" name="from" class="form-control" placeholder="From">
+                                    <span class="text-danger">@error('from'){{$message}}@enderror</span>
+                                </div>
+                               
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">To<span
+                                            style="color:red">*</span></label>
+                                    <input type="date" name="to" class="form-control" placeholder="To">
+                                    <span class="text-danger">@error('to'){{$message}}@enderror</span>
+                                </div>
+
+                               
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Organiged By <span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="organiged_by" class="form-control" id="colFormLabel"
+                                        placeholder="Organiged By">
+                                    <span class="text-danger">@error('organiged_by'){{$message}}@enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Learning Type </label>
+                                    <select name="learning_type" id="" class="form-control">
+                                        <option selected>Select</option>
+                                        <option value="Offline">Offline</option>
+                                        <option value="Online">Online</option>
+                                    </select>
+                                    <span class="text-danger">@error('learning_type'){{$message}}@enderror</span>
+                                </div>
+
+
+
+                            </div>
+                            <div class="row mb-6">
+                            <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Event<span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="event" class="form-control" placeholder="Event">
+                                    <span class="text-danger">@error('event'){{$message}}@enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Total Hours<span
+                                            style="color:red">*</span></label>
+                                    <input type="text" name="total_hours" class="form-control" placeholder="Total Hourse">
+                                    <span class="text-danger">@error('total_hourse'){{$message}}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="row mb-6">
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class="col-form-label">Certificate ID<span
+                                            style="color:red">*</span></label>
+                                    <input type="email" name="certificate_id" class="form-control" placeholder="Certificate ID">
+                                    <span class="text-danger">@error('certificate_id'){{$message}}@enderror</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="colFormLabel" class=" col-form-label">Type of Campus <span
+                                            style="color:red">*</span></label>
+                                    <select name="type_of_campus" id="" class="form-control">
+                                        <option selected>Select</option>
+                                        <option value="In House">In House</option>
+                                        <option value="Outside">Outside</option>
+                                    </select>
+                                    <span class="text-danger">@error('type_of_campus'){{$message}}@enderror</span>
+                                </div>
+                            </div>
+                            <center>
+                                <div class="form-group mt-5">
+                                    <button type="submit" class="cssbuttons-io"><span>Add</span> </button>
+
+                                </div>
+                            </center>
+
+                        </form>
+
+                        <!-- Hackathon form end -->
+                        @endif
+
+
                     </div>
                 </div>
             </div>

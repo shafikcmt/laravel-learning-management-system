@@ -44,8 +44,11 @@ Route::get('/student-logout',[StudentAuth::class,'Logout']);
 Route::get('/student-dashboard',[StudentAuth::class,'StudentDashboard'])->middleware('studentauthcheck');
 Route::get('/drive-skills',[AllStudentController::class,'driveSkills'])->middleware('studentauthcheck');
 Route::get('/technical-work',[TechnicalWork::class,'index'])->middleware('studentauthcheck');
-Route::get('/technical-skill',[TechnicalWork::class,'TechnicalSkill'])->middleware('studentauthcheck');
-Route::get('/add-technical-skill',[TechnicalWork::class,'AddTechnicalSkill'])->middleware('studentauthcheck');
+Route::post('/add-training',[TechnicalWork::class,'TrainingAdd'])->name('add-training');
+Route::post('/add-certificate',[TechnicalWork::class,'AddCertificate'])->name('add-certificate');
+Route::post('/add-hackathon',[TechnicalWork::class,'AddHackathon'])->name('add-hackathon');
+Route::get('/technical-skill/{id}',[TechnicalWork::class,'TechnicalSkill'])->middleware('studentauthcheck');
+Route::get('/add-technical-skill/{id}',[TechnicalWork::class,'AddTechnicalSkill'])->middleware('studentauthcheck');
 Route::get('/assessment-work',[AssessmentWork::class,'index'])->middleware('studentauthcheck');
 Route::get('/assessments',[AssessmentWork::class,'Assessments'])->middleware('studentauthcheck');
 Route::get('/assessments-score',[AssessmentWork::class,'AssessmentScore'])->middleware('studentauthcheck');
@@ -73,7 +76,6 @@ Route::get('/reset-password-student',Sturesetpass::class);
 
 Route::get('/admin',[AdminAuth::class,'AdminLog']);
 Route::get('/admin-logout',[AdminAuth::class,'AdminLogout']);
-
 
 Route::get('/import-page',[AllStudentController::class,'index'])->middleware('adminauthcheck');
 Route::post('/import',[AllStudentController::class,'import'])->name('import');
@@ -169,7 +171,6 @@ Route::get('/admin-dashboard',[AdminAuth::class,'index'])->middleware('adminauth
 
 
 //********************************************************************************************* */
-
 
 
 // Admin Livewire Class
