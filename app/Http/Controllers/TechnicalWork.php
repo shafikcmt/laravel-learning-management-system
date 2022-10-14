@@ -7,6 +7,7 @@ use App\Models\Student;
 use App\Models\TechnicalSkills;
 use App\Models\AddTraining;
 use App\Models\AddCertificate;
+use App\Models\Hackathon;
 use Session;
 class TechnicalWork extends Controller
 {
@@ -20,7 +21,7 @@ class TechnicalWork extends Controller
         $data = Student::where('id','=',Session::get('loginId'))->first();
         $trainingskills = AddTraining::select('*')->where('student_id','=',$data->id)->get();
         $certificate = AddCertificate::select('*')->where('student_id','=',$data->id)->get();
-        return view('technical-skill',compact('data','techskill','trainingskills'));
+        return view('technical-skill',compact('data','techskill','trainingskills','certificate'));
     }
     public function AddTechnicalSkill($id){
         $techskills = TechnicalSkills::find($id);
@@ -81,5 +82,35 @@ class TechnicalWork extends Controller
         $certificate->type_of_campus = $request->type_of_campus;
         $student->addcertificate()->save($certificate);
         return back()->with('add-certificate','Certificate Add Successfully !');
+    }
+    public function AddHackathon(Request $request){
+
+        $request->validate([
+            'course'        => 'required',
+            'instructor_name' => 'required',
+            'from' => 'required',
+            'to' => 'required',
+            'organiged_by' => 'required',
+            'learning_type' => 'required',
+            'total_hours' => 'required',
+            'certificate_id' => 'required',
+            'type_of_campus' => 'required'
+        ]);
+
+        $student = Student::where('id','=',Session::get('loginId'))->first();
+        $hackathon = new Hackathon();
+        $hackathon->course = $request->course;
+        $hackathon->instructor_name = $request->instructor_name;
+        $hackathon->from = $request->from;
+        $hackathon->to = $request->to;
+        $hackathon->organiged_by = $request->organiged_by;
+        $hackathon->learning_type = $request->learning_type;
+        $hackathon->event = $request->event;
+        $hackathon->total_hours = $request->total_hours;
+        $hackathon->certificate_id = $request->certificate_id;
+        $hackathon->type_of_campus = $request->type_of_campus;
+        $student->addhackathon()->save($hackathon);
+        return back()->with('add-hackathon','Hackathon Add Successfully !');
+        
     }
 }

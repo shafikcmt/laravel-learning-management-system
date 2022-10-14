@@ -38,9 +38,11 @@
                                 </thead>
                                 <tbody>
                                     @if($trainingskills->count())
+                                    <?php $i=0; ?>
                                     @foreach($trainingskills as $trainingskill)
+                                    <?php $i++; ?>
                                     <tr valign="middle">
-                                        <td>{{$trainingskill->id}}</td>
+                                        <td><?php echo $i; ?></td>
                                         <td>{{$trainingskill->course}}</td>
                                         <td>{{$trainingskill->event}}</td>
                                         <td>{{$trainingskill->instructor_name}}</td>
@@ -80,7 +82,22 @@
 
                                 </thead>
                                 <tbody>
-                                  
+                                    <?php $i=0; ?>
+                                  @foreach($certificate as $certificate)
+                                  <?php $i++; ?>
+                                  <tr>
+                                    <td><?php echo $i; ?></td>
+                                    <td>{{$certificate->certificate_name}}</td>
+                                    <td>{{$certificate->certificate_from}}</td>
+                                    <td>{{$certificate->instructor_name}}</td>
+                                    <td>{{$certificate->score}}</td>
+                                    <td>{{$certificate->test_center_name}}</td>
+                                    <td>{{$certificate->year_of_pass}}</td>
+                                    <td>{{$certificate->certificate_id}}</td>
+                                    <td>{{$certificate->type_of_campus}}</td>
+                                    <td>{{$certificate->status}}</td>
+                                  </tr>
+                                  @endforeach
                                 </tbody>
 
                                 @elseif($techskill->name == 'Hackathon')

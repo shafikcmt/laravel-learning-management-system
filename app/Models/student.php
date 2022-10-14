@@ -31,4 +31,7 @@ class Student extends Model
     public function addcertificate(){
         return $this->hasMany(AddCertificate::class);
     }
+    public function addhackathon(){
+        return $this->hasMany(Hackathon::class);
+    }
 }

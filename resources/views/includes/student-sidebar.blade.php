@@ -35,13 +35,13 @@
                                 </li>
                                 <li>   
                                 <a href="/assessment-work">
-                                        <i class="fa fa-area-large"></i> Assessments Works
+                                        <i class="fa fa-book"></i> Assessments Works
                                         <i class="fa arrow"></i>
                                     </a>
                                 </li>
                                 <li>   
                                 <a href="/technical-work">
-                                        <i class="fa fa-area-large"></i> Technical Work
+                                        <i class="fa fa-certificate"></i> Technical Work
                                         <i class="fa arrow"></i>
                                     </a>
                                 </li>

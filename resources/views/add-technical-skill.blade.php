@@ -217,7 +217,7 @@
                     <!-- Certifications end -->
                     @elseif($techskills->name == 'Hackathon')
                     <!-- Hackathon form start -->
-                        <form class="col-sm-offset-1" role="form" method="post" action="{{route('student-add')}}">
+                        <form class="col-sm-offset-1" role="form" method="post" action="{{route('add-hackathon')}}">
 
                             <div class="row mb-3">
                                 <div class="col-sm-6">
@@ -284,7 +284,7 @@
                                 <div class="col-sm-6">
                                     <label for="colFormLabel" class="col-form-label">Total Hours<span
                                             style="color:red">*</span></label>
-                                    <input type="text" name="total_hourse" class="form-control" placeholder="Total Hourse">
+                                    <input type="text" name="total_hours" class="form-control" placeholder="Total Hourse">
                                     <span class="text-danger">@error('total_hourse'){{$message}}@enderror</span>
                                 </div>
                             </div>
