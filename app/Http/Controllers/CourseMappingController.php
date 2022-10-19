@@ -179,13 +179,23 @@ class CourseMappingController extends Controller
    
   
     public function Test(){  
-        $data = Student::where('id','=',Session::get('loginId'))->first();
-        $student = Student::find($data->id);
+        $data = Student::where('id','=',Session::get('loginId'))->first();            
+        $courses = DB::table('course_batches')
+        ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
+        ->leftJoin('courses', 'course_batches.course_id', '=', 'courses.id')
+        ->leftJoin('categories','categories.id', '=','courses.category_id')
+        ->where('students_batches.student_roll', '=', $data->roll)
+        ->orWhere('course_batches.batch_id', '=', $data->roll)
+        ->get(); 
 
-        $trainingskills = AddTraining::select('*')->where('student_id','=',$student->id)->get();
-        dd($trainingskills);
-      
+        $drive = DB::table('categories')
+        ->leftJoin('courses','categories.id','=','courses.category_id')
+        ->leftJoin('qcategories','courses.id','=','qcategories.course_id')
+        ->leftJoin('qtopics','qcategories.id','=','qtopics.qcategory_id')
+        ->get();
+        dd($drive->count());
 
+        
     }
 }
 

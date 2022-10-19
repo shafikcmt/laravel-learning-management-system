@@ -48,7 +48,7 @@
             <div class="col-md-12">
                 <div class="card sameheight-item">
                     <div class="card-block">
-                        <div class="card-title-block rounded shadow-lg p-3">
+                        <div class="card-title-block rounded shadow-lg bg-orange">
                             <h3 class="title"> Question Category List </h3>
                         </div>
                         <section class="example">
