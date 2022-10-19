@@ -120,7 +120,25 @@
 
                                 </thead>
                                 <tbody>
-                                  
+                                    <?php $i=0; ?>
+                                 @foreach($hackathons as $hackathon)
+                                 <?php $i++; ?>
+
+                                 <tr>
+                                    <td><?php echo $i; ?></td>
+                                    <td>{{$hackathon->course}}</td>
+                                    <td>{{$hackathon->event}}</td>
+                                    <td>{{$hackathon->instructor_name}}</td>
+                                    <td>{{$hackathon->from}}</td>
+                                    <td>{{$hackathon->to}}</td>
+                                    <td>{{$hackathon->organiged_by}}</td>
+                                    <td>{{$hackathon->learning_type}}</td>
+                                    <td>{{$hackathon->total_hours}}</td>
+                                    <td>{{$hackathon->certificate_id}}</td>
+                                    <td>{{$hackathon->type_of_campus}}</td>
+                                    <td>{{$hackathon->status}}</td>
+                                 </tr>
+                                 @endforeach
                                 </tbody>
                                 @elseif($techskill->name == 'HackerRank')
                                 <thead>

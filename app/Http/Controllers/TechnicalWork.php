@@ -14,14 +14,18 @@ class TechnicalWork extends Controller
     public function index(){
         $data = Student::where('id','=',Session::get('loginId'))->first(); 
         $technicalskill = TechnicalSkills::all();
-        return view('technical-work',compact('data','technicalskill'));
+        $trainingskills = AddTraining::select('*')->where('student_id','=',$data->id)->get();
+        $certificate = AddCertificate::select('*')->where('student_id','=',$data->id)->get();
+        $hackathons = Hackathon::select('*')->where('student_id','=',$data->id)->get();
+        return view('technical-work',compact('data','technicalskill','trainingskills','certificate','hackathons'));
     }
     public function TechnicalSkill($id){
         $techskill = TechnicalSkills::find($id);
         $data = Student::where('id','=',Session::get('loginId'))->first();
         $trainingskills = AddTraining::select('*')->where('student_id','=',$data->id)->get();
         $certificate = AddCertificate::select('*')->where('student_id','=',$data->id)->get();
-        return view('technical-skill',compact('data','techskill','trainingskills','certificate'));
+        $hackathons = Hackathon::select('*')->where('student_id','=',$data->id)->get();
+        return view('technical-skill',compact('data','techskill','trainingskills','certificate','hackathons'));
     }
     public function AddTechnicalSkill($id){
         $techskills = TechnicalSkills::find($id);
@@ -92,6 +96,7 @@ class TechnicalWork extends Controller
             'to' => 'required',
             'organiged_by' => 'required',
             'learning_type' => 'required',
+            'event' => 'required',
             'total_hours' => 'required',
             'certificate_id' => 'required',
             'type_of_campus' => 'required'

@@ -217,11 +217,16 @@
                     <!-- Certifications end -->
                     @elseif($techskills->name == 'Hackathon')
                     <!-- Hackathon form start -->
+                    @if(session()->has('add-hackathon'))
+                        <div class="alert alert-success" id="alertMessage">
+                            {{session()->get('add-hackathon')}}
+                        </div>
+                    @endif
                         <form class="col-sm-offset-1" role="form" method="post" action="{{route('add-hackathon')}}">
-
+                            @csrf
                             <div class="row mb-3">
                                 <div class="col-sm-6">
-                                    <label for="colFormLabel" class="col-form-label">Course <span
+                                    <label for="colFormLabel" class="col-form-label">Course<span
                                             style="color:red">*</span></label>
                                     <input type="text" name="course" class="form-control" placeholder="Course">
                                     <span class="text-danger">@error('course') {{$message}} @enderror</span>
@@ -285,14 +290,14 @@
                                     <label for="colFormLabel" class="col-form-label">Total Hours<span
                                             style="color:red">*</span></label>
                                     <input type="text" name="total_hours" class="form-control" placeholder="Total Hourse">
-                                    <span class="text-danger">@error('total_hourse'){{$message}}@enderror</span>
+                                    <span class="text-danger">@error('total_hours'){{$message}}@enderror</span>
                                 </div>
                             </div>
                             <div class="row mb-6">
                                 <div class="col-sm-6">
                                     <label for="colFormLabel" class="col-form-label">Certificate ID<span
                                             style="color:red">*</span></label>
-                                    <input type="email" name="certificate_id" class="form-control" placeholder="Certificate ID">
+                                    <input type="text" name="certificate_id" class="form-control" placeholder="Certificate ID">
                                     <span class="text-danger">@error('certificate_id'){{$message}}@enderror</span>
                                 </div>
                                 <div class="col-sm-6">
@@ -309,7 +314,6 @@
                             <center>
                                 <div class="form-group mt-5">
                                     <button type="submit" class="cssbuttons-io"><span>Add</span> </button>
-
                                 </div>
                             </center>
 

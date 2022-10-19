@@ -16,8 +16,18 @@
                                 <div class="card card-default {{$skill->bg}}">
                               
                                     <a href="/technical-skill/{{$skill->id}}" class="card-block" style="text-decoration:none">
-                                        <h1>00</h1>
-                                        <h5>{{$skill->name}}</h5>
+                                    @if($skill->name == 'Trainings')    
+                                    <h1>{{$trainingskills->count()}}</h1>
+                                    @elseif($skill->name == 'Certifications')
+                                    <h1>{{$certificate->count()}}</h1>
+                                    @elseif($skill->name == 'Hackathon')
+                                    <h1>{{$hackathons->count()}}</h1>
+                                    @elseif($skill->name == 'Hackathon')
+                                    <h1>{{$hackathons->count()}}</h1>
+                                    @else
+                                    <h1>00</h1>
+                                    @endif
+                                    <h5>{{$skill->name}}</h5>
                                     </a>
                                 </div>
                             </div>    

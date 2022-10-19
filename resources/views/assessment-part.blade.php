@@ -19,7 +19,7 @@
                 
                                     <a href="/assessments-score" class="card-block" style="text-decoration:none">
                                         <h1>00</h1>
-                                        <h4>Drive Skills</h4>
+                                        <h4>Soft Skills</h4>
                                     </a>
                                 </div>
                             </div>
