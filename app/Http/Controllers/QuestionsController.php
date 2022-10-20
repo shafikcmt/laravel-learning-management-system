@@ -30,6 +30,18 @@ class QuestionsController extends Controller
         return response()->json($quizcat);
     }
     }
+
+    public function Getquiz(Request $request){
+        $quiztopic = \DB::table('qtopics')
+        ->where('qcategory_id', $request->id)
+        ->get();
+    
+    if (count($quiztopic) > 0) {
+        return response()->json($quiztopic);
+    }
+    }
+
+
     public function createTopic(Request $request){
         $request->validate([
             'category' => 'required',

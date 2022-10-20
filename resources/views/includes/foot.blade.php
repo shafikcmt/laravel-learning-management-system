@@ -135,6 +135,29 @@
 </script>
 
 
+<!-- Question bulk Import -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#quiz_category').on('change', function () {
+            var qcategoryId = this.value;
+            $('#quiz_topic').html('');
+            $.ajax({
+                url: '{{ route('Getquiz') }}?id='+qcategoryId,
+                type: 'get',
+                success: function (res) {
+                    $('#quiz_topic').html('<option value="">Select Quiz</option>');
+                    $.each(res, function (key, value) {
+                        $('#quiz_topic').append('<option  value="' + value
+                            .id + '">' + value.topic_name + '</option>');
+                    });
+                    
+                }
+            });
+        });
+        
+    });
+</script>
+
 <!-- Quiz wish  Result   -->
 <script type="text/javascript">
     $(document).ready(function () {
@@ -199,34 +222,8 @@ $(document).on('change', '#quiz', function () {
 });
 </script>
 
-<!-- 
-<script>
-    $(document).ready(function () {
 
-        fetch_question_data();
 
-        function fetch_question_data(query = '') {
-            $.ajax({
-                url: "{{ route('all-student.action') }}",
-                method: 'GET',
-                data: {
-                    query: query
-                },
-                dataType: 'json',
-                success: function (data) {
-                    $('#students').html(data.table_data);
-                    $('#total_records').text(data.total_data);
-                }
-            })
-        }
-
-        $(document).on('keyup', '#search', function () {
-            var query = $(this).val();
-            fetch_question_data(query);
-        });
-    });
-
-</script> -->
 
 
 <!-- Add Quiz -->

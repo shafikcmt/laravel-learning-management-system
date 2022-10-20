@@ -45,12 +45,18 @@
                                 <div class="row mb-3">
                                     <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="topic_id">Quiz Name</label>
-                                        <select name="qtopic_id" id="" class="form-control">
-                                            <option selected >Select Quiz</option>
-                                        @foreach($qtopics as $qtopic)
-                                            <option value="{{$qtopic->id}}">{{$qtopic->topic_name}}</option>
+                                        <label for="topic_id">Quiz Category</label>
+                                        <select name="category_id" id="quiz_category" class="form-control">
+                                            <option selected >Select Quiz Category</option>
+                                        @foreach($qcategories as $qcategory)
+                                            <option value="{{$qcategory->id}}">{{$qcategory->category_name}}</option>
                                         @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="topic_id">Quiz Name</label>
+                                        <select name="qtopic_id" id="quiz_topic" class="form-control">
+                                           
                                         </select>
                                         <div class="text-danger">@error('topic_name') {{$message}} @enderror</div>
 

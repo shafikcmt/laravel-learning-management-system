@@ -40,7 +40,8 @@ class AddQuestionController extends Controller
     }
     public function bulkQuestion(){
         $qtopics = Qtopic::all();
-        return view('/question-bulk-import',compact('qtopics'));
+        $qcategories = Qcategory::all();
+        return view('/question-bulk-import',compact('qtopics','qcategories'));
     }
      
     
