@@ -178,7 +178,7 @@ class CourseMappingController extends Controller
     }
    
   
-    public function Test(){  
+    public function Test(Request $request){  
         $data = Student::where('id','=',Session::get('loginId'))->first();            
         $courses = DB::table('course_batches')
         ->leftJoin('students_batches', 'course_batches.batch_id', '=', 'students_batches.batch_id')
@@ -192,6 +192,7 @@ class CourseMappingController extends Controller
         ->leftJoin('courses','categories.id','=','courses.category_id')
         ->leftJoin('qcategories','courses.id','=','qcategories.course_id')
         ->leftJoin('qtopics','qcategories.id','=','qtopics.qcategory_id')
+        ->where('courses.category_id','=',$request->id)
         ->get();
         dd($drive->count());
 
