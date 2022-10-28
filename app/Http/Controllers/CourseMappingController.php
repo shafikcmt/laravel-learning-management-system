@@ -192,7 +192,7 @@ class CourseMappingController extends Controller
         ->leftJoin('courses','categories.id','=','courses.category_id')
         ->leftJoin('qcategories','courses.id','=','qcategories.course_id')
         ->leftJoin('qtopics','qcategories.id','=','qtopics.qcategory_id')
-        ->where('courses.category_id','=',$request->id)
+        ->where('courses.category_id','=',2)
         ->get();
         dd($drive->count());
 
