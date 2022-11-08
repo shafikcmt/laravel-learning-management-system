@@ -59,7 +59,7 @@
                                                 <tr>
                                                     <td>{{$questions->firstItem() + $key}}</td>
                                                     <td>{{$question->topic_name}}</td>
-                                                    <td>{{$question->question}}</td>
+                                                    <td align="left">{{$question->question}}</td>
 
                                                     <td>
                                                         <a class="btn btn-primary"
