@@ -36,7 +36,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/',[HomeController::class,'index'])->middleware('ifStudentLogin');
+Route::get('/',[HomeController::class,'index'])->middleware('ifStudentlogin');
 // Student Controller
 //------------------------------------
 Route::get('/student-login',[StudentAuth::class,'login'])->middleware('studentlogin');
