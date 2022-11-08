@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Student;
-use App\Models\AddQuestion;
+use App\Models\Question;
 use App\Models\attempt_quiz;
 use App\Models\Qtopic;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +16,7 @@ class AdminAuth extends Controller
         $attemp = new attempt_quiz;
         $quizes = new Qtopic;
         $students = new Student;
-        $questions = new AddQuestion;
+        $questions = new Question;
         $courses = DB::table('categories')
         ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
         ->get();

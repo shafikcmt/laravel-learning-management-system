@@ -7,7 +7,7 @@ use App\Models\Batch;
 use App\Models\Course;
 use App\Models\Student;
 use App\Models\Qtopic;
-use App\Models\AddQuestion;
+use App\Models\Question;
 use App\Models\QuizAnswer;
 use App\Models\attempt_quiz;
 use App\Models\CourseBatch;

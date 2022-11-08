@@ -52,12 +52,23 @@
                         @csrf
                         <input type="hidden" name="topic_id" value="{{$qtopic->id}}">
                         <input type="hidden" name="topic_name" value="{{$qtopic->topic_name}}">
-                        <div class="form-group">
+                        <div class="form-group" >
                             <?php $i=1; ?>
                             @foreach($questions as $question)
+                            <div class="question-part card card-block sameheight-item">
                             <label for="question">
-                                <h4>#<?php echo $i; ?>.{{$question->question}}</h4>
+                                <h5 style="width:900px" class="text-justify pb-3 border-bottom">#<?php echo $i; ?>.{{$question->question}}</h5>
                             </label>
+                            <p><input type="radio" required name="answer[{{$question->id}}]"
+                                    value="{{$question->option1}}"> {{$question->option1}}</p>
+                            <p><input type="radio" required name="answer[{{$question->id}}]"
+                                    value="{{$question->option2}}"> {{$question->option2}}</p>
+                            <p><input type="radio" required name="answer[{{$question->id}}]"
+                                    value="{{$question->option3}}"> {{$question->option3}}</p>
+                            <p><input type="radio" required name="answer[{{$question->id}}]"
+                                    value="{{$question->option4}}"> {{$question->option4}}</p>
+                            </div>
+                            
                             <input type="hidden" name="student_name" value="{{$data->name}}">
                             <input type="hidden" name="student_id" value="{{$data->id}}">
                             <input type="hidden" name="student_roll" value="{{$data->roll}}">
@@ -67,14 +78,7 @@
                             <input type="hidden" name="student_mobile" value="{{$data->mobile}}">
                             <input type="hidden" name="student_email" value="{{$data->email}}">
                             <input type="hidden" name="question_id[{{$question->id}}]" value="{{$question->id}}">
-                            <p><input type="radio" required name="answer[{{$question->id}}]"
-                                    value="{{$question->option1}}"> {{$question->option1}}</p>
-                            <p><input type="radio" required name="answer[{{$question->id}}]"
-                                    value="{{$question->option2}}"> {{$question->option2}}</p>
-                            <p><input type="radio" required name="answer[{{$question->id}}]"
-                                    value="{{$question->option3}}"> {{$question->option3}}</p>
-                            <p><input type="radio" required name="answer[{{$question->id}}]"
-                                    value="{{$question->option4}}"> {{$question->option4}}</p>
+                           
                             <input type="hidden" name="canswer[{{$question->id}}]" value="{{$question->answer}}">
                             <?php $i++; ?>
                             @endforeach

@@ -18,7 +18,7 @@ class Qtopic extends Model
         return $this->belongsTo(Qcategory::class);
     }
     public function addquestion(){
-        return $this->hasMany(AddQuestion::class);
+        return $this->hasMany(Question::class);
     }
 
 }
