@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('add_questions', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->longText('question');
             $table->longText('answer');
@@ -21,6 +21,7 @@ return new class extends Migration
             $table->longText('option2');
             $table->longText('option3');
             $table->longText('option4');
+            $table->string('type');
             $table->string('mark')->default('1');
             $table->unsignedBigInteger('qtopic_id');
             $table->foreign('qtopic_id')->references('id')->on('qtopics');
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add_questions');
+        Schema::dropIfExists('questions');
     }
 };

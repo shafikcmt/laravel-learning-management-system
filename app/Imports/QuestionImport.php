@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\Models\AddQuestion;
+use App\Models\Question;
 // use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
@@ -26,16 +26,18 @@ class QuestionImport implements WithHeadingRow, ToCollection
              '*.option2' => 'required',
              '*.option3' => 'required',
              '*.option4' => 'required',
+             '*.type' => 'required',
          ])->validate();
 
         foreach ($rows as $row) {
-            AddQuestion::create([
+            Question::create([
                 'question'  => $row['question'],
                 'answer'    => $row['answer'],
                 'option1'   => $row['option1'],
                 'option2'   => $row['option2'],
                 'option3'   => $row['option3'],
                 'option4'   => $row['option4'],
+                'type'   => $row['type'],
                 'qtopic_id' => request('qtopic_id'),
             ]);
 

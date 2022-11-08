@@ -12,7 +12,7 @@ class QuizAnswer extends Model
     protected $fillable = [
         'student_id',
         'qtopic_id',
-        'addquestion_id',
+        '_id',
         'answer',
         'qanswer',
         'status',

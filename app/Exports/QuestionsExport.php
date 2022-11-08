@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\models\AddQuestion;
+use App\models\Question;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class QuestionsExport implements FromCollection
@@ -25,6 +25,6 @@ class QuestionsExport implements FromCollection
     public function collection()
     {
         // return AddQuestion::all();
-        return collect(AddQuestion::getQuestions());
+        return collect(Question::getQuestions());
     }
 }

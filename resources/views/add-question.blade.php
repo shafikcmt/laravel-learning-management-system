@@ -31,12 +31,23 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3"> 
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-12">
+                                <div class="col-sm-12">
                                         <label for="colFormLabel" class="col-form-label">Question <span style="color:red">*</span></label>
                                         <textarea class="form-control" value="{{old('question')}}" name="question" id="" cols="30" rows="5"></textarea>
                                         <div class="text-danger">@error('question') {{$message}} @enderror</div>
+
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <label for="colFormLabel" class="col-form-label">Question Type <span style="color:red">*</span></label>
+                                        <select class="form-control" value="{{old('type')}}" name="type">
+                                            <option selected>Select Type</option>
+                                            <option value="easy">Easy</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="hard">Hard</option>
+                                        </select>
+                                        <div class="text-danger">@error('type') {{$message}} @enderror</div>
 
                                     </div>
                                 </div>

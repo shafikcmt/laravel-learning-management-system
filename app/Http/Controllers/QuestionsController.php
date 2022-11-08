@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Qcategory;
 use App\Models\Qtopic;
 use App\Models\Course;
-use App\Models\AddQuestion;
+use App\Models\Question;
 use Excel;
 use PDF;
 use Illuminate\Support\Facades\DB;
@@ -131,12 +131,12 @@ class QuestionsController extends Controller
     }
 
     public function getQuestionsPDF(){
-        $questions = AddQuestion::all();
+        $questions = Question::all();
         return view('/all-questionpdf',compact('questions'));
     }
     public function ExportintoPDF()
     {
-        $questions = AddQuestion::all();
+        $questions = Question::all();
         $pdf = PDF::loadView('all-questionpdf',compact('questions'));
         return $pdf->download('Questions.pdf');
     }
