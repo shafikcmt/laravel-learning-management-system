@@ -13,6 +13,7 @@ use App\Models\attempt_quiz;
 use App\Models\CourseBatch;
 use App\Models\StudentsBatch;
 use App\Models\AddTraining;
+use Illuminate\Support\Arr;
 
 use paginate;
 // use Session;
@@ -98,7 +99,8 @@ class CourseMappingController extends Controller
     public function allQuestion($id){
         $data = Student::where('id','=',Session::get('loginId'))->first();
         $qtopic = Qtopic::find($id);
-        $questions = Qtopic::find($id)->addquestion->skip(0)->take($qtopic->total_question);
+        $shuffle = Qtopic::find($id)->addquestion->shuffle();
+        $questions = $shuffle->skip(0)->take($qtopic->total_question);
         return view('/all-question',compact('questions','data','qtopic'));
     }
     public function submitAnswer(Request $request){
