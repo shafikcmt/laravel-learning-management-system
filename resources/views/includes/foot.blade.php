@@ -56,6 +56,16 @@
     $(".startTimer").click(function() {
         $("#CountDownTimer").TimeCircles().start();
     });
+    setInterval(function(){
+            var remaining_second = $('#CountDownTimer').TimeCircles().getTime();
+            if(remaining_second < 1 ){
+                alert('Exam time over !');
+                window.location.replace('/submit-answer');
+                
+
+            }
+        }, 1000);
+
     $(".stopTimer").click(function() {
         $("#CountDownTimer").TimeCircles().stop();
     });

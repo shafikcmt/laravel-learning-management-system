@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('student_id');
             $table->string('qtopic_id');
             $table->string('addquestion_id');
-            $table->string('answer');
-            $table->string('qanswer');
+            $table->longText('answer')->default('Not able to complete due to time over');
+            $table->longText('qanswer');
             $table->string('status')->default('0');
             $table->timestamps();
         });

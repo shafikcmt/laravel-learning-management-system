@@ -94,7 +94,7 @@ class CourseMappingController extends Controller
         }
        
         return view('/start-quiz',compact('qtopic','data','qcategory'));
-    }
+    } 
 
     public function allQuestion($id){
         $data = Student::where('id','=',Session::get('loginId'))->first();
