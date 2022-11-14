@@ -101,12 +101,9 @@
                         <li>
                             <a href="/results-batch-wise"> Batch Wise</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/results-date-wise"> Date Wise</a>
-                        </li>
-
-                       
-                
+                        </li> -->
                     </ul>
                 </li> 
                 <!-- <li>
