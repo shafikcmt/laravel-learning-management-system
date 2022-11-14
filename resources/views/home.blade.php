@@ -8,16 +8,16 @@
     <img src="{{asset('images/homeslider/Website.jpg')}}" alt="Los Angeles" class="d-block w-100">
     </div>
     <div class="carousel-item">
-    <img src="{{asset('images/homeslider/Website2.jpg')}}" alt="Los Angeles" class="d-block w-100">
+    <img src="{{asset('images/homeslider/Website2.jpg')}}" alt="Los Angeles" class="d-block img-fluid w-100">
 
     </div>
     <div class="carousel-item">
-    <img src="{{asset('images/homeslider/Website3.jpg')}}" alt="Los Angeles" class="d-block w-100">
+    <img src="{{asset('images/homeslider/Website3.jpg')}}" alt="Los Angeles" class="d-block img-fluid w-100">
 
     </div>
 
     <div class="carousel-item">
-    <img src="{{asset('images/homeslider/Website4.jpg')}}" alt="Los Angeles" class="d-block w-100">
+    <img src="{{asset('images/homeslider/Website4.jpg')}}" alt="Los Angeles" class="d-block img-fluid w-100">
 
     </div>
   </div>

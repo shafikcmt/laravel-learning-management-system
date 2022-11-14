@@ -62,7 +62,7 @@
             </div>
             </div>
             </div>
-            <div class="row sameheight-container">
+            <div class="row sameheight-container drive-table">
                 <div class="col-md-12">
                     <div class="card sameheight-item">
                         <div class="card-body">
@@ -70,7 +70,7 @@
                         <h1 class="title well p-2 bg-orange text-white"> All Courses </h1>
                         </div>
                         <div class="table-responsive shadow-lg p-3 mb-2 bg-white rounded">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table class="table table-striped table-bordered table-hover ">
                                 <thead>
                                     <tr>
                                         <th>Course Category</th>

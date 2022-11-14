@@ -8,12 +8,12 @@
                                 <span>HAVE ANY QUESTIONS?</span>
                             </div>
                         </div>
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-4 text-center second-title">
                         <span style="font-weight:bold;">ghub@geeta.edu.in</span>
                         </div>
                         <div class="col-md-4">
                             <nav class="navbar-expand-md navbar-dark">
-                                <ul class="nav navbar-nav justify-content-end">
+                                <ul class="nav navbar-nav justify-content-end responsive-menu">
                                 <li class="nav-item"><a class="" href="/student-login">Login </a></li>&nbsp &nbsp &nbsp
                                 <li class="nav-item"><a class="" href="/student-registration"> &nbspCraete Account</a></li>
                               

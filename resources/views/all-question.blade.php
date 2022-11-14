@@ -12,7 +12,7 @@
         .custom_count {
             background:#fff;
             position: fixed;
-            /* left:70%; */
+           
 
             right: 0;
             top: 0;
@@ -56,16 +56,16 @@
                             <?php $i=1; ?>
                             @foreach($questions as $question)
                             <div class="question-part card card-block sameheight-item">
-                            <label for="question">
-                                <h5 style="width:900px" class="text-justify pb-3 border-bottom">#<?php echo $i; ?>.{{$question->question}}</h5>
+                            <label for="question" class="question">
+                                <h5 style="width:100%" class="text-justify pb-3 border-bottom">#<?php echo $i; ?>.{{$question->question}}</h5>
                             </label>
-                            <p><input type="radio" required name="answer[{{$question->id}}]"
+                            <p><input type="radio" name="answer[{{$question->id}}]"
                                     value="{{$question->option1}}"> {{$question->option1}}</p>
-                            <p><input type="radio" required name="answer[{{$question->id}}]"
+                            <p><input type="radio" name="answer[{{$question->id}}]"
                                     value="{{$question->option2}}"> {{$question->option2}}</p>
-                            <p><input type="radio" required name="answer[{{$question->id}}]"
+                            <p><input type="radio" name="answer[{{$question->id}}]"
                                     value="{{$question->option3}}"> {{$question->option3}}</p>
-                            <p><input type="radio" required name="answer[{{$question->id}}]"
+                            <p><input type="radio" name="answer[{{$question->id}}]"
                                     value="{{$question->option4}}"> {{$question->option4}}</p>
                             </div>
                             
@@ -84,7 +84,7 @@
                             @endforeach
                         </div>
                         <!-- <a type="submit" class="btn btn-primary pull-right">Next</a> -->
-                        <button class="cssbuttons-io pull-right mr-5 mr-5" type="submit"><span>Submit</span></button>
+                        <button class="cssbuttons-io pull-right mr-5 mr-5 quiz-submit" type="submit"><span>Submit</span></button>
                     </form>
                    
                 </div>

@@ -1,0 +1,151 @@
+    @media screen and (max-width: 640px){
+        .card-item {
+            width: 270px;
+            height: 316px;
+            text-align: center;
+        } 
+        .custom_count {
+            text-align: left;
+            width: 34%;
+        }
+        .section{
+            width: 64%;
+        }
+        .quiz-submit{
+            display: block;
+            margin-left: -200px;
+        }
+        
+
+    }
+    
+    @media screen and (max-width: 667px){
+        .card-item {
+            width: 278px;
+            height: 316px;
+            text-align: center;
+        }     
+
+    }
+    
+    @media screen and (max-width: 720px){
+        .card-item {
+            width: 270px;
+            height: 316px;
+            text-align: center;
+        }     
+
+    }
+
+    @media screen and (max-width: 768px) {
+        body {
+            min-height: 100vh;
+        }
+        /* Home Page Start */
+
+        .carousel-item img{
+         height: 230px;
+        }
+
+        .logohome img {
+            height: 60px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1px;
+        }
+        #second-header {
+            min-height: 6vh;
+        }
+        .first-title span , .second-title span {
+           display: none;
+        }
+        .responsive-menu {
+            height: 68px;
+        }
+        .responsive-menu li a {
+            background: #F07D1E;
+            line-height: 28px;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .footer-logo img {
+            height: 55px;
+            margin-bottom: 7px;
+            margin-top: 7px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #footerpart {
+            font-size: 18px;
+        }
+        .footer-icon svg {
+            margin-left: 20px;
+            font-size: 25px;
+            margin-top: 0px;
+            margin-bottom: 16px;
+        }
+        .second-footer{
+            display: none;
+        }
+        /* Home Page End */
+
+        /* Login and Registration Page Start */
+
+        .auth {
+            left: 0px;
+            background-repeat: no-repeat;
+            padding: 19px;
+            background: #f1f1f1;
+        }
+
+        .card {
+            border-radius: 5px;
+        }
+
+        .text-dark {
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .auth-regi {
+            margin-left: -115px;
+        }
+        /* Login and Registration Page End */
+
+
+        /* Drive Skill page */
+        .text-dark {
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 25px;
+            margin-top: 7px;
+        }
+        .card-item {
+            width: 285px;
+            height: 316px;
+            text-align: center;
+        }
+        .drive-table{
+            display: none;
+        }
+        .owl-nav {
+            text-align: center;
+            font-size: 43px;
+        }
+      }
+
+      @media screen and (max-width: 800px){
+        .card-item {
+            width: 313px;
+            height: 323px;
+            text-align: center;
+        } 
+    }
+
+   
+  

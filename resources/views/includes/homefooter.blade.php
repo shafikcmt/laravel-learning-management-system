@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <div class="second-footer">
+    <div class="second-footer bg-dark">
 
     </div>
 

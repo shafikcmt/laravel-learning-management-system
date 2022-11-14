@@ -106,7 +106,7 @@ class CourseMappingController extends Controller
     public function submitAnswer(Request $request){
         $data = Student::where('id','=',Session::get('loginId'))->first();
         $request->validate([
-            'answer'        => 'required',
+            // 'answer'        => 'required',
         ]);
         $c = count($request->answer);
         // dd($c);
