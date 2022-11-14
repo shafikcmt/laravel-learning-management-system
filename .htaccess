@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [L]
+AddHandler application/x-httpd-php81 .php .php5
+</IfModule>
+
+
