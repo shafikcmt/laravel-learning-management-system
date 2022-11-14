@@ -34,11 +34,11 @@ class StudentImport implements WithHeadingRow,ToCollection
     {
         Validator::make($rows->toArray(), [
              '*.name'       => 'required',
-             '*.roll'       => 'required|digits_between:1,10|unique:students',
+             '*.roll'       => 'required|digits_between:1,15|unique:students',
              '*.class'      => 'required',
              '*.branch'     => 'required',
              '*.semester'   => 'required',
-             '*.mobile'     => 'required|digits_between:1,10',
+             '*.mobile'     => 'required|digits_between:1,15',
              '*.email'      => 'required|email',
              '*.password'   => 'required',
          ])->validate();

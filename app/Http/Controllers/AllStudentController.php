@@ -126,7 +126,7 @@ class AllStudentController extends Controller
             'class'     => 'required',
             'branch'    => 'required',
             'semester'  => 'required',
-            'mobile'    => 'required|numeric|digits_between:1,10',
+            'mobile'    => 'required|numeric|digits_between:1,15',
             'email'     => 'required',
             'password'  => 'required',
         ]);
@@ -195,18 +195,5 @@ class AllStudentController extends Controller
         return $pdf->download('Studentslist.pdf');
     }
 
-    // public function studentSearch(Request $request){
-    //     $search = '%'.$request->search.'%';
-    //     $students = Student::where('name','LIKE',$search)
-    //     ->orWhere('roll','LIKE',$search)
-    //     ->orWhere('class','LIKE',$search)
-    //     ->orWhere('branch','LIKE',$search)
-    //     ->orWhere('semester','LIKE',$search)
-    //     ->orWhere('mobile','LIKE',$search)
-    //     ->orWhere('email','LIKE',$search)
-    //     ->orderBy('id','DESC')
-    //     ->get();
-    //     return view('/all-student',compact('students'));
-
-    // }
+   
 }
