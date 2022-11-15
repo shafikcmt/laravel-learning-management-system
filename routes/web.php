@@ -122,6 +122,7 @@ Route::get('/all-questionpdf',[QuestionsController::class,'getQuestionsPDF']);
 Route::get('/export-pdf-questions',[QuestionsController::class,'ExportintoPDF']);
 
 Route::get('/questions-category',[QuestionsController::class,'addCategory'])->middleware('adminauthcheck');
+Route::get('/question-category-list',[QuestionsController::class,'Qcatlist'])->middleware('adminauthcheck');
 Route::post('/questions-category',[QuestionsController::class,'createQcategory'])->name('create-qcategory');
 Route::get('/edit-qcategory/{id}',[QuestionsController::class,'editQcategory'])->middleware('adminauthcheck');
 Route::post('/edit-qcategory',[QuestionsController::class,'updateQcategory'])->name('update-qcategory');
@@ -145,6 +146,7 @@ Route::get('/view-topic/{id}',[AddQuestionController::class,'viewTopic'])->middl
 Route::get('/questions-view/{id}',[AddQuestionController::class,'questionsView'])->middleware('adminauthcheck');
 
 Route::get('/add-courses',[AddCourseController::class,'addCourse'])->middleware('adminauthcheck');
+Route::get('/course-lists',[AddCourseController::class,'Courselist'])->middleware('adminauthcheck');
 Route::post('/add-courses',[AddCourseController::class,'CreateCourse'])->name('create-course');
 Route::get('/edit-courses/{id}',[AddCourseController::class,'editCourse'])->middleware('adminauthcheck');
 Route::post('/edit-courses',[AddCourseController::class,'updateCourse'])->name('update-courses');

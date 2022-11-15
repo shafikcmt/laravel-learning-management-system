@@ -22,7 +22,7 @@
                             <a href="/all-student"> Students List </a>
                         </li>
                         <li>
-                            <a href="/add-students"> Add Students </a>
+                            <a href="/add-students"> Add Student </a>
                         </li>
 
                         <li>
@@ -44,12 +44,19 @@
                         <li>
                             <a href="/add-category"> Add Category </a>
                         </li>
+                       
                         <li>
                             <a href="/add-batch"> Add Batch </a>
                         </li>
                         <li>
-                            <a href="/add-courses"> Add Courses </a>
+                            <a href="/add-courses"> Add Course </a>
                         </li>
+
+                        <li>
+                            <a href="/course-lists">Course Lists</a>
+                        </li>
+
+
                         <li>
                             <a href="/course-mapping"> Course Mapping </a>
                         </li>
@@ -64,6 +71,11 @@
                     <li>
                             <a href="/questions-category"> Quiz Category </a>
                         </li>
+
+                        <li>
+                            <a href="/question-category-list"> Quiz Category List </a>
+                        </li>
+
                         <li>
                             <a href="/questions-topic"> Add Quiz </a>
                         </li>
@@ -98,12 +110,15 @@
                         <li>
                             <a href="/results-quiz-wise"> Quiz Wise</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/results-batch-wise"> Batch Wise</a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="/results-date-wise"> Date Wise</a>
-                        </li> -->
+                        </li>
+
+                       
+                
                     </ul>
                 </li> 
                 <!-- <li>
