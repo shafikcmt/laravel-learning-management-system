@@ -81,14 +81,18 @@ class QuestionsController extends Controller
     }
 
     public function addCategory(){
+        $courses = Course::all();
+        return view('/questions-category',compact('courses'));
+    }
+ 
+    public function Qcatlist(){
         $categories = DB::table('courses')
         ->leftJoin('qcategories', 'courses.id', '=', 'qcategories.course_id')
         ->paginate(10);
-        // $categories = Qcategory::all();
         $courses = Course::all();
-        return view('/questions-category',compact('categories','courses'));
+        return view('/question-category-list',compact('categories','courses'));
     }
- 
+
     public function createQcategory(Request $request){
         $request->validate([
             'category_name' => 'required|unique:qcategories,category_name,{$this->course_id}',

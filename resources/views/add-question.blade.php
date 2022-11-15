@@ -51,9 +51,6 @@
 
                                     </div>
                                 </div>
-                        
-
-                    </div>
 
                     <div class="row mb-3">
                         <div class="col-sm-4">
@@ -72,9 +69,11 @@
                             <div class="text-danger">@error('option4') {{$message}} @enderror</div>
                         </div>
                     </div>
+                    
                     <div class="form-group pull-right">
                         <button type="submit" class="cssbuttons-io"><span>Save Question</span></button>
 
+                    </div>
                     </div>
                     </form>
                 </div>

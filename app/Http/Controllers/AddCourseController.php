@@ -16,6 +16,13 @@ class AddCourseController extends Controller
         ->paginate(10);
         return view('/add-courses',compact('categories','courses'));
     }
+    public function Courselist(){
+        $categories = Category::all();
+        $courses = DB::table('categories')
+        ->leftJoin('courses', 'categories.id', '=', 'courses.category_id')
+        ->paginate(10);
+        return view('/course-lists',compact('categories','courses')); 
+    }
     public function CreateCourse(Request $request){
         $request->validate([
             'name' => 'required',
