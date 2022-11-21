@@ -16,7 +16,7 @@
                     </div>
                     @endif
                         <div class="card card-block sameheight-item">
-                            <form role="form" method="POST" action="{{route('create-question')}}">
+                            <form role="form" method="POST" action="{{route('create-question')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-sm-12">
@@ -36,6 +36,12 @@
                                         <textarea class="form-control" value="{{old('question')}}" name="question" id="" cols="30" rows="5"></textarea>
                                         <div class="text-danger">@error('question') {{$message}} @enderror</div>
 
+                                    </div>
+                                </div>
+                                <div class="row mb-3"> 
+                                <div class="col-sm-12">
+                                        <label for="colFormLabel" class="col-form-label">Image</label>
+                                        <input type="file" name="image" class="form-control" id="colFormLabel" placeholder="">
                                     </div>
                                 </div>
                                 <div class="row mb-3">

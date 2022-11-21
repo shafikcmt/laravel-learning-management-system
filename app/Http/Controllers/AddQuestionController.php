@@ -28,14 +28,19 @@ class AddQuestionController extends Controller
             'type' => 'required',
              
         ]);
+        $image = $request->file('image');
+        $imageName = time().'.'.$image->extension();
+        $image->move(public_path('images/question'),$imageName);
+
         $qtopic = Qtopic::find($request->qtopic_id);
         $questions = new Question;
         $questions->question = $request->question;
-        $questions->answer = $request->answer;
-        $questions->option1 = $request->option1;
-        $questions->option2 = $request->option2;
-        $questions->option3 = $request->option3;
-        $questions->option4 = $request->option4;
+        $questions->image    = $imageName;
+        $questions->answer   = $request->answer;
+        $questions->option1  = $request->option1;
+        $questions->option2  = $request->option2;
+        $questions->option3  = $request->option3;
+        $questions->option4  = $request->option4;
         $questions->type = $request->type;
         $qtopic->addquestion()->save($questions);
         return back()->with('add-question','Question added successfully !');
@@ -82,9 +87,14 @@ class AddQuestionController extends Controller
             'option4'       => 'required',
             'type'       => 'required',
         ]);
+        $image = $request->file('image');
+        $imageName = time().'.'.$image->extension();
+        $image->move(public_path('images/question'),$imageName);
+
         $qtopic = Qtopic::find($request->qtopic_id);
         $questions = Question::find($request->id);
         $questions->question = $request->question;
+        $questions->image    = $imageName;
         $questions->answer   = $request->answer;
         $questions->option1  = $request->option1;
         $questions->option2  = $request->option2;

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->longText('question');
+            $table->string('image')->default('');
             $table->longText('answer');
             $table->longText('option1');
             $table->longText('option2');

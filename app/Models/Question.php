@@ -12,6 +12,7 @@ class Question extends Model
     protected $table = 'questions';
     protected $fillable = [
         'question',
+        'image',
         'answer',
         'option1',
         'option2',
@@ -21,7 +22,7 @@ class Question extends Model
         'qtopic_id',
     ];
     public static function getQuestions(){
-        $records = DB::table('questions')->select('id','question','answer','option1','option2','option3','option4','type','qtopic_id')->get()->toArray();
+        $records = DB::table('questions')->select('id','question','image','answer','option1','option2','option3','option4','type','qtopic_id')->get()->toArray();
         return $records;
     }
     public function qtopic(){

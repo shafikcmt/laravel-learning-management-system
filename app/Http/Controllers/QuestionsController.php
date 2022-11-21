@@ -38,7 +38,7 @@ class QuestionsController extends Controller
     
     if (count($quiztopic) > 0) {
         return response()->json($quiztopic);
-    }
+        }
     }
 
 
