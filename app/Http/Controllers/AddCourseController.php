@@ -43,7 +43,7 @@ class AddCourseController extends Controller
         $course->name = $name;
         $course->start_date = $start_date; 
         $course->end_date = $end_date;
-        $course->image = $imageName;
+        $course->image = $imageName; 
         $categories->course()->save($course);
         return back()->with('add-courses','Course record Added Successfully !');
     }

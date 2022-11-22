@@ -32,12 +32,13 @@ class QuestionImport implements WithHeadingRow, ToCollection
         foreach ($rows as $row) {
             Question::create([
                 'question'  => $row['question'],
+                'image'     => $row['image'],
                 'answer'    => $row['answer'],
                 'option1'   => $row['option1'],
                 'option2'   => $row['option2'],
                 'option3'   => $row['option3'],
                 'option4'   => $row['option4'],
-                'type'   => $row['type'],
+                'type'      => $row['type'],
                 'qtopic_id' => request('qtopic_id'),
             ]);
 

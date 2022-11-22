@@ -65,7 +65,7 @@
                                         <label for="colFormLabel" class=" col-form-label">Excell/CSV File <span style="color:red">*</span></label>
                                         <input type="file" name="file" class="form-control" id="colFormLabel" placeholder="">
                                         <div class="text-danger">@error('file') {{$message}} @enderror</div>
-
+ 
                                         </div>
                                     </div>
                                 </div>
