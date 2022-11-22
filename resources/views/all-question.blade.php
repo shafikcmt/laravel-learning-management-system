@@ -59,6 +59,11 @@
                             <label for="question">
                                 <h5 style="width:900px" class="text-justify pb-3 border-bottom">#<?php echo $i; ?>.{{$question->question}}</h5>
                             </label>
+                            @if($question->image > 0)
+                            <img width="80%;" height="300px" src="{{asset('images/question')}}/{{$question->image}}" alt="">
+                            @else
+                            <img width="0%" height="0px">
+                            @endif
                             <p><input type="radio" required name="answer[{{$question->id}}]"
                                     value="{{$question->option1}}"> {{$question->option1}}</p>
                             <p><input type="radio" required name="answer[{{$question->id}}]"
