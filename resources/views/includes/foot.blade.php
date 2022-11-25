@@ -58,12 +58,10 @@
     });
     setInterval(function(){
             var remaining_second = $('#CountDownTimer').TimeCircles().getTime();
-            // if(remaining_second < 1 ){
-            //     alert('Exam time over !');
-            //     window.location.replace('https://www.geetauniversity.edu.in/');
-                
-
-            // }
+            if(remaining_second < 1 ){
+                alert('Exam time over !');
+                window.location.replace('https://www.geetauniversity.edu.in/');
+            }
         }, 1000);
 
     $(".stopTimer").click(function() {
