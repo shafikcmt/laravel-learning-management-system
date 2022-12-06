@@ -34,8 +34,7 @@
                                     <th>Class</th>
                                     <td>{{$data->class}}</td>
                                 </tr>
-                                <tr>
-                                </tr>
+                              
                                 <tr>
                                     <th>Semister</th>
                                     <td>{{$data->semester}}</td>

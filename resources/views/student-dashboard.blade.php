@@ -9,7 +9,6 @@
 
             </div>
         </div>
-      
         <section class="section">
             <div class="row sameheight-container">
                 <div class="col-md-12">
@@ -18,11 +17,13 @@
                         <table valign="middle" class="table table-striped table-bordered table_timeline">
                        @foreach($courses as $course)
                         <tr>
-                            <th width="20%">{{$course->name}}</th>
+                            <th width="15%">{{$course->name}}</th>
                             <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
-                            <th width="20%"></th>
+                            <th width="15%">Apptitude</th>
                             <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
-                            <th width="20%"></th>
+                            <th width="15%">Technical</th>
+                            <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
+                            <th width="15%">Reasoning</th>
                             <th width="10%"><span><i class="fa-solid fa-check"></i></span></th>
                         </tr>
                         @endforeach

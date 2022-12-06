@@ -62,7 +62,7 @@ Route::get('/password',[AllStudentController::class,'ShowPassword']);
 Route::get('student-result',[CourseMappingController::class,'StudentResult']);
 Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']); 
 Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
-Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion']);
+Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion'])->name('start-exam');
 Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
 
 
