@@ -102,7 +102,7 @@
                         <li>
                             <a href="/results-quiz-wise"> Quiz Wise</a>
                         </li>
-                        <!-- <li>
+                         <li>
                             <a href="/results-batch-wise"> Batch Wise</a>
                         </li>
                         <li>

@@ -7,7 +7,7 @@
             <section class="section">
 
                 <div class="row sameheight-container">
-                    <div class="col-xl-3 ">
+                    <div class="col-xl-3">
                         <div class="card card-default bg-orange sameheight-item">
                             <!-- <div class="card-header">
                                     <div class="header-block">
