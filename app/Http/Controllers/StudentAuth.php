@@ -45,7 +45,6 @@ public function StudentRegister(Request $request){
         // return back()->with('message','You have Registered Successfully');
         return redirect('/student-login');
         // return back()->with('message','You have Registered Successfully');
-       
         }
         else{
         return back()->with('message','something wrong');

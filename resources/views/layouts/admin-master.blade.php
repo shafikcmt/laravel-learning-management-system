@@ -10,7 +10,7 @@
     <header>
         @include('includes/admin-header')
     </header>
-    @section('sidebar')
+   @section('sidebar')
    @include('includes.admin-sidebar')
    @show
    <div id="main" class="main-wrapper">
@@ -19,7 +19,7 @@
    </div>
    </div>
     <footer>
-        @include('includes/footer')
+    @include('includes/footer')
     </footer>
     @include('includes/foot')
 
