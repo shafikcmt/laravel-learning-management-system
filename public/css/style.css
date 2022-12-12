@@ -15,6 +15,13 @@
     /* font-family:  !important; */
     font-family: shafi_font !important;
 }
+.count_doun{
+    top: 10%;
+    position: fixed;
+    background: #fff;
+    height:100%;
+    width: 100%;
+} 
 .table_timeline{}
 .table_timeline tr{}
 .table_timeline tr th span {

@@ -17,16 +17,10 @@
             right: 0;
             top: 0;
             z-index: 1;
-            height:100%;
+            /* height:100%; */
             
         }
-        .count_doun{
-            top: 10%;
-            position: fixed;
-            background: #fff;
-            height:100%;
-            width: 100%;
-        } 
+
 
     </style>
     <article class="content dashboard-page">
@@ -48,7 +42,7 @@
                 </h1>
             </div>
 
-                    <form action="{{route('submit-answer')}}" method="POST">
+                    <form action="{{route('submit-answer')}}" method="POST" >
                         @csrf
                         <input type="hidden" name="topic_id" value="{{$qtopic->id}}">
                         <input type="hidden" name="topic_name" value="{{$qtopic->topic_name}}">
