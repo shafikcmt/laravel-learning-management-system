@@ -1803,7 +1803,10 @@ span a {
   @media (max-width: 991.98px) {
     .sidebar {
       position: fixed;
-      left: -240px; } }
+      left: 0px;
+      width: 100%;
+      top: 51px;
+    } }
   .sidebar-fixed .sidebar {
     position: fixed; }
   .sidebar-open .sidebar {

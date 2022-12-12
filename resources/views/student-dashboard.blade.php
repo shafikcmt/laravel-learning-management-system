@@ -8,7 +8,7 @@
             <div class="progress-bar progress-bar-striped progress-bar-animated rounded"  style="width:10%">10%</div> 
 
             </div>
-        </div>
+        </div> 
         <section class="section">
             <div class="row sameheight-container">
                 <div class="col-md-12">

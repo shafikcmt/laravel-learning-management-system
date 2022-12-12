@@ -1,4 +1,4 @@
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar" >
                     <div class="sidebar-container">
                         <div class="sidebar-header">
                             <div class="brand">
@@ -6,15 +6,14 @@
                                    <img src="{{asset('images/fav.png')}}" alt="logo">
                                 </div> Student Dashboard</div>
                         </div>
-                        <!-- <header class="header">
+                        <header class="header">
                             <div class="header-block header-block-collapse d-lg-none d-xl-none">
                                 <button class="collapse-btn" id="sidebar-collapse-btn">
                                     <i class="fa fa-bars"></i>
                                 </button>
                             </div>
-                        </header> -->
+                        </header>
                         <nav class="menu">
-                       
                             <ul class="sidebar-menu metismenu" id="sidebar-menu">
                                 <li class="active">
                                     <a href="/student-dashboard">
