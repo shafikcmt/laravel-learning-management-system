@@ -13,7 +13,7 @@
                         <h1  class="title well p-2 bg-orange text-white"> Available Course </h1>
                     </div>
                     <div class="card-block">
-                    @if(count($courses) >= 5)
+                    @if(count($courses) >= 4)
                     <div class="owl-carousel owl-theme"> 
                         @foreach($courses as $course)
                             <div class="item card-item">

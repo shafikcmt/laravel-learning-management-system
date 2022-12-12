@@ -256,3 +256,9 @@ $(document).on('change', '#quiz', function () {
         
     });
 </script>
+<script>
+    $("#sidebar-collapse-btn").click(function(){
+  $(".sidebar").fadeToggle();
+});
+</script>
+
