@@ -37,8 +37,11 @@
             height: 316px;
             text-align: center;
         } 
-        .question-part:first-child{
-            margin-top: 50px;
+        .question-part:first-child {
+            margin-top: 20px;
+        }
+        .question-part {
+            margin-bottom: 10px !important;
         }
 
     }
@@ -190,6 +193,7 @@
             height: 183px;
             width: 38%;
             right: 0px;
+            background: none;
         }
 
     }
@@ -205,9 +209,29 @@
             top: 121px;
             position: fixed;
             height: 183px;
-            width: 38%;
-            right: 33%;
+            width: 30%;
+            right: 0px;
+        }
+        #CountDownTimer{
+
+        }
+        .textDiv_Seconds{
+            top: 20px !important;
+            left: 56px !important;
+        }
+        .textDiv_Minutes{
+            top: 22px !important;
+            left: -4px !important;
+        }
+
+        .time_circles canvas {
+            height: 60px;
+            width: 120px;
             
+        }
+
+        .time_circles div span{
+            font-size: 18px !important;
         }
        
         .count_doun h4{

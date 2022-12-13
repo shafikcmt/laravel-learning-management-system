@@ -91,7 +91,7 @@
                     <div class="count_doun">
                     <h4>Quiz navigation</h4>
                     <a style="color:skyblue;" href="/student-dashboard">Finish attempt</a>
-                    <div id="CountDownTimer" data-timer="{{$qtopic->total_time*60}}" style="width: 200px; height: 250px;"></div>
+                    <div id="CountDownTimer" data-timer="{{$qtopic->total_time*60}}"></div>
                    
                     </div>
                     
