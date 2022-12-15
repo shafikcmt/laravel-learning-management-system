@@ -12,7 +12,7 @@
                         <div class="table-responsive p-3 bg-white sameheight-item">
                             <table class="table table-striped table-bordered table-hover">
                                <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>Serial</th>
                                     <th>Name</th>
                                     <th>Roll</th>
@@ -38,7 +38,8 @@
                                     <td>{{$quiz_result->wrong_ans + $quiz_result->right_ans}}</td>
                                    
                                     <td>
-                                        <a href="/quiz-result/{{$quiz_result->student_id}}/{{$quiz_result->topic_id}}" class="btn btn-primary">View</a>
+                                    <a href="/quiz-result/{{$quiz_result->student_id}}/{{$quiz_result->topic_id}}" class="btn btn-primary">View</a>
+                                    <a href="/quiz-report/{{$quiz_result->student_id}}/{{$quiz_result->topic_id}}" class="btn btn-primary">Download</a>
                                     </td>
                                 </tr>
                                 <?php $i++ ?>

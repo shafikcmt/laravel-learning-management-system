@@ -167,6 +167,8 @@ Route::get('quiz-result',[QuizResultController::class,'getQuizResult'])->name('g
 Route::get('/results-batch-wise',[QuizResultController::class,'indexBatch'])->middleware('adminauthcheck');
 Route::get('/results-date-wise',[QuizResultController::class,'indexDate']);
 Route::get('/quiz-all-results',[QuizResultController::class,'allStudentResult']);
+Route::get('/quiz-report/{student_id}/{topic_id}',[QuizResultController::class,'quizReport']);
+Route::get('/quiz-report/{student_id}/{topic_id}',[QuizResultController::class,'quizReportPDF']);
 Route::get('/quiz-result/{student_id}/{topic_id}',[QuizResultController::class,'singleQuizResult']);
   
 Route::post('/admin-login',[AdminAuth::class,'AdminLogin'])->name('admin-login');
