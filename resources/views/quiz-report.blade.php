@@ -18,7 +18,8 @@
     color: #fff;
 }
    #grad-score {
-    background-image: linear-gradient(to right top, #233873, #763a82, #b93775, #e54c52, #f07d1e);
+    /* background-image: linear-gradient(to right top, #233873, #763a82, #b93775, #e54c52, #f07d1e); */
+    background: #f07d1e;
     height: 100px;
     width: 200px;
     padding: 6px;
@@ -31,6 +32,7 @@
         width: 200px;
         padding: 6px;
         float: right;
+        background: #233873;
 
     }
 
