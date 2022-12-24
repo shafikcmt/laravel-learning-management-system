@@ -1,9 +1,9 @@
 <header class="header">
-                    <!-- <div class="header-block header-block-collapse d-lg-none d-xl-none">
+                    <div class="header-block header-block-collapse d-lg-none d-xl-none">
                         <button class="collapse-btn" id="sidebar-collapse-btn">
                             <i class="fa-solid fa-bars"></i>
                         </button>
-                    </div> -->
+                    </div>
                    
                    
                     <div class="header-block header-block-nav">
