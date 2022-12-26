@@ -14,7 +14,7 @@ class StudentsExport implements FromCollection,WithHeadings
         return[
         'id',
         'name',
-        'roll',
+        'roll', 
         'class',
         'branch',
         'semester',

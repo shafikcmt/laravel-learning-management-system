@@ -12,14 +12,16 @@
             text-align: center;
             
         }
-        tbody tr:nth-child(even) {background-color: skyblue;}
+        tbody tr:nth-child(even) {
+            background-color: skyblue;
+        }
         #customtble tr, th, td{
             border: 1px solid orange;
             padding: 10px;
             
         }
     </style>
-</head>
+</head> 
 <body>
     <table id="customtble">
         <thead>

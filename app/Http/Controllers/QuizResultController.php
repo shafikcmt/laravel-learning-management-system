@@ -9,7 +9,7 @@ use App\Models\Batch;
 use App\Models\Category;
 use App\Models\Qtopic;
 use Illuminate\Support\Facades\DB;
-
+use PDF;
 
  
 
@@ -119,6 +119,24 @@ class QuizResultController extends Controller
             ["topic_id", "=", $topic_id]
         ])->get();
         return view('/quiz-result',compact('quiz_results','attemp_students'));
+    }
+
+    public function quizReport($stu_id,$topic_id){
+        $quiz_reports = attempt_quiz::select("*")->where([
+            ["student_id", "=", $stu_id],
+            ["topic_id", "=", $topic_id]
+        ])->get();
+        return view('quiz-report',compact('quiz_reports'));
+    }
+
+
+    public function quizReportPDF($stu_id,$topic_id){
+        $quiz_reports = attempt_quiz::select("*")->where([
+            ["student_id", "=", $stu_id],
+            ["topic_id", "=", $topic_id]
+        ])->get();
+        $pdf = PDF::loadView('quiz-report',compact('quiz_reports'));
+        return $pdf->download('quiz_report.pdf');
     }
 
    

@@ -172,7 +172,7 @@ class AllStudentController extends Controller
     if (file_exists($file)) {
         return Response::download($file, 'Studentlist.xlsx', $headers);
     } else {
-        echo('File not found.');
+        echo('File not found.'); 
     }
     }
 
