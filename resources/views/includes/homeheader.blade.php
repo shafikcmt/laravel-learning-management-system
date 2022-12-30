@@ -16,6 +16,7 @@
                                 <ul class="nav navbar-nav justify-content-end responsive-menu">
                                 <li class="nav-item"><a class="" href="/student-login">Login </a></li>&nbsp &nbsp &nbsp
                                 <li class="nav-item"><a class="" href="/student-registration"> &nbspCraete Account</a></li>
+                                <li class="nav-item"><a class="" href="/school-student-registration"> &nbsp Registration</a></li>
                               
                                 </ul>
                             </nav>

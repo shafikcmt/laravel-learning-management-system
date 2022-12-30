@@ -15,6 +15,9 @@
     /* font-family:  !important; */
     font-family: shafi_font !important;
 }
+.time_circles canvas {
+    height: 80px;
+}
 .count_doun{
     top: 10%;
     position: fixed;
