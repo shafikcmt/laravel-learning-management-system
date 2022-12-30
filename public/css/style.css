@@ -22,6 +22,38 @@
     height:100%;
     width: 100%;
 } 
+.time_circles canvas {
+    height: 80px;
+    margin-top: 15px;
+}
+.time_circles .textDiv_Minutes {
+    top: 0 !important;
+    width: 82px !important;
+}
+.time_circles .textDiv_Minutes h4 {
+    font-size: 17px !important;
+    /* margin-top: -2px; */
+}
+.time_circles .textDiv_Minutes span {
+    font-size: 25px !important;
+    /* top: 51px; */
+    margin-top: 24px;
+}
+
+.time_circles .textDiv_Seconds {
+    top: 0px !important;
+    width: 82px !important;
+    left: 80px !important;
+}
+.time_circles .textDiv_Seconds h4 {
+    font-size: 17px !important;
+    /* margin-top: -2px; */
+}
+.time_circles .textDiv_Seconds span {
+    font-size: 25px !important;
+    /* top: 51px; */
+    margin-top: 24px;
+}
 .table_timeline{}
 .table_timeline tr{}
 .table_timeline tr th span {
