@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="card-block">
                                             <img height="100px" width="100%"
-                                                src="{{asset('images')}}/{{$course->image}}" alt="">
+                                                src="{{asset('images/course')}}/{{$course->image}}" alt="">
                                         </div>
                                         <div class="card-footer">
                                             <h5 class="text-dark">{{$course->name}}</h5>
