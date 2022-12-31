@@ -36,13 +36,13 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/',[HomeController::class,'index'])->middleware('ifStudentlogin');
+Route::get('/',[HomeController::class,'index'])->name('/')->middleware('ifStudentlogin');
 // Student Controller
 //------------------------------------
 Route::get('/student-login',[StudentAuth::class,'login'])->middleware('studentlogin');
 Route::get('/student-logout',[StudentAuth::class,'Logout']);
 Route::get('/student-dashboard',[StudentAuth::class,'StudentDashboard'])->middleware('studentauthcheck');
-Route::get('/drive-skills',[AllStudentController::class,'driveSkills'])->middleware('studentauthcheck');
+Route::get('/drive-skills',[AllStudentController::class,'driveSkills'])->name('/drive-skills')->middleware('studentauthcheck');
 Route::get('/technical-work',[TechnicalWork::class,'index'])->middleware('studentauthcheck');
 Route::post('/add-training',[TechnicalWork::class,'TrainingAdd'])->name('add-training');
 Route::post('/add-certificate',[TechnicalWork::class,'AddCertificate'])->name('add-certificate');
@@ -63,7 +63,7 @@ Route::get('student-result',[CourseMappingController::class,'StudentResult']);
 Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']); 
 Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion'])->name('start-exam');
-Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
+Route::post('/submit-answers',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
 
 
 // **************************************************************************

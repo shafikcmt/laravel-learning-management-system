@@ -83,7 +83,7 @@
                             @endforeach
                         </div>
                         <!-- <a type="submit" class="btn btn-primary pull-right">Next</a> -->
-                        <button class="cssbuttons-io pull-right mr-5 mr-5 quiz-submit" type="submit"><span>Submit</span></button>
+                        <button id="submit_quiz" class="cssbuttons-io pull-right mr-5 mr-5 quiz-submit" type="submit"><span>Submit</span></button>
                     </form>
                    
                 </div>
