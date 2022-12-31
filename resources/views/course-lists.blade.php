@@ -35,7 +35,7 @@
                                                     <td>{{$courses->firstItem() + $key}}</td>
                                                     <td>{{$course->name}}</td>
                                                     <td>{{$course->category_name}}</td>
-                                                    <td><img src="{{asset('images')}}/{{$course->image}}" width="60px" alt=""></td>
+                                                    <td><img src="{{asset('images/course')}}/{{$course->image}}" width="60px" alt=""></td>
                                                     <td>
                                                         <a class="btn btn-primary" href="/edit-courses/{{$course->id}}"><i class="fa-solid fa-pen-to-square"></i></a>
                                                         <a class="btn btn-primary" href="/delete-courses/{{$course->id}}"><i class="fa-solid fa-trash"></i></a>
