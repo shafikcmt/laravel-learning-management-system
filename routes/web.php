@@ -62,7 +62,7 @@ Route::get('/student-registration',[StudentAuth::class,'registration'])->middlew
 Route::post('/student-registration',[StudentAuth::class,'StudentRegister'])->name('student-register');
 Route::get('/password',[AllStudentController::class,'ShowPassword']);
 Route::get('student-result',[CourseMappingController::class,'StudentResult']);
-Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']); 
+Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']);  
 Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion'])->name('start-exam');
 Route::post('/submit-answer',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
@@ -72,6 +72,7 @@ Route::get('/school-student-registration',[SchoolQuiz::class,'RegistrationPage']
 Route::get('/school-student-login',[SchoolQuiz::class,'LoginPage'])->middleware('studentlogin');
 Route::post('/school-student-register',[SchoolQuiz::class,'SchoolStudentRegistration'])->name('school-student-register');
 Route::post('/school-student-login',[SchoolQuiz::class,'LoginSchoolStudent'])->name('school-students-login');
+Route::get('/school-student-dashboard',[SchoolQuiz::class,'SchoolStudentDashboard'])->middleware('studentauthcheck');
 
 
 

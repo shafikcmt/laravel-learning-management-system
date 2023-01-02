@@ -12,9 +12,9 @@ use App\Models\QuizAnswer;
 use App\Models\attempt_quiz;
 use App\Models\CourseBatch;
 use App\Models\StudentsBatch;
+use App\Models\SchoolStudent;
 use App\Models\AddTraining;
 use Illuminate\Support\Arr;
-
 use paginate;
 // use Session;
 use App\Models\Qcategory;
@@ -76,7 +76,7 @@ class CourseMappingController extends Controller
 
     public function courseView($id)
     {
-        $data = Student::where('id','=',Session::get('loginId'))->first();
+        $data = SchoolStudent::where('id','=',Session::get('loginId'))->first();
         $courses = Course::find($id);
         $qcategories = Course::find($id)->qcategory;
         $qcategory = Qcategory::find($id);

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SchoolStudent;
-use Illuminate\Support\Facades\Mail;
+use App\Models\Course;
+use Illuminate\Support\Facades\Mail; 
+use Session;
 
 
 
@@ -15,6 +17,14 @@ class SchoolQuiz extends Controller
      }
      public function LoginPage(){
         return view('auth.school.school-student-login');
+     }
+     public function SchoolStudentDashboard(){
+        $data = array();
+        if(Session::has('loginId')){
+            $data = SchoolStudent::where('id','=',Session::get('loginId'))->first(); 
+            $courses = Course::where('id','=',1)->get();
+            }
+        return view('/school-student-dashboard',compact('data','courses'));
      }
 
      public function SchoolStudentRegistration(Request $request){
@@ -56,15 +66,14 @@ class SchoolQuiz extends Controller
       if($student){
       if($request->password == $student->password){
           $request->session()->put('loginId',$student->id);
-          
-          return 'Login';
+          return redirect('/school-student-dashboard');
       }else{
           return back()->with('message','Password is not match');
       }
       
       }
       else{
-          return back()->with('message','This roll number is not Registered ');
+          return back()->with('message','This Email is not Registered ');
       }
   }
 }
