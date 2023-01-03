@@ -1,44 +1,65 @@
-@extends('layouts.school')
-    @section('title','Drive Skills')
+    @extends('layouts.school')
+    @section('title','Course View')
     @section('content')
+    <style>
+        ul .list_img {
+
+            margin: 0;
+            padding: 6px 0px 6px 35px;
+            list-style: none;
+            background-image: url("http://127.0.0.1:8000/images/list.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 27px;
+            font-size: 18px;
+        }
+ 
+        ul .list_img a {
+            text-decoration: none;
+            color: #3C96B4;
+
+        }
+    </style>
     <article class="content dashboard-page">
+
         <div class="title-block">
-            <h1 class="title well p-2 bg-orange text-uppercase"> {{$data->name}} </h1>
-        </div>
+            <h1 class="title well p-2 bg-orange"> {{$courses->name}} <a href="/school-student-dashboard"><button class="btnhead">Back</button></a>
+            </h1>
+        </div> 
         <section class="section">
-            <div class="row sameheight-container ">
+            <div class="row sameheight-container">
+
                 <div class="col-md-12">
-                    <div class="card sameheight-item shadow-lg p-3 bg-white" data-exclude="xs,sm">
-                        <div class="title-block">
-                            <h1  class="title well p-2 bg-orange text-white"> Available Course </h1>
-                        </div>
-                        <div class="card-block">
-                          
-                                @foreach($courses as $course)
-                                <div class="item card-item">
-                                    <div class="card-header">
-                                        <div class="header-block">
-                                            <p class="title">{{$course->category_name}} </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-                                        <img height="100px" width="100%" src="{{asset('images/course')}}/{{$course->image}}" alt="">
-                                    </div>
-                                    <div class="card-footer">
-                                        <h5 class="text-dark">{{$course->name}}</h5>
-                                        <center>
-                                            <a style="position:relative; z-index:10;" href="/school-course-view/{{$course->id}}" class="stretched-link"><button class="cssbuttons-io"><span>View Course</span></button> </a>
-                                        </center>
-                                    </div>
-                                </div>
-                                @endforeach
-                            
-                        </div>
+                    @if(session()->has('already_attemp'))
+                    <div class="alert alert-danger">
+                        {{session()->get('already_attemp')}}
                     </div>
+                    @endif
+                    <table class="table table-striped">
+                        <tr>
+                            @foreach($qcategories as $qcategory)
+                            <div class=" shadow-sm p-3 mb-2 bg-white rounded">
+
+                                <h3 style="padding:12px;" class="h6 text-white bg-orange">{{$qcategory->category_name}}</h3>
+                                <ul class="">
+                                   @if(count($qcategory->qtopic))
+                                    @foreach($qcategory->qtopic as $qtopic)
+                                    <li class="list_img"><a href="/start-school-quiz/{{$qtopic->id}}">{{$qtopic->topic_name}}</a>
+                                    </li>
+                                    @endforeach
+                                    @else
+                                    <p class="text-center pt-2">Quiz not Found !</p>
+                                    @endif
+                                </ul>
+                            </div>
+                            @endforeach
+                        </tr> 
+                    </table>
                 </div>
-            </div>       
+            </div>
         </section>
-</article>
+
+    </article>
 
     <div class="modal fade" id="modal-media">
         <div class="modal-dialog modal-lg">
@@ -123,4 +144,4 @@
             <div class="color-secondary"></div>
         </div>
     </div>
-@stop
+    @stop

@@ -5,9 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class StudentAuthCheck
+class SchoolAuth
 {
-
     /**
      * Handle an incoming request.
      *
@@ -17,10 +16,9 @@ class StudentAuthCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Session()->has('loginId')){
-            return redirect('/student-login')->with('message','You have to login first !');
+        if(!Session()->has('ssloginId')){
+            return redirect('/school-student-login')->with('message','You have to login first !');
         }
-       
         return $next($request);
     }
 }

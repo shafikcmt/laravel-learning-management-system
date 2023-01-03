@@ -76,7 +76,7 @@ class CourseMappingController extends Controller
 
     public function courseView($id)
     {
-        $data = SchoolStudent::where('id','=',Session::get('loginId'))->first();
+        $data = Student::where('id','=',Session::get('loginId'))->first();
         $courses = Course::find($id);
         $qcategories = Course::find($id)->qcategory;
         $qcategory = Qcategory::find($id);
@@ -109,7 +109,7 @@ class CourseMappingController extends Controller
             // 'answer'        => 'required',
         ]);
         $c = count($request->answer);
-        // dd($c);
+       
         $answers = [];
         foreach($request->get('answer') as $question_id => $answer ){
             $answers[] = [

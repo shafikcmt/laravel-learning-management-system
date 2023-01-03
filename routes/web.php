@@ -72,7 +72,15 @@ Route::get('/school-student-registration',[SchoolQuiz::class,'RegistrationPage']
 Route::get('/school-student-login',[SchoolQuiz::class,'LoginPage'])->middleware('studentlogin');
 Route::post('/school-student-register',[SchoolQuiz::class,'SchoolStudentRegistration'])->name('school-student-register');
 Route::post('/school-student-login',[SchoolQuiz::class,'LoginSchoolStudent'])->name('school-students-login');
-Route::get('/school-student-dashboard',[SchoolQuiz::class,'SchoolStudentDashboard'])->middleware('studentauthcheck');
+Route::get('/school-student-dashboard',[SchoolQuiz::class,'SchoolStudentDashboard'])->middleware('schoolauthcheck');
+Route::get('/school-student-logout',[SchoolQuiz::class,'SchoolLogout']);
+Route::get('/school-course-view/{id}',[SchoolQuiz::class,'SchoolcourseView']); 
+Route::get('/start-school-quiz/{id}',[SchoolQuiz::class,'startSchoolQuiz']);
+Route::get('/school-quiz/{id}',[SchoolQuiz::class,'schoolQuiz'])->name('start-quiz');
+
+
+
+
 
 
 

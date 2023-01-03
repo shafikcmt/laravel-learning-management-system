@@ -55,6 +55,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'studentauthcheck' => \App\Http\Middleware\StudentAuthCheck::class,
+        'schoolauthcheck' => \App\Http\Middleware\SchoolAuth::class,
         'adminauthcheck' => \App\Http\Middleware\AdminAuthCheck::class,
         'studentlogin' => \App\Http\Middleware\StudentLogin::class,
         'ifStudentlogin' => \App\Http\Middleware\ifStudentlogin::class,

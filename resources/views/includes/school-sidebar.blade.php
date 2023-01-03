@@ -17,7 +17,7 @@
                         <nav class="menu">
                             <ul class="sidebar-menu metismenu" id="sidebar-menu">
                                 <li class="active">
-                                    <a href="/student-dashboard">
+                                    <a href="/school-student-dashboard">
                                         <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                             </ul>

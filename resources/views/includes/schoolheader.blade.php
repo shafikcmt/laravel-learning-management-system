@@ -15,8 +15,8 @@
                                     <span class="name"> {{$data->name}} </span>
                                 </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="/student-profile/{{$data['id']}}">
-                                    <a class="dropdown-item" href="/student-logout">
+                                    <a class="dropdown-item" href="{{$data['id']}}">
+                                    <a class="dropdown-item" href="/school-student-logout">
                                         <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
