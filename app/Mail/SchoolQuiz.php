@@ -12,15 +12,25 @@ use Illuminate\Queue\SerializesModels;
 class SchoolQuiz extends Mailable
 {
     use Queueable, SerializesModels;
+<<<<<<< HEAD
     public $details;
+=======
+
+>>>>>>> school_quiz
     /**
      * Create a new message instance.
      *
      * @return void
      */
+<<<<<<< HEAD
     public function __construct($details)
     {
         $this->details = $details;
+=======
+    public function __construct()
+    {
+        //
+>>>>>>> school_quiz
     }
 
     /**
@@ -34,7 +44,10 @@ class SchoolQuiz extends Mailable
             subject: 'School Quiz',
         );
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> school_quiz
 
     /**
      * Get the message content definition.

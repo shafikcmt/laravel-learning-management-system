@@ -13,8 +13,10 @@ use App\Http\Controllers\AddQuestionController;
 use App\Http\Controllers\QuizResultController;
 use App\Http\Controllers\AssessmentWork;
 use App\Http\Controllers\TechnicalWork; 
+use App\Http\Controllers\SchoolQuiz; 
 
 // *********************************************************
+
 use App\Http\Livewire\Sturesetpass;
 use App\Http\Livewire\Resetpassword;
 use App\Http\Livewire\Adminlogin;
@@ -60,10 +62,26 @@ Route::get('/student-registration',[StudentAuth::class,'registration'])->middlew
 Route::post('/student-registration',[StudentAuth::class,'StudentRegister'])->name('student-register');
 Route::get('/password',[AllStudentController::class,'ShowPassword']);
 Route::get('student-result',[CourseMappingController::class,'StudentResult']);
-Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']); 
+Route::get('/course-view/{id}',[CourseMappingController::class,'courseView']);  
 Route::get('/start-quiz/{id}',[CourseMappingController::class,'startQuiz']);
 Route::get('/all-question/{id}',[CourseMappingController::class,'allQuestion'])->name('start-exam');
 Route::post('/submit-answers',[CourseMappingController::class,'submitAnswer'])->name('submit-answer');
+
+// School Quiz 
+Route::get('/school-student-registration',[SchoolQuiz::class,'RegistrationPage'])->middleware('studentlogin');
+Route::get('/school-student-login',[SchoolQuiz::class,'LoginPage'])->middleware('studentlogin');
+Route::post('/school-student-register',[SchoolQuiz::class,'SchoolStudentRegistration'])->name('school-student-register');
+Route::post('/school-student-login',[SchoolQuiz::class,'LoginSchoolStudent'])->name('school-students-login');
+Route::get('/school-student-dashboard',[SchoolQuiz::class,'SchoolStudentDashboard'])->middleware('schoolauthcheck');
+Route::get('/school-student-logout',[SchoolQuiz::class,'SchoolLogout']);
+Route::get('/school-course-view/{id}',[SchoolQuiz::class,'SchoolcourseView']); 
+Route::get('/start-school-quiz/{id}',[SchoolQuiz::class,'startSchoolQuiz']);
+Route::get('/school-quiz/{id}',[SchoolQuiz::class,'schoolQuiz'])->name('start-quiz');
+
+
+
+
+
 
 
 // **************************************************************************

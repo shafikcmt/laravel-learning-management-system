@@ -12,9 +12,9 @@ use App\Models\QuizAnswer;
 use App\Models\attempt_quiz;
 use App\Models\CourseBatch;
 use App\Models\StudentsBatch;
+use App\Models\SchoolStudent;
 use App\Models\AddTraining;
 use Illuminate\Support\Arr;
-
 use paginate;
 // use Session;
 use App\Models\Qcategory;
@@ -109,7 +109,7 @@ class CourseMappingController extends Controller
             // 'answer'        => 'required',
         ]);
         $c = count($request->answer);
-        // dd($c);
+       
         $answers = [];
         foreach($request->get('answer') as $question_id => $answer ){
             $answers[] = [
