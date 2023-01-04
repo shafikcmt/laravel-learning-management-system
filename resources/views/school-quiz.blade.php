@@ -67,17 +67,8 @@
                             <p><input type="radio" name="answer[{{$question->id}}]"
                                     value="{{$question->option4}}"> {{$question->option4}}</p>
                             </div>
-                            
-                            <input type="hidden" name="student_name" value="{{$data->name}}">
                             <input type="hidden" name="student_id" value="{{$data->id}}">
-                            <input type="hidden" name="student_roll" value="{{$data->roll}}">
-                            <input type="hidden" name="student_class" value="{{$data->class}}">
-                            <input type="hidden" name="student_branch" value="{{$data->branch}}">
-                            <input type="hidden" name="student_semester" value="{{$data->semester}}">
-                            <input type="hidden" name="student_mobile" value="{{$data->mobile}}">
-                            <input type="hidden" name="student_email" value="{{$data->email}}">
                             <input type="hidden" name="question_id[{{$question->id}}]" value="{{$question->id}}">
-                           
                             <input type="hidden" name="canswer[{{$question->id}}]" value="{{$question->answer}}">
                             <?php $i++; ?>
                             @endforeach
