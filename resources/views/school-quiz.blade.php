@@ -42,7 +42,7 @@
                 </h1>
             </div>
 
-                    <form action="{{route('submit-answer')}}" method="POST" >
+                    <form action="{{route('school-answer-submit')}}" method="POST" >
                         @csrf
                         <input type="hidden" name="topic_id" value="{{$qtopic->id}}">
                         <input type="hidden" name="topic_name" value="{{$qtopic->topic_name}}">

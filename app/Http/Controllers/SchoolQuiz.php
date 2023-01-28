@@ -10,6 +10,9 @@ use App\Models\AttemptsSchoolQuiz;
 use App\Models\Qcategory;
 use App\Models\QuizAnswer;
 use Illuminate\Support\Facades\Mail; 
+use App\Mail\SchoolMailVarify;
+use Illuminate\Support\Facades\DB;
+
 use Session;
 
 
@@ -47,19 +50,25 @@ class SchoolQuiz extends Controller
           $student->email = $request->email;
           $student->password = $request->password;
           $result = $student->save();
+        
           if($result){
-          return back()->with('message','You have Registered Successfully');
+            $details = [
+                'title' => 'Login Access',
+                'email' => $request->email,
+                'name' => $request->name,
+                'password' => $request->password
+            ];
+        Mail::to($request->email)->send(new SchoolMailVarify($details));
+          return back()->with('message','Thanks for registering to Geeta University Test! A verification email has been sent to your provided email address.');
          //  return redirect('/student-login');
+           
           }
           else{
           return back()->with('message','something wrong');
           }
-          $details = [
-            'title' => 'mail from shafiqul',
-            'body' => 'mail from shafiqul testing',
-          ];
-          Mail::to("gth.shafiqul@geeta.edu.in")->send(new SchoolQuiz($details));
-          return 'Email Sent';
+        
+        
+        
       }
 
      public function LoginSchoolStudent(Request $request){
@@ -118,7 +127,7 @@ class SchoolQuiz extends Controller
             return view('/school-quiz',compact('questions','data','qtopic'));
         }
 
-        public function submitAnswer(Request $request){
+        public function schoolSubmitAnswer(Request $request){
             $data = SchoolStudent::where('id','=',Session::get('ssloginId'))->first();
             $request->validate([
                 // 'answer'        => 'required',
@@ -151,14 +160,20 @@ class SchoolQuiz extends Controller
             }
             $schoolstudent = SchoolStudent::find($request->student_id);
             $school_quiz = new AttemptsSchoolQuiz;
-            $school_quiz->stu_id = $request->student_id;
+            $school_quiz->school_student_id = $request->student_id;
             $school_quiz->topic_name = $request->topic_name;
             $school_quiz->topic_id = $request->topic_id;
             $school_quiz->right_ans = $correct;
             $school_quiz->wrong_ans = $wrong;
             $school_quiz->perchantage = round($correct/$results->count() * 100);
             $school_quiz->status = '1';
-            $schoolstudent->AttemptsSchoolQuiz()->save($school_quiz);
-            return view('/submit-answer')->with(['data'=>$data,'results'=>$results,'correct'=>$correct,'wrong'=>$wrong]);
+            $schoolstudent->quizattempt()->save($school_quiz);
+            return view('/school-submit-answer')->with(['data'=>$data,'results'=>$results,'correct'=>$correct,'wrong'=>$wrong]);
+        }
+        public function schoolStudentResult(){          
+            $quiz_results = DB::table('attempts_school_quizzes')
+            ->leftJoin('school_students', 'attempts_school_quizzes.school_student_id', '=', 'school_students.id')
+            ->get();  
+            return view('/school-quiz-all-results',compact('quiz_results'));
         }
 }

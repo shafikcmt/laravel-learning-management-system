@@ -5,24 +5,27 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class SchoolQuiz extends Mailable
+class SchoolMailVarify extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $details;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($details)
     {
-        //
+        $this->details = $details;
     }
-
+    public function build(){
+        return $this->subject('No Reply')->view('emails.schoolmail');
+    }
     /**
      * Get the message envelope.
      *
@@ -31,7 +34,8 @@ class SchoolQuiz extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'School Quiz',
+            from: new Address('test@geetauniversity.edu.in', 'Geeta University'),
+            subject: 'No Reply',
         );
     }
 
@@ -43,7 +47,7 @@ class SchoolQuiz extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.schoolmail',
         );
     }
 

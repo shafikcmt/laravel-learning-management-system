@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('attempts_school_quizzes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('stu_id');
-            $table->foreign('stu_id')->references('id')->on('school_students');
+            $table->unsignedBigInteger('school_student_id');
+            $table->foreign('school_student_id')->references('id')->on('school_students');
             $table->string('topic_name');
             $table->string('topic_id');
             $table->string('right_ans');
