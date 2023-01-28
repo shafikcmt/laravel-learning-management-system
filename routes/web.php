@@ -77,10 +77,8 @@ Route::get('/school-student-logout',[SchoolQuiz::class,'SchoolLogout']);
 Route::get('/school-course-view/{id}',[SchoolQuiz::class,'SchoolcourseView']); 
 Route::get('/start-school-quiz/{id}',[SchoolQuiz::class,'startSchoolQuiz']);
 Route::get('/school-quiz/{id}',[SchoolQuiz::class,'schoolQuiz'])->name('start-quiz');
-
-
-
-
+Route::post('/school-submit-answer',[SchoolQuiz::class,'schoolSubmitAnswer'])->name('school-answer-submit');
+Route::get('/school-quiz-all-results',[SchoolQuiz::class,'schoolStudentResult']);
 
 
 

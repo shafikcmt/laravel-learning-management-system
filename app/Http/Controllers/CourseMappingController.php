@@ -155,8 +155,6 @@ class CourseMappingController extends Controller
         $attemp_exam->perchantage = round($correct/$results->count() * 100);
         $attemp_exam->status = '1';
         $attemp_exam->save();
-
-
         return view('/submit-answer')->with(['data'=>$data,'results'=>$results,'correct'=>$correct,'wrong'=>$wrong]);
     }
     public function showAnswer(){

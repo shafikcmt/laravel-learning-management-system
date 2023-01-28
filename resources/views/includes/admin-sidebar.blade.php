@@ -102,12 +102,24 @@
                         <li>
                             <a href="/results-quiz-wise"> Quiz Wise</a>
                         </li>
-                         <li>
+                         <!-- <li>
                             <a href="/results-batch-wise"> Batch Wise</a>
                         </li>
                         <li>
                             <a href="/results-date-wise"> Date Wise</a>
+                        </li> -->
+                    </ul>
+                </li> 
+                <li>
+                    <a href="forms.html">
+                        <i class="fa fa-pencil-square-o"></i> School Quiz </a>
+                        <ul class="sidebar-nav">
+                        <li>
+                            <a href="/school-quiz-all-results">School Quiz Results</a>
                         </li>
+                        <!-- <li>
+                            <a href="/results-quiz-wise"> Quiz Wise</a>
+                        </li> -->
                     </ul>
                 </li> 
             </ul>
