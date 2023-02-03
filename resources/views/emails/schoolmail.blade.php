@@ -63,7 +63,7 @@
     <div class="mail_body">
     	<h3>Dear {{$details['name']}}</h3>
         <p>Thanks for applying Geeta University Test.</p>
-        <p>You can start your test by directly login using below link: <br> <a href="http://127.0.0.1:8000/school-student-login">Login Here</a></p>
+        <p>You can start your test by directly login using below link: <br> <a href="https://gportal.geeta.edu.in/school-student-login">Login Here</a></p>
         <p>Use the following credentials for login:</p>
         <p><b>Email</b> - {{$details['email']}}</p>
 		<p><b>Password</b> - {{$details['password']}}</p>
