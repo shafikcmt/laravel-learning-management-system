@@ -13,38 +13,19 @@ use Illuminate\Queue\SerializesModels;
 class SchoolMailVarify extends Mailable
 {
     use Queueable, SerializesModels;
-<<<<<<< HEAD:app/Mail/SchoolQuiz.php
-<<<<<<< HEAD
     public $details;
-=======
-
->>>>>>> school_quiz
-=======
-    public $details;
->>>>>>> school_quiz:app/Mail/SchoolMailVarify.php
     /**
      * Create a new message instance.
      *
      * @return void
      */
-<<<<<<< HEAD:app/Mail/SchoolQuiz.php
-<<<<<<< HEAD
-    public function __construct($details)
-    {
-        $this->details = $details;
-=======
-    public function __construct()
-    {
-        //
->>>>>>> school_quiz
-=======
     public function __construct($details)
     {
         $this->details = $details;
     }
     public function build(){
         return $this->subject('No Reply')->view('emails.schoolmail');
->>>>>>> school_quiz:app/Mail/SchoolMailVarify.php
+
     }
     /**
      * Get the message envelope.
@@ -58,11 +39,6 @@ class SchoolMailVarify extends Mailable
             subject: 'No Reply',
         );
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> school_quiz
-
     /**
      * Get the message content definition.
      *
