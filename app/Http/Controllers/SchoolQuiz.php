@@ -29,8 +29,7 @@ class SchoolQuiz extends Controller
         $data = array();
         if(Session::has('ssloginId')){
             $data = SchoolStudent::where('id','=',Session::get('ssloginId'))->first(); 
-            $courses = Course::where('id','=',1)->get();
-            $courses = Course::where('id','=',1)->get();
+            $courses = Course::where('name','=','Mock Drill Test')->get();
             }
         return view('/school-student-dashboard',compact('data','courses'));
      }
